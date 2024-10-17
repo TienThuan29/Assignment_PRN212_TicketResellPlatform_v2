@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|d:\\visual studio 2022\\csharp\\wpf\\assignment_prn212\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|d:\\visual studio 2022\\csharp\\wpf\\assignment_prn212\\assignment_prn212_ticketresellplatform\\dataaccessobject\\prn212_ticketresellplatformcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|solutionrelative:dataaccessobject\\prn212_ticketresellplatformcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -9,33 +18,33 @@
       "DocumentGroups": [
         {
           "DockedHeight": 443,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PRN212_TicketResellPlatformContext.cs",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "RelativeDocumentMoniker": "DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "ToolTip": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "RelativeToolTip": "DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAADwvyoAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T16:13:47.001Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 26,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\appsettings.json",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\appsettings.json",
+              "ToolTip": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\appsettings.json",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-17T16:10:49.352Z",
+              "EditorCaption": ""
             }
           ]
         }
