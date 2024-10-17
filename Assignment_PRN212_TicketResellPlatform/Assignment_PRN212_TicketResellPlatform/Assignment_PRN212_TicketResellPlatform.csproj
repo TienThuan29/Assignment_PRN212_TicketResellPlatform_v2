@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="User\1.jpg" />
+    <None Remove="User\15.jpg" />
+    <None Remove="User\6.jpg" />
+    <None Remove="User\Add a heading %281%29-Photoroom.png" />
+    <None Remove="User\child-1837375_1280.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="User\1.jpg" />
+    <Resource Include="User\15.jpg" />
+    <Resource Include="User\6.jpg" />
+    <Resource Include="User\Add a heading (1)-Photoroom.png" />
+    <Resource Include="User\child-1837375_1280.png" />
+  </ItemGroup>
+
+</Project>

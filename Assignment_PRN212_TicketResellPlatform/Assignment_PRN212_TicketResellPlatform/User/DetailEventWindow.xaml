@@ -1,0 +1,78 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.User.DetailEventWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.User"
+        mc:Ignorable="d"
+        Title="DetailEventWindow" Height="720" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="660"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
+            <Grid>
+                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/User/Add a heading (1)-Photoroom.png"/>
+                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+
+                <Border CornerRadius="30"  Margin="1090,6,62,6">
+                    <Border.Background>
+                        <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                    </Border.Background>
+                </Border>
+                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+            </Grid>
+        </Border>
+        <Label HorizontalAlignment="Left" Margin="515,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" FontSize="20" Content="Chi tiết Sự kiện" RenderTransformOrigin="0.659,0.485"/>
+        <ListBox Margin="10,26,32,57" Grid.Row="1" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <ListBox.Items>
+
+                <Border Width="500" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Sample Event 1" FontSize="16" Foreground="white" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
+                        <TextBox Text="Đây là sự kiện siêu đặc biệt chỉ diễn ra trong khoản thời gian này hãy tranh thủ lên" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="68" TextWrapping="Wrap" IsReadOnly="True"/>
+                        <TextBlock Text="10/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
+                        <TextBlock Text="15/10/2024" FontSize="14" Foreground="white"/>
+                    </StackPanel>
+                </Border>
+                <Border Width="550" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
+                    <StackPanel>
+                        <Image Source="/User/6.jpg" Height="150" Stretch="Fill"/>
+                    </StackPanel>
+                </Border>
+            </ListBox.Items>
+        </ListBox>
+        <Label Content="Vé đang bán" HorizontalAlignment="Left" Margin="515,235,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" FontSize="20"/>
+        <Border Grid.Row="1" Background="#623ED0"  CornerRadius="0 0 10 10" Margin="21,288,10,273">
+            <Grid>
+
+                <Border CornerRadius="30"  Margin="32,28,1092,15">
+                    <Border.Background>
+                        <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                    </Border.Background>
+                </Border>
+                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="0,52,934,0" Height="32" Width="131" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Label  Foreground="White" Content="Người bán" Margin="0,22,934,0" Height="32" Width="131" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Label  Foreground="White" Content="Sự kiện Mùa Thu" Margin="307,50,0,0" Height="32" Width="160" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Label  Foreground="White" Content="Tên sự kiện" Margin="307,20,0,0" Height="32" Width="160" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Label  Foreground="White" Content="50.000" Margin="0,50,130,0" Height="32" Width="110" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Label  Foreground="White" Content="Giá tiền" Margin="0,20,130,0" Height="32" Width="110" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Label  Foreground="White" Content="2ABS" Margin="584,52,0,0" Height="32" Width="94" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.485,0.332"/>
+                <Label  Foreground="White" Content="Khu vực" Margin="584,22,0,0" Height="32" Width="94" FontSize="10" VerticalAlignment="Top" HorizontalAlignment="Left" RenderTransformOrigin="0.485,0.332"/>
+                <Button HorizontalAlignment="Left" Margin="1058,14,0,14" Width="86" Content="Mua"></Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

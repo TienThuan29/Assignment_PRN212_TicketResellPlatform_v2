@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Admin\AdminDashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Staff\StaffDashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\AddingTicketWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\BalanceManagementWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\ChangePasswordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\DetailEventWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\HomeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\MyShopWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="User\UserProfileWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Admin\AdminDashboardWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Staff\StaffDashboardWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\AddingTicketWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\BalanceManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\DetailEventWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\MyShopWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="User\UserProfileWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

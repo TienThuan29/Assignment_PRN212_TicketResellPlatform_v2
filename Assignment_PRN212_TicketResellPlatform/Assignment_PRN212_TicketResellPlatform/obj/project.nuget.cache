@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jui83i075sttvENzXByz1k3hiXezEVg9cG9hgyHyMIKK+F0ACGP0QByacJTTy1mVRxDEf15X01JcqIxQ1IHJDg==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio 2022\\Csharp\\WPF\\Assignment_PRN212\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ADMIN\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\materialdesignthemes\\5.1.0\\materialdesignthemes.5.1.0.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
