@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,19 @@ namespace Assignment_PRN212_TicketResellPlatform.User
     /// </summary>
     public partial class UserProfileWindow : Window
     {
+        private BusinessObject.User logedUser;
+
         public UserProfileWindow()
         {
             InitializeComponent();
+        }
+
+        public UserProfileWindow(BusinessObject.User user)
+        {
+            InitializeComponent();
+            this.logedUser = user;
+            fullnameLabel.Content = logedUser.Firstname + " "+ logedUser.Lastname;
+            fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
         }
 
         private void ShowChangePasswordWindow(object sender, RoutedEventArgs e)

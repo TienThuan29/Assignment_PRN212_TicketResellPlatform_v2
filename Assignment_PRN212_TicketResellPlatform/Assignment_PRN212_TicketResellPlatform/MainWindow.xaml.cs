@@ -1,4 +1,11 @@
-﻿using System.Text;
+﻿using Assignment_PRN212_TicketResellPlatform.Staff;
+using Assignment_PRN212_TicketResellPlatform.User;
+using Service.Authentication;
+using Service.Constant;
+using Service.Staff;
+using Service.User;
+using System.Diagnostics.Eventing.Reader;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,10 +23,52 @@ namespace Assignment_PRN212_TicketResellPlatform
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private IUserService userService = new UserService();
+
+        private IStaffService staffService = new StaffService();    
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private void HandleLogin(object sender, RoutedEventArgs e)
+        {
+            var user = userService.FindByUsername(usernameTextbox.Text);
+
+            if (user != null && user.Password.Equals(passwordBox.Password.ToString()))
+            {
+                UserProfileWindow profileWindow = new UserProfileWindow(user);
+                this.Hide();
+                profileWindow.Show();
+            }
+            else
+            {
+                var staff = staffService.FindByUsername(usernameTextbox.Text);
+                if (staff != null && staff.Password.Equals(passwordBox.Password.ToString()))
+                {
+                    if (staff.RoleCode.Equals(Role.STAFF))
+                    {
+                        // Show staff dashboard here
+                    }
+                    else if (staff.RoleCode.Equals(Role.ADMIN))
+                    {
+                        // Show admin dashboard here
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!");
+                }
+            }
+        }
+
+        private void ToRegisterWindow(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            this.Hide();
+            registerWindow.Show();
+        }
     }
 }

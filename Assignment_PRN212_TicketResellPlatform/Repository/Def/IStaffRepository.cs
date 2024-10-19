@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace Repository.Def
 {
     public interface IStaffRepository
     {
+        Staff FindByUsername(string username);  
     }
 }

@@ -28,7 +28,7 @@
                         <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
             </Grid>
         </Border>
 
@@ -39,7 +39,7 @@
                         <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="fullnameLabel" FontSize="15" Content="Fullname" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label Foreground="Red" FontSize="10" Content="Số dư: 5.000.000đ" Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
                 <Button Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
                 <Button Content="Vé đã mua" Margin="17,322,1015,306" />
@@ -51,16 +51,16 @@
                 <Label FontSize="40" Content="Quản lý tài khoản" Margin="570,37,263,545" />
 
                 <Label FontSize="20" Content="Họ" HorizontalAlignment="Left" Margin="363,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.324,1.648"/>
-                <TextBox FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="firstnameTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
                 <Label FontSize="20" Content="Tên" HorizontalAlignment="Left" Margin="360,250,0,0" VerticalAlignment="Top"/>
-                <TextBox FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="lastnameTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
                 <Label FontSize="20" Content="Email" HorizontalAlignment="Left" Margin="350,332,0,0" VerticalAlignment="Top"/>
-                <TextBox FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="emailTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
                 <Label FontSize="20" Content="SĐT" HorizontalAlignment="Left" Margin="358,413,0,0" VerticalAlignment="Top"/>
-                <TextBox FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="phoneTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                 <Button Content="Lưu" Margin="658,492,414,136" />
 
 

@@ -1,4 +1,6 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using DataAccessObject;
+using Repository.Def;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,14 @@ namespace Repository.Impl
 {
     public class UserRepository : IUserRepository
     {
+        public User FindByUsername(string username)
+        {
+            return UserDAO.Instance.FindByUsername(username);   
+        }
+
+        public bool SaveRegisterUser(User user)
+        {
+            return UserDAO.Instance.SaveRegisterUser(user);
+        }
     }
 }

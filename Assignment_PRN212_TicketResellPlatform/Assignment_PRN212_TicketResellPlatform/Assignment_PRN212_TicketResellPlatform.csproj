@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="User\1.jpg" />
     <Resource Include="User\15.jpg" />
     <Resource Include="User\6.jpg" />

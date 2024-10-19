@@ -10,3 +10,9 @@ D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResel
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\refint\Repository.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.pdb
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\ref\Repository.dll
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.dll
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.dll
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.pdb
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.pdb
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
