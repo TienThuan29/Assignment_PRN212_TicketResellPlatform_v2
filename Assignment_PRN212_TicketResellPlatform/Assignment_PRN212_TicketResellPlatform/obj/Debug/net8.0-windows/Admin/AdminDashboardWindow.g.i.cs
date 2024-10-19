@@ -56,8 +56,8 @@ namespace Assignment_PRN212_TicketResellPlatform.Admin {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;component/admin/admindashboardwindow.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;V1.0.0.0;component/admin/admindashboardwi" +
+                    "ndow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Admin\AdminDashboardWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

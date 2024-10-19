@@ -50,8 +50,7 @@
               "RelativeToolTip": "Service\\User\\UserService.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAA/wBsAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:45:11.267Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:45:11.267Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "DataAccessObject\\StaffDAO.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAwBQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:40:25.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:40:25.669Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "Repository\\Impl\\StaffRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:40:05.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:40:05.798Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "Repository\\Def\\IStaffRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:39:23.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:39:23.206Z"
             },
             {
               "$type": "Document",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "Service\\Staff\\StaffService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:38:20.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:38:20.14Z"
             },
             {
               "$type": "Document",
@@ -115,8 +110,7 @@
               "RelativeToolTip": "Service\\Staff\\IStaffService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T09:37:38.702Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T09:37:38.702Z"
             },
             {
               "$type": "Document",

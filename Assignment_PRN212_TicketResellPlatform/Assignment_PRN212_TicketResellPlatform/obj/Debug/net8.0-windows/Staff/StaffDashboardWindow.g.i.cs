@@ -56,8 +56,8 @@ namespace Assignment_PRN212_TicketResellPlatform.Staff {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;component/staff/staffdashboardwindow.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;V1.0.0.0;component/staff/staffdashboardwi" +
+                    "ndow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Staff\StaffDashboardWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

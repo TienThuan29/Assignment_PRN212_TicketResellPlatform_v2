@@ -104,7 +104,8 @@ namespace Assignment_PRN212_TicketResellPlatform.User {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;component/user/userprofilewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;V1.0.0.0;component/user/userprofilewindow" +
+                    ".xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\User\UserProfileWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
