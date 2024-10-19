@@ -10,7 +10,7 @@
         Title="Ticket Resell Platform" Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
         >
-    <Grid>
+    <Grid Background="#FFFDEEFF">
 
         <Label Foreground="#623ED0" FontSize="50" Content="Đăng ký" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
 

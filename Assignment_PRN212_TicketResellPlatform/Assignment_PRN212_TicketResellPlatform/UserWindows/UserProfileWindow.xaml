@@ -40,7 +40,7 @@
                     </Border.Background>
                 </Border>
                 <Label x:Name="fullnameLabel" FontSize="15" Content="Fullname" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label Foreground="Red" FontSize="10" Content="Số dư: 5.000.000đ" Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
+                <Label x:Name="balanceLabel" Foreground="Red" FontSize="10" Content="Số dư: " Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
                 <Button Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
                 <Button Content="Vé đã mua" Margin="17,322,1015,306" />
                 <Button Content="Cửa hàng của tôi" Margin="17,376,1015,252" Click="ShowMyShopWindow" />

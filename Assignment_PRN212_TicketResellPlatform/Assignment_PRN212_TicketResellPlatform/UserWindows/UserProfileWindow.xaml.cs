@@ -31,8 +31,20 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             InitializeComponent();
             this.logedUser = user;
-            fullnameLabel.Content = logedUser.Firstname + " "+ logedUser.Lastname;
+            this.InitDataOnWindow();
+        }
+
+        private void InitDataOnWindow()
+        {
+            // Init label
+            fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
+            balanceLabel.Content = balanceLabel.Content.ToString() + logedUser.Balance + "đ";
+            // Init textbox
+            firstnameTextBox.Text = logedUser.Firstname;
+            lastnameTextBox.Text = logedUser.Lastname;
+            emailTextBox.Text = logedUser.Email;    
+            phoneTextBox.Text = logedUser.Phone;
         }
 
         private void ShowChangePasswordWindow(object sender, RoutedEventArgs e)

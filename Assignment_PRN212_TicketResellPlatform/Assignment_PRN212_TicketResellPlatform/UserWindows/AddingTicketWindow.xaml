@@ -20,12 +20,12 @@
 
         <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
             <Grid>
-                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/User/Add a heading (1)-Photoroom.png"/>
+                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
                 <Border CornerRadius="30"  Margin="1090,6,57,6">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                        <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
                 <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
@@ -36,7 +36,7 @@
             <Grid>
                 <Border CornerRadius="90"  Margin="26,37,1024,493">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                        <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
                 <Label FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
