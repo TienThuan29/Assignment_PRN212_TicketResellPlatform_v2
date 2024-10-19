@@ -57,6 +57,11 @@ namespace Service.User
             }
             return flag;
         }
+
+        public bool SaveNewPassword(long userId, string newPassword)
+        {
+            return userRepository.SaveNewPassword(userId, newPassword); 
+        }
     }
 }
 

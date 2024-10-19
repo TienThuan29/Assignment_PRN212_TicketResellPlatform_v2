@@ -12,6 +12,8 @@ namespace Service.User
 
         bool CheckExistUsername(string username);
 
-        bool SaveRegisterUser(string username, string password, string firtsname, string lastname, string email);    
+        bool SaveRegisterUser(string username, string password, string firtsname, string lastname, string email);
+
+        bool SaveNewPassword(long userId, string newPassword);
     }
 }

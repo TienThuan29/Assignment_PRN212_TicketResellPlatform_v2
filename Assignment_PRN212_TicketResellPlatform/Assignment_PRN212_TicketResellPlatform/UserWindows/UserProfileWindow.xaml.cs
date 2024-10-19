@@ -50,7 +50,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private void ShowChangePasswordWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow();
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
             changePasswordWindow.Show();
         }
 
@@ -66,6 +66,14 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.Hide();
             MyShopWindow myShopWindow = new MyShopWindow(); 
             myShopWindow.Show();    
+        }
+
+        private void HandleLogout(object sender, RoutedEventArgs e)
+        {
+            this.logedUser = null;
+            this.Hide();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }

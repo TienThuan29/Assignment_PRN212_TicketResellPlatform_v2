@@ -42,5 +42,20 @@ namespace DataAccessObject
             }
             return flag;
         }
+
+        public bool SaveNewPassword(long userId, string newPassword)
+        {
+            bool flag = true;
+            var user = this.context.Users.SingleOrDefault(obj => obj.Id.Equals(userId));
+            if (user != null)
+            {
+                user.Password = newPassword;
+                this.context.Entry<User>(user).CurrentValues.SetValues(user);
+                this.context.SaveChanges();
+            }
+            else flag = false;
+            return flag;    
+        }
+
     }
 }

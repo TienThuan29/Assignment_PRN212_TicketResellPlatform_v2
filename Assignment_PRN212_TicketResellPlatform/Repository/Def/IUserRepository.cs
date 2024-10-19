@@ -11,6 +11,8 @@ namespace Repository.Def
     {
         User FindByUsername(string username);
 
-        bool SaveRegisterUser(User user);   
+        bool SaveRegisterUser(User user);
+
+        bool SaveNewPassword(long userId, string newPassword);
     }
 }

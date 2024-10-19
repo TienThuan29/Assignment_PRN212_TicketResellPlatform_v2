@@ -64,7 +64,7 @@
                 <Button Content="Lưu" Margin="658,492,414,136" />
 
 
-                <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
+                <Button Click="HandleLogout" HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>
 

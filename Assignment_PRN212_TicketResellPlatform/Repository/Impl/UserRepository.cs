@@ -16,6 +16,11 @@ namespace Repository.Impl
             return UserDAO.Instance.FindByUsername(username);   
         }
 
+        public bool SaveNewPassword(long userId, string newPassword)
+        {
+            return UserDAO.Instance.SaveNewPassword(userId, newPassword);   
+        }
+
         public bool SaveRegisterUser(User user)
         {
             return UserDAO.Instance.SaveRegisterUser(user);

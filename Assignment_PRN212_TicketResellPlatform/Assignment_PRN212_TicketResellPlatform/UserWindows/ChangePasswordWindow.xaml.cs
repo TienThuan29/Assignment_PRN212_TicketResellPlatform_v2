@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using Service.User;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,16 +21,70 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     /// </summary>
     public partial class ChangePasswordWindow : Window
     {
+        private User logedUser;
+
+        private IUserService userService = new UserService();
+
         public ChangePasswordWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public ChangePasswordWindow(User user)
+        {
+            InitializeComponent();
+            this.logedUser = user;  
+            this.InitDataOnWindow();
+        }
+
+        private void InitDataOnWindow()
+        {
+            // Init label
+            fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
+            fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
+            balanceLabel.Content = balanceLabel.Content.ToString() + logedUser.Balance + "đ";
+        }
+
+        private void ToUserProfileWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            UserProfileWindow userProfileWindow = new UserProfileWindow();
+            UserProfileWindow userProfileWindow = new UserProfileWindow(logedUser);
             userProfileWindow.Show();
         }
+
+        
+        private void SaveNewPassword(object sender, RoutedEventArgs e)
+        {
+            bool flag = false;
+            string oldPass = oldPasswordBox.Password.ToString();
+            string newPass = newPasswordBox.Password.ToString();
+            string repeatNewPass = repeatNewPasswordBox.Password.ToString();
+            if (newPass.Equals(repeatNewPass)) 
+            {
+                if(logedUser.Password.Equals(oldPass)) 
+                {
+                    flag = userService.SaveNewPassword(logedUser.Id, newPass); 
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu cũ không đúng!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Mật khẩu nhập lại không hợp lệ!");
+            }
+
+            if (flag) MessageBox.Show("Đổi mật khẩu thành công");
+        }
+
+        private void HandleLogout(object sender, RoutedEventArgs e)
+        {
+            this.logedUser = null;
+            this.Hide();
+            MainWindow mainWindow = new MainWindow(); 
+            mainWindow.Show();
+        }
+
     }
 }
