@@ -37,6 +37,7 @@ namespace Assignment_PRN212_TicketResellPlatform
 
         private void RegisterUserAccount(object sender, RoutedEventArgs e)
         {
+            bool registerSuccess = false;
             string username = usernameTextbox.Text;
             string firstname = firstnameTextbox.Text;
             string lastname = lastnameTextbox.Text;
@@ -55,14 +56,20 @@ namespace Assignment_PRN212_TicketResellPlatform
             {
                 MessageBox.Show("Bạn không được để trống các mục điền!");
             }
+            else if (userService.CheckExistUsername(username))
+            {
+                MessageBox.Show("Tên đăng nhập đã tồn tại!");
+            }
             else if (password.Equals(repeatPass))
-            { 
-                // save user
+            {
+                registerSuccess = userService.SaveRegisterUser(username, password, firstname, lastname, email);
             }
             else
             {
                 MessageBox.Show("Mật khẩu nhập lại không hợp lệ!");
             }
+
+            if (registerSuccess) MessageBox.Show("Đăng ký tài khoản thành công!");
         }
 
         private bool CheckEmaidAddress(string email)

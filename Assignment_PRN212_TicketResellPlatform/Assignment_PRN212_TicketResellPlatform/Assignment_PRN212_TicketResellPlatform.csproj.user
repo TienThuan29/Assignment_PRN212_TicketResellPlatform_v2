@@ -7,39 +7,51 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Admin\AdminDashboardWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Staff\StaffDashboardWindow.xaml.cs">
+    <Compile Update="StaffWindows\StaffDashboardWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\AddingTicketWindow.xaml.cs">
+    <Compile Update="UserWindows\AddingTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\BalanceManagementWindow.xaml.cs">
+    <Compile Update="UserWindows\BalanceManagementWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\ChangePasswordWindow.xaml.cs">
+    <Compile Update="UserWindows\ChangePasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\DetailEventWindow.xaml.cs">
+    <Compile Update="UserWindows\DetailEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\HomeWindow.xaml.cs">
+    <Compile Update="UserWindows\HomeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\MyShopWindow.xaml.cs">
+    <Compile Update="UserWindows\MyShopWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="User\UserProfileWindow.xaml.cs">
+    <Compile Update="UserWindows\UserProfileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Admin\AdminDashboardWindow.xaml">
+    <Page Update="AdminWindows\AdminDashboardWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindows\HistoryTransactionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindows\ManagePolicyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindows\ManageStaffWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindows\ManageUserWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdminWindows\WithdrawalListWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -48,28 +60,28 @@
     <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Staff\StaffDashboardWindow.xaml">
+    <Page Update="StaffWindows\StaffDashboardWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\AddingTicketWindow.xaml">
+    <Page Update="UserWindows\AddingTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\BalanceManagementWindow.xaml">
+    <Page Update="UserWindows\BalanceManagementWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\ChangePasswordWindow.xaml">
+    <Page Update="UserWindows\ChangePasswordWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\DetailEventWindow.xaml">
+    <Page Update="UserWindows\DetailEventWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\HomeWindow.xaml">
+    <Page Update="UserWindows\HomeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\MyShopWindow.xaml">
+    <Page Update="UserWindows\MyShopWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="User\UserProfileWindow.xaml">
+    <Page Update="UserWindows\UserProfileWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

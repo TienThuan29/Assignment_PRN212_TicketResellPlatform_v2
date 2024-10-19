@@ -1,0 +1,109 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.AdminWindows.ManageStaffWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
+        mc:Ignorable="d"
+        Title="ManageStaffWindow" Height="720" Width="1200">
+    <Border CornerRadius="30" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
+                <Grid>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/User/Add a heading (1)-Photoroom.png"/>
+                    <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+
+                    <Border CornerRadius="30"  Margin="1090,6,62,6">
+                        <Border.Background>
+                            <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="10" 
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Quản lý người dùng" Grid.Row="0" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
+                <Button Content="Quản lý nhân viên" Grid.Row="1" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
+                <Button Content="Quản lý chính sách" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
+                <Button Content="Lịch sử giao dịch" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
+                <Button Content="Danh sách rút tiền" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
+                <Button Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,0,0,0">
+                    <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                </Button>
+            </Grid>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
+                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+                     />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                </StackPanel>
+
+                <Grid Grid.Row="1" Grid.Column="1" Width="921">
+                    <DataGrid AutoGenerateColumns="False" 
+                ItemsSource="{Binding EventList}" 
+                CanUserAddRows="False"
+                CanUserDeleteRows="False"
+                HeadersVisibility="Column" 
+                RowHeight="50" 
+                ColumnWidth="*" 
+                Margin="39,10,39,10" 
+                IsReadOnly="True"
+                Background="White">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
+                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="250"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding EventName}" Width="100"/>
+                            <DataGridTextColumn Header="Phone" Binding="{Binding EventName}" Width="100"/>
+                            <DataGridTextColumn Header="Staff Code" Binding="{Binding EventNumber}" Width="100"/>
+                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Header="Hành động" Width="200">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0" />
+                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

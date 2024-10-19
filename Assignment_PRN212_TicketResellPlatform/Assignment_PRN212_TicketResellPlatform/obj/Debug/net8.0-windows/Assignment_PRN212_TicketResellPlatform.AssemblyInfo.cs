@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Assignment_PRN212_TicketResellPlatform")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f3101c30a166fec697f9ba574849df179c41353")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+251bf73c6752bec2301eb75db9d248fc624341a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Assignment_PRN212_TicketResellPlatform")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Assignment_PRN212_TicketResellPlatform")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

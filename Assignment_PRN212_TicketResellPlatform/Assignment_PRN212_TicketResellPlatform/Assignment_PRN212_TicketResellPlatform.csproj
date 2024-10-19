@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="User\1.jpg" />
-    <None Remove="User\15.jpg" />
-    <None Remove="User\6.jpg" />
-    <None Remove="User\Add a heading %281%29-Photoroom.png" />
-    <None Remove="User\child-1837375_1280.png" />
+    <None Remove="UserWindows\1.jpg" />
+    <None Remove="UserWindows\15.jpg" />
+    <None Remove="UserWindows\6.jpg" />
+    <None Remove="UserWindows\Add a heading %281%29-Photoroom.png" />
+    <None Remove="UserWindows\child-1837375_1280.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,11 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="User\1.jpg" />
-    <Resource Include="User\15.jpg" />
-    <Resource Include="User\6.jpg" />
-    <Resource Include="User\Add a heading (1)-Photoroom.png" />
-    <Resource Include="User\child-1837375_1280.png" />
+    <Resource Include="UserWindows\1.jpg" />
+    <Resource Include="UserWindows\15.jpg" />
+    <Resource Include="UserWindows\6.jpg" />
+    <Resource Include="UserWindows\Add a heading (1)-Photoroom.png" />
+    <Resource Include="UserWindows\child-1837375_1280.png" />
   </ItemGroup>
 
   <ItemGroup>

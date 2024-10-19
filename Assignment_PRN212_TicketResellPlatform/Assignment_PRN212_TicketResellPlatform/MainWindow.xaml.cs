@@ -1,5 +1,6 @@
-﻿using Assignment_PRN212_TicketResellPlatform.Staff;
-using Assignment_PRN212_TicketResellPlatform.User;
+﻿using Assignment_PRN212_TicketResellPlatform.AdminWindows;
+using Assignment_PRN212_TicketResellPlatform.StaffWindows;
+using Assignment_PRN212_TicketResellPlatform.UserWindows;
 using Service.Authentication;
 using Service.Constant;
 using Service.Staff;
@@ -51,10 +52,14 @@ namespace Assignment_PRN212_TicketResellPlatform
                     if (staff.RoleCode.Equals(Role.STAFF))
                     {
                         // Show staff dashboard here
+                        MessageBox.Show("Staff nè");
                     }
                     else if (staff.RoleCode.Equals(Role.ADMIN))
                     {
                         // Show admin dashboard here
+                        AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+                        adminDashboardWindow.Show();
+                        this.Hide();
                     }
                 }
                 else
