@@ -14,5 +14,7 @@ namespace Repository.Def
         bool SaveRegisterUser(User user);
 
         bool SaveNewPassword(long userId, string newPassword);
+
+        bool SaveProfile(User user);
     }
 }

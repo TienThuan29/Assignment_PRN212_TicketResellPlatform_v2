@@ -64,7 +64,10 @@ namespace Assignment_PRN212_TicketResellPlatform
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!");
+                    MessageBox.Show(
+                        "Tên đăng nhập hoặc mật khẩu không đúng!", "Đăng nhập", 
+                        MessageBoxButton.OK, MessageBoxImage.Error
+                    );
                 }
             }
         }

@@ -50,18 +50,18 @@
 
                 <Label FontSize="40" Content="Quản lý tài khoản" Margin="570,37,263,545" />
 
-                <Label FontSize="20" Content="Họ" HorizontalAlignment="Left" Margin="363,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.324,1.648"/>
+                <Label FontSize="20" Content="Họ*" HorizontalAlignment="Left" Margin="363,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.324,1.648"/>
                 <TextBox x:Name="firstnameTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-                <Label FontSize="20" Content="Tên" HorizontalAlignment="Left" Margin="360,250,0,0" VerticalAlignment="Top"/>
+                <Label FontSize="20" Content="Tên*" HorizontalAlignment="Left" Margin="360,250,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="lastnameTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-                <Label FontSize="20" Content="Email" HorizontalAlignment="Left" Margin="350,332,0,0" VerticalAlignment="Top"/>
+                <Label FontSize="20" Content="Email*" HorizontalAlignment="Left" Margin="350,332,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="emailTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
                 <Label FontSize="20" Content="SĐT" HorizontalAlignment="Left" Margin="358,413,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="phoneTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="586" Margin="429,407,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-                <Button Content="Lưu" Margin="658,492,414,136" />
+                <Button Click="SaveProfile" Content="Lưu" Margin="658,492,414,136" />
 
 
                 <Button Click="HandleLogout" HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">

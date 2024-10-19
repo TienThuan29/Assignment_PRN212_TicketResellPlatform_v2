@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,21 @@ namespace DataAccessObject
         private TransactionDAO()
         {
             this.context = new PRN212_TicketResellPlatformContext();
+        }
+
+        public bool Save(Transaction transaction)
+        {
+            bool flag = true;
+            try
+            {
+                this.context.Transactions.Add(transaction); 
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                flag = false;   
+            }
+            return flag;
         }
     }
 }

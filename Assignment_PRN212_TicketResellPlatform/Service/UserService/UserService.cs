@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessObject;
 
 namespace Service.User
 {
@@ -62,6 +63,12 @@ namespace Service.User
         {
             return userRepository.SaveNewPassword(userId, newPassword); 
         }
+
+        public bool SaveProfile(BusinessObject.User user)
+        {
+            return userRepository.SaveProfile(user);
+        }
+
     }
 }
 

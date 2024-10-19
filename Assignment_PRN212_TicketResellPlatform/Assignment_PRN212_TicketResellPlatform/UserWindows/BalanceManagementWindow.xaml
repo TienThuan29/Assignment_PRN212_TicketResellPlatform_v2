@@ -28,7 +28,7 @@
                         <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel"  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
             </Grid>
         </Border>
 
@@ -39,9 +39,9 @@
                         <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label Foreground="Red" FontSize="10" Content="Số dư: 5.000.000đ" Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
-                <Button Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
+                <Label x:Name="fullnameLabel" FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="balanceLabel" Foreground="Red" FontSize="10" Content="Số dư: " Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
+                <Button Click="ToUserProfileWindow" Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
                 <Button Content="Vé đã mua" Margin="17,322,1015,306" />
                 <Button Content="Cửa hàng của tôi" Margin="17,376,1015,252" />
                 <Button Content="Quản lý số dư" Margin="17,434,1015,194" />
@@ -59,18 +59,17 @@
 
                 <Button Content="Lịch sử giao dịch" Margin="264,118,777,510" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000"/>
 
-                <Label FontSize="20" Content="Số dư của bạn: 5.000.000đ" Margin="886,118,42,506" />
+                <Label x:Name="balanceMainLabel" FontSize="20" Content="Số dư của bạn: " Margin="886,118,42,506" />
                 <Border Margin="264,166,42,306" Background="#FFC1EDFF" Panel.ZIndex="-1" />
-                <ComboBox FontSize="16" Margin="264,380,616,0" VerticalAlignment="Top" Height="47">
+                <ComboBox x:Name="amountDepositeComboBox" FontSize="16" Margin="264,380,616,0" VerticalAlignment="Top" Height="47">
                     <ComboBoxItem IsSelected="True">10.000đ</ComboBoxItem>
                     <ComboBoxItem>20.000đ</ComboBoxItem>
                     <ComboBoxItem>50.000đ</ComboBoxItem>
                     <ComboBoxItem>100.000đ</ComboBoxItem>
                     <ComboBoxItem>200.000đ</ComboBoxItem>
                     <ComboBoxItem>500.000đ</ComboBoxItem>
-                    <ComboBoxItem>1.000.000đ</ComboBoxItem>
                 </ComboBox>
-                <Button Foreground="#DD000000" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Content="Nạp tiền" Margin="264,450,616,178"/>
+                <Button Foreground="#DD000000" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Content="Nạp tiền" Margin="264,450,616,178" Click="HandleDeposite"/>
 
                 <Label FontSize="28" Content="Bảng tỷ lệ quy đổi" Margin="742,363,184,239"/>
                 <TextBlock FontSize="16" Margin="662,412,422,216" Text="Số tiền nạp"/>

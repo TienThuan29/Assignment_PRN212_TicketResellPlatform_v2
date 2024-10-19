@@ -15,5 +15,7 @@ namespace Service.User
         bool SaveRegisterUser(string username, string password, string firtsname, string lastname, string email);
 
         bool SaveNewPassword(long userId, string newPassword);
+
+        bool SaveProfile(BusinessObject.User user);
     }
 }

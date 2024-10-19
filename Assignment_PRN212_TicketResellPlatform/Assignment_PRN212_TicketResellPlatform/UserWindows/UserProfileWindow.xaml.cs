@@ -1,4 +1,6 @@
 ﻿using BusinessObject;
+using Service.User;
+using Service.Utils.TienThuan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     {
         private BusinessObject.User logedUser;
 
+        private IUserService userService = new UserService();
+
         public UserProfileWindow()
         {
             InitializeComponent();
@@ -39,13 +43,40 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
-            balanceLabel.Content = balanceLabel.Content.ToString() + logedUser.Balance + "đ";
+            balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);
             // Init textbox
             firstnameTextBox.Text = logedUser.Firstname;
             lastnameTextBox.Text = logedUser.Lastname;
             emailTextBox.Text = logedUser.Email;    
             phoneTextBox.Text = logedUser.Phone;
         }
+
+        // Handle button click on window
+
+        private void SaveProfile(object sender, RoutedEventArgs e)
+        {
+            bool flag = false;
+            if (
+                firstnameTextBox.Text.Length > 0 &&
+                lastnameTextBox.Text.Length > 0 &&
+                emailTextBox.Text.Length > 0
+            )
+            {
+                this.logedUser.Firstname = firstnameTextBox.Text;
+                this.logedUser.Lastname = lastnameTextBox.Text; 
+                this.logedUser.Email = emailTextBox.Text;   
+                this.logedUser.Phone = phoneTextBox.Text;  
+                flag = userService.SaveProfile( this.logedUser );
+            }
+            else
+            {
+                MessageBox.Show("Bạn không được để trống các mục nhập");
+            }
+
+            if (flag) MessageBox.Show("Cập nhật thông tin thành công");
+        }
+
+        // Redirect to other windows
 
         private void ShowChangePasswordWindow(object sender, RoutedEventArgs e)
         {
@@ -54,10 +85,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             changePasswordWindow.Show();
         }
 
+        
         private void ShowBalanceManagementWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow();
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
             balanceManagementWindow.Show();
         }
 
@@ -68,6 +100,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             myShopWindow.Show();    
         }
 
+        // Handle logout function
         private void HandleLogout(object sender, RoutedEventArgs e)
         {
             this.logedUser = null;
@@ -75,5 +108,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
+
+        
     }
 }

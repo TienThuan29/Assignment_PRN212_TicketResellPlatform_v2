@@ -43,6 +43,18 @@ namespace DataAccessObject
             return flag;
         }
 
+        public bool SaveProfile(User user)
+        {
+            bool flag = true;
+            if (user != null)
+            {
+                this.context.Entry<User>(user).CurrentValues.SetValues(user);
+                this.context.SaveChanges();
+            }
+            else flag = false;
+            return flag;
+        }
+
         public bool SaveNewPassword(long userId, string newPassword)
         {
             bool flag = true;
