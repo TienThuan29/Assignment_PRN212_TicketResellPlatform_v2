@@ -10,5 +10,7 @@ namespace Repository.Def
     public interface ITransactionRepository
     {
         bool Save(Transaction transaction);
+
+        ICollection<Transaction> FindByUserID(long userId);
     }
 }

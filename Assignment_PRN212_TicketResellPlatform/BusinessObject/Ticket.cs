@@ -17,5 +17,6 @@ namespace BusinessObject
         public string TicketSerial { get; set; } = null!;
         public long? GenericTicketId { get; set; }
         public long? StaffId { get; set; }
+
     }
 }

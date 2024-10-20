@@ -25,6 +25,9 @@
     <Compile Update="UserWindows\DetailEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\HistoryDepositeWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\HomeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -73,6 +76,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\DetailEventWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\HistoryDepositeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\HomeWindow.xaml">

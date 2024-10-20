@@ -98,6 +98,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             userProfileWindow.Show();
         }
 
-
+        private void ToHistoryDepositeWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            HistoryDepositeWindow history = new HistoryDepositeWindow(logedUser);
+            history.Show();
+        }
     }
 }

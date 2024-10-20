@@ -1,4 +1,6 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using DataAccessObject;
+using Repository.Def;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,9 @@ namespace Repository.Impl
 {
     public class TicketRepository : ITicketRepository
     {
+        public ICollection<Ticket> FindByGenericTicketID(long genericTicketID)
+        {
+            return TicketDAO.Instance.FindByGenericTicketID(genericTicketID);
+        }
     }
 }

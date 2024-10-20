@@ -96,7 +96,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private void ShowMyShopWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MyShopWindow myShopWindow = new MyShopWindow(); 
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser); 
             myShopWindow.Show();    
         }
 

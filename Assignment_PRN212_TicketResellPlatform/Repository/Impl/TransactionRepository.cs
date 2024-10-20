@@ -11,6 +11,12 @@ namespace Repository.Impl
 {
     public class TransactionRepository : ITransactionRepository
     {
+        public ICollection<Transaction> FindByUserID(long userId)
+        {
+            return TransactionDAO.Instance.FindByUserID(userId);    
+        }
+
+
         public bool Save(Transaction transaction)
         {
             return TransactionDAO.Instance.Save(transaction);

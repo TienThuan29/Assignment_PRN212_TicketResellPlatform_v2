@@ -57,7 +57,7 @@
                 />
                 <TextBlock FontSize="16" Foreground="Red" Text="* Quan trọng! Chuyển khoản Ngân hàng sẽ bị chậm vì hệ thống ngân hàng có thay đổi, hệ thống sẽ tự cập nhật sau khi nhận được tiền, vui lòng bình tĩnh đừng hối~" Margin="295,285,55,331" TextWrapping="Wrap" />
 
-                <Button Content="Lịch sử giao dịch" Margin="264,118,777,510" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000"/>
+                <Button Click="ToHistoryDepositeWindow" Content="Lịch sử giao dịch" Margin="264,118,777,510" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000"/>
 
                 <Label x:Name="balanceMainLabel" FontSize="20" Content="Số dư của bạn: " Margin="886,118,42,506" />
                 <Border Margin="264,166,42,306" Background="#FFC1EDFF" Panel.ZIndex="-1" />

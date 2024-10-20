@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,22 @@ namespace DataAccessObject
 
         private static GenericTicketDAO instance;
 
+
         public static GenericTicketDAO Instance
         {
             get => instance = instance ?? (instance = new GenericTicketDAO());
         }
 
+
         private GenericTicketDAO() 
         { 
             this.context = new PRN212_TicketResellPlatformContext();
+        }
+
+
+        public ICollection<GenericTicket> FindBySellerId(long sellerId)
+        {
+            return this.context.GenericTickets.Where(gt => gt.SellerId.Equals(sellerId)).ToList();
         }
     }
 }

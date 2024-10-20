@@ -11,6 +11,12 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         >
+
+    <Window.Resources>
+        <local:ByteArrayToImageConverter  x:Key="ByteArrayToImageConverter"/>
+    </Window.Resources>
+    
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -28,20 +34,20 @@
                         <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel"  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
             </Grid>
         </Border>
 
-        <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10">
+        <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10" Loaded="OnWindowLoaded">
             <Grid>
                 <Border CornerRadius="90"  Margin="26,37,1024,493">
                     <Border.Background>
                         <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label Foreground="Red" FontSize="10" Content="Số dư: 5.000.000đ" Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
-                <Button Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
+                <Label x:Name="fullnameLabel" FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="balanceLabel" Foreground="Red" FontSize="10" Content="Số dư: " Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
+                <Button Click="ToUserProfileWindow" Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
                 <Button Content="Vé đã mua" Margin="17,322,1015,306" />
                 <Button Content="Cửa hàng của tôi" Margin="17,376,1015,252" />
                 <Button Content="Quản lý số dư" Margin="17,434,1015,194" />
@@ -49,14 +55,44 @@
 
                 <Label FontSize="30" Content="Cửa hàng của tôi" Margin="576,25,330,588" />
 
-                <Button Content="Thêm vé mới" Margin="236,28,834,600" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Click="Button_Click"/>
-                <DataGrid Margin="236,80,39,508">
-                    <DataGrid.Columns>
+                <Button Click="ToAddingTicketWindow" Content="Thêm vé mới" Margin="214,28,856,600" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" />
 
-                        <DataGridTemplateColumn Header="Mã Serial"/>
-                        <DataGridTemplateColumn Header="Tên vé"/>
-                        <DataGridTemplateColumn Header="Giá"/>
-                        <DataGridTemplateColumn Header="Loại vé"/>
+                <DataGrid x:Name="ticketDataGrid" Margin="214,80,10,47"
+                          AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False"
+                          Height="Auto"
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" />
+                        <DataGridTextColumn Header="Mã vé" Binding="{Binding TicketSerial}" Width="Auto" />
+                        
+
+                        <DataGridTemplateColumn Header="Ảnh" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Image, Converter={StaticResource ByteArrayToImageConverter}}" Width="50" Height="50" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        
+                        <DataGridCheckBoxColumn Header="Kiểm tra" Binding="{Binding IsChecked}" Width="Auto" />
+                        <DataGridCheckBoxColumn Header="Hợp lệ" Binding="{Binding IsValid}" Width="Auto" />
+                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding Process}" Width="Auto" />
+                        <DataGridCheckBoxColumn Header="Bán" Binding="{Binding IsBought}" Width="Auto" />
+                        <DataGridTextColumn Header="Ngày bán" Binding="{Binding BoughtDate, StringFormat=G}" Width="Auto" />
+                        <DataGridTextColumn Header="Người mua" Binding="{Binding BuyerId}" Width="Auto" />
+                        
+                        <DataGridTemplateColumn Header="Action" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Content="Sửa" Click="EditButton_Click" Tag="{Binding TicketSerial}" />
+                                        <Button Content="Ghi chú" Click="ViewNoteButton" Tag="{Binding Note}" Margin="5,0,0,0" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                     </DataGrid.Columns>
                 </DataGrid>
 

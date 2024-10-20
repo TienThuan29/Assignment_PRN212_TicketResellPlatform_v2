@@ -19,15 +19,24 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     /// </summary>
     public partial class AddingTicketWindow : Window
     {
+        private BusinessObject.User logedUser;
+
+
         public AddingTicketWindow()
         {
             InitializeComponent();
         }
 
+        public AddingTicketWindow(BusinessObject.User user)
+        {
+            InitializeComponent();
+            this.logedUser = user;
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MyShopWindow myShopWindow = new MyShopWindow();
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
             myShopWindow.Show();    
         }
     }

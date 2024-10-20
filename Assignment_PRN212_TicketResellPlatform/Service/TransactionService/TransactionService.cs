@@ -15,10 +15,18 @@ namespace Service.TransactionService
     {
         private ITransactionRepository transactionRepository;
 
+
         public TransactionService() 
         { 
             this.transactionRepository = new TransactionRepository();
-        } 
+        }
+
+
+        public ICollection<Transaction> FindByUserID(long userId)
+        {
+            return transactionRepository.FindByUserID(userId);  
+        }
+
 
         public bool SaveDepositeTransaction(long userId, long amount)
         {
@@ -31,5 +39,7 @@ namespace Service.TransactionService
             transaction.TransactionNo = RandomUtil.RandomString(10);
             return transactionRepository.Save(transaction);
         }
+
+
     }
 }
