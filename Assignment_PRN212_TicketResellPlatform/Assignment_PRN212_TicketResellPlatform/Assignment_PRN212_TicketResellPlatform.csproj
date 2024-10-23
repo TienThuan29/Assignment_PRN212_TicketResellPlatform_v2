@@ -38,4 +38,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\EventImages\" />
+    <Folder Include="Images\ProfileImages\" />
+    <Folder Include="Images\TicketImages\" />
+  </ItemGroup>
+
 </Project>
