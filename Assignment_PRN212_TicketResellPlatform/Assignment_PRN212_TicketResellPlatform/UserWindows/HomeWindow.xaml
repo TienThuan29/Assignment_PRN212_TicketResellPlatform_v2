@@ -10,79 +10,55 @@
         Title="HomeWindow" Height="720" Width="1200" 
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        >
-        
+        Loaded="OnWindowLoad">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"></RowDefinition>
             <RowDefinition Height="660"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
+        <!-- Header Section -->
+        <Border Grid.Row="0" Background="#623ED0" CornerRadius="0 0 10 10">
             <Grid>
-                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
-                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5">
+                    <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+                <Image HorizontalAlignment="Left" Height="52" Margin="129,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="176,8,807,10"/>
 
-                <Border CornerRadius="30"  Margin="1090,6,62,6">
+                <Border CornerRadius="30" Margin="1039,10,113,2">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush Stretch="Fill" ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="743,0,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="1111,14,8,14" RenderTransformOrigin="0.5,0.5" Click="ShowUserProfileWindow">
+                    <materialDesign:PackIcon Kind="User" RenderTransformOrigin="0.5,0.5"/>
+                </Button>
             </Grid>
         </Border>
-        <ListBox Margin="21,29,21,54" Grid.Row="1" >
+
+        <!-- ListBox for displaying events -->
+        <ListBox x:Name="mainEventList" Margin="21,29,21,54" Grid.Row="1" ItemsSource="{Binding Events}">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto"/>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
-
-            <ListBox.Items>
-                <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
-                    <StackPanel>
-                        <Image Source="/UserWindows/15.jpg" Height="150" Stretch="Fill"/>
-                        <TextBlock Text="Sample Event 1" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBlock Text="10/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <TextBlock Text="15/10/2024" FontSize="14" Foreground="white"/>
-                    </StackPanel>
-                </Border>
-                <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
-                    <StackPanel>
-                        <Image Source="/UserWindows/6.jpg" Height="150" Stretch="Fill"/>
-                        <TextBlock Text="Sample Event 2" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBlock Text="12/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <TextBlock Text="16/10/2024" FontSize="14" Foreground="white"/>
-                    </StackPanel>
-                </Border>
-                <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
-                    <StackPanel>
-                        <Image Source="/UserWindows/6.jpg" Height="150" Stretch="Fill"/>
-                        <TextBlock Text="Sample Event 3" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBlock Text="12/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <TextBlock Text="16/10/2024" FontSize="14" Foreground="white"/>
-                    </StackPanel>
-                </Border>
-                <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
-                    <StackPanel>
-                        <Image Source="/UserWindows/1.jpg" Height="150" Stretch="Fill"/>
-                        <TextBlock Text="Sample Event 4" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBlock Text="12/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <TextBlock Text="16/10/2024" FontSize="14" Foreground="white"/>
-                    </StackPanel>
-                </Border>
-                <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
-                    <StackPanel>
-                        <Image Source="/UserWindows/15.jpg" Height="150" Stretch="Fill"/>
-                        <TextBlock Text="Sample Event 5" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBlock Text="12/10/2024" FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <TextBlock Text="16/10/2024" FontSize="14" Foreground="white"/>
-                    </StackPanel>
-                </Border>
-            </ListBox.Items>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Width="250" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
+                        <StackPanel>
+                            <Image Source="{Binding ImageUrl}" Height="150" Stretch="Fill"/>
+                            <TextBlock Text="{Binding Name}" FontSize="16" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
+                            <TextBlock Text="{Binding StartDate}" FontSize="14" Foreground="White" Margin="0,0,0,5"/>
+                            <TextBlock Text="{Binding EndDate}" FontSize="14" Foreground="White"/>
+                            <Button x:Name="btn_Detail" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Click="ShowDetailEventWindow" Tag="{Binding Id}">Chi tiết</Button>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
-
-
-
     </Grid>
 </Window>

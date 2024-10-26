@@ -20,15 +20,39 @@
 
         <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
             <Grid>
-                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
-                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
+                    <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5"  >
+                        <materialDesign:PackIcon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="357.82"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </materialDesign:PackIcon.RenderTransform>
+                    </materialDesign:PackIcon>
+                </Button>
+                <Image HorizontalAlignment="Left" Height="52" Margin="147,6,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="208,7,775,11"/>
 
-                <Border CornerRadius="30"  Margin="1090,6,57,6">
+                <Border CornerRadius="30"  Margin="1028,7,119,5">
                     <Border.Background>
                         <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="726,0,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="1111,14,8,14" RenderTransformOrigin="0.5,0.5">
+                    <materialDesign:PackIcon Kind="User" RenderTransformOrigin="0.5,0.5"  >
+                        <materialDesign:PackIcon.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="357.82"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </materialDesign:PackIcon.RenderTransform>
+                    </materialDesign:PackIcon>
+                </Button>
             </Grid>
         </Border>
 

@@ -33,11 +33,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.logedUser = user;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
-            myShopWindow.Show();    
+            HomeWindow homeWindow = new HomeWindow(logedUser);
+            homeWindow.Show();
         }
     }
 }

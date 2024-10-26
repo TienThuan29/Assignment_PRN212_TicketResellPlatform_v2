@@ -15,7 +15,7 @@
     <Window.Resources>
         <local:ByteArrayToImageConverter  x:Key="ByteArrayToImageConverter"/>
     </Window.Resources>
-    
+
 
     <Grid>
 
@@ -26,8 +26,11 @@
 
         <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
             <Grid>
-                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
-                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
+                    <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+                <Image HorizontalAlignment="Left" Height="52" Margin="131,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="196,9,786,9"/>
 
                 <Border CornerRadius="30"  Margin="1090,6,57,6">
                     <Border.Background>
@@ -64,7 +67,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" />
                         <DataGridTextColumn Header="Mã vé" Binding="{Binding TicketSerial}" Width="Auto" />
-                        
+
 
                         <DataGridTemplateColumn Header="Ảnh" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
@@ -74,14 +77,14 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
 
-                        
+
                         <DataGridCheckBoxColumn Header="Kiểm tra" Binding="{Binding IsChecked}" Width="Auto" />
                         <DataGridCheckBoxColumn Header="Hợp lệ" Binding="{Binding IsValid}" Width="Auto" />
                         <DataGridTextColumn Header="Trạng thái" Binding="{Binding Process}" Width="Auto" />
                         <DataGridCheckBoxColumn Header="Bán" Binding="{Binding IsBought}" Width="Auto" />
                         <DataGridTextColumn Header="Ngày bán" Binding="{Binding BoughtDate, StringFormat=G}" Width="Auto" />
                         <DataGridTextColumn Header="Người mua" Binding="{Binding BuyerId}" Width="Auto" />
-                        
+
                         <DataGridTemplateColumn Header="Action" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>

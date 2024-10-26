@@ -104,5 +104,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             HistoryDepositeWindow history = new HistoryDepositeWindow(logedUser);
             history.Show();
         }
+
+        private void ShowHomeWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            HomeWindow mainWindow = new HomeWindow(logedUser);
+            mainWindow.Show();
+        }
     }
 }

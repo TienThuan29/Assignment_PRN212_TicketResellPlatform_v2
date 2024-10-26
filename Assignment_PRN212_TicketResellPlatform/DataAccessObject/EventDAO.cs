@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,5 +22,16 @@ namespace DataAccessObject
         { 
             this.context = new PRN212_TicketResellPlatformContext();
         }
+
+        public ICollection<Event> GetAllEvents()
+        {
+            return context.Events.ToList();
+        }
+
+        public Event GetEvent(int id) 
+        {
+            return context.Events.SingleOrDefault(m => m.Id.Equals(id));
+        }
+
     }
 }

@@ -28,3 +28,18 @@ D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResel
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.pdb
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.genruntimeconfig.cache
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\ref\BusinessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\bin\Debug\net8.0\BusinessObject.deps.json
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\bin\Debug\net8.0\BusinessObject.runtimeconfig.json
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\bin\Debug\net8.0\BusinessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\bin\Debug\net8.0\BusinessObject.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.csproj.AssemblyReference.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.GeneratedMSBuildEditorConfig.editorconfig
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.AssemblyInfoInputs.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.AssemblyInfo.cs
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.csproj.CoreCompileInputs.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.sourcelink.json
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\refint\BusinessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\BusinessObject.genruntimeconfig.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\BusinessObject\obj\Debug\net8.0\ref\BusinessObject.dll

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\
 Assignment_PRN212_TicketResellPlatform
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\App.xaml
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\App.xaml
 171389778959
 
 22-2085986579
-2311070116791
+231-1577474558
 AdminWindows\AdminDashboardWindow.xaml;AdminWindows\HistoryTransactionWindow.xaml;AdminWindows\ManagePolicyWindow.xaml;AdminWindows\ManageStaffWindow.xaml;AdminWindows\ManageUserWindow.xaml;AdminWindows\WithdrawalListWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;StaffWindows\StaffDashboardWindow.xaml;UserWindows\AddingTicketWindow.xaml;UserWindows\BalanceManagementWindow.xaml;UserWindows\ChangePasswordWindow.xaml;UserWindows\DetailEventWindow.xaml;UserWindows\HistoryDepositeWindow.xaml;UserWindows\HomeWindow.xaml;UserWindows\MyShopWindow.xaml;UserWindows\UserProfileWindow.xaml;
 
 True
