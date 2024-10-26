@@ -16,5 +16,5 @@ E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Assignment
 231-1577474558
 AdminWindows\AdminDashboardWindow.xaml;AdminWindows\HistoryTransactionWindow.xaml;AdminWindows\ManagePolicyWindow.xaml;AdminWindows\ManageStaffWindow.xaml;AdminWindows\ManageUserWindow.xaml;AdminWindows\WithdrawalListWindow.xaml;MainWindow.xaml;RegisterWindow.xaml;StaffWindows\StaffDashboardWindow.xaml;UserWindows\AddingTicketWindow.xaml;UserWindows\BalanceManagementWindow.xaml;UserWindows\ChangePasswordWindow.xaml;UserWindows\DetailEventWindow.xaml;UserWindows\HistoryDepositeWindow.xaml;UserWindows\HomeWindow.xaml;UserWindows\MyShopWindow.xaml;UserWindows\UserProfileWindow.xaml;
 
-True
+False
 
