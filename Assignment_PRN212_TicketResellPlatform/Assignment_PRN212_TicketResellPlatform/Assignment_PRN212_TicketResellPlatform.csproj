@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="StaffWindows\Add a heading (1)-Photoroom.png" />
+    <None Remove="StaffWindows\child-1837375_1280.png" />
     <None Remove="UserWindows\1.jpg" />
     <None Remove="UserWindows\15.jpg" />
     <None Remove="UserWindows\6.jpg" />
@@ -25,6 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="StaffWindows\Add a heading (1)-Photoroom.png" />
+    <Resource Include="StaffWindows\child-1837375_1280.png" />
     <Resource Include="UserWindows\1.jpg" />
     <Resource Include="UserWindows\15.jpg" />
     <Resource Include="UserWindows\6.jpg" />
