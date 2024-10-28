@@ -8,7 +8,7 @@ namespace BusinessObject
         public long Id { get; set; }
         public DateTime? BoughtDate { get; set; }
         public long? BuyerId { get; set; }
-        public byte[]? Image { get; set; }
+        public string? Image { get; set; }
         public bool? IsBought { get; set; }
         public bool? IsChecked { get; set; }
         public bool? IsValid { get; set; }

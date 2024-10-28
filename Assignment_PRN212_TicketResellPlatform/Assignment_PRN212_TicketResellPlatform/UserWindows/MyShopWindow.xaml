@@ -13,7 +13,7 @@
         >
 
     <Window.Resources>
-        <local:ByteArrayToImageConverter  x:Key="ByteArrayToImageConverter"/>
+        <local:ByteArrayToImageConverter  x:Key="byteArrayToImageConverter"/>
     </Window.Resources>
     
 
@@ -69,7 +69,7 @@
                         <DataGridTemplateColumn Header="Ảnh" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Source="{Binding Image, Converter={StaticResource ByteArrayToImageConverter}}" Width="50" Height="50" />
+                                    <Image Source="{Binding Image, Converter={StaticResource byteArrayToImageConverter}}" Width="50" Height="50" /> 
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

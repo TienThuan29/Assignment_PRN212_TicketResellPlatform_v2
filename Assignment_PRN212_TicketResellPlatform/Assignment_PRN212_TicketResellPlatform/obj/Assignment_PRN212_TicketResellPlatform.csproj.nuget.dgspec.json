@@ -57,6 +57,10 @@
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[5.1.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.10, )"
             }
           },
           "imports": [

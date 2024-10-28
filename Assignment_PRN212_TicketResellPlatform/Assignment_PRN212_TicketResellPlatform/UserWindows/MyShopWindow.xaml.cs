@@ -5,6 +5,7 @@ using Service.Utils.TienThuan;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -124,17 +125,33 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 {
                     using (var stream = new MemoryStream(byteArray))
                     {
-                        var image = new BitmapImage();
+                        BitmapImage image = new BitmapImage();
                         image.BeginInit();
-                        image.StreamSource = stream;
                         image.CacheOption = BitmapCacheOption.OnLoad;
+                        image.StreamSource = stream;
                         image.EndInit();
-                        image.Freeze();
+                        image.Freeze(); // Freeze for performance
                         return image;
                     }
                 }
+                else
+                {
+                    MessageBox.Show("The image data is null or empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
-            catch (Exception ex) { }
+            catch (NotSupportedException ex)
+            {
+                MessageBox.Show($"Unsupported image format: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Invalid image data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error loading image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             return null;
         }
 

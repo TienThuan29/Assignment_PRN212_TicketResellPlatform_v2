@@ -33,6 +33,7 @@ D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResel
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\System.Drawing.Common.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll

@@ -68,7 +68,6 @@
                         <DataGridCheckBoxColumn Header="Is Done" Binding="{Binding IsDone}" Width="Auto" />
                         <DataGridTextColumn Header="Transaction Date" Binding="{Binding TransDate, StringFormat=G}" Width="Auto" />
                         <DataGridTextColumn Header="Transaction Type" Binding="{Binding TransType}" Width="Auto" />
-                        <DataGridTextColumn Header="User ID" Binding="{Binding UserId}" Width="Auto" />
                         <DataGridTextColumn Header="Transaction No" Binding="{Binding TransactionNo}" Width="Auto" />
                     </DataGrid.Columns>
                 </DataGrid>
