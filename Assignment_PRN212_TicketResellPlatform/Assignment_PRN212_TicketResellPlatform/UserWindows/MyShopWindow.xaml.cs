@@ -66,7 +66,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             ticketDataGrid.ItemsSource = tickets;
         }
 
-     
+
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -110,55 +110,18 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             this.Hide();
             UserProfileWindow userProfileWindow = new UserProfileWindow(logedUser);
-            userProfileWindow.Show();   
+            userProfileWindow.Show();
         }
-    }
 
-    // Window Resource Image Converter
-    public class ByteArrayToImageConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+
+        private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (value is byte[] byteArray && byteArray.Length > 0)
-                {
-                    using (var stream = new MemoryStream(byteArray))
-                    {
-                        BitmapImage image = new BitmapImage();
-                        image.BeginInit();
-                        image.CacheOption = BitmapCacheOption.OnLoad;
-                        image.StreamSource = stream;
-                        image.EndInit();
-                        image.Freeze(); // Freeze for performance
-                        return image;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("The image data is null or empty.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
-            catch (NotSupportedException ex)
-            {
-                MessageBox.Show($"Unsupported image format: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show($"Invalid image data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Unexpected error loading image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            return null;
+            this.Hide();
+            HomeWindow mainWindow = new HomeWindow(logedUser);
+            mainWindow.Show();
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+
+
     }
-
 }

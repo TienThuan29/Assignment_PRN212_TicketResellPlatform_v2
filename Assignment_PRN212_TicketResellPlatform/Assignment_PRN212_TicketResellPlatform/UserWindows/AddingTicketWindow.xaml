@@ -20,8 +20,11 @@
 
         <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
             <Grid>
-                <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
-                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
+                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
+                    <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
+                </Button>
+                <Image HorizontalAlignment="Left" Height="52" Margin="131,6,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="196,7,787,11"/>
 
                 <Border CornerRadius="30"  Margin="1090,6,57,6">
                     <Border.Background>
@@ -48,7 +51,7 @@
                 <Button Content="Đổi mật khẩu" Margin="17,492,1015,136" />
 
                 <Label FontSize="30" Content="Thêm vé mới" Margin="400,24,506,588" />
-                <Button Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" Click="Button_Click">
+                <Button Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" >
                     <materialDesign:PackIcon
                         Kind="Arrow"
                         Height="24"
@@ -93,14 +96,14 @@
 
                 <Label FontSize="16" Content="Mô tả" Margin="740,473,328,160"/>
                 <TextBox Margin="740,500,132,133"/>
-                
-                
+
+
                 <Button Content="Tạo vé" Margin="315,560,779,68" />
                 <Button Content="Cập nhật chỉnh sửa" Margin="456,560,557,68" />
                 <Button Content="Thêm vé chi tiết" Margin="920,560,132,68" Background="#FF3AA5B7" BorderBrush="{x:Null}" />
-                
-                
-                
+
+
+
                 <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>

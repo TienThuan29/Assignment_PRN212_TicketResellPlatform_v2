@@ -40,9 +40,12 @@ namespace Assignment_PRN212_TicketResellPlatform
 
             if (user != null && user.Password.Equals(passwordBox.Password.ToString()))
             {
-                UserProfileWindow profileWindow = new UserProfileWindow(user);
+                //UserProfileWindow profileWindow = new UserProfileWindow(user);
+                //this.Hide();
+                //profileWindow.Show();
+                HomeWindow homeWindow = new HomeWindow(user);
                 this.Hide();
-                profileWindow.Show();
+                homeWindow.Show();
             }
             else
             {
@@ -52,7 +55,9 @@ namespace Assignment_PRN212_TicketResellPlatform
                     if (staff.RoleCode.Equals(Role.STAFF))
                     {
                         // Show staff dashboard here
-                        MessageBox.Show("Staff nè");
+                        StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
+                        staffDashboardWindow.Show();
+                        this.Hide();
                     }
                     else if (staff.RoleCode.Equals(Role.ADMIN))
                     {
