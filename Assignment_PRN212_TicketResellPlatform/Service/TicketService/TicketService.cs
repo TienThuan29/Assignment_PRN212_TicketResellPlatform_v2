@@ -24,5 +24,11 @@ namespace Service.TicketService
         {
             return tickeRepository.FindByGenericTicketID(genericTicketID);
         }
+
+        public bool AddTicket(BusinessObject.Ticket ticket) 
+        {
+            return tickeRepository.AddTicket(ticket);   
+        }
+
     }
 }

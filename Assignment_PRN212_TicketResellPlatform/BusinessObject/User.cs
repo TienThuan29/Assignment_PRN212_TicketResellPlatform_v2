@@ -6,7 +6,7 @@ namespace BusinessObject
     public partial class User
     {
         public long Id { get; set; }
-        public byte[]? Avatar { get; set; }
+        public string? Avatar { get; set; }
         public long? Balance { get; set; }
         public string CustomerCode { get; set; } = null!;
         public string Email { get; set; } = null!;

@@ -15,5 +15,10 @@ namespace Repository.Impl
         {
             return GenericTicketDAO.Instance.FindBySellerId(sellerId);
         }
+
+        public bool AddGenericTicket(GenericTicket ticket)
+        {
+            return GenericTicketDAO.Instance.AddGenericTicket(ticket);
+        }
     }
 }

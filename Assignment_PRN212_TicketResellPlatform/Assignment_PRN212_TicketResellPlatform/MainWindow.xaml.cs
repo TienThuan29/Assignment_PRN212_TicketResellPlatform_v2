@@ -55,7 +55,9 @@ namespace Assignment_PRN212_TicketResellPlatform
                     if (staff.RoleCode.Equals(Role.STAFF))
                     {
                         // Show staff dashboard here
-                        MessageBox.Show("Staff nè");
+                        StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
+                        staffDashboardWindow.Show();
+                        this.Hide();
                     }
                     else if (staff.RoleCode.Equals(Role.ADMIN))
                     {
@@ -82,9 +84,12 @@ namespace Assignment_PRN212_TicketResellPlatform
             registerWindow.Show();
         }
 
+<<<<<<< HEAD
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+=======
+>>>>>>> 3e838d81f031f5f667b76044bc8af6c67e086887
     }
 }

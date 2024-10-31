@@ -22,5 +22,10 @@ namespace Service.TicketService
         {
             return genericTicketRepository.FindBySellerId(sellerId);
         }
+
+        public bool AddGenericTicket(GenericTicket genericTicket)
+        {
+            return genericTicketRepository.AddGenericTicket(genericTicket);
+        }
     }
 }

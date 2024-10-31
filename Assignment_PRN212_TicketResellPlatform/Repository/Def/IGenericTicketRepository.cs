@@ -10,5 +10,7 @@ namespace Repository.Def
     public interface IGenericTicketRepository
     {
         ICollection<GenericTicket> FindBySellerId(long sellerId);
+
+        public bool AddGenericTicket(GenericTicket ticket);
     }
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.deps.json
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.dll
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.pdb
@@ -16,3 +17,41 @@ C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\R
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\refint\Repository.dll
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.pdb
 C:\Users\CHuy\Desktop\PRN212\AssignCode\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\ref\Repository.dll
+=======
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.deps.json
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.sourcelink.json
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\refint\Repository.dll
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.pdb
+E:\FPT\PRN212\AssignmentPRN212\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\ref\Repository.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.deps.json
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\Repository.pdb
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\DataAccessObject.pdb
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\bin\Debug\net8.0\BusinessObject.pdb
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.sourcelink.json
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\refint\Repository.dll
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\Repository.pdb
+D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Repository\obj\Debug\net8.0\ref\Repository.dll
+>>>>>>> 3e838d81f031f5f667b76044bc8af6c67e086887

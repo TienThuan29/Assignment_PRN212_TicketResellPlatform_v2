@@ -19,7 +19,6 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class ManageStaffWindow : Window
     {
-        private 
         public ManageStaffWindow()
         {
             InitializeComponent();
