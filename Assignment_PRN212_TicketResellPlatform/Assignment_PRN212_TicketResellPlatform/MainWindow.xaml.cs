@@ -83,5 +83,6 @@ namespace Assignment_PRN212_TicketResellPlatform
             this.Hide();
             registerWindow.Show();
         }
+
     }
 }

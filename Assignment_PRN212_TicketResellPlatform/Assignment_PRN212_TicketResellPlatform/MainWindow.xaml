@@ -8,26 +8,35 @@
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform"
         mc:Ignorable="d"
         Title="Ticket Resell Platform" Height="720" Width="1200"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"  Background="#FFF6E9F7"
         >
-    <Grid Background="#FFFDEEFF">
-        <Label Foreground="#623ED0" FontSize="50" Content="Đăng nhập" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
 
-        <Label FontSize="25" Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="300,173,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Center" Height="50" Width="600" Margin="0,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="600" Margin="0,367,0,0"/>
-        <Label FontSize="25" Content="Mật khẩu" HorizontalAlignment="Left" Margin="300,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.365,0.546"/>
+    <Border Background="#FFFCF7FD" CornerRadius="20" Margin="100">
 
-        <Button Click="HandleLogin" Content="Đăng nhập" HorizontalAlignment="Left" Margin="356,466,0,0" VerticalAlignment="Top" Width="158"/>
-        <Button Click="ToRegisterWindow" Content="Đăng ký tài khoản" HorizontalAlignment="Left" Margin="682,466,0,0" Width="158" VerticalAlignment="Top"/>
+        <Border.Effect>
+            <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="5" Opacity="0.3" />
+        </Border.Effect>
 
-        <Button HorizontalAlignment="Left" Margin="10,645,0,0" VerticalAlignment="Top">
-            <materialDesign:PackIcon
-            Kind="ExitRun"
-            Height="24"
-            Width="24" />
-        </Button>
+        <Grid>
+            <Label Foreground="#623ED0" FontSize="40" Content="Đăng nhập" HorizontalAlignment="Left" Margin="622,22,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
+
+            <Label FontSize="18" Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="509,116,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="509,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <materialDesign:PackIcon Kind="Users" Margin="911,163,0,0" Height="24" Width="24" />
+            
+            <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="426" Margin="509,275,0,0"/>
+            <Label FontSize="18" Content="Mật khẩu" HorizontalAlignment="Left" Margin="509,252,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.365,0.546"/>
+            <materialDesign:PackIcon Kind="Key" Margin="911,301,0,0" Height="24" Width="24" />
+
+            <Button Click="HandleLogin" Content="Đăng nhập" HorizontalAlignment="Left" Margin="527,369,0,0" VerticalAlignment="Top" Width="158"/>
+            <Button Click="ToRegisterWindow" Content="Đăng ký tài khoản" HorizontalAlignment="Left" Margin="745,369,0,0" Width="158" VerticalAlignment="Top"/>
+
+            <Button HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" BorderBrush="#00673AB7" Background="#0005010C" Height="127">
+                <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" Foreground="#DD000000" />
+            </Button>
+            <Image HorizontalAlignment="Left" Height="247" Margin="38,154,0,0" VerticalAlignment="Top" Width="404" Source="/LogoHeader-Photoroom.png"/>
+        </Grid>
+    </Border>
 
 
-    </Grid>
 </Window>

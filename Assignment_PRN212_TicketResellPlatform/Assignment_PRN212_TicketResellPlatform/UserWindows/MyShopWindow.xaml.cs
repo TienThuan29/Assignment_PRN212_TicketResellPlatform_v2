@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using Service.Ticket;
 using Service.TicketService;
+using Service.Utils;
 using Service.Utils.TienThuan;
 using System;
 using System.Collections;
@@ -48,6 +49,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
+            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+            avatarImageBrush.ImageSource = new BitmapImage(uri);
+            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);

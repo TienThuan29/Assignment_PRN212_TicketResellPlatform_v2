@@ -38,23 +38,3 @@ D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatf
 D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\refint\Service.dll
 D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.pdb
 D:\FPT\PRN212\Assignment_PRN212_TicketResell\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\ref\Service.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\Service.deps.json
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\Service.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\Service.pdb
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\BusinessObject.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\DataAccessObject.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\Repository.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\Repository.pdb
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\BusinessObject.pdb
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\bin\Debug\net8.0\DataAccessObject.pdb
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.csproj.AssemblyReference.cache
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.GeneratedMSBuildEditorConfig.editorconfig
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.AssemblyInfoInputs.cache
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.AssemblyInfo.cs
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.csproj.CoreCompileInputs.cache
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.sourcelink.json
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.csproj.Up2Date
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\refint\Service.dll
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\Service.pdb
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Service\obj\Debug\net8.0\ref\Service.dll
