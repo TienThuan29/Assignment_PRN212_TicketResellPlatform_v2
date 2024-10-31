@@ -1,4 +1,6 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using DataAccessObject;
+using Repository.Def;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +11,9 @@ namespace Repository.Impl
 {
     public class CategoryRepository : ICategoryRepository
     {
+        public ICollection<Category> GetAllCategories()
+        {
+            return CategoryDAO.Instance.GetAllCategories();
+        }
     }
 }

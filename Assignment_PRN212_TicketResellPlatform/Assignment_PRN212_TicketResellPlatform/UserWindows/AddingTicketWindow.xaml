@@ -71,38 +71,42 @@
                 </Button>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Tên vé" Margin="315,102,0,0" Width="120"/>
-                <TextBox Margin="315,134,557,499"/>
+                <TextBox x:Name="gTicketNameTextbox"  Margin="315,134,557,499"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Giá bán" Margin="315,195,0,0" Width="142"/>
-                <TextBox Margin="315,227,557,406"/>
+                <TextBox x:Name="gTicketPriceTextbox" Margin="315,227,557,406"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Giảm giá (%)" Margin="315,281,0,0" Width="182"/>
-                <TextBox Margin="315,308,557,325"/>
+                <TextBox x:Name="gTicketSalePercentTextbox" Margin="315,308,557,325"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Khu vực ngồi" Margin="315,373,0,0" Width="175"/>
-                <TextBox Margin="315,401,557,232"/>
+                <TextBox x:Name="gTicketAreaTextbox" Margin="315,401,557,232"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Thời gian hết hạn" Margin="315,473,0,0" Width="192"/>
-                <materialDesign:TimePicker Margin="315,500,557,133" />
+                <DatePicker x:Name="gTicketExpiredDateTime" Margin="315,500,557,133" />
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Link sự kiện" Margin="740,102,0,0" Width="140"/>
-                <TextBox Margin="740,134,132,499"/>
+                <TextBox x:Name="gTicketLinkTextbox" Margin="740,134,132,499"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Thể loại vé" Margin="740,193,0,0" Width="149"/>
-                <ComboBox Margin="740,229,132,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="categoriesComboBox" Margin="740,229,132,0" VerticalAlignment="Top"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Loại vé" Margin="740,281,0,0" Width="144"/>
-                <ComboBox Margin="740,310,132,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="gTicketTypeComboBox" Margin="740,310,132,0" VerticalAlignment="Top" SelectedIndex="0">
+                    <ComboBoxItem Content="Online" Tag="0"/>
+                    <ComboBoxItem Content="Giấy" Tag="1"/>
+                </ComboBox>
 
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Loại vé" Margin="740,373,0,0" Width="137"/>
-                <ComboBox Margin="740,403,132,0" VerticalAlignment="Top"/>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Sự kiện" Margin="740,373,0,0" Width="137"/>
+                <ComboBox x:Name="eventsComboBox" Margin="740,403,132,0" VerticalAlignment="Top"/>
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Mô tả" Margin="740,473,0,0" Width="133"/>
-                <TextBox Margin="740,500,132,133"/>
+                <TextBox x:Name="desTextbox" Margin="740,500,132,133"/>
 
 
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Tạo vé" Margin="315,560,779,68" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cập nhật chỉnh sửa" Margin="456,560,557,68" />
+                <Button Click="CreateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Tạo vé" Margin="400,560,0,0" Background="#FF9DEC68" Foreground="#DD000000" BorderBrush="#FF9DEC68" />
+                <Button Click="UpdateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cập nhật chỉnh sửa" Margin="490,560,0,0" BorderBrush="#FFFFC805" Background="#FFFFC805" Foreground="#DD000000" />
                 
                 <Button Click="OpenAddSpecificTicketWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Thêm vé chi tiết" Margin="920,560,132,68" Background="#FF3AA5B7" BorderBrush="{x:Null}" />
 
@@ -110,6 +114,9 @@
 
                 <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                </Button>
+                <Button Click="RefreshFields" HorizontalAlignment="Left" Margin="315,560,0,0" VerticalAlignment="Top" Background="#FFED8D8D" Foreground="#DD000000" BorderBrush="#FFED8D8D">
+                    <materialDesign:PackIcon Kind="Refresh" />
                 </Button>
 
             </Grid>

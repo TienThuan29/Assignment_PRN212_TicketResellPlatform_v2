@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Service.EventService;
+using Service.TicketService;
+using BusinessObject;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
@@ -22,6 +25,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     public partial class AddingTicketWindow : Window
     {
         private BusinessObject.User logedUser;
+
+        private IEventService eventService = new EventService();
+        private ICategoryService categoryService = new CategoryService();   
 
 
         public AddingTicketWindow()
@@ -44,6 +50,14 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);
+            // Init combo box
+            eventsComboBox.ItemsSource = eventService.GetAllEvents();
+            eventsComboBox.DisplayMemberPath = "Name";
+            eventsComboBox.SelectedValue = "Id";
+
+            categoriesComboBox.ItemsSource = categoryService.GetAllCategories();
+            categoriesComboBox.DisplayMemberPath = "Name";
+            categoriesComboBox.SelectedValue = "Id";
         }
 
 
@@ -58,6 +72,46 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             AddingSpecificTicketWindow addingSpecificTicketWindow = new AddingSpecificTicketWindow();
             addingSpecificTicketWindow.Show();
+        }
+
+
+        private void RefreshFields(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UpdateGenericTicket(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreateGenericTicket(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Create");
+            try
+            {
+                GenericTicket genericTicket = new GenericTicket();
+                genericTicket.SellerId = logedUser.Id;
+                genericTicket.TicketName = gTicketNameTextbox.Text;
+                genericTicket.Price = int.Parse(gTicketPriceTextbox.Text);
+                genericTicket.SalePercent = int.Parse(gTicketSalePercentTextbox.Text);
+                genericTicket.Area = gTicketAreaTextbox.Text;
+                genericTicket.ExpiredDateTime = DateTime.Parse(gTicketExpiredDateTime.Text);
+                genericTicket.LinkEvent = gTicketLinkTextbox.Text;
+                genericTicket.CategoryId = int.Parse(categoriesComboBox.SelectedValue.ToString());
+                //genericTicket.IsPaper = int.Parse(gTicketTypeComboBox.Tag == 1);
+                var selectedItem = gTicketTypeComboBox.SelectedItem as ComboBoxItem;
+                if (selectedItem != null && int.TryParse(selectedItem.Tag?.ToString(), out int tagValue))
+                {
+                    genericTicket.IsPaper = (tagValue == 1); // true if "Giấy" is selected, false otherwise
+                }
+
+
+                genericTicket.EventId = int.Parse(eventsComboBox.SelectedValue.ToString());
+                genericTicket.Description = desTextbox.Text;
+                Console.WriteLine(genericTicket);   
+            }
+            catch (Exception ex) { }
         }
     }
 }
