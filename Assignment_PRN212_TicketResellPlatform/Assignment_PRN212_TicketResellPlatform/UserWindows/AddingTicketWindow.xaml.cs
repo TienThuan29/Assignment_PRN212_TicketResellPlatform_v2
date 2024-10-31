@@ -19,16 +19,16 @@ using BusinessObject;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
-    /// <summary>
-    /// Interaction logic for AddingTicketWindow.xaml
-    /// </summary>
+
     public partial class AddingTicketWindow : Window
     {
         private BusinessObject.User logedUser;
 
         private IEventService eventService = new EventService();
-        private ICategoryService categoryService = new CategoryService();   
+        private ICategoryService categoryService = new CategoryService();
+        private IGenericTicketService genericTicketService = new GenericTicketService();
 
+        private GenericTicket currentAddingGenericTicket;
 
         public AddingTicketWindow()
         {
@@ -70,8 +70,15 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void OpenAddSpecificTicketWindow(object sender, RoutedEventArgs e)
         {
-            AddingSpecificTicketWindow addingSpecificTicketWindow = new AddingSpecificTicketWindow();
-            addingSpecificTicketWindow.Show();
+            if(this.currentAddingGenericTicket != null)
+            {
+                AddingSpecificTicketWindow addingSpecificTicketWindow = new AddingSpecificTicketWindow(currentAddingGenericTicket);
+                addingSpecificTicketWindow.Show();
+            }
+            else
+            {
+                ShowErrorMessageBox("Bạn cần tạo thông tin vé trước khi thêm vé chi tiết!");
+            }
         }
 
 
@@ -87,31 +94,93 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void CreateGenericTicket(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Create");
             try
             {
-                GenericTicket genericTicket = new GenericTicket();
-                genericTicket.SellerId = logedUser.Id;
-                genericTicket.TicketName = gTicketNameTextbox.Text;
-                genericTicket.Price = int.Parse(gTicketPriceTextbox.Text);
-                genericTicket.SalePercent = int.Parse(gTicketSalePercentTextbox.Text);
-                genericTicket.Area = gTicketAreaTextbox.Text;
-                genericTicket.ExpiredDateTime = DateTime.Parse(gTicketExpiredDateTime.Text);
-                genericTicket.LinkEvent = gTicketLinkTextbox.Text;
-                genericTicket.CategoryId = int.Parse(categoriesComboBox.SelectedValue.ToString());
-                //genericTicket.IsPaper = int.Parse(gTicketTypeComboBox.Tag == 1);
-                var selectedItem = gTicketTypeComboBox.SelectedItem as ComboBoxItem;
-                if (selectedItem != null && int.TryParse(selectedItem.Tag?.ToString(), out int tagValue))
+                if (ValidateReuiredFields())
                 {
-                    genericTicket.IsPaper = (tagValue == 1); // true if "Giấy" is selected, false otherwise
+                    GenericTicket genericTicket = new GenericTicket();
+                    genericTicket.SellerId = logedUser.Id;
+                    genericTicket.TicketName = gTicketNameTextbox.Text;
+                    genericTicket.Price = int.Parse(gTicketPriceTextbox.Text);
+                    genericTicket.SalePercent = int.Parse(
+                        gTicketSalePercentTextbox.Text.Trim().Equals("") ? "0" : gTicketSalePercentTextbox.Text
+                    );
+                    genericTicket.Area = gTicketAreaTextbox.Text;
+                    genericTicket.ExpiredDateTime = DateTime.Parse(gTicketExpiredDateTime.Text);
+                    genericTicket.LinkEvent = gTicketLinkTextbox.Text;
+                    genericTicket.CategoryId = int.Parse(categoriesComboBox.SelectedValue.ToString());
+                    //genericTicket.IsPaper = int.Parse(gTicketTypeComboBox.Tag == 1);
+                    var selectedItem = gTicketTypeComboBox.SelectedItem as ComboBoxItem;
+                    if (selectedItem != null && int.TryParse(selectedItem.Tag?.ToString(), out int tagValue))
+                    {
+                        genericTicket.IsPaper = (tagValue == 1);
+                    }
+                    genericTicket.EventId = int.Parse(eventsComboBox.SelectedValue.ToString());
+                    genericTicket.Description = desTextbox.Text;
+                    currentAddingGenericTicket = genericTicket;
+                    if (genericTicketService.AddGenericTicket(genericTicket))
+                    {
+                        ShowInfoMessageBox("Tạo vé thành công! Bạn hay thêm vé chi tiết");
+                    }
+                    else
+                    {
+                        ShowErrorMessageBox("Tạo vé thất bại! Vui lòng thử lại!");
+                    }
                 }
-
-
-                genericTicket.EventId = int.Parse(eventsComboBox.SelectedValue.ToString());
-                genericTicket.Description = desTextbox.Text;
-                Console.WriteLine(genericTicket);   
             }
-            catch (Exception ex) { }
+            catch (Exception ex) 
+            {
+                ShowErrorMessageBox("Tạo vé thất bại! Vui lòng kiểm tra các mục nhập!");
+            }
+        }
+
+        private bool ValidateReuiredFields()
+        {
+            if (string.IsNullOrWhiteSpace(gTicketNameTextbox.Text))
+            {
+                ShowWarningMessageBox("Không được để trống tên vé");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(gTicketPriceTextbox.Text))
+            {
+                ShowWarningMessageBox("Không được để trống giá vé!");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(gTicketExpiredDateTime.Text))
+            {
+                ShowWarningMessageBox("Không được để trống thời gian hết hạn!");
+                return false;
+            }
+
+            if (categoriesComboBox.SelectedValue == null)
+            {
+                ShowWarningMessageBox("Không được để trống thể loại vé!");
+            }
+
+            if (eventsComboBox.SelectedValue == null)
+            {
+                ShowWarningMessageBox("Không được để trống sự kiện!");
+                return false;
+            }
+            return true;
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        public void ShowWarningMessageBox(string message)
+        {
+            MessageBox.Show(message, "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }

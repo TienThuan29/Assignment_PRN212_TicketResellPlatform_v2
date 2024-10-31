@@ -30,5 +30,20 @@ namespace DataAccessObject
         {
             return this.context.GenericTickets.Where(gt => gt.SellerId.Equals(sellerId)).ToList();
         }
+
+        public bool AddGenericTicket(GenericTicket genericTicket)
+        {
+            bool flag = true;
+            try
+            {
+                context.GenericTickets.Add(genericTicket);
+                context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                flag = false;
+            }
+            return flag;
+        }
     }
 }

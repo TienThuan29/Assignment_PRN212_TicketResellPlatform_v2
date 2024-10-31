@@ -10,5 +10,7 @@ namespace Service.TicketService
     public interface IGenericTicketService
     {
         ICollection<GenericTicket> FindBySellerId(long sellerId);
+
+        public bool AddGenericTicket(GenericTicket ticket);
     }
 }

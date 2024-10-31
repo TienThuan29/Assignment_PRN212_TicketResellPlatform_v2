@@ -27,5 +27,20 @@ namespace DataAccessObject
         {
             return this.context.Tickets.Where(ticket => ticket.GenericTicketId.Equals(genericTicketID)).ToList();
         }
+
+        public bool AddTicket(BusinessObject.Ticket ticket)
+        {
+            bool flag = true;
+            try
+            {
+                context.Tickets.Add(ticket);
+                context.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                flag = false;
+            }
+            return flag;
+        }
     }
 }
