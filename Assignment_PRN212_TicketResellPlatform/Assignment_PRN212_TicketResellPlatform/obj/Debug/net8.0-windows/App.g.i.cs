@@ -47,7 +47,7 @@ namespace Assignment_PRN212_TicketResellPlatform {
         /// InitializeComponent
         /// </summary>
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.7.0")]
         public void InitializeComponent() {
             if (_contentLoaded) {
                 return;
@@ -59,7 +59,7 @@ namespace Assignment_PRN212_TicketResellPlatform {
             
             #line default
             #line hidden
-            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;V1.0.0.0;component/app.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Assignment_PRN212_TicketResellPlatform;component/app.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\App.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
@@ -73,7 +73,7 @@ namespace Assignment_PRN212_TicketResellPlatform {
         /// </summary>
         [System.STAThreadAttribute()]
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.8.0")]
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "8.0.7.0")]
         public static void Main() {
             Assignment_PRN212_TicketResellPlatform.App app = new Assignment_PRN212_TicketResellPlatform.App();
             app.InitializeComponent();

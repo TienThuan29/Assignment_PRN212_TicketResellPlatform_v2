@@ -11,10 +11,10 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         >
-
     <Window.Resources>
-        <local:ByteArrayToImageConverter  x:Key="ByteArrayToImageConverter"/>
+        <local:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
     </Window.Resources>
+
 
 
     <Grid>

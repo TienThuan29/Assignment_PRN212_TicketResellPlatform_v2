@@ -501,22 +501,17 @@
           "Microsoft.Extensions.Configuration.Json": "6.0.0"
         },
         "runtime": {
-          "BusinessObject.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "BusinessObject.dll": {}
         }
       },
       "DataAccessObject/1.0.0": {
         "dependencies": {
           "BusinessObject": "1.0.0",
-          "Microsoft.Extensions.Configuration": "6.0.0"
+          "Microsoft.Extensions.Configuration": "6.0.0",
+          "Microsoft.Extensions.Configuration.Json": "6.0.0"
         },
         "runtime": {
-          "DataAccessObject.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "DataAccessObject.dll": {}
         }
       },
       "Repository/1.0.0": {
@@ -524,10 +519,7 @@
           "DataAccessObject": "1.0.0"
         },
         "runtime": {
-          "Repository.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Repository.dll": {}
         }
       },
       "Service/1.0.0": {
@@ -535,10 +527,7 @@
           "Repository": "1.0.0"
         },
         "runtime": {
-          "Service.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Service.dll": {}
         }
       }
     }

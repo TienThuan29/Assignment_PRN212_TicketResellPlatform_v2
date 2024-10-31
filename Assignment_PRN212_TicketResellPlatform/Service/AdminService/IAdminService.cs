@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,10 @@ namespace Service.Admin
 {
     public interface IAdminService
     {
+        public List<Transaction> GetTransactions();
+
+        public List<Transaction> GetTransactionsListOfType(string type);
+
+        public List<Policy> GetPolicies();
     }
 }

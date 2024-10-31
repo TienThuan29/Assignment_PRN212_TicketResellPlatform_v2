@@ -19,9 +19,56 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class ManageStaffWindow : Window
     {
+        private 
         public ManageStaffWindow()
         {
             InitializeComponent();
+        }
+        private void ButtonClickManageUser(object sender, RoutedEventArgs e)
+        {
+            ManageUserWindow manageUserWindow = new ManageUserWindow();
+            manageUserWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClickManageStaff(object sender, RoutedEventArgs e)
+        {
+            ManageStaffWindow manageStaffWindow = new ManageStaffWindow();
+            manageStaffWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClickManagePolicy(object sender, RoutedEventArgs e)
+        {
+            ManagePolicyWindow managePolicyWindow = new ManagePolicyWindow();
+            managePolicyWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClickHistoryTransaction(object sender, RoutedEventArgs e)
+        {
+            HistoryTransactionWindow historyTransactionWindow = new HistoryTransactionWindow();
+            historyTransactionWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClickWithdrawalList(object sender, RoutedEventArgs e)
+        {
+            WithdrawalListWindow withdrawalWindow = new WithdrawalListWindow();
+            withdrawalWindow.Show();
+            this.Hide();
+        }
+
+        private void ButtonClickExit(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
