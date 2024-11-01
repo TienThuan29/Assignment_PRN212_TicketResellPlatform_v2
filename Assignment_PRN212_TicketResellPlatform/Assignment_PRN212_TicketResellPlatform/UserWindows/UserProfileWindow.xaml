@@ -46,7 +46,7 @@
                 </Grid.RowDefinitions>
                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="90"  Margin="26,16,0,0" Height="156" Width="159">
                     <Border.Background>
-                        <ImageBrush x:Name="avatarImageBrush" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush x:Name="avatarImageBrush" Stretch="Fill" ImageSource="/UserWindows/child-1837375_1280.png" />
                     </Border.Background>
                 </Border>
 

@@ -24,12 +24,12 @@
                 <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5">
                     <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
                 </Button>
-                <Image HorizontalAlignment="Left" Height="52" Margin="129,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Image HorizontalAlignment="Left" Height="52" Margin="129,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/LogoTab-Photoroom.png" />
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="176,8,807,10"/>
 
                 <Border CornerRadius="30" Margin="1039,10,113,2">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill" ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush Stretch="Fill" ImageSource="/UserWindows/child-1837375_1280.png" />
                     </Border.Background>
                 </Border>
                 <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="743,0,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>

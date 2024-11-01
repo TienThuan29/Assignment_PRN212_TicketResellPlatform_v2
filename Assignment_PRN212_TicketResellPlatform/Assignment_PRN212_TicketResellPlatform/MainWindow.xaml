@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform" Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"  Background="#FFF6E9F7"
+        
         >
 
     <Border Background="#FFFCF7FD" CornerRadius="20" Margin="100">
@@ -17,13 +18,14 @@
             <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="5" Opacity="0.3" />
         </Border.Effect>
 
+
         <Grid>
             <Label Foreground="#623ED0" FontSize="40" Content="Đăng nhập" HorizontalAlignment="Left" Margin="622,22,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
 
             <Label FontSize="18" Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="509,116,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="509,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <materialDesign:PackIcon Kind="Users" Margin="911,163,0,0" Height="24" Width="24" />
-            
+
             <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="426" Margin="509,275,0,0"/>
             <Label FontSize="18" Content="Mật khẩu" HorizontalAlignment="Left" Margin="509,252,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.365,0.546"/>
             <materialDesign:PackIcon Kind="Key" Margin="911,301,0,0" Height="24" Width="24" />
@@ -34,8 +36,16 @@
             <Button HorizontalAlignment="Left" Margin="10,385,0,0" VerticalAlignment="Top" BorderBrush="#00673AB7" Background="#0005010C" Height="127">
                 <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" Foreground="#DD000000" />
             </Button>
-            <Image HorizontalAlignment="Left" Height="247" Margin="38,154,0,0" VerticalAlignment="Top" Width="404" Source="/LogoHeader-Photoroom.png"/>
+            <Image HorizontalAlignment="Left" Height="277" Margin="10,159,0,0" VerticalAlignment="Top" Width="439" Source="/LogoHeader-Photoroom.png"  />
+
+            <Button HorizontalAlignment="Left" Margin="10,645,0,0" VerticalAlignment="Top" Click="ButtonClickExit">
+                <materialDesign:PackIcon
+    Kind="ExitRun"
+    Height="24"
+    Width="24" />
+            </Button>
         </Grid>
+
     </Border>
 
 

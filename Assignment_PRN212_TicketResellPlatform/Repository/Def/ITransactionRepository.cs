@@ -12,5 +12,9 @@ namespace Repository.Def
         bool Save(Transaction transaction);
 
         ICollection<Transaction> FindByUserID(long userId);
+
+        List<Transaction> GetTransactions();
+
+        List<Transaction> GetTransactionsListOfType(string type);
     }
 }

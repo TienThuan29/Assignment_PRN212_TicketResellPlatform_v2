@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,19 @@ namespace DataAccessObject
         private PolicyDAO() 
         {
             this.context = new PRN212_TicketResellPlatformContext();
+        }
+
+        public List<Policy> GetPolicies()
+        {
+            List<Policy> policies = context.Policies.ToList();
+            foreach (var item in policies)
+            {
+                if (item.IsDeleted.Equals(true))
+                {
+                    policies.Remove(item);
+                }
+            }
+            return policies;
         }
     }
 }

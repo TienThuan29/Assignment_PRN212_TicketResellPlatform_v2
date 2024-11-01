@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="ManageUserWindow" Height="720" Width="1200">
+        Title="ManageUserWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,12 +22,12 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/User/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
                     <Border CornerRadius="30"  Margin="1090,6,62,6">
                         <Border.Background>
-                            <ImageBrush Stretch="Fill"  ImageSource="/User/child-1837375_1280.png"/>
+                            <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
                     <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
@@ -45,12 +45,12 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Button Content="Quản lý người dùng" Grid.Row="0" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
-                <Button Content="Quản lý nhân viên" Grid.Row="1" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
-                <Button Content="Quản lý chính sách" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
-                <Button Content="Lịch sử giao dịch" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
-                <Button Content="Danh sách rút tiền" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16"/>
-                <Button Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,0,0,0">
+                <Button Content="Quản lý người dùng" Grid.Row="0" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManageUser"/>
+                <Button Content="Quản lý nhân viên" Grid.Row="1" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManageStaff"/>
+                <Button Content="Quản lý chính sách" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManagePolicy"/>
+                <Button Content="Lịch sử giao dịch" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickHistoryTransaction"/>
+                <Button Content="Danh sách rút tiền" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickWithdrawalList"/>
+                <Button Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,0,0,0" Click="ButtonClickExit">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>
             </Grid>
@@ -62,7 +62,7 @@
                     <TextBox Width="250" Height="30" VerticalAlignment="Center" 
                          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                          />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">

@@ -24,42 +24,42 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             InitializeComponent();
         }
 
-        private void Button_Click_Manage_User(object sender, RoutedEventArgs e)
+        private void ButtonClickManageUser(object sender, RoutedEventArgs e)
         {
             ManageUserWindow manageUserWindow = new ManageUserWindow();
             manageUserWindow.Show();
             this.Hide();
         }
 
-        private void Button_Click_Manage_Staff(object sender, RoutedEventArgs e)
+        private void ButtonClickManageStaff(object sender, RoutedEventArgs e)
         {
             ManageStaffWindow manageStaffWindow = new ManageStaffWindow();
             manageStaffWindow.Show();
             this.Hide();
         }
 
-        private void Button_Click_Manage_Policy(object sender, RoutedEventArgs e)
+        private void ButtonClickManagePolicy(object sender, RoutedEventArgs e)
         {
             ManagePolicyWindow managePolicyWindow = new ManagePolicyWindow();
             managePolicyWindow.Show();
-            this.Hide();
+            this.Close();
         }
 
-        private void Button_Click_History_Transaction(object sender, RoutedEventArgs e)
+        private void ButtonClickHistoryTransaction(object sender, RoutedEventArgs e)
         {
             HistoryTransactionWindow historyTransactionWindow = new HistoryTransactionWindow();
             historyTransactionWindow.Show();
             this.Hide();
         }
 
-        private void Button_Click_Withdrawal_List(object sender, RoutedEventArgs e)
+        private void ButtonClickWithdrawalList(object sender, RoutedEventArgs e)
         {
             WithdrawalListWindow withdrawalWindow = new WithdrawalListWindow();
             withdrawalWindow.Show();
             this.Hide();
         }
 
-        private void Button_Click_Exit(object sender, RoutedEventArgs e)
+        private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

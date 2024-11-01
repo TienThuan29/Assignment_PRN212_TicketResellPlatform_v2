@@ -51,6 +51,20 @@ namespace DataAccessObject
                     .OrderByDescending(trs => trs.TransDate).ToList();
         }
 
+        public List<Transaction> GetTransactions() => context.Transactions.ToList();
+
+        public List<Transaction> GetTransactionsListOfType(string type)
+        {
+            List<Transaction> list = this.GetTransactions();
+            foreach (var item in list)
+            {
+                if (!item.TransType.Equals(type))
+                {
+                    list.Remove(item);
+                }
+            }
+            return list;
+        }
 
     }
 }
