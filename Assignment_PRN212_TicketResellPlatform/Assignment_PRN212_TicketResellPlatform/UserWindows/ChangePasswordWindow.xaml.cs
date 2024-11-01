@@ -1,5 +1,6 @@
 ﻿using BusinessObject;
 using Service.User;
+using Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
-    /// <summary>
-    /// Interaction logic for ChangePasswordWindow.xaml
-    /// </summary>
     public partial class ChangePasswordWindow : Window
     {
         private User logedUser;
@@ -39,6 +37,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
+            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+            avatarImageBrush.ImageSource = new BitmapImage(uri);
+            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;

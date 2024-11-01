@@ -1,5 +1,6 @@
 ﻿using DataAccessObject;
 using Service.EventService;
+using Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,15 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             //init lable
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
+            //init event
+
+            var events = eventService.GetAllEvents();
+            foreach (var eventItem in events)
+            {              
+                eventItem.Image = LocalPathSetting.EventImagePath + eventItem.Image;
+            }
+
+            mainEventList.ItemsSource = events;
         }
 
         public void OnWindowLoad(object sender, RoutedEventArgs e)

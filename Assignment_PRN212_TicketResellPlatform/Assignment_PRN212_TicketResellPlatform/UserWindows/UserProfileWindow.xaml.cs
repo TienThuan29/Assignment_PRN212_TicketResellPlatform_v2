@@ -1,19 +1,14 @@
 ﻿using BusinessObject;
+using Microsoft.Win32;
 using Service.User;
 using Service.Utils.TienThuan;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
+using Microsoft.Win32;
+using System.Drawing;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.IO;
+using Service.Utils;
+
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
@@ -40,6 +35,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
+            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+            avatarImageBrush.ImageSource = new BitmapImage(uri);
+            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
@@ -74,6 +72,30 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             }
 
             if (flag) MessageBox.Show("Cập nhật thông tin thành công");
+        }
+
+        private void ChangeAvatar(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            if (fileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    string fullFilename = fileDialog.FileName;
+                    avatarImageBrush.ImageSource = new BitmapImage(new Uri(fullFilename, UriKind.Absolute));
+                    FileInfo fileInfo = new FileInfo(fullFilename);
+                    string filename = System.IO.Path.GetFileName(fullFilename);
+                    fileInfo.CopyTo(LocalPathSetting.ProfileImagePath + filename);
+                    // Save db
+                    this.logedUser.Avatar = filename;
+                    userService.SaveProfile(this.logedUser);
+                    ShowInfoMessageBox("Cập nhật ảnh đại diện thành công!");
+                }
+                catch (Exception ex) 
+                {
+                    ShowErrorMessageBox("Cập nhật ảnh đại diện không thành công!");
+                }
+            }
         }
 
         // Redirect to other windows
@@ -114,6 +136,17 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.Hide();
             HomeWindow mainWindow = new HomeWindow(logedUser);
             mainWindow.Show();
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

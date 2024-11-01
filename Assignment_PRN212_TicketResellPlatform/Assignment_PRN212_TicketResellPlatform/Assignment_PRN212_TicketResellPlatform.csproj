@@ -9,6 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="LogoHeader-Photoroom.png" />
+    <None Remove="StaffWindows\Add a heading (1)-Photoroom.png" />
+    <None Remove="StaffWindows\child-1837375_1280.png" />
     <None Remove="UserWindows\1.jpg" />
     <None Remove="UserWindows\15.jpg" />
     <None Remove="UserWindows\6.jpg" />
@@ -18,17 +21,23 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Images\EventImages\" />
+    <Folder Include="Images\ProfileImages\" />
+    <Folder Include="Images\TicketImages\" />
+  </ItemGroup>
+
+
   <ItemGroup>
     <Resource Include="UserWindows\1.jpg" />
-    <Resource Include="UserWindows\15.jpg" />
-    <Resource Include="UserWindows\6.jpg" />
-    <Resource Include="UserWindows\Add a heading (1)-Photoroom.png" />
     <Resource Include="UserWindows\child-1837375_1280.png" />
   </ItemGroup>
 
@@ -36,12 +45,6 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Images\EventImages\" />
-    <Folder Include="Images\ProfileImages\" />
-    <Folder Include="Images\TicketImages\" />
   </ItemGroup>
 
 </Project>

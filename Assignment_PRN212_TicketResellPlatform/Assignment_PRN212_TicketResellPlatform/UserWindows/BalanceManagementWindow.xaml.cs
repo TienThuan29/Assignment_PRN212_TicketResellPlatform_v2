@@ -1,5 +1,6 @@
 ﻿using Service.TransactionService;
 using Service.User;
+using Service.Utils;
 using Service.Utils.TienThuan;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
+            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+            avatarImageBrush.ImageSource = new BitmapImage(uri);
+            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;

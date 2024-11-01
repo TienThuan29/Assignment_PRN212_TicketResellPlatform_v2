@@ -16,6 +16,15 @@ namespace Repository.Impl
             return TransactionDAO.Instance.FindByUserID(userId);    
         }
 
+        public List<Transaction> GetTransactions()
+        {
+            return TransactionDAO.Instance.GetTransactions();
+        }
+
+        public List<Transaction> GetTransactionsListOfType(string type)
+        {
+            return TransactionDAO.Instance.GetTransactionsListOfType(type);
+        }
 
         public bool Save(Transaction transaction)
         {

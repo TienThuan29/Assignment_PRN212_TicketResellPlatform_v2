@@ -20,38 +20,41 @@
 
         <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
             <Grid>
-                <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
+                <Button Background="#FFD8C5FA" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
                     <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
                 </Button>
                 <Image HorizontalAlignment="Left" Height="52" Margin="131,6,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="196,7,787,11"/>
 
-                <Border CornerRadius="30"  Margin="1090,6,57,6">
+                <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1067,7,0,0" Height="43" Width="47">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="781,12,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="1133,0,0,0" RenderTransformOrigin="0.5,0.5" Width="47">
+                    <materialDesign:PackIcon Kind="User" RenderTransformOrigin="0.5,0.5"  />
+                </Button>
             </Grid>
         </Border>
 
         <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10">
             <Grid>
-                <Border CornerRadius="90"  Margin="26,37,1024,493">
+                <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="90"  Margin="26,16,0,0" Height="156" Width="159">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush x:Name="avatarImageBrush" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
-                <Label FontSize="15" Content="Nguyễn Văn A" Margin="7,177,1005,456" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                <Label Foreground="Red" FontSize="10" Content="Số dư: 5.000.000đ" Margin="56,209,0,0" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="22"/>
-                <Button Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
-                <Button Content="Vé đã mua" Margin="17,322,1015,306" />
-                <Button Content="Cửa hàng của tôi" Margin="17,376,1015,252" />
-                <Button Content="Quản lý số dư" Margin="17,434,1015,194" />
-                <Button Content="Đổi mật khẩu" Margin="17,492,1015,136" />
+                <Label x:Name="fullnameLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Content="Fullname" Margin="33,182,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label x:Name="balanceLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Red" FontSize="10" Content="Số dư: " Margin="44,213,0,0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cửa hàng của tôi" Margin="17,376,1015,252" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý số dư" Margin="17,434,0,0" Width="138" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đổi mật khẩu" Margin="17,492,0,0" Width="138" />
 
-                <Label FontSize="30" Content="Thêm vé mới" Margin="400,24,506,588" />
-                <Button Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" >
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Thêm vé mới" Margin="400,24,506,588" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" >
                     <materialDesign:PackIcon
                         Kind="Arrow"
                         Height="24"
@@ -67,45 +70,77 @@
                     </materialDesign:PackIcon>
                 </Button>
 
-                <Label FontSize="16" Content="Tên vé" Margin="315,102,813,531"/>
-                <TextBox Margin="315,134,557,499"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,102,0,0" Width="120">
+                    <Run Text="Tên vé" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>
+                </TextBlock>
 
-                <Label FontSize="16" Content="Giá bán" Margin="315,195,813,438"/>
-                <TextBox Margin="315,227,557,406"/>
+                <TextBox x:Name="gTicketNameTextbox"  Margin="315,134,557,499"/>
 
-                <Label FontSize="16" Content="Giảm giá (%)" Margin="315,281,779,352"/>
-                <TextBox Margin="315,308,557,325"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,195,0,0" Width="142">
+                    <Run Text="Giá bán" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>    
+                </TextBlock>
 
-                <Label FontSize="16" Content="Khu vực ngồi" Margin="315,373,779,260"/>
-                <TextBox Margin="315,401,557,232"/>
+                <TextBox x:Name="gTicketPriceTextbox" Margin="315,227,557,406"/>
 
-                <Label FontSize="16" Content="Thời gian hết hạn" Margin="315,473,753,160"/>
-                <materialDesign:TimePicker Margin="315,500,557,133" />
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Giảm giá (%)" Margin="315,281,0,0" Width="182"/>
+                <TextBox x:Name="gTicketSalePercentTextbox" Margin="315,308,557,325"/>
 
-                <Label FontSize="16" Content="Link sự kiện" Margin="740,102,328,531"/>
-                <TextBox Margin="740,134,132,499"/>
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Khu vực ngồi" Margin="315,373,0,0" Width="175"/>
+                <TextBox x:Name="gTicketAreaTextbox" Margin="315,401,557,232"/>
 
-                <Label FontSize="16" Content="Thể loại vé" Margin="740,193,328,440"/>
-                <ComboBox Margin="740,229,132,0" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,473,0,0" Width="192">
+                    <Run Text="Thời gian hết hạn" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>
+                </TextBlock>
 
-                <Label FontSize="16" Content="Loại vé" Margin="740,281,328,352"/>
-                <ComboBox Margin="740,310,132,0" VerticalAlignment="Top"/>
+                <DatePicker x:Name="gTicketExpiredDateTime" Margin="315,500,557,133" />
+                
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Link sự kiện" Margin="740,102,0,0" Width="140"/>
+                <TextBox x:Name="gTicketLinkTextbox" Margin="740,134,132,499"/>
 
-                <Label FontSize="16" Content="Loại vé" Margin="740,373,328,260"/>
-                <ComboBox Margin="740,403,132,0" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="740,193,0,0" Width="149">
+                    <Run Text="Thể loại vé" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>
+                </TextBlock>
 
-                <Label FontSize="16" Content="Mô tả" Margin="740,473,328,160"/>
-                <TextBox Margin="740,500,132,133"/>
+                <ComboBox x:Name="categoriesComboBox" Margin="740,229,132,0" VerticalAlignment="Top"/>
+
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="740,281,0,0" Width="144">
+                    <Run Text="Loại vé" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>
+                </TextBlock>
+
+                <ComboBox x:Name="gTicketTypeComboBox" Margin="740,310,132,0" VerticalAlignment="Top" SelectedIndex="0">
+                    <ComboBoxItem Content="Online" Tag="0"/>
+                    <ComboBoxItem Content="Giấy" Tag="1"/>
+                </ComboBox>
 
 
-                <Button Content="Tạo vé" Margin="315,560,779,68" />
-                <Button Content="Cập nhật chỉnh sửa" Margin="456,560,557,68" />
-                <Button Content="Thêm vé chi tiết" Margin="920,560,132,68" Background="#FF3AA5B7" BorderBrush="{x:Null}" />
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="740,373,0,0" Width="137">
+                    <Run Text="Sự kiện" Foreground="Black"/>
+                    <Run Text="*" Foreground="Red"/>
+                </TextBlock>
+
+                <ComboBox x:Name="eventsComboBox" Margin="740,403,132,0" VerticalAlignment="Top"/>
+
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Mô tả" Margin="740,473,0,0" Width="133"/>
+                <TextBox x:Name="desTextbox" Margin="740,500,132,133"/>
+
+
+                <Button Click="CreateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Tạo vé" Margin="391,560,0,0" Background="#FF9DEC68" Foreground="#DD000000" BorderBrush="#FF9DEC68" />
+                <Button Click="UpdateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cập nhật chỉnh sửa" Margin="490,560,0,0" BorderBrush="#FFFFC805" Background="#FFFFC805" Foreground="#DD000000" />
+                
+                <Button Click="OpenAddSpecificTicketWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Thêm vé chi tiết" Margin="920,560,132,68" Background="#FF3AA5B7" BorderBrush="{x:Null}" />
 
 
 
                 <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                </Button>
+                <Button Click="RefreshFields" HorizontalAlignment="Left" Margin="315,560,0,0" VerticalAlignment="Top" Background="#FFED8D8D" Foreground="#DD000000" BorderBrush="#FFED8D8D">
+                    <materialDesign:PackIcon Kind="Refresh" />
                 </Button>
 
             </Grid>

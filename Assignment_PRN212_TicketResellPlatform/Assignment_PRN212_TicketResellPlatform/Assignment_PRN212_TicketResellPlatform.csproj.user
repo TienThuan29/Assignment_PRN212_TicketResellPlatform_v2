@@ -10,13 +10,31 @@
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffWindows\ManageHashtagWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffWindows\ManageSellingTicketRequestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindows\StaffDashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="StaffWindows\ViewUserInfoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserWindows\AddingSpecificTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\AddingTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\BalanceManagementWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserWindows\BuyTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\ChangePasswordWindow.xaml.cs">
@@ -63,13 +81,31 @@
     <Page Update="RegisterWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="StaffWindows\ManageEventWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\ManageHashtagWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\ManageSellingTicketRequestWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="StaffWindows\StaffDashboardWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\ViewUserInfoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\AddingSpecificTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\AddingTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\BalanceManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\BuyTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\ChangePasswordWindow.xaml">

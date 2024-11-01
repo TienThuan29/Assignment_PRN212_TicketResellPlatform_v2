@@ -1,10 +1,12 @@
 ﻿using BusinessObject;
 using Service.Ticket;
 using Service.TicketService;
+using Service.Utils;
 using Service.Utils.TienThuan;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -47,6 +49,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
+            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+            avatarImageBrush.ImageSource = new BitmapImage(uri);
+            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);
@@ -65,7 +70,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             ticketDataGrid.ItemsSource = tickets;
         }
 
-     
+
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -109,8 +114,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             this.Hide();
             UserProfileWindow userProfileWindow = new UserProfileWindow(logedUser);
-            userProfileWindow.Show();   
+            userProfileWindow.Show();
         }
+
 
         private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
@@ -118,37 +124,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             HomeWindow mainWindow = new HomeWindow(logedUser);
             mainWindow.Show();
         }
+
+
+
     }
-
-    // Window Resource Image Converter
-    public class ByteArrayToImageConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            try
-            {
-                if (value is byte[] byteArray && byteArray.Length > 0)
-                {
-                    using (var stream = new MemoryStream(byteArray))
-                    {
-                        var image = new BitmapImage();
-                        image.BeginInit();
-                        image.StreamSource = stream;
-                        image.CacheOption = BitmapCacheOption.OnLoad;
-                        image.EndInit();
-                        image.Freeze();
-                        return image;
-                    }
-                }
-            }
-            catch (Exception ex) { }
-            return null;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
 }

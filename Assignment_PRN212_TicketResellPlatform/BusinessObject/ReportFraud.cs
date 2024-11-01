@@ -8,7 +8,7 @@ namespace BusinessObject
         public long Id { get; set; }
         public string? Content { get; set; }
         public string? ReportProcess { get; set; }
-        public byte[]? Proof { get; set; }
+        public string? Proof { get; set; }
         public long ReportedUserId { get; set; }
         public long StaffId { get; set; }
         public long? AccuserId { get; set; }
