@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BusinessObject;
+using Service.User;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
 {
@@ -19,56 +10,68 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
     /// </summary>
     public partial class ViewUserInfoWindow : Window
     {
+        private readonly IUserService userService;
+        private Staff staff;
         public ViewUserInfoWindow()
         {
             InitializeComponent();
         }
 
-        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        public ViewUserInfoWindow(Staff staff)
         {
-
+            InitializeComponent();
+            this.staff = staff;
+            this.userService = new UserService();
         }
 
+        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        {
+            var users = userService.GetAllUsers();
+            foreach (var user in users)
+            {
+                if (!user.Avatar.Contains(LocalPathSetting.ProfileImagePath))
+                {
+                    user.Avatar = LocalPathSetting.ProfileImagePath+user.Avatar;
+                }
+            }  
+
+            UserGrid.ItemsSource= users;
+        }
+
+        //Side bar button
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
-            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
-            this.Hide();
+            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
             staffDashboardWindow.Show();
+            this.Close();
         }
 
         private void ManageEvent_Click(object sender, RoutedEventArgs e)
         {
-            ManageEventWindow manageEventWindow = new ManageEventWindow();
-            this.Hide();
+            ManageEventWindow manageEventWindow = new ManageEventWindow(staff);
             manageEventWindow.Show();
-        }
-
-        private void ManageHashtag_Click(object sender, RoutedEventArgs e)
-        {
-            ManageHashtagWindow manageHashtagWindow = new ManageHashtagWindow();
-            this.Hide();
-            manageHashtagWindow.Show();
+            this.Close();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)
         {
             ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow();
-            this.Hide();
             manageSellingTicketRequestWindow.Show();
+            this.Close();
         }
 
         private void ViewInfoUser_Click(object sender, RoutedEventArgs e)
         {
-            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow();
-            this.Hide();
+            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow(staff);
             viewUserInfoWindow.Show();
+            this.Close();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            this.Hide();
             mainWindow.Show();
+            this.Close();
         }
     }
 }

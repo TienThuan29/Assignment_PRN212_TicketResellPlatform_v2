@@ -69,6 +69,10 @@ namespace Service.User
             return userRepository.SaveProfile(user);
         }
 
+        public ICollection<BusinessObject.User> GetAllUsers()
+        {
+            return userRepository.GetAll();
+        }
     }
 }
 

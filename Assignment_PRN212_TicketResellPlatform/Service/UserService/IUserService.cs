@@ -17,5 +17,7 @@ namespace Service.User
         bool SaveNewPassword(long userId, string newPassword);
 
         bool SaveProfile(BusinessObject.User user);
+
+        ICollection<BusinessObject.User> GetAllUsers();
     }
 }

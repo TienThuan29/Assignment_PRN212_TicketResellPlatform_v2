@@ -16,5 +16,7 @@ namespace Repository.Def
         bool CreateEvent(Event Event);
 
         bool UpdateEvent(Event Event);
+
+        ICollection<Event> SearchEventsByName(string name);
     }
 }

@@ -69,5 +69,9 @@ namespace DataAccessObject
             return flag;    
         }
 
+        public ICollection<User> GetAllUsers()
+        {
+            return context.Users.ToList();
+        }
     }
 }

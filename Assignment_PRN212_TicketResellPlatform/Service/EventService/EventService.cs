@@ -32,6 +32,11 @@ namespace Service.EventService
             return eventRepository.GetEvent(id);
         }
 
+        public ICollection<Event> SearchEventsByName(string name)
+        {
+            return eventRepository.SearchEventsByName(name);
+        }
+
         public bool UpdateEvent(Event Event)
         {
             return eventRepository.UpdateEvent(Event);

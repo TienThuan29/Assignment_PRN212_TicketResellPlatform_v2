@@ -16,9 +16,6 @@
     <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="StaffWindows\ManageHashtagWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="StaffWindows\ManageSellingTicketRequestWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,9 +82,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageEventWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="StaffWindows\ManageHashtagWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageSellingTicketRequestWindow.xaml">
