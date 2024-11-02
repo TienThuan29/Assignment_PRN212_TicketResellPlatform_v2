@@ -44,5 +44,10 @@ namespace Service.TicketService
         {
             return tickeRepository.RejectTicketSelling(ticketId);
         }
+        public BusinessObject.Ticket GetTicketById(long ticketID) 
+        {
+            return tickeRepository.GetTicketById(ticketID);
+        }
+
     }
 }

@@ -73,7 +73,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                         Ticket ticket = new Ticket();
                         ticket.TicketSerial = ticketSerialTextbox.Text;
                         ticket.Image = filename;
-                        ticket.Process = GeneralProcess.SELLING;
+                        ticket.Process = GeneralProcess.WAITING;
                         ticket.GenericTicketId = addedGenericTicket.Id;
                         ticket.IsBought = false;
                         ticket.IsChecked = false;

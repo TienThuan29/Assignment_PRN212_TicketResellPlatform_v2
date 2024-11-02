@@ -15,10 +15,14 @@ namespace Service.TicketService
 
         public bool AddTicket(BusinessObject.Ticket ticket);
 
+
         ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID);
 
         bool AcceptTicketSelling(long ticketId);
 
         bool RejectTicketSelling(long ticketId);
+
+        public BusinessObject.Ticket GetTicketById(long ticketID);
+
     }
 }

@@ -22,5 +22,10 @@ namespace Service.TicketService
         {
             return categoryRepository.GetAllCategories();
         }
+
+        public Category GetCategoryById(int id)
+        {
+            return categoryRepository.GetCategoryById(id);
+        }
     }
 }

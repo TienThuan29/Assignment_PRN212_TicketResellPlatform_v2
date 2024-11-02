@@ -1,0 +1,48 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.UserWindows.ViewTicketDetailWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
+        mc:Ignorable="d"
+        Title="Ticket Resell Platform"  Height="900" Width="600"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Label x:Name="ticketNameLabel" FontSize="16" Content="Tên vé: " HorizontalAlignment="Left" Margin="42,50,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="categoriesNameLabel" FontSize="16" Content="Thể loại vé: " HorizontalAlignment="Left" Margin="42,100,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="priceLable" FontSize="16" Content="Giá vé: " HorizontalAlignment="Left" Margin="42,150,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="expiredDateLabel" FontSize="16" Content="Ngày hết hạn: " HorizontalAlignment="Left" Margin="42,200,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="areaLabel" FontSize="16" Content="Khu vực: " HorizontalAlignment="Left" Margin="42,250,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="ticketTypeLabel" FontSize="16" Content="Loại vé: " HorizontalAlignment="Left" Margin="42,300,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="descriptionTextBlock" FontSize="16" Text="Mô tả: " 
+                   TextWrapping="Wrap" HorizontalAlignment="Left" Margin="42,350,0,0" 
+                   VerticalAlignment="Top" Height="99" Width="511"
+         />
+
+        <Label x:Name="ticketSerialLabel" FontSize="16" Content="Mã vé: " HorizontalAlignment="Left" Margin="42,400,0,0" VerticalAlignment="Top"/>
+
+        <Label x:Name="processLabel" FontSize="16" Content="Mã vé: " HorizontalAlignment="Left" Margin="42,450,0,0" VerticalAlignment="Top"/>
+
+        <TextBlock x:Name="noteTextBlock" FontSize="16" Text="Ghi chú từ nhân viên: " TextWrapping="Wrap" HorizontalAlignment="Left" Margin="42,500,0,0" VerticalAlignment="Top" Height="109" Width="494"/>
+
+        <Label x:Name="tickImageLabel" FontSize="16" Content="Ảnh vé: " HorizontalAlignment="Left" Margin="47,614,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="ticketImage" HorizontalAlignment="Left" Height="160" Margin="151,614,0,0" VerticalAlignment="Top" Width="370"/>
+
+        <Button Content="Đóng" HorizontalAlignment="Left" Margin="50,802,0,0" VerticalAlignment="Top" Background="#FFF55050" BorderBrush="#FFEF3B3B"/>
+        <Button Content="Đánh giấu đã bán" HorizontalAlignment="Left" Margin="148,802,0,0" VerticalAlignment="Top" Background="#FF85FD5B" BorderBrush="#FFC0E0AE" Foreground="#DD000000"/>
+
+
+
+
+    </Grid>
+</Window>

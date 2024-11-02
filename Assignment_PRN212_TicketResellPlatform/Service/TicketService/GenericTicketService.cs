@@ -33,14 +33,19 @@ namespace Service.TicketService
             return genericTicketRepository.FindTicketByEventId(ticketEventId);
         }
 
-        public GenericTicket FindTicketById(long ticketId)
+        public GenericTicket FindGenericTicketById(long ticketId)
         {
-            return genericTicketRepository.FindTicketById(ticketId);
+            return genericTicketRepository.FindGenericTicketById(ticketId);
         }
 
         public ICollection<GenericTicket> GetRequestSellingGenericTickets()
         {
             return genericTicketRepository.GetRequestSellingGenericTickets();
+        }
+
+        public GenericTicket FindTicketById(long ticketId)
+        {
+            return genericTicketRepository.FindTicketById((int)ticketId);
         }
     }
 }

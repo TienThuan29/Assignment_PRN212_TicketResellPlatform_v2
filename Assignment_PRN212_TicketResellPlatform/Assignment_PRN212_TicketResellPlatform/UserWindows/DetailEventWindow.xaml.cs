@@ -87,7 +87,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             var ticketId = (long)((Button)sender).Tag;
 
-            var ticketD = genericTicketService.FindTicketById(ticketId);
+            var ticketD = genericTicketService.FindGenericTicketById(ticketId);
             this.Hide();
             BuyTicketWindow buyTicketWindow = new BuyTicketWindow(ticketD, LoggedUser);
             buyTicketWindow.Show();

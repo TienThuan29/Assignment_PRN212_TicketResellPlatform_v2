@@ -23,9 +23,6 @@ using System.Windows.Shapes;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
-    /// <summary>
-    /// Interaction logic for MyShopWindow.xaml
-    /// </summary>
     public partial class MyShopWindow : Window
     {
         private BusinessObject.User logedUser;
@@ -107,7 +104,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             string ticketId = button?.Tag?.ToString();
             if (!string.IsNullOrEmpty(ticketId))
             {
-                MessageBox.Show("Ticket Id: " + ticketId);
+                ViewTicketDetailWindow viewTicketDetailWindow = new  ViewTicketDetailWindow(long.Parse(ticketId));
+                viewTicketDetailWindow.Show();
             }
         }
 

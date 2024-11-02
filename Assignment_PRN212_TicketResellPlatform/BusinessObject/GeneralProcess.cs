@@ -15,5 +15,6 @@ namespace BusinessObject
         public static readonly string WAITING = "WAITING";
 
         public static readonly string REJECTED = "REJECTED";
+
     }
 }

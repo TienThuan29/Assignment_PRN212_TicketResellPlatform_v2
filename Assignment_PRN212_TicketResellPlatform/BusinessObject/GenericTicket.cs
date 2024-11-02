@@ -20,5 +20,7 @@ namespace BusinessObject
         public long? SellerId { get; set; }
 
         public virtual Category Category { get; set; }
+
+        public virtual Event Event { get; set; }
     }
 }

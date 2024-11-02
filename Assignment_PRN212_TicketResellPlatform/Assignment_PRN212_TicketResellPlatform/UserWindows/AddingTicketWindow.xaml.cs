@@ -102,9 +102,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     genericTicket.SellerId = logedUser.Id;
                     genericTicket.TicketName = gTicketNameTextbox.Text;
                     genericTicket.Price = int.Parse(gTicketPriceTextbox.Text);
-                    genericTicket.SalePercent = int.Parse(
+                    /*genericTicket.SalePercent = int.Parse(
                         gTicketSalePercentTextbox.Text.Trim().Equals("") ? "0" : gTicketSalePercentTextbox.Text
-                    );
+                    );*/
+                    genericTicket.SalePercent = 0;
                     genericTicket.Area = gTicketAreaTextbox.Text;
                     genericTicket.ExpiredDateTime = DateTime.Parse(gTicketExpiredDateTime.Text);
                     genericTicket.LinkEvent = gTicketLinkTextbox.Text;

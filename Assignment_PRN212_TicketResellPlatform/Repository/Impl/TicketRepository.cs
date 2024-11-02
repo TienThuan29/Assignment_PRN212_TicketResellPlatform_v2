@@ -35,5 +35,9 @@ namespace Repository.Impl
         {
             return TicketDAO.Instance.RejectTicketSelling(ticketId);
         }
+        public BusinessObject.Ticket GetTicketById(long ticketID)
+        {
+            return TicketDAO.Instance.GetTicketById(ticketID);
+        }
     }
 }

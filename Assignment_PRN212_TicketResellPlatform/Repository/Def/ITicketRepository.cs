@@ -18,5 +18,6 @@ namespace Repository.Def
         bool AcceptTicketSelling(long ticketId);
 
         bool RejectTicketSelling(long ticketId);
+        public BusinessObject.Ticket GetTicketById(long ticketID);
     }
 }

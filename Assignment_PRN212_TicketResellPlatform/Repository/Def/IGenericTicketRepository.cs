@@ -17,5 +17,7 @@ namespace Repository.Def
         public GenericTicket FindTicketById(long ticketId);
 
         ICollection<GenericTicket> GetRequestSellingGenericTickets();
+
+        public GenericTicket FindGenericTicketById(long ticketId);
     }
 }
