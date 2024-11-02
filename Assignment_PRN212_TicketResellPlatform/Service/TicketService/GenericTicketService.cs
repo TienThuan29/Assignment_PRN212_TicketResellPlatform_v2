@@ -37,5 +37,15 @@ namespace Service.TicketService
         {
             return genericTicketRepository.FindGenericTicketById(ticketId);
         }
+
+        public ICollection<GenericTicket> GetRequestSellingGenericTickets()
+        {
+            return genericTicketRepository.GetRequestSellingGenericTickets();
+        }
+
+        public GenericTicket FindTicketById(long ticketId)
+        {
+            return genericTicketRepository.FindTicketById((int)ticketId);
+        }
     }
 }

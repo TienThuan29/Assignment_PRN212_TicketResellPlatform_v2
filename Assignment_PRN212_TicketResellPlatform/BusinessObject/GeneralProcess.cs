@@ -10,6 +10,11 @@ namespace BusinessObject
     {
         public static readonly string SELLING = "SELLING";
 
+        public static readonly string SUCCESS = "SUCCESS";
+
         public static readonly string WAITING = "WAITING";
+
+        public static readonly string REJECTED = "REJECTED";
+
     }
 }

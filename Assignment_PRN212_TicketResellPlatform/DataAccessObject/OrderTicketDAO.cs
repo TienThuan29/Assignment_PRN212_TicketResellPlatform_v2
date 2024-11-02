@@ -67,6 +67,7 @@ namespace DataAccessObject
                 if(CreateOrderTicket(quantity, user.Id, GenericTicketId, genericTicket.Price))
                 {
                     user.Balance = user.Balance - genericTicket.Price * quantity;
+                    UserDAO.Instance.SaveProfile(user);
                     context.SaveChanges();
                     isSuccess = true;
                 }

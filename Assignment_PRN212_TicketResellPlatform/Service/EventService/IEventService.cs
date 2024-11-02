@@ -16,5 +16,7 @@ namespace Service.EventService
         bool CreateEvent(Event Event);
 
         bool UpdateEvent(Event Event);
+
+        ICollection<Event> SearchEventsByName(string name);
     }
 }

@@ -48,7 +48,6 @@
                 </Grid.RowDefinitions>
                 <Button x:Name="btnStaffInfo" Content="Thông tin tài khoản" Grid.Row="0" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="StaffInfo_Click"/>
                 <Button x:Name="btnManageEvent" Content="Quản lý sự kiện" Grid.Row="1" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageEvent_Click"/>
-                <Button x:Name="btnMangeHashtag" Content="Quản lý hashtags" Grid.Row="2" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageHashtag_Click"/>
                 <Button x:Name="btnManageSellingRequest" Content="Quản lý yêu cầu bán vé" Grid.Row="3" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageSellingRequest_Click"/>
                 <Button x:Name="btnViewUserInfo" Content="Xem Thông Tin Người Dùng" Grid.Row="4" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ViewInfoUser_Click"/>
                 <Button x:Name="btnLogout" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,10,0,0" Click="Logout_Click">

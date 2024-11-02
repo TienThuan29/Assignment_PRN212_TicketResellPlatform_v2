@@ -16,5 +16,7 @@ namespace Repository.Def
         bool SaveNewPassword(long userId, string newPassword);
 
         bool SaveProfile(User user);
+
+        ICollection<User> GetAll();
     }
 }

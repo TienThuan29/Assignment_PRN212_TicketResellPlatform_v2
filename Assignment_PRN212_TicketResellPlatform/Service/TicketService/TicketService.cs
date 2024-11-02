@@ -1,7 +1,6 @@
 ﻿using BusinessObject;
 using Repository.Def;
 using Repository.Impl;
-using Service.Ticket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +30,20 @@ namespace Service.TicketService
             return tickeRepository.AddTicket(ticket);   
         }
 
+        public ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID)
+        {
+            return tickeRepository.FindByRequestSellingGenericTicket(genericTicketID);
+        }
+
+        public bool AcceptTicketSelling(long ticketId)
+        {
+            return tickeRepository.AcceptTicketSelling(ticketId);
+        }
+
+        public bool RejectTicketSelling(long ticketId)
+        {
+            return tickeRepository.RejectTicketSelling(ticketId);
+        }
         public BusinessObject.Ticket GetTicketById(long ticketID) 
         {
             return tickeRepository.GetTicketById(ticketID);
@@ -40,5 +53,12 @@ namespace Service.TicketService
         {
             return tickeRepository.FindSellingTicket(genericTicketID);
         }
+
+        public bool MarkBought(long ticketId)
+        {
+            return tickeRepository.MarkBought(ticketId);
+        }
+
+
     }
 }

@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform"
         mc:Ignorable="d"
         Title="Ticket Resell Platform" Height="720" Width="1200"
-        WindowStartupLocation="CenterScreen" Background="#FFF6E9F7">
+        WindowStartupLocation="CenterScreen" Background="#FFF6E9F7" Icon="/LogoTab-Photoroom.png">
 
     <Border Background="#FFFCF7FD" CornerRadius="20" Margin="40">
         <Border.Effect>

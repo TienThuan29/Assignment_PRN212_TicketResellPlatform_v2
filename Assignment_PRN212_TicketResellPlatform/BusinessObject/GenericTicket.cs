@@ -18,5 +18,9 @@ namespace BusinessObject
         public int? EventId { get; set; }
         public int? PolicyId { get; set; }
         public long? SellerId { get; set; }
+
+        public virtual Category Category { get; set; }
+
+        public virtual Event Event { get; set; }
     }
 }

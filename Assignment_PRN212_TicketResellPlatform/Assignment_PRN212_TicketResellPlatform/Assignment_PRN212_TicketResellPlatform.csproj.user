@@ -13,10 +13,10 @@
     <Compile Update="StaffWindows\EventDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
+    <Compile Update="StaffWindows\GenericTicketDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="StaffWindows\ManageHashtagWindow.xaml.cs">
+    <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="StaffWindows\ManageSellingTicketRequestWindow.xaml.cs">
@@ -90,10 +90,10 @@
     <Page Update="StaffWindows\EventDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="StaffWindows\ManageEventWindow.xaml">
+    <Page Update="StaffWindows\GenericTicketDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="StaffWindows\ManageHashtagWindow.xaml">
+    <Page Update="StaffWindows\ManageEventWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageSellingTicketRequestWindow.xaml">
