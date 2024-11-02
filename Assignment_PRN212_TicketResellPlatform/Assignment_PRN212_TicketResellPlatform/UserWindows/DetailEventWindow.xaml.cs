@@ -1,5 +1,11 @@
+
+﻿using BusinessObject;
+using Service.EventService;
+
+
 ﻿using Service.EventService;
 using Service.TicketService;
+
 using Service.TicketService;
 using Service.Utils;
 using System;
@@ -59,20 +65,26 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             EventDetailBox.DataContext = Event;
 
             //Init Ticket On sell
-            var tickets = genericTicketService.FindTicketByEventId(Event.Id);
+            var tickets = genericTicketService.FindGenericTicketByEventId(Event.Id);
+            var genericTicket = new List<GenericTicket>();
+            foreach (var ticket in tickets) 
+            {
+                if (!ticket.SellerId.Equals(LoggedUser.Id)) 
+                {
+                    genericTicket.Add(ticket);
+                }
+            }
             if (tickets == null || !tickets.Any())
             {
                 MessageBox.Show("No tickets found for this event.");
             }
-            TicketGridData.ItemsSource = tickets;
+            TicketGridData.ItemsSource = genericTicket;
 
             //Uri uri = new Uri(LocalPathSetting.EventImagePath+Event.Image, UriKind.Absolute);
             //txtImageEvent.Source = new BitmapImage(uri);
 
             //Uri uri = new Uri(System.IO.Path.Combine(LocalPathSetting.EventImagePath, Event.Image), UriKind.Absolute);
             //txtImageEvent.Source = new BitmapImage(uri);
-
-
 
         }
 
@@ -85,11 +97,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void ShowBuyTicketWindow(object sender, RoutedEventArgs e)
         {
-            var ticketId = (long)((Button)sender).Tag;
+            var genericTicketId = (long)((Button)sender).Tag;
 
-            var ticketD = genericTicketService.FindGenericTicketById(ticketId);
+            var genericTicket = genericTicketService.FindGenericTicketById(genericTicketId);
+
             this.Hide();
-            BuyTicketWindow buyTicketWindow = new BuyTicketWindow(ticketD, LoggedUser);
+            BuyTicketWindow buyTicketWindow = new BuyTicketWindow(genericTicket, LoggedUser);
             buyTicketWindow.Show();
         }
     }

@@ -11,7 +11,7 @@ namespace Repository.Def
     {
         ICollection<GenericTicket> FindBySellerId(long sellerId);
 
-        public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId);
+        public ICollection<GenericTicket> FindGenericTicketByEventId(long ticketEventId);
         public bool AddGenericTicket(GenericTicket ticket);
 
         public GenericTicket FindTicketById(long ticketId);

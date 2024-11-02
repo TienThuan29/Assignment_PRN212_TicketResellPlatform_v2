@@ -37,9 +37,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
-            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
-            avatarImageBrush.ImageSource = new BitmapImage(uri);
-            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            if (!string.IsNullOrEmpty(logedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+                avatarImageBrush.ImageSource = new BitmapImage(uri);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
@@ -94,5 +97,18 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             mainWindow.Show();
         }
 
+        private void ToManageBalanceWindow(object sender, RoutedEventArgs e)
+        {
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
+            this.Hide();
+            balanceManagementWindow.Show();
+        }
+
+        private void ToMyShopWindow(object sender, RoutedEventArgs e)
+        {
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
+            this.Hide();
+            myShopWindow.Show();    
+        }
     }
 }

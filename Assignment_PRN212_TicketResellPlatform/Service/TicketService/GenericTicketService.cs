@@ -32,9 +32,9 @@ namespace Service.TicketService
             return genericTicketRepository.AddGenericTicket(genericTicket);
         }
 
-        public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId)
+        public ICollection<GenericTicket> FindGenericTicketByEventId(long ticketEventId)
         {
-            return genericTicketRepository.FindTicketByEventId(ticketEventId);
+            return genericTicketRepository.FindGenericTicketByEventId(ticketEventId);
         }
 
         public GenericTicket FindGenericTicketById(long ticketId)
