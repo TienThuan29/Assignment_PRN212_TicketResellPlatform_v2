@@ -8,41 +8,54 @@
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform"
         mc:Ignorable="d"
         Title="Ticket Resell Platform" Height="720" Width="1200"
-        WindowStartupLocation="CenterScreen"
-        >
-    <Grid Background="#FFFDEEFF">
+        WindowStartupLocation="CenterScreen" Background="#FFF6E9F7">
 
-        <Label Foreground="#623ED0" FontSize="50" Content="Đăng ký" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold"/>
+    <Border Background="#FFFCF7FD" CornerRadius="20" Margin="40">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="5" Opacity="0.3" />
+        </Border.Effect>
 
-        <Label FontSize="18" Content="Tên đăng nhập" Margin="300,112,681,527" RenderTransformOrigin="0.515,-0.257" />
-        <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Center" Height="40" Width="600" Margin="0,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Grid>
 
-        <Label FontSize="18" Content="Họ" Margin="300,209,681,430" />
-        <TextBox x:Name="firstnameTextbox" FontSize="20" HorizontalAlignment="Left" Height="40" Width="265" Margin="300,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Image HorizontalAlignment="Left" Height="277" Margin="38,191,0,0" VerticalAlignment="Top" Width="439" Source="/LogoHeader-Photoroom.png"  />
 
-        <Label FontSize="18" Content="Tên" Margin="635,209,346,433" />
-        <TextBox x:Name="lastnameTextbox" FontSize="20" HorizontalAlignment="Left" Height="40" Width="265" TextWrapping="Wrap" VerticalAlignment="Top" Margin="635,242,0,0"/>
+            <!-- Header Label -->
+            <Label Foreground="#623ED0" FontSize="36" Content="Đăng ký" HorizontalAlignment="Left" Margin="679,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
-        <Label FontSize="18" Content="Email" Margin="300,306,681,339" />
-        <TextBox x:Name="emailTextbox" FontSize="20" HorizontalAlignment="Center" Height="40" Width="600" Margin="0,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <!-- Username -->
+            <Label FontSize="18" Content="Tên đăng nhập" Margin="527,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="534,101,0,0" VerticalAlignment="Top"/>
 
-        <Label FontSize="18" Content="Mật khẩu" Margin="300,401,681,243" />
-        <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Center" Height="40" Width="600" Margin="0,437,0,0"  VerticalAlignment="Top"/>
+            <!-- First Name -->
+            <Label FontSize="18" Content="Họ" Margin="530,176,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="firstnameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="200" Margin="535,197,0,0" VerticalAlignment="Top"/>
 
-        <Label FontSize="18" Content="Nhập lại mật khẩu" Margin="300,503,681,141" />
-        <PasswordBox x:Name="repeatPasswordBox" FontSize="20" HorizontalAlignment="Center" Height="40" Width="600" Margin="0,550,0,0"  VerticalAlignment="Top"/>
+            <!-- Last Name -->
+            <Label FontSize="18" Content="Tên" Margin="760,176,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="lastnameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="200" Margin="760,197,0,0" VerticalAlignment="Top"/>
 
-        <Button Click="RegisterUserAccount" Content="Tạo tài khoản" HorizontalAlignment="Left" Margin="667,634,0,0" VerticalAlignment="Top" Width="155"/>
+            <!-- Email -->
+            <Label FontSize="18" Content="Email" Margin="534,272,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="emailTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="535,295,0,0" VerticalAlignment="Top"/>
 
+            <!-- Password -->
+            <Label FontSize="18" Content="Mật khẩu" Margin="534,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="535,388,0,0" VerticalAlignment="Top"/>
 
-        <Button HorizontalAlignment="Left" Margin="10,645,0,0" VerticalAlignment="Top">
-            <materialDesign:PackIcon
-                Kind="ExitRun"
-                Height="24"
-                Width="24" />
-        </Button>
-        <Button Click="ToLoginPage" Content="Trở về đăng nhập" HorizontalAlignment="Left" Margin="379,634,0,0" VerticalAlignment="Top"/>
+            <!-- Repeat Password -->
+            <Label FontSize="18" Content="Nhập lại mật khẩu" Margin="535,458,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <PasswordBox x:Name="repeatPasswordBox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="535,480,0,0" VerticalAlignment="Top"/>
 
+            <!-- Register Button -->
+            <Button Click="RegisterUserAccount" Content="Tạo tài khoản" HorizontalAlignment="Left" Margin="534,550,0,0" VerticalAlignment="Top" Width="158"/>
 
-    </Grid>
+            <!-- Back to Login Button -->
+            <Button Click="ToLoginPage" Content="Trở về đăng nhập" HorizontalAlignment="Left" Margin="803,550,0,0" VerticalAlignment="Top" Width="158"/>
+
+            <!-- Exit Button with Icon -->
+            <Button HorizontalAlignment="Left" Margin="10,645,0,0" VerticalAlignment="Top">
+                <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24"/>
+            </Button>
+        </Grid>
+    </Border>
 </Window>
