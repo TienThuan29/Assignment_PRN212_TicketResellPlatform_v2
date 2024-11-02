@@ -16,5 +16,7 @@ namespace Service.TicketService
         public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId);
 
         public GenericTicket FindTicketById(long ticketId);
+
+        ICollection<GenericTicket> GetRequestSellingGenericTickets();
     }
 }

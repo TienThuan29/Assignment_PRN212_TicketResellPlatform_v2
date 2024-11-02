@@ -90,7 +90,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             {
                 if(!CreateEvent()) return;
                 manageEventWindow.LoadData();
-                ShowInfoMessageBox("Thểm Sự Kiện Thành Công");
+                ShowInfoMessageBox("Thêm Sự Kiện Thành Công");
                 this.Close();
             }else if (action == ACTION.UPDATE)
             {
@@ -185,11 +185,10 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
                     FileInfo fileInfo = new FileInfo(fullFilename);
                     string filename = System.IO.Path.GetFileName(fullFilename);
                     fileInfo.CopyTo(LocalPathSetting.EventImagePath + filename);
-                    //ShowInfoMessageBox("Cập nhật ảnh đại diện thành công!");
                 }
                 catch (Exception ex)
                 {
-                    //ShowErrorMessageBox("Cập nhật ảnh đại diện không thành công!");
+                    ShowErrorMessageBox(ex.Message);
                 }
             }
         }

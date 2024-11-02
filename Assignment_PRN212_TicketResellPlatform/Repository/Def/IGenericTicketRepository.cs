@@ -15,5 +15,7 @@ namespace Repository.Def
         public bool AddGenericTicket(GenericTicket ticket);
 
         public GenericTicket FindTicketById(long ticketId);
+
+        ICollection<GenericTicket> GetRequestSellingGenericTickets();
     }
 }

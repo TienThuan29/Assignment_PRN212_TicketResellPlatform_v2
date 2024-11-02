@@ -85,7 +85,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     avatarImageBrush.ImageSource = new BitmapImage(new Uri(fullFilename, UriKind.Absolute));
                     FileInfo fileInfo = new FileInfo(fullFilename);
                     string filename = System.IO.Path.GetFileName(fullFilename);
-                    fileInfo.CopyTo(LocalPathSetting.ProfileImagePath + filename);
+                    
+                    if (!File.Exists(LocalPathSetting.ProfileImagePath + filename))
+                    {
+                        fileInfo.CopyTo(LocalPathSetting.ProfileImagePath + filename);
+                    }
                     // Save db
                     this.logedUser.Avatar = filename;
                     userService.SaveProfile(this.logedUser);

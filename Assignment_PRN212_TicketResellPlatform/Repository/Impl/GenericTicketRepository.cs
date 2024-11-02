@@ -30,5 +30,10 @@ namespace Repository.Impl
         {
             return GenericTicketDAO.Instance.FindTicketById(ticketId);
         }
+
+        public ICollection<GenericTicket> GetRequestSellingGenericTickets()
+        {
+            return GenericTicketDAO.Instance.GetRequestSellingGenericTickets();
+        }
     }
 }

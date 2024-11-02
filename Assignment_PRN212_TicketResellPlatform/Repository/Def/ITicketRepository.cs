@@ -12,5 +12,11 @@ namespace Repository.Def
         ICollection<Ticket> FindByGenericTicketID(long genericTicketID);
 
         public bool AddTicket(BusinessObject.Ticket ticket);
+
+        ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID);
+
+        bool AcceptTicketSelling(long ticketId);
+
+        bool RejectTicketSelling(long ticketId);
     }
 }

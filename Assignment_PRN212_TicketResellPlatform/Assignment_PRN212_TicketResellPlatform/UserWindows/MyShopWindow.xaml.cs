@@ -1,5 +1,5 @@
 ﻿using BusinessObject;
-using Service.Ticket;
+using Service.TicketService;
 using Service.TicketService;
 using Service.Utils;
 using Service.Utils.TienThuan;
