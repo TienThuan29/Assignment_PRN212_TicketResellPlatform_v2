@@ -35,6 +35,10 @@
 
 
   <ItemGroup>
+
+    <Resource Include="UserWindows\1.jpg" />
+    <Resource Include="UserWindows\child-1837375_1280.png" />
+
     <Content Include="UserWindows\LogoTab-Photoroom.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -48,6 +52,7 @@
     <Resource Include="UserWindows\child-1837375_1280.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+
   </ItemGroup>
 
   <ItemGroup>

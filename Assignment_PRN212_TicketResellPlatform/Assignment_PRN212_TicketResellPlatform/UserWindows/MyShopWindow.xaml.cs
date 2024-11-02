@@ -101,6 +101,16 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             }
         }
 
+        private void ViewDetailTicket(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string ticketId = button?.Tag?.ToString();
+            if (!string.IsNullOrEmpty(ticketId))
+            {
+                MessageBox.Show("Ticket Id: " + ticketId);
+            }
+        }
+
 
         // Rediect to other window
         private void ToAddingTicketWindow(object sender, RoutedEventArgs e)
