@@ -1,5 +1,6 @@
 ﻿using DataAccessObject;
 using Service.EventService;
+using Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,24 +25,37 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private BusinessObject.User logedUser;
         public HomeWindow()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
 
-        public HomeWindow(BusinessObject.User LogedUser)
+        public HomeWindow(BusinessObject.User user)
         {
             InitializeComponent();
-            this.logedUser = LogedUser;
+            this.logedUser = user;
             this.InitOndataWindow();
         }
         public void InitOndataWindow()
         {
             //init lable
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
-        }
+            //init event
 
+            var events = eventService.GetAllEvents();
+            foreach (var eventItem in events)
+            {    if(!eventItem.Image.Contains(LocalPathSetting.EventImagePath))
+                {
+                   eventItem.Image = LocalPathSetting.EventImagePath + eventItem.Image;
+                }        
+                
+            }
+
+            mainEventList.ItemsSource = events;
+        }
+            
         public void OnWindowLoad(object sender, RoutedEventArgs e)
         {
             mainEventList.ItemsSource = eventService.GetAllEvents();
+
         }
 
         private void ShowUserProfileWindow(object sender, RoutedEventArgs e)
@@ -57,9 +71,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
             var eventD = eventService.GetEvent(eventId);
 
-            this.Hide();
+            
             DetailEventWindow detailEventWindow = new DetailEventWindow(eventD, logedUser);
             detailEventWindow.Show();
+            this.Close();
         }
 
     }
