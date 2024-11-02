@@ -10,6 +10,9 @@
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffWindows\EventDetailWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -79,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RegisterWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\EventDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageEventWindow.xaml">

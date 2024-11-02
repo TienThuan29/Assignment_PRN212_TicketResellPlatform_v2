@@ -7,7 +7,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="ViewUserInfoWindow" Height="720" Width="1200">
+        Title="ViewUserInfoWindow" Height="720" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Loaded="OnWindowLoad">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -57,9 +60,10 @@
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
-             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                    <TextBox Width="250" Height="30" VerticalAlignment="Center"/>
+                    <Button Content="Tìm kiếm" Width="120" Height="30">
+                        
+                    </Button>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
@@ -96,8 +100,6 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

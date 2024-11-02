@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,24 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
     /// </summary>
     public partial class StaffDashboardWindow : Window
     {
+        private readonly Staff staff;
         public StaffDashboardWindow()
         {
             InitializeComponent();
+        }
+
+        public StaffDashboardWindow(Staff staff)
+        {
+            InitializeComponent();
+            this.staff = staff;
+        }
+
+        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        {
+            firstnameTextBox.Text = staff.Firstname;
+            lastnameTextBox.Text = staff.Lastname;
+            emailTextBox.Text = staff.Email;
+            phoneTextBox.Text = staff.Phone;
         }
 
         private void StaffInfo_Click(object sender, RoutedEventArgs e)

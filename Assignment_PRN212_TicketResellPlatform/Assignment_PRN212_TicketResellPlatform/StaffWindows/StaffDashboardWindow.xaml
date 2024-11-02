@@ -7,7 +7,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="StaffDashboardWindow" Height="720" Width="1200" >
+        Title="StaffDashboardWindow" Height="720" Width="1200" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Loaded="OnWindowLoad">  
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -58,18 +61,16 @@
 
                 <StackPanel Margin="60,100,60,60">
                     <Label FontSize="20" Content="Họ*" />
-                    <TextBox x:Name="firstnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsEnabled="False" x:Name="firstnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="Tên*" />
-                    <TextBox x:Name="lastnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsEnabled="False" x:Name="lastnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="Email*" />
-                    <TextBox x:Name="emailTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsEnabled="False" x:Name="emailTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="SĐT" />
-                    <TextBox x:Name="phoneTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
-
-                    <Button Content="Lưu" Margin="0,20" Width="100" HorizontalAlignment="Center"/>
+                    <TextBox IsEnabled="False" x:Name="phoneTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
                 </StackPanel>
             </Grid>
         </Grid>

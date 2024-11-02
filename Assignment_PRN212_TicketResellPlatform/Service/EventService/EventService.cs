@@ -17,6 +17,11 @@ namespace Service.EventService
             eventRepository = new EventRepository();
         }
 
+        public bool CreateEvent(Event Event)
+        {
+            return eventRepository.CreateEvent(Event);
+        }
+
         public ICollection<Event> GetAllEvents()
         {
             return eventRepository.GetAllEvents();
@@ -25,6 +30,11 @@ namespace Service.EventService
         public Event GetEvent(int id)
         {
             return eventRepository.GetEvent(id);
+        }
+
+        public bool UpdateEvent(Event Event)
+        {
+            return eventRepository.UpdateEvent(Event);
         }
     }
 }
