@@ -184,7 +184,11 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
                     imgEventImage.Source = new BitmapImage(new Uri(fullFilename, UriKind.Absolute));
                     FileInfo fileInfo = new FileInfo(fullFilename);
                     string filename = System.IO.Path.GetFileName(fullFilename);
-                    fileInfo.CopyTo(LocalPathSetting.EventImagePath + filename);
+                    if(!File.Exists(LocalPathSetting.EventImagePath + filename))
+                    {
+                        fileInfo.CopyTo(LocalPathSetting.EventImagePath + filename);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {

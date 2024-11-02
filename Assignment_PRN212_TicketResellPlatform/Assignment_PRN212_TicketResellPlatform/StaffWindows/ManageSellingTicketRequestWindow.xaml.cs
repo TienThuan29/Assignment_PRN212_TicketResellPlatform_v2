@@ -44,28 +44,28 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
 
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
-            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
+            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
             this.Hide();
             staffDashboardWindow.Show();
         }
 
         private void ManageEvent_Click(object sender, RoutedEventArgs e)
         {
-            ManageEventWindow manageEventWindow = new ManageEventWindow();
+            ManageEventWindow manageEventWindow = new ManageEventWindow(staff);
             this.Hide();
             manageEventWindow.Show();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)
         {
-            ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow();
+            ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow(staff);
             this.Hide();
             manageSellingTicketRequestWindow.Show();
         }
 
         private void ViewInfoUser_Click(object sender, RoutedEventArgs e)
         {
-            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow();
+            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow(staff);
             this.Hide();
             viewUserInfoWindow.Show();
         }
