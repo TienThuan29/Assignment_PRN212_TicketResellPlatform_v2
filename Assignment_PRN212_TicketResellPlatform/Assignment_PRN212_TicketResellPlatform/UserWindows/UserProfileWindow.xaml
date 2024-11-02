@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform"  Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Icon="/UserWindows/LogoTab-Photoroom.png"
         >
     <Grid>
 

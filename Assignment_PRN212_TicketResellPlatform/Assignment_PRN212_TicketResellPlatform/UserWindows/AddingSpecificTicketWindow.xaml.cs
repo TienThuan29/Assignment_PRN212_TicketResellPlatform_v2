@@ -67,8 +67,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     if (!ticketSerialIsAdded) 
                     {
                         FileInfo fileInfo = new FileInfo(currentFullFilePath);
-                        string filename = System.IO.Path.GetFileName(currentFullFilePath) + RandomUtil.RandomString(7);
-                        fileInfo.CopyTo(LocalPathSetting.TicketImagePath + filename);
+                        string filename = System.IO.Path.GetFileName(currentFullFilePath);
+                        if (!File.Exists(currentFullFilePath))
+                        {
+                            fileInfo.CopyTo(LocalPathSetting.TicketImagePath + filename);
+                        }
 
                         Ticket ticket = new Ticket();
                         ticket.TicketSerial = ticketSerialTextbox.Text;

@@ -14,5 +14,7 @@ namespace Repository.Def
         public bool AddTicket(BusinessObject.Ticket ticket);
 
         public BusinessObject.Ticket GetTicketById(long ticketID);
+
+        public bool MarkBought(long ticketId);
     }
 }

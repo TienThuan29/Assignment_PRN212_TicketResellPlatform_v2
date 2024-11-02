@@ -25,5 +25,10 @@ namespace Repository.Impl
         {
             return TicketDAO.Instance.GetTicketById(ticketID);
         }
+
+        public bool MarkBought(long ticketId)
+        {
+            return TicketDAO.Instance.MarkBought(ticketId);
+        }
     }
 }

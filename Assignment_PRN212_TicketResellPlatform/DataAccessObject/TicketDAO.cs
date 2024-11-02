@@ -48,5 +48,25 @@ namespace DataAccessObject
         {
             return context.Tickets.SingleOrDefault(ticket => ticket.Id.Equals(ticketID));
         }
+
+        public bool MarkBought(long ticketId)
+        {
+            bool flag = true;
+            try
+            {
+                Ticket ticket = GetTicketById(ticketId);
+                if (ticket != null)
+                {
+                    ticket.IsBought = true;
+                    ticket.Process = GeneralProcess.SUCCESS;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+            }
+            return flag;
+        }
     }
 }

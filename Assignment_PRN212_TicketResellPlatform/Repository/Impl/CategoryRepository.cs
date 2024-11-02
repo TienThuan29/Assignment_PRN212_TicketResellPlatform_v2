@@ -18,7 +18,7 @@ namespace Repository.Impl
 
         public Category GetCategoryById(int id)
         {
-            return CategoryDAO.Instance.GetCategoryById(id);s
+            return CategoryDAO.Instance.GetCategoryById(id);
         }
     }
 }

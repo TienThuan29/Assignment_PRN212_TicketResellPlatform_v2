@@ -36,5 +36,10 @@ namespace Service.TicketService
             return tickeRepository.GetTicketById(ticketID);
         }
 
+        public bool MarkBought(long ticketId)
+        {
+            return tickeRepository.MarkBought(ticketId);
+        }
+
     }
 }
