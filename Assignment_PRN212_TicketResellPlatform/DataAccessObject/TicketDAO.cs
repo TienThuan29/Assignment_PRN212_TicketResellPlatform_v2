@@ -43,5 +43,10 @@ namespace DataAccessObject
             }
             return flag;
         }
+
+        public Ticket GetTicketById(long ticketID) 
+        {
+            return context.Tickets.SingleOrDefault(ticket => ticket.Id.Equals(ticketID));
+        }
     }
 }

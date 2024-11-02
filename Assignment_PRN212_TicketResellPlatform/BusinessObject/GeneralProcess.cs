@@ -9,5 +9,7 @@ namespace BusinessObject
     public class GeneralProcess
     {
         public static readonly string SELLING = "SELLING";
+
+        public static readonly string WAITING = "WAITING";
     }
 }

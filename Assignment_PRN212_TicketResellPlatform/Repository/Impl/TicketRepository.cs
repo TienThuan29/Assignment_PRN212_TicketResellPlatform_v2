@@ -20,5 +20,10 @@ namespace Repository.Impl
         {
             return TicketDAO.Instance.AddTicket(ticket);    
         }
+
+        public BusinessObject.Ticket GetTicketById(long ticketID)
+        {
+            return TicketDAO.Instance.GetTicketById(ticketID);
+        }
     }
 }

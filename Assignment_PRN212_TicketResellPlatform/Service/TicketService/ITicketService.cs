@@ -12,5 +12,7 @@ namespace Service.Ticket
         ICollection<BusinessObject.Ticket> FindByGenericTicketID(long genericTicketID);
 
         public bool AddTicket(BusinessObject.Ticket ticket);
+
+        public BusinessObject.Ticket GetTicketById(long ticketID);
     }
 }

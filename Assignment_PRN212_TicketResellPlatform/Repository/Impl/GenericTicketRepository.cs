@@ -26,9 +26,9 @@ namespace Repository.Impl
             return GenericTicketDAO.Instance.FindTicketByEventId(ticketEventId);
         }
 
-        public GenericTicket FindTicketById(long ticketId)
+        public GenericTicket FindGenericTicketById(long ticketId)
         {
-            return GenericTicketDAO.Instance.FindTicketById(ticketId);
+            return GenericTicketDAO.Instance.FindGenericTicketById(ticketId);
         }
     }
 }

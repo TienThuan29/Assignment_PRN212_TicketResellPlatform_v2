@@ -1,4 +1,5 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using Repository.Def;
 using Repository.Impl;
 using Service.Ticket;
 using System;
@@ -28,6 +29,11 @@ namespace Service.TicketService
         public bool AddTicket(BusinessObject.Ticket ticket) 
         {
             return tickeRepository.AddTicket(ticket);   
+        }
+
+        public BusinessObject.Ticket GetTicketById(long ticketID) 
+        {
+            return tickeRepository.GetTicketById(ticketID);
         }
 
     }

@@ -36,10 +36,11 @@ namespace DataAccessObject
             return this.context.GenericTickets.Where(a => a.EventId.Equals((int)ticketEventId)).ToList();
         }
 
-        public GenericTicket FindTicketById(long ticketId) 
+        public GenericTicket FindGenericTicketById(long ticketId) 
         {
             return this.context.GenericTickets.SingleOrDefault(a => a.Id.Equals(ticketId));
         }
+
         public bool AddGenericTicket(GenericTicket genericTicket)
         {
             bool flag = true;

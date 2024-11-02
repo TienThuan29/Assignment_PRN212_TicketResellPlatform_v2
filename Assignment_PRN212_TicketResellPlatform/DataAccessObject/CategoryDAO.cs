@@ -27,5 +27,10 @@ namespace DataAccessObject
         {
             return context.Categories.ToList();
         }
+
+        public Category GetCategoryById(int id)
+        {
+            return context.Categories.SingleOrDefault(cate => cate.Id.Equals(id));
+        }
     }
 }
