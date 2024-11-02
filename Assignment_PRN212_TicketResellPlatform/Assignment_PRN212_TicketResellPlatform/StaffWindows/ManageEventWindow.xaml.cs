@@ -53,43 +53,36 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
             StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
-            this.Close();
             staffDashboardWindow.Show();
+            this.Close();
         }
 
         private void ManageEvent_Click(object sender, RoutedEventArgs e)
         {
             ManageEventWindow manageEventWindow = new ManageEventWindow(staff);
-            this.Close();
             manageEventWindow.Show();
-        }
-
-        private void ManageHashtag_Click(object sender, RoutedEventArgs e)
-        {
-            ManageHashtagWindow manageHashtagWindow = new ManageHashtagWindow();
             this.Close();
-            manageHashtagWindow.Show();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)
         {
             ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow();
-            this.Close();
             manageSellingTicketRequestWindow.Show();
+            this.Close();
         }
 
         private void ViewInfoUser_Click(object sender, RoutedEventArgs e)
         {
-            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow();
-            this.Close();
+            ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow(staff);
             viewUserInfoWindow.Show();
+            this.Close();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            this.Close();
             mainWindow.Show();
+            this.Close();
         }
 
         //Action button
@@ -105,10 +98,6 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             eventDetailWindow.Show();
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
         private void btnDetail_Click(object sender, RoutedEventArgs e)
         {
             Event EventDetail = null;
@@ -125,6 +114,23 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             EventDetailWindow eventDetailWindow = new EventDetailWindow(null, ACTION.ADD, this);
             eventDetailWindow.Show();
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        //Search Event Name
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            EventGrid.ItemsSource = eventService.SearchEventsByName(txtSearch.Text);
         }
     }
 }

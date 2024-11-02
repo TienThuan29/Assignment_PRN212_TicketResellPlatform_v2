@@ -1,11 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Media.Imaging;
 using BusinessObject;
-using Service.Ticket;
 using Service.TicketService;
 using Service.Utils;
 using Service.Utils.TienThuan;
-
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
@@ -29,6 +27,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             this.choosenTicket = ticketService.GetTicketById(ticketId);
             GenericTicket genericTicket = genericTicketService.FindGenericTicketById((long)choosenTicket.GenericTicketId);
+<<<<<<< HEAD
             Category category = categoryService.GetCategoryById((int)genericTicket.CategoryId);
             ticketNameLabel.Content += genericTicket.TicketName;
             expiredDateLabel.Content += genericTicket.ExpiredDateTime.ToString();
@@ -46,6 +45,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             {
                 markBoughtBtn.IsEnabled = false;
             }
+=======
+            //Category category = 
+            //ticketNameLabel.Content = ticketNameLabel.Content + genericTicket.TicketName;
+>>>>>>> ea9fa6eecb64337501e27f76b61c733dd09bdddf
         }
 
         private void CloseWindow(object sender, RoutedEventArgs e)

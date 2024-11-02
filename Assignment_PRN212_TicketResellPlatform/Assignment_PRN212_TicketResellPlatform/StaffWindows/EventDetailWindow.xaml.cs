@@ -78,6 +78,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             DisableAttribute();
             btnAction.Visibility = Visibility.Collapsed;
+            btnChooseImage.Visibility = Visibility.Collapsed;
             AddInfoEvent();
         }
 
@@ -87,39 +88,60 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             if (action == ACTION.ADD) 
             {
-                CreateEvent();
+                if(!CreateEvent()) return;
                 manageEventWindow.LoadData();
+                ShowInfoMessageBox("Thêm Sự Kiện Thành Công");
                 this.Close();
             }else if (action == ACTION.UPDATE)
             {
-                UpdateEvent();
+                if (!UpdateEvent()) return;
+                manageEventWindow.LoadData();
+                ShowInfoMessageBox("Cập Nhật Sự Kiện Thành Công");
+                this.Close();
             }    
         }
 
-        private void CreateEvent()
+        private bool CreateEvent()
         {
-            Event addEvent = new Event();
-            addEvent.Name = txtEventName.Text;
-            addEvent.Detail = txtEventDetail.Text;
-            addEvent.IsDeleted = false;
-            addEvent.StartDate = dpStartDate.Value.HasValue ? dpStartDate.Value.Value : DateTime.MinValue;
-            addEvent.EndDate = dpEndDate.Value.HasValue ? dpEndDate.Value.Value : DateTime.MinValue;
-            addEvent.Image = GetFileName();
+            if (CheckField())
+            {
+                Event addEvent = new Event();
+                addEvent.Name = txtEventName.Text;
+                addEvent.Detail = txtEventDetail.Text;
+                addEvent.IsDeleted = false;
+                addEvent.StartDate = dpStartDate.Value.HasValue ? dpStartDate.Value.Value : DateTime.MinValue;
+                addEvent.EndDate = dpEndDate.Value.HasValue ? dpEndDate.Value.Value : DateTime.MinValue;
+                addEvent.Image = GetFileName();
 
-            eventService.CreateEvent(addEvent);
+                return eventService.CreateEvent(addEvent);
+            }
+            else
+            {
+                ShowErrorMessageBox("Cần điền đầy đủ các thông tin của sự kiện!!!");
+            }
+            return false;
         }
 
-        private void UpdateEvent()
+        private bool UpdateEvent()
         {
-            Event addEvent = new Event();
-            addEvent.Name = txtEventName.Text;
-            addEvent.Detail = txtEventDetail.Text;
-            addEvent.IsDeleted = false;
-            addEvent.StartDate = dpStartDate.Value.HasValue ? dpStartDate.Value.Value : DateTime.MinValue;
-            addEvent.EndDate = dpEndDate.Value.HasValue ? dpEndDate.Value.Value : DateTime.MinValue;
-            addEvent.Image = GetFileName();
+            if (CheckField())
+            {
+                Event addEvent = new Event();
+                addEvent.Id = Event.Id;
+                addEvent.Name = txtEventName.Text;
+                addEvent.Detail = txtEventDetail.Text;
+                addEvent.IsDeleted = false;
+                addEvent.StartDate = dpStartDate.Value.HasValue ? dpStartDate.Value.Value : DateTime.MinValue;
+                addEvent.EndDate = dpEndDate.Value.HasValue ? dpEndDate.Value.Value : DateTime.MinValue;
+                addEvent.Image = GetFileName();
 
-            eventService.UpdateEvent(addEvent);
+                return eventService.UpdateEvent(addEvent);
+            }
+            else
+            {
+                ShowErrorMessageBox("Cần điền đầy đủ các thông tin của sự kiện!!!");
+            }
+            return false;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -163,14 +185,27 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
                     FileInfo fileInfo = new FileInfo(fullFilename);
                     string filename = System.IO.Path.GetFileName(fullFilename);
                     fileInfo.CopyTo(LocalPathSetting.EventImagePath + filename);
-                    
-                    //ShowInfoMessageBox("Cập nhật ảnh đại diện thành công!");
                 }
                 catch (Exception ex)
                 {
-                    //ShowErrorMessageBox("Cập nhật ảnh đại diện không thành công!");
+                    ShowErrorMessageBox(ex.Message);
                 }
             }
+        }
+
+        //Check all field before update and create
+        private bool CheckField()
+        {
+            if(string.IsNullOrEmpty(txtEventName.Text)
+                || string.IsNullOrEmpty(txtEventDetail.Text)
+                || string.IsNullOrEmpty(dpEndDate.Text)
+                || string.IsNullOrEmpty(dpStartDate.Text)
+                || string.IsNullOrEmpty(GetFileName())
+                )
+            {
+                return false;
+            }
+            return true;
         }
 
         private string GetFileName()
@@ -180,7 +215,19 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
                 string fullPath = bitmapImage.UriSource.AbsoluteUri;
                 return System.IO.Path.GetFileName(fullPath);
             }
+
             return null;
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

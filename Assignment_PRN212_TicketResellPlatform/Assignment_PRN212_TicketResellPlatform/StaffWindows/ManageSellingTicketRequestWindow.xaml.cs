@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessObject;
+using Service.TicketService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,20 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
     /// </summary>
     public partial class ManageSellingTicketRequestWindow : Window
     {
+        private Staff staff;
+        private readonly GenericTicketService genericTicketService;
+        private readonly TicketService ticketService;
         public ManageSellingTicketRequestWindow()
         {
             InitializeComponent();
+        }
+
+        public ManageSellingTicketRequestWindow(Staff staff)
+        {
+            InitializeComponent();
+            this.staff = staff;
+            this.genericTicketService = new GenericTicketService();
+            this.ticketService = new TicketService();
         }
 
         public void OnWindowLoad(object sender, RoutedEventArgs e)
@@ -41,13 +54,6 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             ManageEventWindow manageEventWindow = new ManageEventWindow();
             this.Hide();
             manageEventWindow.Show();
-        }
-
-        private void ManageHashtag_Click(object sender, RoutedEventArgs e)
-        {
-            ManageHashtagWindow manageHashtagWindow = new ManageHashtagWindow();
-            this.Hide();
-            manageHashtagWindow.Show();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)

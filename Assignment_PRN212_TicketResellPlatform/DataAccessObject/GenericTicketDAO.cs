@@ -55,5 +55,16 @@ namespace DataAccessObject
             }
             return flag;
         }
+
+        public ICollection<GenericTicket> GetRequestSellingGenericTickets()
+        {
+            var genericTickets = (from gt in context.GenericTickets
+                                  join t in context.Tickets on gt.Id equals t.GenericTicketId
+                                  where t.Process == GeneralProcess.WAITING
+                                  select gt
+                                  ).Distinct();
+            
+            return (ICollection<GenericTicket>)genericTickets;
+        }
     }
 }

@@ -26,6 +26,11 @@ namespace Repository.Impl
             return EventDAO.Instance.GetEvent(id);
         }
 
+        public ICollection<Event> SearchEventsByName(string name)
+        {
+            return EventDAO.Instance.SearchEventsByName(name);
+        }
+
         public bool UpdateEvent(Event Event)
         {
             return EventDAO.Instance.UpdateEvent(Event);

@@ -50,23 +50,39 @@ namespace DataAccessObject
             return isSuccess;
         }
 
-        public bool UpdateEvent(Event Event)
+        public bool UpdateEvent(Event updatedEvent)
         {
             bool isSuccess = false;
-            Event updateEvent = GetEvent(Event.Id);
-            if (updateEvent != null)
-            {
-                updateEvent.Detail = Event.Detail;
-                updateEvent.Name = Event.Name;
-                updateEvent.StartDate = Event.StartDate;
-                updateEvent.EndDate = Event.EndDate;
-                updateEvent.Image = Event.Image;
+            Event existingEvent = GetEvent(updatedEvent.Id);
 
-                context.Entry(updateEvent).State
-                    = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            if (existingEvent != null)
+            {
+                existingEvent.Detail = updatedEvent.Detail;
+                existingEvent.Name = updatedEvent.Name;
+                existingEvent.StartDate = updatedEvent.StartDate;
+                existingEvent.EndDate = updatedEvent.EndDate;
+                existingEvent.Image = updatedEvent.Image;
+
+                context.Entry(existingEvent).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
+
+                isSuccess = true;
             }
+
             return isSuccess;
+        }
+
+        public ICollection<Event> SearchEventsByName(string eventName)
+        {
+            if (string.IsNullOrWhiteSpace(eventName))
+            {
+                return GetAllEvents();
+            }
+            var matchingEvents = context.Events
+                .Where(e => e.Name.Contains(eventName)) 
+                .ToList();
+
+            return matchingEvents;
         }
     }
 }
