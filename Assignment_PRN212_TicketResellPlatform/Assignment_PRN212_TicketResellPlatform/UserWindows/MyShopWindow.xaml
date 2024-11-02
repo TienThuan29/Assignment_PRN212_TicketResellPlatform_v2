@@ -24,7 +24,7 @@
                 <Button Background="#FFD8C5FA" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
                     <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
                 </Button>
-                <Image HorizontalAlignment="Left" Height="52" Margin="131,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Image HorizontalAlignment="Left" Height="52" Margin="131,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/LogoTab-Photoroom.png"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="196,9,786,9"/>
 
                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1067,7,0,0" Height="43" Width="47">
@@ -78,7 +78,7 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Button Content="Sửa" Click="EditButton_Click" Tag="{Binding TicketSerial}" />
                                         <Button Content="Ghi chú" Click="ViewNoteButton" Tag="{Binding Note}" Margin="5,0,0,0" />
-                                        <Button Content="Chi tiết" Margin="5,0,0,0" />
+                                        <Button Content="Chi tiết" Click="ViewDetailTicket" Tag="{Binding Id}" Margin="5,0,0,0" />
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -86,8 +86,6 @@
 
                     </DataGrid.Columns>
                 </DataGrid>
-
-
 
 
                 <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
