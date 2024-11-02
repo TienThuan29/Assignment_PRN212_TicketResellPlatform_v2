@@ -8,5 +8,6 @@ namespace Repository.Def
 {
     public interface IOrderTicketRepository
     {
+        public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice);
     }
 }

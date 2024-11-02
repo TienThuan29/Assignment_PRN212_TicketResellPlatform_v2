@@ -36,7 +36,7 @@
             </Grid>
         </Border>
         <Label HorizontalAlignment="Left" Margin="515,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" FontSize="20" Content="Chi tiết Sự kiện" RenderTransformOrigin="0.659,0.485"/>
-        <ListBox x:Name="EventDetailBox" Margin="10,26,32,362" Grid.Row="1">
+        <ListBox x:Name="EventDetailBox" Margin="10,26,32,280" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" />
@@ -68,8 +68,8 @@
                 </Border>
             </ListBox.Items>
         </ListBox>
-        <Label Content="Vé đang bán" HorizontalAlignment="Left" Margin="523,318,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" FontSize="20"/>
-        <DataGrid x:Name="TicketGridData" Grid.Row="1" Margin="22,355,10,55" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False">
+        <Label Content="Vé đang bán" HorizontalAlignment="Left" Margin="515,380,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" FontSize="20"/>
+        <DataGrid x:Name="TicketGridData" Grid.Row="1" Margin="22,434,10,55" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Người Bán" Binding="{Binding SellerId}" Width="Auto" />
                 <DataGridTextColumn Header="Tên Vé" Binding="{Binding TicketName}" Width="Auto" />

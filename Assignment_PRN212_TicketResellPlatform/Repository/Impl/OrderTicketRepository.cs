@@ -1,4 +1,5 @@
-﻿using Repository.Def;
+﻿using DataAccessObject;
+using Repository.Def;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,9 @@ namespace Repository.Impl
 {
     public class OrderTicketRepository : IOrderTicketRepository
     {
+        public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice)
+        {
+            return OrderTicketDAO.Instance.CreateOrderTicket(Quantity, BuyerId, GenericTicketId, GenericTicketPrice);  
+        }
     }
 }

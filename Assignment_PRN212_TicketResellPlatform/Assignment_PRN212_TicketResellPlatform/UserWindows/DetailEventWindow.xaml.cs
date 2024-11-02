@@ -72,8 +72,6 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             //Uri uri = new Uri(System.IO.Path.Combine(LocalPathSetting.EventImagePath, Event.Image), UriKind.Absolute);
             //txtImageEvent.Source = new BitmapImage(uri);
 
-
-
         }
 
         private void ShowHomePageWindow(object sender, RoutedEventArgs e)
@@ -88,6 +86,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             var ticketId = (long)((Button)sender).Tag;
 
             var ticketD = genericTicketService.FindTicketById(ticketId);
+            
             this.Hide();
             BuyTicketWindow buyTicketWindow = new BuyTicketWindow(ticketD, LoggedUser);
             buyTicketWindow.Show();

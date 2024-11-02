@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository.Impl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private BusinessObject.User LoggedUser;
         private BusinessObject.Event Event;
         private BusinessObject.GenericTicket GenericTicket;
+        private OrderTicketRepository OrderTicketRepository = new OrderTicketRepository();
         public BuyTicketWindow()
         {
             InitializeComponent();
@@ -31,7 +33,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {   //Init Lable
             fullnameLabel.Content = LoggedUser.Firstname + " " + LoggedUser.Lastname;
             //Init TextBox
+            
             GenericTicketBox.DataContext = GenericTicket;
+
         }
 
         public BuyTicketWindow(BusinessObject.GenericTicket genericTicket,BusinessObject.User loggedUser)
@@ -47,6 +51,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.Hide();
             HomeWindow homeWindow = new HomeWindow(LoggedUser);
             homeWindow.Show();
+        }
+
+        private void Button_Buy(object sender, RoutedEventArgs e)
+        {
+            if(OrderTicketRepository.CreateOrderTicket()
         }
     }
 }
