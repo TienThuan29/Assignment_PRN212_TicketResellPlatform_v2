@@ -9,8 +9,12 @@ namespace Repository.Def
 {
     public interface IEventRepository
     {
-         ICollection<Event> GetAllEvents();
+        ICollection<Event> GetAllEvents();
 
-         Event GetEvent(int id);
+        Event GetEvent(int id);
+
+        bool CreateEvent(Event Event);
+
+        bool UpdateEvent(Event Event);
     }
 }

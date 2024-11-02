@@ -24,6 +24,11 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             InitializeComponent();
         }
 
+        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
             StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();

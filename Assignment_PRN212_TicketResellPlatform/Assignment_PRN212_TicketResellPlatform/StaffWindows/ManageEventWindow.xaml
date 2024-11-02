@@ -7,7 +7,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="ManageEventWindow" Height="720" Width="1200">
+        Title="ManageEventWindow" Height="720" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Loaded="OnWindowLoad">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -34,7 +37,7 @@
             </Border>
 
             <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="10" 
-    HorizontalAlignment="Center" VerticalAlignment="Center">
+                HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -56,48 +59,43 @@
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
-                 Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10" VerticalAlignment="Center" >
+                    <TextBox Width="250" Height="30" VerticalAlignment="Center" Margin="0,0,5,0" materialDesign:HintAssist.Hint="Nhập Tên Sự Kiện"/>
+
+                    <Button Width="40" Height="30" Padding="0" Margin="0,0,5,0">
+                        <materialDesign:PackIcon Kind="Search" Height="24" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+
+                    <Button x:Name="btnAddEvent" Content="Thêm Sự Kiện" Height="30" Padding="5,0" VerticalAlignment="Center" Click="btnAddEvent_Click" />
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
                     <DataGrid AutoGenerateColumns="False" 
-                ItemsSource="{Binding EventList}" 
-                CanUserAddRows="False"
-                CanUserDeleteRows="False"
-                HeadersVisibility="Column" 
-                RowHeight="50" 
-                ColumnWidth="*" 
-                Margin="39,10,39,10" 
-                IsReadOnly="True"
-                Background="White">
+                        x:Name="EventGrid"     
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        HeadersVisibility="Column" 
+                        RowHeight="50" 
+                        ColumnWidth="*" 
+                        Margin="39,10,39,10" 
+                        IsReadOnly="True"
+                        Background="White"> 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
-                            <DataGridTextColumn Header="Số tiền" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="UserID" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="Số tài khoản" Binding="{Binding EventNumber}" Width="150"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Hành động" Width="200">
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="150"/>
+                            <DataGridTextColumn Header="Ngày bắt dầu" Binding="{Binding StartDate}" Width="150"/>
+                            <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding EndDate}" Width="150"/>
+                            <DataGridTemplateColumn Header="Hành động" Width="210">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Chưa chuyển khoản" Background="LightBlue" Padding="5,0" Margin="5,0" />
-                                            <Button Content="Đã chuyển khoản" Background="LightCoral" Padding="5,0" Margin="5,0" />
+                                            <Button x:Name="btnUpdate" Click="btnUpdate_Click" Content="Cập Nhật" Tag="{Binding Id}" Background="Green" Padding="5,0" Margin="5,0" />
+                                            <Button x:Name="btnDelete" Click="btnDelete_Click" Content="Xóa" Tag="{Binding Id}" Background="Red" Padding="5,0" Margin="5,0" />
+                                            <Button x:Name="btnDetail" Click="btnDetail_Click" Content="Chi tiết" Tag="{Binding Id}" Background="Aqua" Padding="5,0" Margin="5,0" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

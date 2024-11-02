@@ -55,7 +55,7 @@ namespace Assignment_PRN212_TicketResellPlatform
                     if (staff.RoleCode.Equals(Role.STAFF))
                     {
                         // Show staff dashboard here
-                        StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
+                        StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
                         staffDashboardWindow.Show();
                         this.Hide();
                     }

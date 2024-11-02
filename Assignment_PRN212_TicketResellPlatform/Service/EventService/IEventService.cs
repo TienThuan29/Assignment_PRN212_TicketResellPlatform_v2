@@ -12,5 +12,9 @@ namespace Service.EventService
         BusinessObject.Event GetEvent(int id);
 
         ICollection<Event> GetAllEvents();
+
+        bool CreateEvent(Event Event);
+
+        bool UpdateEvent(Event Event);
     }
 }

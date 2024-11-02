@@ -1,0 +1,58 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.StaffWindows.EventDetailWindow"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Event Detail" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Text="Event Image" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <Image x:Name="imgEventImage" Height="200" Width="200" HorizontalAlignment="Center" Margin="0,0,0,10" />
+            <Button x:Name="btnChooseImage" Content="Choose Image" Click="ChooseImage_Click" HorizontalAlignment="Center" 
+                    Style="{DynamicResource MaterialDesignFlatButton}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0">
+            <TextBlock Text="Event ID:" FontWeight="Bold"/>
+            <TextBlock x:Name="txtEventId" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Event Name:" FontWeight="Bold"/>
+            <TextBox x:Name="txtEventName"
+                     Style="{DynamicResource MaterialDesignTextBox}" />
+
+            <TextBlock Text="Event Details:" FontWeight="Bold"/>
+            <TextBox x:Name="txtEventDetail"
+                     TextWrapping="Wrap" AcceptsReturn="True" Height="100" 
+                     Style="{DynamicResource MaterialDesignTextBox}"/>
+
+            <TextBlock Text="Start Date:" FontWeight="Bold" />
+            <xctk:DateTimePicker x:Name="dpStartDate" Format="FullDateTime" Width="300" />
+
+            <TextBlock Text="End Date:" FontWeight="Bold" Margin="0,10,0,0" />
+            <xctk:DateTimePicker x:Name="dpEndDate" Format="FullDateTime" Width="300" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Button x:Name="btnAction" Width="100" Click="btnAction_Click" 
+                    Style="{DynamicResource MaterialDesignRaisedButton}" />
+            <Button Content="Close" Width="100" Click="Close_Click" Margin="5,0,0,0" 
+                    Style="{DynamicResource MaterialDesignRaisedButton}" />
+        </StackPanel>
+    </Grid>
+</Window>
