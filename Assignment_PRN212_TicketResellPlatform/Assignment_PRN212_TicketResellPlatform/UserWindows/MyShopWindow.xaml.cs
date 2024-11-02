@@ -46,9 +46,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
-            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
-            avatarImageBrush.ImageSource = new BitmapImage(uri);
-            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            if (!string.IsNullOrEmpty(logedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+                avatarImageBrush.ImageSource = new BitmapImage(uri);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);
@@ -133,7 +136,25 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             mainWindow.Show();
         }
 
+        private void ToManageBalanceWindow(object sender, RoutedEventArgs e)
+        {
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
+            this.Hide();
+            balanceManagementWindow.Show();
+        }
 
+        private void ToChangePasswordWindow(object sender, RoutedEventArgs e)
+        {
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
+            this.Hide();
+            changePasswordWindow.Show();
+        }
 
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Hide();
+            mainWindow.Show();  
+        }
     }
 }

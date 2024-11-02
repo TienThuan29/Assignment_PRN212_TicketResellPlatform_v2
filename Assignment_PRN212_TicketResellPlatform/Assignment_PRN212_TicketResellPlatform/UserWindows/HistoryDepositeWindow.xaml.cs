@@ -37,9 +37,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void InitDataOnWindow()
         {
-            Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
-            avatarImageBrush.ImageSource = new BitmapImage(uri);
-            avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            if (!string.IsNullOrEmpty(logedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+                avatarImageBrush.ImageSource = new BitmapImage(uri);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
             // Init label
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
@@ -72,6 +75,34 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             this.Hide();
             HomeWindow mainWindow = new HomeWindow(logedUser);
+            mainWindow.Show();
+        }
+
+        private void ToMyShopWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
+            myShopWindow.Show();
+        }
+
+        private void ToManageBalanceWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
+            balanceManagementWindow.Show();
+        }
+
+        private void ToChangePasswordWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
+            changePasswordWindow.Show();    
+        }
+
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
         }
     }

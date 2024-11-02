@@ -54,7 +54,7 @@
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đổi mật khẩu" Margin="17,492,0,0" Width="138" />
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Thêm vé mới" Margin="400,24,506,588" />
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" >
+                <Button Click="ToMyShopWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="305,32,823,596" Background="{x:Null}" Foreground="#DD000000" >
                     <materialDesign:PackIcon
                         Kind="Arrow"
                         Height="24"
