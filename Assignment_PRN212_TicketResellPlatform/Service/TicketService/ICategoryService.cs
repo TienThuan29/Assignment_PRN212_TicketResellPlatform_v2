@@ -10,5 +10,7 @@ namespace Service.TicketService
     public interface ICategoryService
     {
         public ICollection<Category> GetAllCategories();
+
+        public Category GetCategoryById(int id);
     }
 }

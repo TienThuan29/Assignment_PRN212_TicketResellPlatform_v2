@@ -13,8 +13,8 @@ namespace Service.TicketService
 
         public bool AddGenericTicket(GenericTicket ticket);
 
-        public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId);
+        public ICollection<GenericTicket> FindGenericTicketByEventId(long ticketEventId);
 
-        public GenericTicket FindTicketById(long ticketId);
+        public GenericTicket FindGenericTicketById(long ticketId);
     }
 }

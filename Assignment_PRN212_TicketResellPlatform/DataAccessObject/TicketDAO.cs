@@ -28,6 +28,11 @@ namespace DataAccessObject
             return this.context.Tickets.Where(ticket => ticket.GenericTicketId.Equals(genericTicketID)).ToList();
         }
 
+        public ICollection<Ticket> FindSellingTicket(long genericTicketID) 
+        {
+            return this.context.Tickets.Where(ticket => ticket.GenericTicketId.Equals(genericTicketID) 
+            && ticket.Process.Equals(GeneralProcess.SELLING)).ToList();
+        }
 
         public bool AddTicket(BusinessObject.Ticket ticket)
         {
@@ -42,6 +47,11 @@ namespace DataAccessObject
                 flag = false;
             }
             return flag;
+        }
+
+        public Ticket GetTicketById(long ticketID) 
+        {
+            return context.Tickets.SingleOrDefault(ticket => ticket.Id.Equals(ticketID));
         }
     }
 }

@@ -21,14 +21,14 @@ namespace Repository.Impl
             return GenericTicketDAO.Instance.AddGenericTicket(ticket);
         }
 
-        public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId)
+        public ICollection<GenericTicket> FindGenericTicketByEventId(long ticketEventId)
         {
-            return GenericTicketDAO.Instance.FindTicketByEventId(ticketEventId);
+            return GenericTicketDAO.Instance.FindGenericTicketByEventId(ticketEventId);
         }
 
-        public GenericTicket FindTicketById(long ticketId)
+        public GenericTicket FindGenericTicketById(long ticketId)
         {
-            return GenericTicketDAO.Instance.FindTicketById(ticketId);
+            return GenericTicketDAO.Instance.FindGenericTicketById(ticketId);
         }
     }
 }

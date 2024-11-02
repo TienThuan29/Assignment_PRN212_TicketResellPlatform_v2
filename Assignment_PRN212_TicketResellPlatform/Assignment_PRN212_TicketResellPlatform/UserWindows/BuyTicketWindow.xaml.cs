@@ -1,4 +1,7 @@
-﻿using Repository.Impl;
+﻿using BusinessObject;
+using Repository.Impl;
+using Service.Ticket;
+using Service.TicketService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +26,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private BusinessObject.User LoggedUser;
         private BusinessObject.Event Event;
         private BusinessObject.GenericTicket GenericTicket;
-        private OrderTicketRepository OrderTicketRepository = new OrderTicketRepository();
+        private ITicketService ticketService = new TicketService();
+        private IOrderTicketService orderTicketService = new OrderTicketService();
         public BuyTicketWindow()
         {
             InitializeComponent();
@@ -33,8 +37,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {   //Init Lable
             fullnameLabel.Content = LoggedUser.Firstname + " " + LoggedUser.Lastname;
             //Init TextBox
-            
+            var tickets = ticketService.FindSellingTicket(GenericTicket.Id);
+            var quantity = tickets.Count();
             GenericTicketBox.DataContext = GenericTicket;
+            txtQuantity.Text = quantity.ToString();
 
         }
 
@@ -55,7 +61,40 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void Button_Buy(object sender, RoutedEventArgs e)
         {
-            if(OrderTicketRepository.CreateOrderTicket()
+            var tickets = ticketService.FindSellingTicket(GenericTicket.Id);
+            var quantity = tickets.Count();
+            if(orderTicketService.OrderTicket(GenericTicket.Id, quantity, LoggedUser))
+            {
+                MessageBox.Show("Mua thành công");
+            }
+            else
+            {
+                MessageBox.Show("Không đủ tiền");
+            }
         }
+
+        private int selectedQuantity = 1;
+
+        private void DecreaseQuantity_Click(object sender, RoutedEventArgs e)
+        {   
+            var quantity = ticketService.FindSellingTicket(GenericTicket.Id).Count();
+            if (selectedQuantity > quantity)
+            {
+                selectedQuantity--;
+                quantitySelector.Text = selectedQuantity.ToString();
+            }
+        }
+
+        private void IncreaseQuantity_Click(object sender, RoutedEventArgs e)
+        {
+            var quantity = ticketService.FindSellingTicket(GenericTicket.Id).Count();
+            if (selectedQuantity < quantity)
+            {
+                selectedQuantity++;
+                quantitySelector.Text = selectedQuantity.ToString();
+            }
+
+        }
+
     }
 }

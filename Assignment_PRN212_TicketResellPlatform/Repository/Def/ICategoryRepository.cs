@@ -10,5 +10,7 @@ namespace Repository.Def
     public interface ICategoryRepository
     {
         public ICollection<Category> GetAllCategories();
+
+        public Category GetCategoryById(int id);
     }
 }

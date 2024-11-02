@@ -84,18 +84,18 @@
 
                 <TextBox x:Name="gTicketPriceTextbox" Margin="315,227,557,406"/>
 
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Giảm giá (%)" Margin="315,281,0,0" Width="182"/>
-                <TextBox x:Name="gTicketSalePercentTextbox" Margin="315,308,557,325"/>
+                <!-- <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Giảm giá (%)" Margin="315,281,0,0" Width="182"/> -->
+                <!-- <TextBox x:Name="gTicketSalePercentTextbox" Margin="315,308,557,325"/> -->
 
-                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Khu vực ngồi" Margin="315,373,0,0" Width="175"/>
-                <TextBox x:Name="gTicketAreaTextbox" Margin="315,401,557,232"/>
+                <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Khu vực ngồi"  Margin="315,281,0,0" Width="175"/>
+                <TextBox x:Name="gTicketAreaTextbox" Margin="315,308,557,325"/>
 
-                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,473,0,0" Width="192">
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,373,0,0" Width="192">
                     <Run Text="Thời gian hết hạn" Foreground="Black"/>
                     <Run Text="*" Foreground="Red"/>
                 </TextBlock>
 
-                <DatePicker x:Name="gTicketExpiredDateTime" Margin="315,500,557,133" />
+                <DatePicker x:Name="gTicketExpiredDateTime" Margin="315,401,557,232" />
                 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Content="Link sự kiện" Margin="740,102,0,0" Width="140"/>
                 <TextBox x:Name="gTicketLinkTextbox" Margin="740,134,132,499"/>

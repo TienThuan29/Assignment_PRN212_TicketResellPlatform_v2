@@ -10,9 +10,10 @@ namespace Repository.Impl
 {
     public class OrderGenericTicketRepository : IOrderGenericTicketRepository
     {
-        public bool OrderGenericTicket(long GenericTicketId, int quantity)
+        public bool OrderGenericTicket(long GenericTicketId, int quantity, BusinessObject.User user)
         {
-            return OrderGenericTicketDAO.Instance.OrderGenericTicket(GenericTicketId, quantity);
+            return OrderGenericTicketDAO.Instance.OrderGenericTicket(GenericTicketId, quantity, user);
         }
+
     }
 }

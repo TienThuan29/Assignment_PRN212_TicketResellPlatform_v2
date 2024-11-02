@@ -1,4 +1,5 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using Repository.Def;
 using Repository.Impl;
 using Service.Ticket;
 using System;
@@ -30,5 +31,14 @@ namespace Service.TicketService
             return tickeRepository.AddTicket(ticket);   
         }
 
+        public BusinessObject.Ticket GetTicketById(long ticketID) 
+        {
+            return tickeRepository.GetTicketById(ticketID);
+        }
+
+        public ICollection<BusinessObject.Ticket> FindSellingTicket(long genericTicketID)
+        {
+            return tickeRepository.FindSellingTicket(genericTicketID);
+        }
     }
 }
