@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BusinessObject;
+using Service.EventService;
+using Service.Utils.NhatTruong;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,51 +22,109 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
     /// </summary>
     public partial class ManageEventWindow : Window
     {
+        private readonly IEventService eventService;
+        private readonly Staff staff;
         public ManageEventWindow()
         {
             InitializeComponent();
+            eventService = new EventService();
         }
 
+        public ManageEventWindow(Staff staff)
+        {
+            InitializeComponent();
+            eventService = new EventService();
+            this.staff = staff;
+        }
+
+        public void LoadData()
+        {
+            EventGrid.ItemsSource = eventService.GetAllEvents();
+        }
+
+        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        {
+            EventGrid.ItemsSource = eventService.GetAllEvents();
+        }
+
+
+
+        //Side bar button
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
-            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow();
-            this.Hide();
+            StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
+            this.Close();
             staffDashboardWindow.Show();
         }
 
         private void ManageEvent_Click(object sender, RoutedEventArgs e)
         {
-            ManageEventWindow manageEventWindow = new ManageEventWindow();
-            this.Hide();
+            ManageEventWindow manageEventWindow = new ManageEventWindow(staff);
+            this.Close();
             manageEventWindow.Show();
         }
 
         private void ManageHashtag_Click(object sender, RoutedEventArgs e)
         {
             ManageHashtagWindow manageHashtagWindow = new ManageHashtagWindow();
-            this.Hide();
+            this.Close();
             manageHashtagWindow.Show();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)
         {
             ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow();
-            this.Hide();
+            this.Close();
             manageSellingTicketRequestWindow.Show();
         }
 
         private void ViewInfoUser_Click(object sender, RoutedEventArgs e)
         {
             ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow();
-            this.Hide();
+            this.Close();
             viewUserInfoWindow.Show();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            this.Hide();
+            this.Close();
             mainWindow.Show();
+        }
+
+        //Action button
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            Event EventDetail = null;
+            Button button = sender as Button;
+            if (button != null)
+            {
+                EventDetail = eventService.GetEvent((int)button.Tag);
+            }
+            EventDetailWindow eventDetailWindow = new EventDetailWindow(EventDetail, ACTION.UPDATE, this);
+            eventDetailWindow.Show();
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnDetail_Click(object sender, RoutedEventArgs e)
+        {
+            Event EventDetail = null;
+            Button button = sender as Button;
+            if (button != null) 
+            {
+                EventDetail = eventService.GetEvent((int)button.Tag);                      
+            }
+            EventDetailWindow eventDetailWindow = new EventDetailWindow(EventDetail, ACTION.DEATAIL, this);
+            eventDetailWindow.Show();
+        }
+
+        private void btnAddEvent_Click(object sender, RoutedEventArgs e)
+        {
+            EventDetailWindow eventDetailWindow = new EventDetailWindow(null, ACTION.ADD, this);
+            eventDetailWindow.Show();
         }
     }
 }
