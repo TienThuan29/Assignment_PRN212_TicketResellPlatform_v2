@@ -32,5 +32,49 @@
                 </Button>
             </Grid>
         </Border>
+        <Label HorizontalAlignment="Left" Margin="554,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" FontSize="20" Content="Chi tiết Vé" RenderTransformOrigin="0.659,0.485"/>
+        <ListBox x:Name="GenericTicketBox" Margin="10,47,32,26" Grid.Row="1">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <ListBox.Items>
+                <Border Width="527" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10" Height="444">
+                    <StackPanel>
+                        <TextBlock Text="Tên vé" FontSize="16" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBlock Text="{Binding TicketName}" FontSize="16" Foreground="white" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,5"/>
+
+                        <TextBlock Text="Mô tả" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Description}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="68" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <TextBlock Text="Khu vực" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Area}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <TextBlock Text="Ngày hết hạn" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <DatePicker SelectedDate="{Binding ExpiredDateTime}" FontSize="14" Foreground="white" IsEnabled="False"/>
+
+                        <TextBlock Text="Phần trăm giảm giá" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding SalePercent}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <TextBlock Text="Giá" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Price}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <TextBlock Text="Chi tiết" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Detail}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <Button Width="104" Content="Mua" Margin="0,10,0,0"/>
+                    </StackPanel>
+
+                </Border>
+
+                <Border Width="482" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10" Height="277">
+                    <StackPanel>
+                        <Image Source="{Binding Image}" Height="150" Stretch="Fill" Width="514"/>
+                    </StackPanel>
+                </Border>
+            </ListBox.Items>
+        </ListBox>
     </Grid>
 </Window>

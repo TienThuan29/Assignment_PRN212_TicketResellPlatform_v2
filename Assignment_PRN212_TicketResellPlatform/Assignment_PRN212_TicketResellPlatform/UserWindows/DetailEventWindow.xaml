@@ -36,32 +36,40 @@
             </Grid>
         </Border>
         <Label HorizontalAlignment="Left" Margin="515,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" FontSize="20" Content="Chi tiết Sự kiện" RenderTransformOrigin="0.659,0.485"/>
-        <ListBox Margin="10,26,32,57" Grid.Row="1" >
+        <ListBox x:Name="EventDetailBox" Margin="10,26,32,362" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto"/>
+                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
             <ListBox.Items>
-
                 <Border Width="500" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
                     <StackPanel>
-                        <TextBlock x:Name="txtEventNameTextBox"  FontSize="16" Foreground="white" FontWeight="Bold" TextWrapping="Wrap" Margin="0,10,0,5"/>
-                        <TextBox x:Name="txtEventDescriptionTextBox"  FontSize="14" Foreground="white" Margin="0,0,0,5" Height="68" TextWrapping="Wrap" IsReadOnly="True"/>
-                        <DatePicker x:Name="txtStartDateTextBox"  FontSize="14" Foreground="white" Margin="0,0,0,5"/>
-                        <DatePicker x:Name="txtEndDateTextBox" FontSize="14" Foreground="white"/>
+                        <TextBlock Text="Tên sự kiện" FontSize="16" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBlock Text="{Binding Name}" FontSize="16" Foreground="white" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,5"/>
+
+                        <TextBlock Text="Chi tiết" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Detail}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="68" TextWrapping="Wrap" IsReadOnly="True"/>
+
+                        <TextBlock Text="Ngày bắt đầu" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <DatePicker SelectedDate="{Binding StartDate}" FontSize="14" Foreground="white" Margin="0,0,0,5" IsEnabled="False"/>
+
+                        <TextBlock Text="Ngày kết thúc" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <DatePicker SelectedDate="{Binding EndDate}" FontSize="14" Foreground="white" IsEnabled="False"/>
                     </StackPanel>
+
                 </Border>
+
                 <Border Width="550" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10">
                     <StackPanel>
-                        <Image x:Name="txtImageEvent"  Height="150" Stretch="Fill"/>
+                        <Image Source="{Binding Image}" Height="150" Stretch="Fill"/>
                     </StackPanel>
                 </Border>
             </ListBox.Items>
         </ListBox>
-        <Label Content="Vé đang bán" HorizontalAlignment="Left" Margin="515,255,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" FontSize="20"/>
-        <DataGrid x:Name="TicketGridData" Grid.Row="1" Margin="22,308,10,102" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False">
+        <Label Content="Vé đang bán" HorizontalAlignment="Left" Margin="523,318,0,0" Grid.Row="1" VerticalAlignment="Top" Width="132" FontSize="20"/>
+        <DataGrid x:Name="TicketGridData" Grid.Row="1" Margin="22,355,10,55" AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Người Bán" Binding="{Binding SellerId}" Width="Auto" />
                 <DataGridTextColumn Header="Tên Vé" Binding="{Binding TicketName}" Width="Auto" />
@@ -72,7 +80,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Mua" Click="ShowBuyTicketWindow" Tag="{Binding SellerId}"></Button>
+                                <Button Content="Mua" Click="ShowBuyTicketWindow" Tag="{Binding Id}"></Button>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

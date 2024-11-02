@@ -83,6 +83,7 @@ namespace Assignment_PRN212_TicketResellPlatform
             this.Hide();
             registerWindow.Show();
         }
+
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             this.Close();

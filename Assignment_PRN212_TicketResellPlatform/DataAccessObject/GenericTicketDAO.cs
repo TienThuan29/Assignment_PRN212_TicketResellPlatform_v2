@@ -33,7 +33,7 @@ namespace DataAccessObject
 
         public ICollection<GenericTicket> FindTicketByEventId(long ticketEventId) 
         {
-            return this.context.GenericTickets.Where(a => a.EventId.Equals(ticketEventId)).ToList();
+            return this.context.GenericTickets.Where(a => a.EventId.Equals((int)ticketEventId)).ToList();
         }
 
         public GenericTicket FindTicketById(long ticketId) 

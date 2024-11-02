@@ -38,6 +38,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             InitializeComponent();
             Event = @event;
             LoggedUser = loggedUser;
+
             InitDataOnWindow();         
         }
 
@@ -45,18 +46,31 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {   //Init Lable
             fullnameLabel.Content = LoggedUser.Firstname + " " + LoggedUser.Lastname;
             //Init TextBox
-            txtEventNameTextBox.Text = Event.Name;
-            txtEventDescriptionTextBox.Text = Event.Detail;
-            txtStartDateTextBox.Text= Event.StartDate.ToString();
-            txtEndDateTextBox.Text= Event.EndDate.ToString();
+
+            //txtEventNameTextBox.Text = Event.Name;
+            //txtEventDescriptionTextBox.Text = Event.Detail;
+            //txtStartDateTextBox.Text= Event.StartDate.ToString();
+            //txtEndDateTextBox.Text= Event.EndDate.ToString();
+
+            // Add image path
+            Event.Image = System.IO.Path.Combine(LocalPathSetting.EventImagePath, Event.Image);
+
+            // Set DataContext for binding
+            EventDetailBox.DataContext = Event;
 
             //Init Ticket On sell
-            TicketGridData.ItemsSource = genericTicketService.FindTicketByEventId(Event.Id);
-            //Uri uri = new Uri(LocalPathSetting.EventImagePath + Event.Image, UriKind.Absolute);
+            var tickets = genericTicketService.FindTicketByEventId(Event.Id);
+            if (tickets == null || !tickets.Any())
+            {
+                MessageBox.Show("No tickets found for this event.");
+            }
+            TicketGridData.ItemsSource = tickets;
+
+            //Uri uri = new Uri(LocalPathSetting.EventImagePath+Event.Image, UriKind.Absolute);
             //txtImageEvent.Source = new BitmapImage(uri);
 
-            Uri uri = new Uri(System.IO.Path.Combine(LocalPathSetting.EventImagePath, Event.Image), UriKind.Absolute);
-            txtImageEvent.Source = new BitmapImage(uri);
+            //Uri uri = new Uri(System.IO.Path.Combine(LocalPathSetting.EventImagePath, Event.Image), UriKind.Absolute);
+            //txtImageEvent.Source = new BitmapImage(uri);
 
 
 
@@ -71,12 +85,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void ShowBuyTicketWindow(object sender, RoutedEventArgs e)
         {
-            var ticketId = (int)((Button)sender).Tag;
+            var ticketId = (long)((Button)sender).Tag;
 
-            //var ticketD = ticketService.FindByGenericTicketID(ticketId);
+            var ticketD = genericTicketService.FindTicketById(ticketId);
             this.Hide();
-            //BuyTicketWindow buyTicketWindow = new BuyTicketWindow(ticketD,LoggedUser);
-            //buyTicketWindow.Show();
+            BuyTicketWindow buyTicketWindow = new BuyTicketWindow(ticketD, LoggedUser);
+            buyTicketWindow.Show();
         }
     }
 }

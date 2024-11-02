@@ -12,11 +12,8 @@
     <None Remove="LogoHeader-Photoroom.png" />
     <None Remove="StaffWindows\Add a heading (1)-Photoroom.png" />
     <None Remove="StaffWindows\child-1837375_1280.png" />
-    <None Remove="UserWindows\1.jpg" />
-    <None Remove="UserWindows\15.jpg" />
-    <None Remove="UserWindows\6.jpg" />
-    <None Remove="UserWindows\Add a heading %281%29-Photoroom.png" />
     <None Remove="UserWindows\child-1837375_1280.png" />
+    <None Remove="UserWindows\LogoTab-Photoroom.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,8 +34,24 @@
 
 
   <ItemGroup>
+
     <Resource Include="UserWindows\1.jpg" />
     <Resource Include="UserWindows\child-1837375_1280.png" />
+
+    <Content Include="UserWindows\LogoTab-Photoroom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Resource Include="LogoHeader-Photoroom.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UserWindows\child-1837375_1280.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+
   </ItemGroup>
 
   <ItemGroup>
