@@ -13,7 +13,12 @@ namespace Service.TicketService
     {
         ICollection<BusinessObject.Ticket> FindByGenericTicketID(long genericTicketID);
 
+
         public bool AddTicket(BusinessObject.Ticket ticket);
+
+        public BusinessObject.Ticket GetTicketById(long ticketID);
+
+        public ICollection<BusinessObject.Ticket> FindSellingTicket(long genericTicketID);
 
 
         ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID);
@@ -22,9 +27,9 @@ namespace Service.TicketService
 
         bool RejectTicketSelling(long ticketId);
 
-        public BusinessObject.Ticket GetTicketById(long ticketID);
 
         public bool MarkBought(long ticketId);
+
 
     }
 }

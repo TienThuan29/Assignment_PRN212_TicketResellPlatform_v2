@@ -25,6 +25,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         public void InitDataWindow(long ticketId)
         {
+
+            //this.choosenTicket = ticketService.GetTicketById(ticketId);
+            //GenericTicket genericTicket = genericTicketService.FindGenericTicketById((long)choosenTicket.GenericTicketId);
+            //Category category = 
+            //ticketNameLabel.Content = ticketNameLabel.Content + genericTicket.TicketName;
+
             this.choosenTicket = ticketService.GetTicketById(ticketId);
             GenericTicket genericTicket = genericTicketService.FindGenericTicketById((long)choosenTicket.GenericTicketId);
             Category category = categoryService.GetCategoryById((int)genericTicket.CategoryId);

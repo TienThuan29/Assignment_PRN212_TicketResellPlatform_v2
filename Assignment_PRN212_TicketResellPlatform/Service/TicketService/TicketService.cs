@@ -49,10 +49,16 @@ namespace Service.TicketService
             return tickeRepository.GetTicketById(ticketID);
         }
 
+        public ICollection<BusinessObject.Ticket> FindSellingTicket(long genericTicketID)
+        {
+            return tickeRepository.FindSellingTicket(genericTicketID);
+        }
+
         public bool MarkBought(long ticketId)
         {
             return tickeRepository.MarkBought(ticketId);
         }
+
 
     }
 }

@@ -7,8 +7,6 @@
 
 **/appsettings.json
 
-**/bin
-**/obj
 
 # dotenv files
 .env
