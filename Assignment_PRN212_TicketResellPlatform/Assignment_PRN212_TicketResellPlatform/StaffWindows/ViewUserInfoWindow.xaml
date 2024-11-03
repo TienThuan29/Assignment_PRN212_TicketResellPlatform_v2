@@ -57,14 +57,6 @@
             </Grid>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center"/>
-                    <Button Content="Tìm kiếm" Width="120" Height="30">
-                        
-                    </Button>
-                </StackPanel>
-
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
                     <DataGrid AutoGenerateColumns="False" 
                               x:Name="UserGrid"

@@ -26,15 +26,6 @@ namespace Repository.Impl
             return TicketDAO.Instance.FindByRequestSellingGenericTicket(genericTicketID);
         }
 
-        public bool AcceptTicketSelling(long ticketId)
-        {
-            return TicketDAO.Instance.AcceptTicketSelling(ticketId);
-        }
-
-        public bool RejectTicketSelling(long ticketId)
-        {
-            return TicketDAO.Instance.RejectTicketSelling(ticketId);
-        }
         public BusinessObject.Ticket GetTicketById(long ticketID)
         {
             return TicketDAO.Instance.GetTicketById(ticketID);
@@ -49,6 +40,16 @@ namespace Repository.Impl
         {
             return TicketDAO.Instance.MarkBought(ticketId);
 
+        }
+
+        public bool AcceptTicketSelling(long ticketId, long staffId, string note)
+        {
+            return TicketDAO.Instance.AcceptTicketSelling(ticketId, staffId, note);
+        }
+
+        public bool RejectTicketSelling(long ticketId, long staffId, string note)
+        {
+            return TicketDAO.Instance.RejectTicketSelling(ticketId, staffId, note);
         }
     }
 }

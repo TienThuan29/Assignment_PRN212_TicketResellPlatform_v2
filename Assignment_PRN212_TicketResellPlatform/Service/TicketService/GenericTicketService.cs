@@ -20,6 +20,8 @@ namespace Service.TicketService
         public GenericTicketService() 
         {
             this.genericTicketRepository = new GenericTicketRepository();
+            this.categoryRepository = new CategoryRepository();
+            this.eventRepository = new EventRepository();
         }
 
         public ICollection<GenericTicket> FindBySellerId(long sellerId)

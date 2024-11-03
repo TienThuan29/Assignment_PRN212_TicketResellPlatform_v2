@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using Service.EventService;
 using Service.TicketService;
 using System;
 using System.Collections.Generic;
@@ -37,11 +38,17 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             this.ticketService = new TicketService();
         }
 
-        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        public void loadData()
         {
-
+            GenericGrid.ItemsSource = genericTicketService.GetRequestSellingGenericTickets();
         }
 
+        public void OnWindowLoad(object sender, RoutedEventArgs e)
+        {
+            loadData();
+        }
+
+        //Side bar button
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
             StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
@@ -75,6 +82,18 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             MainWindow mainWindow = new MainWindow();
             this.Hide();
             mainWindow.Show();
+        }
+
+        //Action
+        private void btnDetail_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            if (button != null)
+            {
+                GenericTicket genericTicket = genericTicketService.FindGenericTicketById((long)button.Tag);
+                GenericTicketDetailWindow detailWindow = new GenericTicketDetailWindow(genericTicket, this, staff);
+                detailWindow.Show();
+            }
         }
     }
 }

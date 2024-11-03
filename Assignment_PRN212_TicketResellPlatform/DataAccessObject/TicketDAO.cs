@@ -57,15 +57,17 @@ namespace DataAccessObject
             return flag;
         }
 
-        public bool AcceptTicketSelling(long ticketId)
+        public bool AcceptTicketSelling(long ticketId, long staffId, string note)
         {
             bool isSuccess = false;
-            Ticket ticket = context.Tickets.SingleOrDefault(ticket => ticket.Id.Equals(ticketId));
+            Ticket ticket = GetTicketById(ticketId);
             if (ticket != null) 
             {
                 ticket.Process = GeneralProcess.SELLING;
                 ticket.IsChecked = true;
                 ticket.IsValid = true;
+                ticket.StaffId = staffId;
+                ticket.Note = note;
                 //Save to db
                 context.Entry(ticket).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
@@ -74,16 +76,17 @@ namespace DataAccessObject
             return isSuccess;
         }
 
-        public bool RejectTicketSelling(long ticketId)
+        public bool RejectTicketSelling(long ticketId, long staffId, string note)
         {
             bool isSuccess = false;
-            Ticket ticket = context.Tickets.SingleOrDefault(ticket => ticket.Id.Equals(ticketId));
+            Ticket ticket = GetTicketById(ticketId);
             if (ticket != null)
             {
                 ticket.Process = GeneralProcess.REJECTED;
                 ticket.IsChecked = true;
                 ticket.IsValid = false;
-
+                ticket.StaffId = staffId;
+                ticket.Note= note;
                 //Save to db
                 context.Entry(ticket).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();

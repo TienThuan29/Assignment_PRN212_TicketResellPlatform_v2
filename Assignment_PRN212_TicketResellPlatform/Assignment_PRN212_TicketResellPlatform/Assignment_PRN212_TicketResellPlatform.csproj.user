@@ -16,6 +16,9 @@
     <Compile Update="StaffWindows\GenericTicketDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffWindows\InputBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -91,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\GenericTicketDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\InputBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageEventWindow.xaml">

@@ -64,6 +64,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             btnAction.Content = "Create";
             txtEventId.Visibility = Visibility.Collapsed;
+            eventIdHead.Visibility = Visibility.Collapsed;
         }
 
         private void CaseUpdate()
@@ -166,11 +167,10 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         private void DisableAttribute()
         {
             txtEventId.IsEnabled = false;
-            txtEventDetail.IsEnabled = false;
-            txtEventId.IsEnabled = false;
-            txtEventName.IsEnabled = false;
-            dpEndDate.IsEnabled = false;
-            dpStartDate.IsEnabled = false;
+            txtEventDetail.IsReadOnly = true;
+            txtEventName.IsReadOnly = true;
+            dpEndDate.IsReadOnly = true;
+            dpStartDate.IsReadOnly = true;
         }
 
         private void ChooseImage_Click(object sender, RoutedEventArgs e)
