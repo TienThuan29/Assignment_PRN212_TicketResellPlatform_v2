@@ -56,11 +56,23 @@
 
                 <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Cửa hàng của tôi" Margin="576,25,330,588" />
 
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="ToAddingTicketWindow" Content="Thêm vé mới" Margin="229,31,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="ToAddingTicketWindow" Margin="229,78,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" >
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Add" />
+                        <TextBlock Text="Thêm vé" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
 
-                <DataGrid x:Name="ticketDataGrid" Margin="229,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,78,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ShoppingBasket" />
+                        <TextBlock Text=" Đơn mua" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <DataGrid x:Name="ticketDataGrid" Margin="229,124,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                           AutoGenerateColumns="False" HeadersVisibility="Column" IsReadOnly="True" CanUserAddRows="False"
-                          Height="533" Width="928"
+                          Height="489" Width="928"
                           >
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" />

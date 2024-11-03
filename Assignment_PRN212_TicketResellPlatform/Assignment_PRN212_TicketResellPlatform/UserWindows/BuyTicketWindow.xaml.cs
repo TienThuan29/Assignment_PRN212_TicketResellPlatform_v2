@@ -1,6 +1,7 @@
 ﻿using BusinessObject;
 using Repository.Impl;
 using Service.TicketService;
+using Service.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,13 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         }
 
         public void InitDataOnWindow()
-        {   //Init Lable
+        {
+            if (!string.IsNullOrEmpty(LoggedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + LoggedUser.Avatar, UriKind.Absolute);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
+            //Init Lable
             fullnameLabel.Content = LoggedUser.Firstname + " " + LoggedUser.Lastname;
             //Init TextBox
             var tickets = ticketService.FindSellingTicket(GenericTicket.Id);
@@ -41,6 +48,13 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             GenericTicketBox.DataContext = GenericTicket;
             txtQuantity.Text = quantity.ToString();
 
+        }
+
+        private void ShowUserProfileWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            UserProfileWindow userProfileWindow = new UserProfileWindow(LoggedUser);
+            userProfileWindow.Show();
         }
 
         public BuyTicketWindow(BusinessObject.GenericTicket genericTicket,BusinessObject.User loggedUser)
@@ -77,7 +91,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private void DecreaseQuantity_Click(object sender, RoutedEventArgs e)
         {   
             var quantity = ticketService.FindSellingTicket(GenericTicket.Id).Count();
-            if (selectedQuantity > quantity)
+            if (selectedQuantity > quantity && selectedQuantity >= 0)
             {
                 selectedQuantity--;
                 quantitySelector.Text = selectedQuantity.ToString();
