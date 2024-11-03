@@ -1,0 +1,22 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.UserWindows.PolicyWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
+        mc:Ignorable="d"
+        Title="PolicyWindow" Height="750" Width="900" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="160,21,72,642"/>
+        <DataGrid x:Name="PolicyDataGrid" Margin="0,97,0,127" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Thể loại chính sách" Width="Auto" Binding="{Binding TypePolicy.Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Nội dung chính sách" Width="Auto" Binding="{Binding Content}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Đóng" HorizontalAlignment="Left" Margin="815,664,0,0" VerticalAlignment="Top" Background="#FFE62809" Click="Button_Close"/>
+
+    </Grid>
+</Window>

@@ -35,14 +35,14 @@ namespace Service.TicketService
             return tickeRepository.FindByRequestSellingGenericTicket(genericTicketID);
         }
 
-        public bool AcceptTicketSelling(long ticketId)
+        public bool AcceptTicketSelling(long ticketId, long staffId, string note)
         {
-            return tickeRepository.AcceptTicketSelling(ticketId);
+            return tickeRepository.AcceptTicketSelling(ticketId, staffId, note);
         }
 
-        public bool RejectTicketSelling(long ticketId)
+        public bool RejectTicketSelling(long ticketId, long staffId, string note)
         {
-            return tickeRepository.RejectTicketSelling(ticketId);
+            return tickeRepository.RejectTicketSelling(ticketId, staffId, note);
         }
         public BusinessObject.Ticket GetTicketById(long ticketID) 
         {

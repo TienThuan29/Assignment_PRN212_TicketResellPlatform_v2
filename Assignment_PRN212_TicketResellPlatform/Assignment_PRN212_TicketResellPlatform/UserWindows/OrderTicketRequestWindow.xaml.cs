@@ -9,14 +9,14 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
     public partial class OrderTicketRequestWindow : Window
     {
-        private User logedUser;
+        private  BusinessObject.User logedUser;
 
         public OrderTicketRequestWindow()
         {
             InitializeComponent();
         }
 
-        public OrderTicketRequestWindow(User user)
+        public OrderTicketRequestWindow(BusinessObject.User user)
         {
             InitializeComponent();
             this.logedUser = user;

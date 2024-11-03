@@ -60,16 +60,16 @@
 
                 <StackPanel Margin="60,100,60,60">
                     <Label FontSize="20" Content="Họ*" />
-                    <TextBox IsEnabled="False" x:Name="firstnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsReadOnly="True" x:Name="firstnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="Tên*" />
-                    <TextBox IsEnabled="False" x:Name="lastnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsReadOnly="True" x:Name="lastnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="Email*" />
-                    <TextBox IsEnabled="False" x:Name="emailTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsReadOnly="True" x:Name="emailTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
 
                     <Label FontSize="20" Content="SĐT" />
-                    <TextBox IsEnabled="False" x:Name="phoneTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                    <TextBox IsReadOnly="True" x:Name="phoneTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
                 </StackPanel>
             </Grid>
         </Grid>

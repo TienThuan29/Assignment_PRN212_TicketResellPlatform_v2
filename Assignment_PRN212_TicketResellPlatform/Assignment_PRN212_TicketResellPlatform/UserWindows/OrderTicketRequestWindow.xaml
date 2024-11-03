@@ -40,7 +40,7 @@
                 </Grid>
             </Border>
 
-            <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10" Loaded="OnWindowLoaded">
+            <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10" >
                 <Grid>
                     <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="90"  Margin="26,16,0,0" Height="156" Width="159">
                         <Border.Background>

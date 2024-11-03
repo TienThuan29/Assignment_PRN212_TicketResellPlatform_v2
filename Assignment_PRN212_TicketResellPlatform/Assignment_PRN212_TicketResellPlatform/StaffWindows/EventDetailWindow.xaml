@@ -9,7 +9,6 @@
         mc:Ignorable="d"
         Title="Event Detail" Height="500" Width="800"
         WindowStartupLocation="CenterScreen">
-
     <Grid Margin="20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -29,8 +28,8 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0">
-            <TextBlock Text="Event ID:" FontWeight="Bold"/>
-            <TextBlock x:Name="txtEventId" Margin="0,0,0,10"/>
+            <TextBlock x:Name="eventIdHead" Text="Event ID:" FontWeight="Bold"/>
+            <TextBlock x:Name="txtEventId" Margin="0,0,0,10" Style="{DynamicResource MaterialDesignTextBlock}"/>
 
             <TextBlock Text="Event Name:" FontWeight="Bold"/>
             <TextBox x:Name="txtEventName"

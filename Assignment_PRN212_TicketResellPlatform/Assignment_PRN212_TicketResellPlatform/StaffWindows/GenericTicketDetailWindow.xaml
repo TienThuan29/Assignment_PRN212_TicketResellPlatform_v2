@@ -7,69 +7,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="GenericTicketDetailWindow" Height="600" Width="800" 
+        Title="GenericTicketDetailWindow" Height="700" Width="800" 
         WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="20,0,0,0">
-                <TextBlock Text="Event ID:" FontWeight="Bold"/>
-                <TextBlock x:Name="txtEventId" Margin="0,0,0,10"/>
+    <Grid Margin="2">
+        <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Background="#F5F5F5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
 
-                <TextBlock Text="Event Name:" FontWeight="Bold"/>
-                <TextBox x:Name="txtEventName"
-                Style="{DynamicResource MaterialDesignTextBox}" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical" Margin="10">
+                    <TextBlock Text="Tên vé:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtGenericName" Margin="0,0,0,10" IsReadOnly="True"
+                Style="{DynamicResource MaterialDesignTextBox}"/>
 
-                <TextBlock Text="Event Details:" FontWeight="Bold"/>
-                <TextBox x:Name="txtEventDetail"
-                 TextWrapping="Wrap" AcceptsReturn="True" Height="100" 
+                    <TextBlock Text="Khu vực:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtArea" IsReadOnly="True"
+                Style="{DynamicResource MaterialDesignTextBox}" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Loại vé:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtTypeTicket" IsReadOnly="True"
+                 Style="{DynamicResource MaterialDesignTextBox}" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Giá vé:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtPrice" IsReadOnly="True"
+                Style="{DynamicResource MaterialDesignTextBox}" Margin="0,0,0,10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10">
+
+                    <TextBlock Text="Thể loại:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtCategory" IsReadOnly="True"
+                Style="{DynamicResource MaterialDesignTextBox}" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Link sự kiện:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtLinkEvent" IsReadOnly="True"
+                Style="{DynamicResource MaterialDesignTextBox}" Margin="0,0,0,10"/>
+
+                    <TextBlock Text="Mô tả:" FontWeight="Bold"/>
+                    <TextBox x:Name="txtDescription" IsReadOnly="True"
+                 TextWrapping="Wrap" AcceptsReturn="True" Height="73" 
                  Style="{DynamicResource MaterialDesignTextBox}"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0">
-                <TextBlock Text="Event ID:" FontWeight="Bold"/>
-                <TextBlock  Margin="0,0,0,10"/>
-
-                <TextBlock Text="Event Name:" FontWeight="Bold"/>
-                <TextBox 
-                Style="{DynamicResource MaterialDesignTextBox}" />
-
-                <TextBlock Text="Event Details:" FontWeight="Bold"/>
-                <TextBox 
-                 TextWrapping="Wrap" AcceptsReturn="True" Height="100" 
-                 Style="{DynamicResource MaterialDesignTextBox}"/>  
-            </StackPanel>
-        </Grid>
-
-        <Grid Grid.Row="1" Grid.Column="1" Width="921">
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" Grid.Column="1" Width="921" Margin="5">
             <DataGrid AutoGenerateColumns="False" 
-              x:Name="UserGrid"
+              x:Name="TicketGrid"
               CanUserAddRows="False"
               CanUserDeleteRows="False"
               HeadersVisibility="Column" 
               RowHeight="50" 
-              ColumnWidth="*" 
-              Margin="0,228,122,10" 
+              Margin="10,199,140,60" 
               IsReadOnly="True"
               Background="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Ticket Serial" Binding="{Binding Id}" Width="150"/>
-                    <DataGridTemplateColumn Header="Avatar" Width="180">
+                    <DataGridTextColumn Header="Serial" Binding="{Binding Id}" Width="150"/>
+                    <DataGridTemplateColumn Header="Ảnh vé" Width="200">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Image x:Name="imgAvatar" Source="{Binding Avatar}" Width="150" Height="150" 
-                                        Stretch="UniformToFill" />
+                                <Image x:Name="imgImage" Source="{Binding Image}" 
+                                   Width="150" Height="150" 
+                                   Stretch="Uniform" 
+                                   ToolTip="{Binding Image}" 
+                                   MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    <DataGridTemplateColumn Header="Hành động" Width="210">
+                    <DataGridTemplateColumn Header="Hành động" Width="200">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -79,9 +89,14 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    
                 </DataGrid.Columns>
             </DataGrid>
+            <Popup x:Name="ImagePopup" StaysOpen="False" Placement="Mouse" AllowsTransparency="True" IsOpen="{Binding ElementName=imgImage, Path=IsMouseOver}">
+                <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Background="White">
+                    <Image x:Name="PopupImage" Width="400" Height="400" Stretch="Uniform"/>
+                </Border>
+            </Popup>
+            <Button Content="Đóng" HorizontalAlignment="Left" Margin="705,615,0,0" VerticalAlignment="Top" Click="btnClose_Click" Background="#F44336"/>
         </Grid>
     </Grid>
 </Window>

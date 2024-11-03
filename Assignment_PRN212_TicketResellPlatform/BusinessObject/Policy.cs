@@ -10,5 +10,7 @@ namespace BusinessObject
         public int Fee { get; set; }
         public bool? IsDeleted { get; set; }
         public long? TypePolicyId { get; set; }
+
+        public virtual TypePolicy? TypePolicy { get; set; }
     }
 }

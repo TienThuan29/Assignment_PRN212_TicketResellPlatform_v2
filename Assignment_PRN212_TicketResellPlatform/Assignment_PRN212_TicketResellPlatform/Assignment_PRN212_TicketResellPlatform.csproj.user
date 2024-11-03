@@ -16,6 +16,9 @@
     <Compile Update="StaffWindows\GenericTicketDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffWindows\InputBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,7 +58,12 @@
     <Compile Update="UserWindows\MyShopWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
+
+	<Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
+	    <SubType>Code</SubType>
+	</Compile>
+	 
+    <Compile Update="UserWindows\PolicyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\UserProfileWindow.xaml.cs">
@@ -94,6 +102,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\GenericTicketDetailWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="StaffWindows\InputBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="StaffWindows\ManageEventWindow.xaml">
@@ -135,7 +146,12 @@
     <Page Update="UserWindows\MyShopWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
+
+	  <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
+		  <SubType>Designer</SubType>
+	  </Page>
+
+    <Page Update="UserWindows\PolicyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\UserProfileWindow.xaml">

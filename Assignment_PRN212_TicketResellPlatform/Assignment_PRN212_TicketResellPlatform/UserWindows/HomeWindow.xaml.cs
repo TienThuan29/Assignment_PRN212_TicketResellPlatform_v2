@@ -36,6 +36,11 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         }
         public void InitOndataWindow()
         {
+            if (!string.IsNullOrEmpty(logedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + logedUser.Avatar, UriKind.Absolute);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
             //init lable
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             //init event
@@ -77,5 +82,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.Close();
         }
 
+        private void ShowPolicyWindow(object sender, RoutedEventArgs e)
+        {
+            PolicyWindow policyWindow = new PolicyWindow();
+            policyWindow.Show();
+        }
     }
 }
