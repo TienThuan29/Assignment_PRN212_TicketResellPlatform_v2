@@ -9,38 +9,46 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform"  Height="900" Width="600"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Background="#FFF6E9F7" Icon="/LogoTab-Photoroom.png"
         >
-    <Grid>
-        <Label x:Name="ticketNameLabel" FontSize="16" Content="Tên vé: " HorizontalAlignment="Left" Margin="42,50,0,0" VerticalAlignment="Top"/>
+    <Border Background="#FFFCF7FD" CornerRadius="20" Margin="20">
+        <Border.Effect>
+            <DropShadowEffect Color="Black" BlurRadius="15" ShadowDepth="5" Opacity="0.3" />
+        </Border.Effect>
+        <Grid Margin="20">
+            <Label x:Name="ticketNameLabel" FontSize="16" Content="Tên vé: " HorizontalAlignment="Left" Margin="42,50,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="priceLable" FontSize="16" Content="Giá vé: " HorizontalAlignment="Left" Margin="42,100,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="priceLable" FontSize="16" Content="Giá vé: " HorizontalAlignment="Left" Margin="42,100,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="expiredDateLabel" FontSize="16" Content="Ngày hết hạn: " HorizontalAlignment="Left" Margin="42,150,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="expiredDateLabel" FontSize="16" Content="Ngày hết hạn: " HorizontalAlignment="Left" Margin="42,150,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="areaLabel" FontSize="16" Content="Khu vực: " HorizontalAlignment="Left" Margin="42,200,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="areaLabel" FontSize="16" Content="Khu vực: " HorizontalAlignment="Left" Margin="42,200,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="ticketTypeLabel" FontSize="16" Content="Loại vé: " HorizontalAlignment="Left" Margin="42,250,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ticketTypeLabel" FontSize="16" Content="Loại vé: " HorizontalAlignment="Left" Margin="42,250,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock x:Name="descriptionTextBlock" FontSize="16" Text="Mô tả: " 
-                   TextWrapping="Wrap" HorizontalAlignment="Left" Margin="42,300,0,0" 
-                   VerticalAlignment="Top" Height="99" Width="511"
-         />
+            <TextBlock x:Name="descriptionTextBlock" FontSize="16" Text="Mô tả: " 
+           TextWrapping="Wrap" HorizontalAlignment="Left" Margin="42,300,0,0" 
+           VerticalAlignment="Top" Height="99" Width="511"
+ />
 
-        <Label x:Name="ticketSerialLabel" FontSize="16" Content="Mã vé: " HorizontalAlignment="Left" Margin="42,400,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="ticketSerialLabel" FontSize="16" Content="Mã vé: " HorizontalAlignment="Left" Margin="42,400,0,0" VerticalAlignment="Top"/>
 
-        <Label x:Name="processLabel" FontSize="16" Content="Trạng thái: " HorizontalAlignment="Left" Margin="42,450,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="processLabel" FontSize="16" Content="Trạng thái: " HorizontalAlignment="Left" Margin="42,450,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock x:Name="noteTextBlock" FontSize="16" Text="Ghi chú từ nhân viên: " TextWrapping="Wrap" HorizontalAlignment="Left" Margin="47,500,0,0" VerticalAlignment="Top" Height="109" Width="494"/>
+            <TextBlock x:Name="noteTextBlock" FontSize="16" Text="Ghi chú từ nhân viên: " TextWrapping="Wrap" HorizontalAlignment="Left" Margin="47,500,0,0" VerticalAlignment="Top" Height="57" Width="423"/>
 
-        <Label x:Name="tickImageLabel" FontSize="16" Content="Ảnh vé: " HorizontalAlignment="Left" Margin="47,614,0,0" VerticalAlignment="Top"/>
-        <Image x:Name="ticketImage" HorizontalAlignment="Left" Height="160" Margin="151,614,0,0" VerticalAlignment="Top" Width="370"/>
+            <Label x:Name="tickImageLabel" FontSize="16" Content="Ảnh vé: " HorizontalAlignment="Left" Margin="47,573,0,0" VerticalAlignment="Top"/>
+            <Image x:Name="ticketImage" HorizontalAlignment="Left" Height="133" Margin="151,579,0,0" VerticalAlignment="Top" Width="305"/>
 
-        <Button Click="CloseWindow" Content="Đóng" HorizontalAlignment="Left" Margin="50,802,0,0" VerticalAlignment="Top" Background="#FFF55050" BorderBrush="#FFEF3B3B"/>
-        <Button x:Name="markBoughtBtn" Click="MarkBought" Content="Đánh giấu đã bán" HorizontalAlignment="Left" Margin="148,802,0,0" VerticalAlignment="Top" Background="#FF85FD5B" BorderBrush="#FFC0E0AE" Foreground="#DD000000"/>
-
-
+            <Button Click="CloseWindow" Content="Đóng" HorizontalAlignment="Left" Margin="10,736,0,0" VerticalAlignment="Top" Background="#FFF55050" BorderBrush="#FFEF3B3B"/>
+            <Button x:Name="markBoughtBtn" Click="MarkBought" Content="Đánh dấu đã bán" HorizontalAlignment="Left" Margin="92,736,0,0" VerticalAlignment="Top" Background="#FF85FD5B" BorderBrush="#FFC0E0AE" Foreground="#DD000000"/>
 
 
-    </Grid>
+
+
+        </Grid>
+    </Border>
+
+
+
 </Window>

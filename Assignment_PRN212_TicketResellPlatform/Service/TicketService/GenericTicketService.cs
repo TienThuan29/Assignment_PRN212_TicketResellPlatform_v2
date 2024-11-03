@@ -13,6 +13,10 @@ namespace Service.TicketService
     {
         private IGenericTicketRepository genericTicketRepository;
 
+        private ICategoryRepository categoryRepository;
+
+        private IEventRepository eventRepository;
+
         public GenericTicketService() 
         {
             this.genericTicketRepository = new GenericTicketRepository();
@@ -40,7 +44,15 @@ namespace Service.TicketService
 
         public ICollection<GenericTicket> GetRequestSellingGenericTickets()
         {
-            return genericTicketRepository.GetRequestSellingGenericTickets();
+            var genericTickets = genericTicketRepository.GetRequestSellingGenericTickets();
+            foreach (var genericTicket in genericTickets) {
+                if (genericTicket.CategoryId != null && genericTicket.EventId != null)
+                {
+                    genericTicket.Category = categoryRepository.GetCategoryById(genericTicket.CategoryId.Value);
+                    genericTicket.Event = eventRepository.GetEvent(genericTicket.EventId.Value);
+                }
+            }
+            return genericTickets;
         }
 
         public GenericTicket FindTicketById(long ticketId)

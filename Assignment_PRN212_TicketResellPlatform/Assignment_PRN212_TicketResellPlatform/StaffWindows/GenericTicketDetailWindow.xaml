@@ -7,8 +7,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="GenericTicketDetailWindow" Height="600" Width="800">
+        Title="GenericTicketDetailWindow" Height="600" Width="800" 
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="20,0,0,0">
+                <TextBlock Text="Event ID:" FontWeight="Bold"/>
+                <TextBlock x:Name="txtEventId" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Event Name:" FontWeight="Bold"/>
+                <TextBox x:Name="txtEventName"
+                Style="{DynamicResource MaterialDesignTextBox}" />
+
+                <TextBlock Text="Event Details:" FontWeight="Bold"/>
+                <TextBox x:Name="txtEventDetail"
+                 TextWrapping="Wrap" AcceptsReturn="True" Height="100" 
+                 Style="{DynamicResource MaterialDesignTextBox}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical" Margin="20,0,0,0">
+                <TextBlock Text="Event ID:" FontWeight="Bold"/>
+                <TextBlock  Margin="0,0,0,10"/>
+
+                <TextBlock Text="Event Name:" FontWeight="Bold"/>
+                <TextBox 
+                Style="{DynamicResource MaterialDesignTextBox}" />
+
+                <TextBlock Text="Event Details:" FontWeight="Bold"/>
+                <TextBox 
+                 TextWrapping="Wrap" AcceptsReturn="True" Height="100" 
+                 Style="{DynamicResource MaterialDesignTextBox}"/>  
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Width="921">
+            <DataGrid AutoGenerateColumns="False" 
+              x:Name="UserGrid"
+              CanUserAddRows="False"
+              CanUserDeleteRows="False"
+              HeadersVisibility="Column" 
+              RowHeight="50" 
+              ColumnWidth="*" 
+              Margin="0,228,122,10" 
+              IsReadOnly="True"
+              Background="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Ticket Serial" Binding="{Binding Id}" Width="150"/>
+                    <DataGridTemplateColumn Header="Avatar" Width="180">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image x:Name="imgAvatar" Source="{Binding Avatar}" Width="150" Height="150" 
+                                        Stretch="UniformToFill" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Hành động" Width="210">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button x:Name="btnAccept" Click="btnAccept_Click" Content="Chấp Nhận" Tag="{Binding Id}" Background="Green" Padding="5,0" Margin="5,0" />
+                                    <Button x:Name="btnReject" Click="btnReject_Click" Content="Từ Chối" Tag="{Binding Id}" Background="Red" Padding="5,0" Margin="5,0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Window>

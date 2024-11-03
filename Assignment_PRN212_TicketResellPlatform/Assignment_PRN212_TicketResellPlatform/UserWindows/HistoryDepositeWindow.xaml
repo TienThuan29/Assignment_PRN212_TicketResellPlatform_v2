@@ -73,12 +73,12 @@
                           HorizontalAlignment="Left" VerticalAlignment="Top" Height="498" Width="905"
                 >
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto" />
-                        <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="Auto" />
-                        <DataGridCheckBoxColumn Header="Is Done" Binding="{Binding IsDone}" Width="Auto" />
-                        <DataGridTextColumn Header="Transaction Date" Binding="{Binding TransDate, StringFormat=G}" Width="Auto" />
-                        <DataGridTextColumn Header="Transaction Type" Binding="{Binding TransType}" Width="Auto" />
-                        <DataGridTextColumn Header="Transaction No" Binding="{Binding TransactionNo}" Width="Auto" />
+                        <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto" />
+                        <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" Width="Auto" />
+                        <DataGridCheckBoxColumn Header="Hoàn thành" Binding="{Binding IsDone}" Width="Auto" />
+                        <DataGridTextColumn Header="Thời gian giao dịch" Binding="{Binding TransDate, StringFormat=G}" Width="Auto" />
+                        <DataGridTextColumn Header="Loại giao dịch" Binding="{Binding TransType}" Width="Auto" />
+                        <DataGridTextColumn Header="Mã số giao dịch" Binding="{Binding TransactionNo}" Width="Auto" />
                     </DataGrid.Columns>
                 </DataGrid>
 
