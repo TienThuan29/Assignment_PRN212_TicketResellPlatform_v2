@@ -49,7 +49,13 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         }
 
         public void InitDataOnWindow()
-        {   //Init Lable
+        {
+            if (!string.IsNullOrEmpty(LoggedUser.Avatar))
+            {
+                Uri uri = new Uri(LocalPathSetting.ProfileImagePath + LoggedUser.Avatar, UriKind.Absolute);
+                avatarImageBrushHeader.ImageSource = new BitmapImage(uri);
+            }
+            //Init Lable
             fullnameLabel.Content = LoggedUser.Firstname + " " + LoggedUser.Lastname;
             //Init TextBox
 
@@ -88,6 +94,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         }
 
+        private void ShowUserProfileWindow(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            UserProfileWindow userProfileWindow = new UserProfileWindow(LoggedUser);
+            userProfileWindow.Show();
+        }
         private void ShowHomePageWindow(object sender, RoutedEventArgs e)
         {
             this.Hide();

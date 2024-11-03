@@ -32,8 +32,16 @@ namespace DataAccessObject
                 {
                     policies.Remove(item);
                 }
+                else
+                {
+                    item.TypePolicy = TypePolicyDAO.Instance.GetTypePolicyByid(item.Id);
+                }
+                
             }
             return policies;
         }
+            
+
+       
     }
 }

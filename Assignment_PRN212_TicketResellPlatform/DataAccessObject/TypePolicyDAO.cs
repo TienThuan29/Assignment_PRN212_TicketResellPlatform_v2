@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,11 @@ namespace DataAccessObject
         private TypePolicyDAO()
         {
             this.context = new PRN212_TicketResellPlatformContext();
+        }
+
+        public TypePolicy GetTypePolicyByid(long id)
+        {
+            return this.context.TypePolicies.SingleOrDefault(m => m.Id.Equals(id));
         }
     }
 }

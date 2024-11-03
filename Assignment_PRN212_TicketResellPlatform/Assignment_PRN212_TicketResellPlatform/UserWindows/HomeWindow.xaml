@@ -33,7 +33,7 @@
 
                 <Border CornerRadius="30" Margin="1039,10,113,2">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill" ImageSource="/UserWindows/child-1837375_1280.png" />
+                        <ImageBrush Stretch="Fill" x:Name="avatarImageBrushHeader" ImageSource="/UserWindows/child-1837375_1280.png" />
                     </Border.Background>
                 </Border>
                 <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="743,0,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
@@ -64,5 +64,6 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Grid.Column="1" Content="Chính sách của chúng tôi" HorizontalAlignment="Left" Margin="915,585,0,0" Grid.Row="1" VerticalAlignment="Top" Click="ShowPolicyWindow"/>
     </Grid>
 </Window>
