@@ -63,7 +63,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,78,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000">
+                <Button Click="ToOrderTicketWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="350,78,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ShoppingBasket" />
                         <TextBlock Text=" Đơn mua" VerticalAlignment="Center"/>

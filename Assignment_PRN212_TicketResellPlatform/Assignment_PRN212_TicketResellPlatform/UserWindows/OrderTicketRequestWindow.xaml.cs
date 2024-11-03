@@ -3,6 +3,8 @@ using Service.Utils.TienThuan;
 using Service.Utils;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Service.TicketService;
+using System.Windows.Controls;
 
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
@@ -10,11 +12,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     public partial class OrderTicketRequestWindow : Window
     {
         private  BusinessObject.User logedUser;
+        private IOrderTicketService orderTicketService = new OrderTicketService(); 
 
-        public OrderTicketRequestWindow()
-        {
-            InitializeComponent();
-        }
 
         public OrderTicketRequestWindow(BusinessObject.User user)
         {
@@ -34,6 +33,28 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             fullnameLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             fullnameHeaderLabel.Content = logedUser.Firstname + " " + logedUser.Lastname;
             balanceLabel.Content = balanceLabel.Content.ToString() + StringFormatUtil.FormatVND((long)logedUser.Balance);
+            ReloadDataGrid();
+        }
+
+        private void ReloadDataGrid()
+        {
+            orderTicketDataGrid.ItemsSource = orderTicketService.GetAllOrderTicketsBySeller(logedUser.Id);
+        }
+
+        private void AcceptOrder(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.CommandParameter is string orderNo)
+            {
+                MessageBox.Show($"Accepted Order No: {orderNo}");
+            }
+        }
+
+        private void RejectOrder(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.CommandParameter is string orderNo)
+            {
+                MessageBox.Show($"Rejected Order No: {orderNo}");
+            }
         }
 
         private void Logout(object sender, RoutedEventArgs e)

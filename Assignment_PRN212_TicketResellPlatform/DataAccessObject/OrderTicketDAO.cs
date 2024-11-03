@@ -75,5 +75,21 @@ namespace DataAccessObject
             }
             return isSuccess;
         }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId)
+        {
+            var orderTickets = (from ot in context.OrderTickets 
+                                join gt in context.GenericTickets
+                                on ot.GenericTicketId equals gt.Id
+                                where gt.SellerId == sellerId 
+                                select ot)
+                                .ToList();
+            return orderTickets;
+;       }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId)
+        {
+            return context.OrderTickets.Where(orderTicket => orderTicket.BuyerId.Equals(buyerId)).ToList(); 
+        }
     }
 }

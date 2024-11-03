@@ -14,5 +14,10 @@ namespace BusinessObject
         public long GenericTicketId { get; set; }
         public long? PaymentMethodId { get; set; }
         public bool? IsCanceled { get; set; }
+
+        public virtual User? Buyer { get; set; }
+
+        public virtual GenericTicket? GenericTicket { get; set; }
+
     }
 }

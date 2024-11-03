@@ -1,4 +1,4 @@
-﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.UserWindows.OrderTicketRequestWindow"
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.UserWindows.BoughtTicketWindow"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         FontFamily="{DynamicResource MaterialDesignFont}"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -6,7 +6,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
-        mc:Ignorable="d"
         Title="Ticket Resell Platform"  Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
@@ -50,39 +49,33 @@
                     <Label x:Name="fullnameLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Content="Fullname" Margin="33,182,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                     <Label x:Name="balanceLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Red" FontSize="10" Content="Số dư: " Margin="44,213,0,0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22"/>
                     <Button Click="ToUserProfileWindow" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" />
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cửa hàng của tôi" Margin="17,376,0,0" Width="140" Click="ToMyShopWindow" />
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" Click="Button_Click" />
+                    <Button Click="ToMyShopWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cửa hàng của tôi" Margin="17,376,0,0" Width="140" />
                     <Button Click="ToManageBalanceWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý số dư" Margin="17,434,0,0" Width="140" />
                     <Button Click="ToChangePasswordWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đổi mật khẩu" Margin="17,492,0,0" Width="140" />
 
-                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Đơn mua" Margin="576,25,330,588" />
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Lịch sử đơn hàng" Margin="576,25,330,588" />
 
                     <DataGrid x:Name="orderTicketDataGrid" AutoGenerateColumns="False" IsReadOnly="True"
-                              Margin="229,124,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="506" Width="926">
+          Margin="229,124,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="506" Width="926">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Mã đơn" Binding="{Binding OrderNo}" />
-                            <DataGridTextColumn Header="Ghi chú" Binding="{Binding Note}" />
                             <DataGridTextColumn Header="Số lượng" Binding="{Binding Quantity}" />
                             <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TotalPrice}" />
                             <!-- <DataGridTextColumn Header="Người mua" Binding="{Binding Buyer.Fullname}" /> -->
                             <DataGridTextColumn Header="Tên vé" Binding="{Binding GenericTicket.TicketName}" />
                             <DataGridCheckBoxColumn Header="Đã hủy" Binding="{Binding IsCanceled}" />
                             <DataGridCheckBoxColumn Header="Đã đồng ý" Binding="{Binding IsAccepted}" />
-
+                            <DataGridTextColumn Header="Ghi chú của người bán" Binding="{Binding Note}" />
                             <!-- Action Buttons -->
                             <DataGridTemplateColumn Header="Thao tác">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Click="AcceptOrder" Width="50" Margin="5,0,5,0" CommandParameter="{Binding OrderNo}"
-                                                     Background="#FF74D44A" Foreground="#DD000000" BorderBrush="#FF74D44A"
-                                                    >
-                                                <materialDesign:PackIcon Kind="Check" />
-                                            </Button>
-                                            <Button Click="RejectOrder" Width="50" CommandParameter="{Binding OrderNo}"
-                                                    Background="#FFF37575" Foreground="#DD000000" BorderBrush="#FFF37575"
-                                                    >
-                                                <materialDesign:PackIcon Kind="CloseBoxOutline" />
+                                            <Button Click="CancelOrder" Width="50" CommandParameter="{Binding OrderNo}"
+                                                Background="#FFF37575" Foreground="#DD000000" BorderBrush="#FFF37575"
+                                            >
+                                                <materialDesign:PackIcon Kind="DeleteForever" />
                                             </Button>
                                         </StackPanel>
                                     </DataTemplate>
@@ -92,11 +85,10 @@
                     </DataGrid>
 
 
-
                     <Button Click="Logout" HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
                         <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                     </Button>
-                   
+
                 </Grid>
             </Border>
 

@@ -1,4 +1,5 @@
-﻿using Repository.Def;
+﻿using BusinessObject;
+using Repository.Def;
 using Repository.Impl;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,20 @@ namespace Service.TicketService
         {
             orderTicketRepository = new OrderTicketRepository();
         }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId)
+        {
+            return orderTicketRepository.GetAllOrderTicketsBySeller(sellerId);
+        }
+
         public bool OrderTicket(long GenericTicketId, int quantity, BusinessObject.User user)
         {
             return orderTicketRepository.OrderTicket(GenericTicketId, quantity, user);
+        }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId)
+        {
+            return orderTicketRepository.GetAllOrderTicketsByBuyer(buyerId);
         }
     }
 }

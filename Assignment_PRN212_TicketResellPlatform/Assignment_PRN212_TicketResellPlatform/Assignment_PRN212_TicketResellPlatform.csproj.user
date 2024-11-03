@@ -40,6 +40,9 @@
     <Compile Update="UserWindows\BalanceManagementWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\BoughtTicketWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\BuyTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -58,11 +61,9 @@
     <Compile Update="UserWindows\MyShopWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-
-	<Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
-	    <SubType>Code</SubType>
-	</Compile>
-	 
+    <Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\PolicyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -128,6 +129,9 @@
     <Page Update="UserWindows\BalanceManagementWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserWindows\BoughtTicketWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserWindows\BuyTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -146,11 +150,9 @@
     <Page Update="UserWindows\MyShopWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-
-	  <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
-		  <SubType>Designer</SubType>
-	  </Page>
-
+    <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserWindows\PolicyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
