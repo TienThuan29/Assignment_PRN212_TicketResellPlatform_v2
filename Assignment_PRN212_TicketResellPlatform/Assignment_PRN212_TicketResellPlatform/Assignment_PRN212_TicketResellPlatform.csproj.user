@@ -55,6 +55,9 @@
     <Compile Update="UserWindows\MyShopWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\UserProfileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -130,6 +133,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\MyShopWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\UserProfileWindow.xaml">
