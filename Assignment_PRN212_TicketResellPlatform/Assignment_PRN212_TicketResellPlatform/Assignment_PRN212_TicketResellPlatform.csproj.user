@@ -73,6 +73,9 @@
     <Compile Update="UserWindows\UserProfileWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\ViewBoughtTicketsOfOrder.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\ViewTicketDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -163,6 +166,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\UserProfileWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\ViewBoughtTicketsOfOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\ViewTicketDetailWindow.xaml">

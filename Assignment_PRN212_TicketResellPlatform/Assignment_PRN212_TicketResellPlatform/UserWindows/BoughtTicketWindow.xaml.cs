@@ -25,6 +25,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private IOrderTicketService orderTicketService = new OrderTicketService();
 
+        private ITicketService ticketService = new TicketService();
+
         public BoughtTicketWindow()
         {
             InitializeComponent();
@@ -35,6 +37,42 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             InitializeComponent();
             this.logedUser = user;
             InitDataWindow();
+        }
+
+
+        private void ViewOrderDetail(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.CommandParameter is string orderNo)
+            {
+                //MessageBox.Show($"Detail Order No: {orderNo}");
+                OrderTicket orderTicket = orderTicketService.GetOrderTicketByOrderNo(orderNo);
+                if (orderTicket.IsAccepted == false && !string.IsNullOrEmpty(orderTicket.Note))
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã bị từ chối bởi người bán!");
+                }
+                else if (orderTicket.IsCanceled == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được hủy!");
+                }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ICollection<Ticket> boughtTicketsOfBuyer = ticketService.FindByGenericTicketID(orderTicket.GenericTicketId).Where(
+                        ticket => ticket.BuyerId.Equals(logedUser.Id)
+                    ).ToList();
+                    foreach (Ticket ticket in boughtTicketsOfBuyer)
+                    {
+                        if (!ticket.Image.Contains(LocalPathSetting.TicketImagePath))
+                            ticket.Image = LocalPathSetting.TicketImagePath + ticket.Image;
+                    }
+                    ViewBoughtTicketsOfOrder viewBoughtTicketsOfOrder = new ViewBoughtTicketsOfOrder(boughtTicketsOfBuyer);
+                    viewBoughtTicketsOfOrder.Show();
+                }
+                else
+                {
+                    ShowErrorMessageBox("Có một vài sự cố xảy ra!!!");
+                }
+                
+            }
         }
 
 
@@ -62,6 +100,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 }
             }
         }
+        
 
         private void InitDataWindow()
         {

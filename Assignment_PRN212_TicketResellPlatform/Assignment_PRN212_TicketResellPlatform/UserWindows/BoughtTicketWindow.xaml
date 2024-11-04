@@ -69,10 +69,17 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button Click="CancelOrder" Width="50" CommandParameter="{Binding OrderNo}"
+
+                                            <Button Click="ViewOrderDetail" Width="50" CommandParameter="{Binding OrderNo}" Margin="0,0,5,0"
+                                                    BorderBrush="#FF79D05A" Background="#FF87F95E" Foreground="#DD000000">
+                                                <materialDesign:PackIcon Kind="NoteText" />
+                                            </Button>
+
+                                            <Button Click="CancelOrder" Width="50" CommandParameter="{Binding OrderNo}" 
                                                 Background="#FFF37575" Foreground="#DD000000" BorderBrush="#FFF37575">
                                                 <materialDesign:PackIcon Kind="DeleteForever" />
                                             </Button>
+                                            
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
