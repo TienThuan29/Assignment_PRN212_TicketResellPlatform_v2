@@ -6,6 +6,7 @@ using System.Windows.Media.Imaging;
 using Service.TicketService;
 using System.Windows.Controls;
 using Assignment_PRN212_TicketResellPlatform.UserWindows.CustomDialog;
+using Service.TransactionService;
 
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
@@ -14,7 +15,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
     {
         private  BusinessObject.User logedUser;
         private IOrderTicketService orderTicketService = new OrderTicketService(); 
-
+        private ITicketService ticketService = new TicketService();
+        private ITransactionService transactionService = new TransactionService();  
 
         public OrderTicketRequestWindow(BusinessObject.User user)
         {
@@ -46,7 +48,58 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             if (sender is Button button && button.CommandParameter is string orderNo)
             {
-                MessageBox.Show($"Accepted Order No: {orderNo}");
+                //MessageBox.Show($"Accepted Order No: {orderNo}");
+                OrderTicket orderTicket = orderTicketService.GetOrderTicketByOrderNo(orderNo);
+                if (orderTicket.IsAccepted == false && !string.IsNullOrEmpty(orderTicket.Note))
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được từ chối!");
+                }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được xác nhận!");
+                }
+                else if (orderTicket.IsCanceled == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã bị hủy bởi người mua!");
+                }
+                else
+                {
+                    switch(MessageBox.Show("Xác nhận bán vé cho đơn hàng?", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question))
+                    {
+                        case MessageBoxResult.Yes:
+                            // Check quantity
+                            ICollection<Ticket> sellingTickets = ticketService.FindSellingTicket(orderTicket.GenericTicketId);
+                            if (orderTicket.Quantity <= sellingTickets.Count)
+                            {
+                                // Auto transact tickets to buyer
+                                for (int i = 1; i <= orderTicket.Quantity; i++)
+                                {
+                                    Ticket sellingTicket = sellingTickets.ElementAt(i - 1);
+                                    sellingTicket.IsBought = true;
+                                    sellingTicket.BuyerId = orderTicket.BuyerId;
+                                    sellingTicket.BoughtDate = DateTime.Now;
+                                    sellingTicket.Process = GeneralProcess.SUCCESS;
+                                    ticketService.UpdateBoughtTicket(sellingTicket);
+                                }
+                                // Update order ticket
+                                orderTicket.IsAccepted = true;
+                                orderTicketService.UpdateOrderTicket(orderTicket);
+                                // Save transaction
+                                transactionService.SaveBuyingTransaction(orderTicket.BuyerId, (long)orderTicket.TotalPrice);
+                                transactionService.SaveSellingTransaction(logedUser.Id, (long)orderTicket.TotalPrice);
+                                ShowInfoMessageBox("Đã chuyển vé đến người mua thành công!");
+                            }
+                            else
+                            {
+                                ShowErrorMessageBox("Không đủ số lượng vé cho đơn hàng này!");
+                            }
+                            break;
+                        case MessageBoxResult.No:
+
+                            break;
+                    }
+                    
+                }
             }
         }
 
@@ -60,6 +113,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 {
                     ShowErrorMessageBox("Đơn hàng này đã được từ chối!");
                 }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được xác nhận!");
+                }
                 else if (orderTicket.IsCanceled == true)
                 {
                     ShowErrorMessageBox("Đơn hàng này đã bị hủy bởi người mua!");
@@ -69,9 +126,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     RejectOrderDialog rejectOrderDialog = new RejectOrderDialog(this.orderTicketService, orderNo);
                     rejectOrderDialog.Show();
                 }
-                
             }
-            
         }
 
         private void Logout(object sender, RoutedEventArgs e)

@@ -34,12 +34,19 @@ namespace DataAccessObject
             return this.context.Tickets.Where(ticket => ticket.GenericTicketId.Equals(genericTicketID)
             && ticket.Process.Equals(GeneralProcess.SELLING)).ToList();
         }
+
         public ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID)
         {
             return this.context.Tickets.Where(ticket => ticket.GenericTicketId.Equals(genericTicketID)
                 && ticket.Process.Equals(GeneralProcess.WAITING)
-            ).ToList();
+            ).ToList();  
 
+        }
+
+        public void UpdateBoughtTicket(Ticket ticket)
+        {
+            context.Entry<Ticket>(ticket).CurrentValues.SetValues(ticket);
+            context.SaveChanges();
         }
 
         public bool AddTicket(BusinessObject.Ticket ticket)

@@ -23,5 +23,6 @@ namespace BusinessObject
 
         public virtual Event? Event { get; set; }
 
+        public virtual User Seller { get; set; } 
     }
 }

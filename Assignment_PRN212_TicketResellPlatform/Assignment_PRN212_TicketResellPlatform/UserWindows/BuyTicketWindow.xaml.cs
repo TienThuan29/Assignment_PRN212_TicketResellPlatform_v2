@@ -28,6 +28,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private BusinessObject.GenericTicket GenericTicket;
         private ITicketService ticketService = new TicketService();
         private IOrderTicketService orderTicketService = new OrderTicketService();
+
         public BuyTicketWindow()
         {
             InitializeComponent();
@@ -75,23 +76,23 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private void Button_Buy(object sender, RoutedEventArgs e)
         {
             var tickets = ticketService.FindSellingTicket(GenericTicket.Id);
-            var quantity = tickets.Count();
+            var quantity = int.Parse(quantitySelector.Text);
             if(orderTicketService.OrderTicket(GenericTicket.Id, quantity, LoggedUser))
             {
                 MessageBox.Show("Mua thành công");
             }
             else
             {
-                MessageBox.Show("Không đủ tiền");
+                MessageBox.Show("Mua thất bại");
             }
         }
 
-        private int selectedQuantity = 1;
+        private int selectedQuantity = 0;
 
         private void DecreaseQuantity_Click(object sender, RoutedEventArgs e)
         {   
             var quantity = ticketService.FindSellingTicket(GenericTicket.Id).Count();
-            if (selectedQuantity > quantity && selectedQuantity >= 0)
+            if (selectedQuantity <= quantity && selectedQuantity > 0)
             {
                 selectedQuantity--;
                 quantitySelector.Text = selectedQuantity.ToString();

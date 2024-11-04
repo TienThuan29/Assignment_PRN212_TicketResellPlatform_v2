@@ -51,5 +51,10 @@ namespace Repository.Impl
         {
             return TicketDAO.Instance.RejectTicketSelling(ticketId, staffId, note);
         }
+
+        public void UpdateBoughtTicket(Ticket ticket)
+        {
+            TicketDAO.Instance.UpdateBoughtTicket(ticket);
+        }
     }
 }

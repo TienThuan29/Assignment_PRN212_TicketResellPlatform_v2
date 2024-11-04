@@ -42,5 +42,10 @@ namespace Service.TicketService
         {
             return orderTicketRepository.GetOrderTicketByOrderNo(orderNo);
         }
+
+        public void UpdateOrderTicket(OrderTicket orderTicket) 
+        {
+            orderTicketRepository.UpdateOrderTicket(orderTicket);
+        }
     }
 }

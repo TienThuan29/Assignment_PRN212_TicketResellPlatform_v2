@@ -62,14 +62,14 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         //Case action
         private void CaseAdd()
         {
-            btnAction.Content = "Create";
+            btnAction.Content = "Thêm";
             txtEventId.Visibility = Visibility.Collapsed;
             eventIdHead.Visibility = Visibility.Collapsed;
         }
 
         private void CaseUpdate()
         {
-            btnAction.Content = "Update";
+            btnAction.Content = "Cập nhật";
             txtEventId.IsEnabled = false;
             //btnChooseImage.Visibility = Visibility.Collapsed;
             AddInfoEvent();

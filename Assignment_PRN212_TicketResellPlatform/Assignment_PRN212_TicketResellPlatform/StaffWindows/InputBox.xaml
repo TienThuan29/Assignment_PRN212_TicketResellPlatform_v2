@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="InputBox" Height="250" Width="300" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
-        <TextBlock Text="Enter your message:" Margin="0,0,0,10"/>
+        <TextBlock x:Name="txtHeader" Text="Enter your message:" Margin="0,0,0,10"/>
         <TextBox x:Name="txtInput" Height="25" Margin="0,0,0,10"/>
         <Button Content="OK" Click="OkButton_Click" Margin="58,107,157,25" Padding="0" Background="#4CAF50" />
         <Button Content="Cancel" Click="CancelButton_Click" Margin="150,107,61,25" Padding="0" Background="#F44336"/>

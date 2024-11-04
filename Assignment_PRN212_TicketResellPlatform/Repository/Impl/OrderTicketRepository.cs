@@ -40,5 +40,10 @@ namespace Repository.Impl
         {
             return OrderTicketDAO.Instance.GetOrderTicketByOrderNo(orderNo);
         }
+
+        public void UpdateOrderTicket(OrderTicket orderTicket)
+        {
+            OrderTicketDAO.Instance.UpdateOrderTicket(orderTicket);
+        }
     }
 }

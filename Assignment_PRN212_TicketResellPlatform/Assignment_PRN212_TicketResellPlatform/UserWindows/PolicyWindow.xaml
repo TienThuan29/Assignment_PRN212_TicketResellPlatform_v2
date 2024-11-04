@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="PolicyWindow" Height="750" Width="900" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen" >
     <Grid>
-        <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="160,21,72,642"/>
+        <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="264,26,251,637"/>
         <DataGrid x:Name="PolicyDataGrid" Margin="0,97,0,127" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Thể loại chính sách" Width="Auto" Binding="{Binding TypePolicy.Name}" IsReadOnly="True"/>

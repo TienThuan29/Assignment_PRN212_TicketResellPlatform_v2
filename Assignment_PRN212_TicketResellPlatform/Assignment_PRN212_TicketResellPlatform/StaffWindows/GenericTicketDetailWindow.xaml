@@ -67,7 +67,7 @@
               IsReadOnly="True"
               Background="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Serial" Binding="{Binding Id}" Width="150"/>
+                    <DataGridTextColumn Header="Serial" Binding="{Binding TicketSerial}" Width="150"/>
                     <DataGridTemplateColumn Header="Ảnh vé" Width="200">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

@@ -36,7 +36,7 @@
                 </Grid>
             </Border>
 
-            <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="10" 
+            <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="0" 
                 HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -80,10 +80,10 @@
                         IsReadOnly="True"
                         Background="White"> 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
-                            <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="150"/>
-                            <DataGridTextColumn Header="Ngày bắt dầu" Binding="{Binding StartDate}" Width="150"/>
-                            <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding EndDate}" Width="150"/>
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
+                            <DataGridTextColumn Header="Tên" Binding="{Binding Name}" Width="Auto"/>
+                            <DataGridTextColumn Header="Ngày bắt dầu" Binding="{Binding StartDate}" Width="Auto"/>
+                            <DataGridTextColumn Header="Ngày kết thúc" Binding="{Binding EndDate}" Width="Auto"/>
                             <DataGridTemplateColumn Header="Hành động" Width="210">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

@@ -37,6 +37,12 @@ namespace DataAccessObject
             return context.OrderTickets.SingleOrDefault(obj => obj.OrderNo.Equals(orderNo));
         }
 
+        public void UpdateOrderTicket(OrderTicket orderTicket)
+        {
+            context.Entry<OrderTicket>(orderTicket).CurrentValues.SetValues(orderTicket);
+            context.SaveChanges();
+        }
+
         public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice)
         {
             bool result = false;
@@ -94,12 +100,17 @@ namespace DataAccessObject
             return flag;
         }
 
+        public bool AcceptOrder(string orderNo) 
+        {
+            return true;
+        }
+
 
         public bool OrderTicket(long GenericTicketId, int quantity, BusinessObject.User user)
         {
             bool isSuccess = false;
             GenericTicket genericTicket = GenericTicketDAO.Instance.FindGenericTicketById(GenericTicketId);
-            if (user.Balance >= genericTicket.Price * quantity)
+            if (user.Balance >= genericTicket.Price * quantity && quantity > 0)
             {
                 if(CreateOrderTicket(quantity, user.Id, GenericTicketId, genericTicket.Price))
                 {

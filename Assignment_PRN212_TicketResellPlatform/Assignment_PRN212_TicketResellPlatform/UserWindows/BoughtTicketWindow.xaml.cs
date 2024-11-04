@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Service.TicketService;
 using Assignment_PRN212_TicketResellPlatform.UserWindows.CustomDialog;
 using BusinessObject;
+using Service.User;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
@@ -24,6 +25,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private BusinessObject.User logedUser;
 
         private IOrderTicketService orderTicketService = new OrderTicketService();
+
+        private ITicketService ticketService = new TicketService();
+
+        private IUserService userService = new UserService();
 
         public BoughtTicketWindow()
         {
@@ -35,6 +40,41 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             InitializeComponent();
             this.logedUser = user;
             InitDataWindow();
+        }
+
+
+        private void ViewOrderDetail(object sender, EventArgs e)
+        {
+            if (sender is Button button && button.CommandParameter is string orderNo)
+            {
+                //MessageBox.Show($"Detail Order No: {orderNo}");
+                OrderTicket orderTicket = orderTicketService.GetOrderTicketByOrderNo(orderNo);
+                if (orderTicket.IsAccepted == false && !string.IsNullOrEmpty(orderTicket.Note))
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã bị từ chối bởi người bán!");
+                }
+                else if (orderTicket.IsCanceled == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được hủy!");
+                }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ICollection<Ticket> boughtTicketsOfBuyer = ticketService.FindByGenericTicketID(orderTicket.GenericTicketId).Where(
+                        ticket => ticket.BuyerId.Equals(logedUser.Id)
+                    ).ToList();
+                    foreach (Ticket ticket in boughtTicketsOfBuyer)
+                    {
+                        if (!ticket.Image.Contains(LocalPathSetting.TicketImagePath))
+                            ticket.Image = LocalPathSetting.TicketImagePath + ticket.Image;
+                    }
+                    ViewBoughtTicketsOfOrder viewBoughtTicketsOfOrder = new ViewBoughtTicketsOfOrder(boughtTicketsOfBuyer);
+                    viewBoughtTicketsOfOrder.Show();
+                }
+                else
+                {
+                    ShowErrorMessageBox("Có một vài sự cố xảy ra!!!");
+                }
+            }
         }
 
 
@@ -52,12 +92,28 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 {
                     ShowErrorMessageBox("Đơn hàng này đã được hủy!");
                 }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ShowInfoMessageBox("Đơn này đã hoàn thành");
+                }
                 else
                 {
-                    
+                    switch(MessageBox.Show("Xác nhận hủy đơn hàng?", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question))
+                    {
+                        case MessageBoxResult.Yes:
+                            orderTicket.IsCanceled = true;
+                            orderTicketService.UpdateOrderTicket(orderTicket);
+                            logedUser.Balance += orderTicket.TotalPrice;
+                            userService.SaveProfile(logedUser);
+                            ShowInfoMessageBox("Hủy đon hàng thành công!");
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    }
                 }
             }
         }
+        
 
         private void InitDataWindow()
         {
@@ -80,37 +136,45 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void Logout(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mainWindow = new MainWindow();   
+            this.Hide();
+            mainWindow.Show();
         }
 
         private void ToChangePasswordWindow(object sender, RoutedEventArgs e)
         {
-
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
+            this.Hide();
+            changePasswordWindow.Show();
         }
 
         private void ToManageBalanceWindow(object sender, RoutedEventArgs e)
         {
-
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
+            this.Hide();
+            balanceManagementWindow.Show();
         }
 
         private void ToMyShopWindow(object sender, RoutedEventArgs e)
         {
-
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
+            this.Hide();
+            myShopWindow.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ToUserProfileWindow(object sender, RoutedEventArgs e)
         {
-
+            UserProfileWindow userProfileWindow = new UserProfileWindow(logedUser);
+            this.Hide();
+            userProfileWindow.Show();
         }
 
         private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
-
+            HomeWindow homeWindow = new HomeWindow(logedUser);
+            this.Hide();
+            homeWindow.Show();
         }
 
         // Message box define
