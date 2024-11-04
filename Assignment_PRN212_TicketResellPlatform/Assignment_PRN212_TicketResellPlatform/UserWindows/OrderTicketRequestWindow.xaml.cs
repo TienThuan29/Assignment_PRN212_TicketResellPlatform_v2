@@ -64,27 +64,41 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 }
                 else
                 {
-                    // Check quantity
-                    ICollection<Ticket> sellingTickets = ticketService.FindSellingTicket(orderTicket.GenericTicketId);
-                    if (orderTicket.Quantity <= sellingTickets.Count)
+                    switch(MessageBox.Show("Xác nhận bán vé cho đơn hàng?", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question))
                     {
-                        // Auto transact tickets to buyer
-                        for (int i = 1; i <= orderTicket.Quantity; i++)
-                        {
-                            Ticket sellingTicket = sellingTickets.ElementAt(i - 1);
-                            sellingTicket.IsBought = true;
-                            sellingTicket.BuyerId = orderTicket.BuyerId;
-                            sellingTicket.BoughtDate = DateTime.Now;
-                            sellingTicket.Process = GeneralProcess.SUCCESS;
-                            ticketService.UpdateBoughtTicket(sellingTicket);
-                        }
-                        // Update order ticket
-                        orderTicket.IsAccepted = true;
-                        orderTicketService.UpdateOrderTicket(orderTicket);
-                        // Save transaction
-                        transactionService.SaveBuyingTransaction(orderTicket.BuyerId, (long)orderTicket.TotalPrice);
-                        transactionService.SaveSellingTransaction(logedUser.Id, (long)orderTicket.TotalPrice);
+                        case MessageBoxResult.Yes:
+                            // Check quantity
+                            ICollection<Ticket> sellingTickets = ticketService.FindSellingTicket(orderTicket.GenericTicketId);
+                            if (orderTicket.Quantity <= sellingTickets.Count)
+                            {
+                                // Auto transact tickets to buyer
+                                for (int i = 1; i <= orderTicket.Quantity; i++)
+                                {
+                                    Ticket sellingTicket = sellingTickets.ElementAt(i - 1);
+                                    sellingTicket.IsBought = true;
+                                    sellingTicket.BuyerId = orderTicket.BuyerId;
+                                    sellingTicket.BoughtDate = DateTime.Now;
+                                    sellingTicket.Process = GeneralProcess.SUCCESS;
+                                    ticketService.UpdateBoughtTicket(sellingTicket);
+                                }
+                                // Update order ticket
+                                orderTicket.IsAccepted = true;
+                                orderTicketService.UpdateOrderTicket(orderTicket);
+                                // Save transaction
+                                transactionService.SaveBuyingTransaction(orderTicket.BuyerId, (long)orderTicket.TotalPrice);
+                                transactionService.SaveSellingTransaction(logedUser.Id, (long)orderTicket.TotalPrice);
+                                ShowInfoMessageBox("Đã chuyển vé đến người mua thành công!");
+                            }
+                            else
+                            {
+                                ShowErrorMessageBox("Không đủ số lượng vé cho đơn hàng này!");
+                            }
+                            break;
+                        case MessageBoxResult.No:
+
+                            break;
                     }
+                    
                 }
             }
         }
