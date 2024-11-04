@@ -34,9 +34,6 @@
                         </Border.Background>
                     </Border>
                     <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="781,12,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
-                    <Button HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="1133,0,0,0" RenderTransformOrigin="0.5,0.5" Width="47">
-                        <materialDesign:PackIcon Kind="User" RenderTransformOrigin="0.5,0.5"  />
-                    </Button>
                 </Grid>
             </Border>
 
@@ -66,8 +63,8 @@
                             <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TotalPrice}" />
                             <!-- <DataGridTextColumn Header="Người mua" Binding="{Binding Buyer.Fullname}" /> -->
                             <DataGridTextColumn Header="Tên vé" Binding="{Binding GenericTicket.TicketName}" />
-                            <DataGridCheckBoxColumn Header="Đã hủy" Binding="{Binding IsCanceled}" />
-                            <DataGridCheckBoxColumn Header="Đã đồng ý" Binding="{Binding IsAccepted}" />
+                            <DataGridCheckBoxColumn Header="Đã bị hủy bởi người mua" Binding="{Binding IsCanceled}" />
+                            <DataGridCheckBoxColumn Header="Đã đồng ý bán" Binding="{Binding IsAccepted}" />
 
                             <!-- Action Buttons -->
                             <DataGridTemplateColumn Header="Thao tác">

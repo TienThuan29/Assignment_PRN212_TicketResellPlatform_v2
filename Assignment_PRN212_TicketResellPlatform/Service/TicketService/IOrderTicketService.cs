@@ -14,5 +14,9 @@ namespace Service.TicketService
         public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId);
 
         public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId);
+
+        public bool RejectOrder(string orderNo, string note);
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo);
     }
 }

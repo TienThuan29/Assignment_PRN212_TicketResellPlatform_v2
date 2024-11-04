@@ -49,6 +49,9 @@
     <Compile Update="UserWindows\ChangePasswordWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\CustomDialog\RejectOrderDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\DetailEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,6 +139,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\CustomDialog\RejectOrderDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\DetailEventWindow.xaml">

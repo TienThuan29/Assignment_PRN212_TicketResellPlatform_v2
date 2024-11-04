@@ -28,6 +28,11 @@ namespace DataAccessObject
             return context.Users.SingleOrDefault(obj => obj.Username.Equals(username));
         }
 
+        public User FindById(long id) 
+        {
+            return context.Users.SingleOrDefault(obj => obj.Id.Equals(id));
+        }
+
         public bool SaveRegisterUser(User user) 
         {
             bool flag = true;

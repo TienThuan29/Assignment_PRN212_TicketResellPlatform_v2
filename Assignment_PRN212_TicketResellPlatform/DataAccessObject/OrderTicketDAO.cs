@@ -31,6 +31,12 @@ namespace DataAccessObject
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo)
+        {
+            return context.OrderTickets.SingleOrDefault(obj => obj.OrderNo.Equals(orderNo));
+        }
+
         public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice)
         {
             bool result = false;
@@ -57,6 +63,37 @@ namespace DataAccessObject
 
             return result;
         }
+
+        public bool RejectOrder(string orderNo, string note)
+        {
+            bool flag = true;
+            try
+            {
+                OrderTicket orderTicket = GetOrderTicketByOrderNo(orderNo);
+                
+                if (orderTicket != null)
+                {
+                    orderTicket.Note = note;
+                    orderTicket.IsAccepted = false;
+                    context.Entry<OrderTicket>(orderTicket).CurrentValues.SetValues(orderTicket);
+                    context.SaveChanges();
+                    // Refund for buyer
+                    User user = UserDAO.Instance.FindById(orderTicket.BuyerId);
+                    user.Balance += orderTicket.TotalPrice;
+                    UserDAO.Instance.SaveProfile(user);
+
+                    context.SaveChanges();
+                }
+                else flag = false;
+
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+            }
+            return flag;
+        }
+
 
         public bool OrderTicket(long GenericTicketId, int quantity, BusinessObject.User user)
         {

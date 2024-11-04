@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Media.Imaging;
 using Service.TicketService;
 using System.Windows.Controls;
+using Assignment_PRN212_TicketResellPlatform.UserWindows.CustomDialog;
 
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
@@ -53,8 +54,24 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             if (sender is Button button && button.CommandParameter is string orderNo)
             {
-                MessageBox.Show($"Rejected Order No: {orderNo}");
+                //MessageBox.Show($"Rejected Order No: {orderNo}");
+                OrderTicket orderTicket = orderTicketService.GetOrderTicketByOrderNo(orderNo);
+                if (orderTicket.IsAccepted == false && !string.IsNullOrEmpty(orderTicket.Note)) 
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã được từ chối!");
+                }
+                else if (orderTicket.IsCanceled == true)
+                {
+                    ShowErrorMessageBox("Đơn hàng này đã bị hủy bởi người mua!");
+                }
+                else
+                {
+                    RejectOrderDialog rejectOrderDialog = new RejectOrderDialog(this.orderTicketService, orderNo);
+                    rejectOrderDialog.Show();
+                }
+                
             }
+            
         }
 
         private void Logout(object sender, RoutedEventArgs e)
@@ -95,6 +112,17 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

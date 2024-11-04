@@ -32,5 +32,15 @@ namespace Service.TicketService
         {
             return orderTicketRepository.GetAllOrderTicketsByBuyer(buyerId);
         }
+
+        public bool RejectOrder(string orderNo, string note)
+        {
+            return orderTicketRepository.RejectOrder(orderNo, note);
+        }
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo)
+        {
+            return orderTicketRepository.GetOrderTicketByOrderNo(orderNo);
+        }
     }
 }
