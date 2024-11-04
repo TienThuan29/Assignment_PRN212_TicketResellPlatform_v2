@@ -20,5 +20,7 @@ namespace Repository.Def
         public bool RejectOrder(string orderNo, string note);
 
         public OrderTicket GetOrderTicketByOrderNo(string orderNo);
+
+        public void UpdateOrderTicket(OrderTicket orderTicket);
     }
 }

@@ -37,6 +37,12 @@ namespace DataAccessObject
             return context.OrderTickets.SingleOrDefault(obj => obj.OrderNo.Equals(orderNo));
         }
 
+        public void UpdateOrderTicket(OrderTicket orderTicket)
+        {
+            context.Entry<OrderTicket>(orderTicket).CurrentValues.SetValues(orderTicket);
+            context.SaveChanges();
+        }
+
         public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice)
         {
             bool result = false;
@@ -92,6 +98,11 @@ namespace DataAccessObject
                 flag = false;
             }
             return flag;
+        }
+
+        public bool AcceptOrder(string orderNo) 
+        {
+            return true;
         }
 
 

@@ -59,6 +59,9 @@ namespace Service.TicketService
             return tickeRepository.MarkBought(ticketId);
         }
 
-
+        public void UpdateBoughtTicket(Ticket ticket)
+        {
+            tickeRepository.UpdateBoughtTicket(ticket);
+        }
     }
 }

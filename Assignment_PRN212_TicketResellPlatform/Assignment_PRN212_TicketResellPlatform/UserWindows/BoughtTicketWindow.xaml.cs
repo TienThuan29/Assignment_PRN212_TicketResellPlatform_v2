@@ -52,6 +52,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 {
                     ShowErrorMessageBox("Đơn hàng này đã được hủy!");
                 }
+                else if (orderTicket.IsAccepted == true)
+                {
+                    ShowInfoMessageBox("Đơn này đã hoàn thành");
+                }
                 else
                 {
                     
@@ -80,37 +84,45 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void Logout(object sender, RoutedEventArgs e)
         {
-            
+            MainWindow mainWindow = new MainWindow();   
+            this.Hide();
+            mainWindow.Show();
         }
 
         private void ToChangePasswordWindow(object sender, RoutedEventArgs e)
         {
-
+            ChangePasswordWindow changePasswordWindow = new ChangePasswordWindow(logedUser);
+            this.Hide();
+            changePasswordWindow.Show();
         }
 
         private void ToManageBalanceWindow(object sender, RoutedEventArgs e)
         {
-
+            BalanceManagementWindow balanceManagementWindow = new BalanceManagementWindow(logedUser);
+            this.Hide();
+            balanceManagementWindow.Show();
         }
 
         private void ToMyShopWindow(object sender, RoutedEventArgs e)
         {
-
+            MyShopWindow myShopWindow = new MyShopWindow(logedUser);
+            this.Hide();
+            myShopWindow.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void ToUserProfileWindow(object sender, RoutedEventArgs e)
         {
-
+            UserProfileWindow userProfileWindow = new UserProfileWindow(logedUser);
+            this.Hide();
+            userProfileWindow.Show();
         }
 
         private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
-
+            HomeWindow homeWindow = new HomeWindow(logedUser);
+            this.Hide();
+            homeWindow.Show();
         }
 
         // Message box define

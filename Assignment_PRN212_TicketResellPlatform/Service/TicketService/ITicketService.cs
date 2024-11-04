@@ -29,5 +29,7 @@ namespace Service.TicketService
 
         public bool MarkBought(long ticketId);
 
+        public void UpdateBoughtTicket(Ticket ticket);
+
     }
 }
