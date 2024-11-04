@@ -22,5 +22,7 @@ namespace BusinessObject
         public virtual Category Category { get; set; }
 
         public virtual Event Event { get; set; }
+
+        public virtual User Seller { get; set; } 
     }
 }

@@ -21,9 +21,9 @@
                 <Image HorizontalAlignment="Left" Height="52" Margin="130,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png" RenderTransformOrigin="1.048,0.414"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="190,10,792,8"/>
 
-                <Border CornerRadius="30"  Margin="1039,7,113,5" RenderTransformOrigin="-0.302,0.542">
+                <Border HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="30"  Margin="1040,0,0,0" Height="44" Width="47">
                     <Border.Background>
-                        <ImageBrush Stretch="Fill" x:Name="avatarImageBrushHeader" ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                     </Border.Background>
                 </Border>
                 <Label x:Name="fullnameLabel"  Foreground="White" Content="Nguyễn Văn A" Margin="751,12,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
@@ -32,56 +32,66 @@
                 </Button>
             </Grid>
         </Border>
-        <Label HorizontalAlignment="Center" Margin="0,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="148" FontSize="20" Content="Mua vé" RenderTransformOrigin="0.659,0.485"/>
-        <ListBox x:Name="GenericTicketBox" Margin="10,52,32,21" Grid.Row="1">
+        <!-- Title -->
+        <Label Grid.Row="1" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Foreground="#623ED0" Content="Mua vé" />
+
+        <!-- Ticket List -->
+        <ListBox x:Name="GenericTicketBox" Margin="20,70,20,20" Grid.Row="1">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel IsItemsHost="True" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" />
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>
 
             <ListBox.Items>
-                <Border Width="552" Margin="10" Background="#623ED0" CornerRadius="10" Padding="10" Height="601">
+                <Border Width="500" Background="White" CornerRadius="10" Padding="20" Margin="10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="2" />
+                    </Border.Effect>
                     <StackPanel>
-                        <TextBlock Text="Tên vé" FontSize="16" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <TextBlock Text="{Binding TicketName}" FontSize="16" Foreground="white" FontWeight="Bold" TextWrapping="Wrap" Margin="0,0,0,5"/>
+                        <TextBlock Text="Tên vé" FontSize="16" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBlock Text="{Binding TicketName}" FontSize="16" Foreground="#333" TextWrapping="Wrap" Margin="0,0,0,5"/>
 
-                        <TextBlock Text="Mô tả" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <TextBox Text="{Binding Description}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="68" TextWrapping="Wrap" IsReadOnly="True"/>
+                        <TextBlock Text="Mô tả" FontSize="14" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBlock Text="{Binding Description}" FontSize="14" Foreground="#333" 
+                                 Height="80" TextWrapping="Wrap"  Padding="5"/>
 
-                        <TextBlock Text="Khu vực" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <TextBox Text="{Binding Area}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+                        <TextBlock Text="Khu vực" FontSize="14" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBlock Text="{Binding Area}" FontSize="14" Foreground="#333" 
+                                 Height="30" TextWrapping="Wrap"   Padding="5"/>
 
-                        <TextBlock Text="Ngày hết hạn" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <DatePicker SelectedDate="{Binding ExpiredDateTime}" FontSize="14" Foreground="white" IsEnabled="False"/>
-
+                        <TextBlock Text="Ngày hết hạn" FontSize="14" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <DatePicker SelectedDate="{Binding ExpiredDateTime}" FontSize="14" Foreground="#333" IsEnabled="False"
+                                     BorderThickness="0" />
 
                         <Grid Margin="0,10,0,5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Label Content="Số lượng vé" FontSize="14" Foreground="white" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
-                            <TextBox x:Name="txtQuantity" FontSize="14" Foreground="white" Height="30" Width="100" TextWrapping="Wrap" IsReadOnly="True" Grid.Column="1" Margin="10,0,0,0"/>
+                            <Label Content="Số lượng vé" FontSize="14" Foreground="#623ED0" FontWeight="Bold" VerticalAlignment="Center" />
+                            <TextBox x:Name="txtQuantity" FontSize="14" Foreground="#333" Height="30" Width="100"
+                                      TextWrapping="Wrap" IsReadOnly="True" Margin="10,0,0,0"
+                                     BorderThickness="0" Padding="5"/>
                         </Grid>
 
-
-                        <TextBlock Text="Chọn số lượng" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <Button Content="-" Width="30" Height="30" Click="DecreaseQuantity_Click" Margin="0,0,5,0"/>
-                            <TextBox x:Name="quantitySelector" Text="1" Width="50" Height="30" TextAlignment="Center" IsReadOnly="True"/>
-                            <Button Content="+" Width="30" Height="30" Click="IncreaseQuantity_Click" Margin="5,0,0,0"/>
+                        <TextBlock Text="Chọn số lượng" FontSize="14" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,5">
+                            <Button Content="-" Width="30" Foreground="White" Background="#623ED0"
+                                    Height="30" Click="DecreaseQuantity_Click" Margin="0,0,5,0" Padding="0"/>
+                            <TextBox x:Name="quantitySelector" Text="0" Width="50" Height="30" TextAlignment="Center"
+                                     IsReadOnly="True" Background="#F0F0F0" BorderThickness="0" Padding="5"/>
+                            <Button Content="+" Width="30" Foreground="White" Background="#623ED0"
+                                    Height="30" Click="IncreaseQuantity_Click" Margin="5,0,0,0" Padding="0"/>
                         </StackPanel>
 
-                        <TextBlock Text="Giá" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <TextBox Text="{Binding Price}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
+                        <TextBlock Text="Giá" FontSize="14" Foreground="#623ED0" FontWeight="Bold" Margin="0,10,0,5"/>
+                        <TextBox Text="{Binding Price}" FontSize="14" Foreground="#333" 
+                                 Height="30" TextWrapping="Wrap" IsReadOnly="True" BorderThickness="0" Padding="5"/>
 
-                        <TextBlock Text="Chi tiết" FontSize="14" Foreground="white" FontWeight="Bold" Margin="0,10,0,5"/>
-                        <TextBox Text="{Binding Detail}" FontSize="14" Foreground="white" Margin="0,0,0,5" Height="30" TextWrapping="Wrap" IsReadOnly="True"/>
-
-                        <Button Width="143" Content="Mua" Margin="0,10,0,0" Height="54" Click="Button_Buy"/>
+                        <Button Content="Mua" Width="150" Height="40" Margin="0,20,0,0" HorizontalAlignment="Center"
+                                Background="#623ED0" Foreground="White" FontWeight="Bold" Click="Button_Buy" />
                     </StackPanel>
-
                 </Border>
             </ListBox.Items>
         </ListBox>

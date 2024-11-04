@@ -62,7 +62,7 @@ namespace DataAccessObject
         {
             bool isSuccess = false;
             GenericTicket genericTicket = GenericTicketDAO.Instance.FindGenericTicketById(GenericTicketId);
-            if (user.Balance >= genericTicket.Price * quantity)
+            if (user.Balance >= genericTicket.Price * quantity && quantity > 0)
             {
                 if(CreateOrderTicket(quantity, user.Id, GenericTicketId, genericTicket.Price))
                 {
