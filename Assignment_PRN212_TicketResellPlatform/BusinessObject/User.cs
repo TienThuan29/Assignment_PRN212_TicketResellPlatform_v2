@@ -19,5 +19,6 @@ namespace BusinessObject
         public long? Revenue { get; set; }
         public string? RoleCode { get; set; }
         public string? Username { get; set; }
+
     }
 }

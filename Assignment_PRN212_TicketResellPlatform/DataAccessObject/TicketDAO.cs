@@ -68,6 +68,7 @@ namespace DataAccessObject
                 ticket.IsValid = true;
                 ticket.StaffId = staffId;
                 ticket.Note = note;
+                ticket.Image = System.IO.Path.GetFileName(ticket.Image);
                 //Save to db
                 context.Entry(ticket).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
@@ -87,6 +88,7 @@ namespace DataAccessObject
                 ticket.IsValid = false;
                 ticket.StaffId = staffId;
                 ticket.Note= note;
+                ticket.Image = System.IO.Path.GetFileName(ticket.Image);
                 //Save to db
                 context.Entry(ticket).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();

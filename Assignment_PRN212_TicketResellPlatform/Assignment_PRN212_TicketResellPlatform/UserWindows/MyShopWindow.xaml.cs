@@ -156,5 +156,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             this.Hide();
             mainWindow.Show();  
         }
+
+        private void ToOrderTicketWindow(object sender, RoutedEventArgs e)
+        {
+            OrderTicketRequestWindow orderTicketRequestWindow = new OrderTicketRequestWindow(logedUser);
+            this.Hide();
+            orderTicketRequestWindow.Show();
+        }
     }
 }

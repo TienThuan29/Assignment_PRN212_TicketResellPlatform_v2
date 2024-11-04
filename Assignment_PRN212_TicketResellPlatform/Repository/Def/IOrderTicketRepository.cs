@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessObject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,13 @@ namespace Repository.Def
         public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice);
 
         public bool OrderTicket(long GenericTicketId, int quantity, BusinessObject.User user);
+
+        public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId);
+
+        public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId);
+
+        public bool RejectOrder(string orderNo, string note);
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo);
     }
 }

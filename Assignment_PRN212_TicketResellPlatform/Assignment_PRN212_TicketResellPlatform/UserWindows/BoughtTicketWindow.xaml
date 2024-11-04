@@ -1,0 +1,95 @@
+﻿<Window x:Class="Assignment_PRN212_TicketResellPlatform.UserWindows.BoughtTicketWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
+        Title="Ticket Resell Platform"  Height="720" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="660"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="#623ED0"  CornerRadius="0 0 10 10">
+                <Grid>
+                    <Button Background="#FFD8C5FA" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
+                        <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
+                    </Button>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="131,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/LogoTab-Photoroom.png"/>
+                    <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="196,9,786,9"/>
+
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1067,7,0,0" Height="43" Width="47">
+                        <Border.Background>
+                            <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Label x:Name="fullnameHeaderLabel" Foreground="White" Content="Nguyễn Văn A" Margin="781,12,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1" Background="White"  CornerRadius="0 0 10 10" >
+                <Grid>
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="90"  Margin="26,16,0,0" Height="156" Width="159">
+                        <Border.Background>
+                            <ImageBrush x:Name="avatarImageBrush" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Label x:Name="fullnameLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Content="Fullname" Margin="33,182,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="balanceLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Red" FontSize="10" Content="Số dư: " Margin="44,213,0,0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22"/>
+                    <Button Click="ToUserProfileWindow" HorizontalAlignment="Left" VerticalAlignment="Top"  Content="Quản lý tài khoản" Margin="17,268,1015,360"/>
+                    <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" Click="Button_Click" />
+                    <Button Click="ToMyShopWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cửa hàng của tôi" Margin="17,376,0,0" Width="140" />
+                    <Button Click="ToManageBalanceWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý số dư" Margin="17,434,0,0" Width="140" />
+                    <Button Click="ToChangePasswordWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đổi mật khẩu" Margin="17,492,0,0" Width="140" />
+
+                    <Label HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" Content="Lịch sử đơn hàng" Margin="576,25,330,588" />
+
+                    <DataGrid x:Name="orderTicketDataGrid" AutoGenerateColumns="False" IsReadOnly="True"
+          Margin="229,124,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="506" Width="926">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Mã đơn" Binding="{Binding OrderNo}" />
+                            <DataGridTextColumn Header="Số lượng" Binding="{Binding Quantity}" />
+                            <DataGridTextColumn Header="Tổng tiền" Binding="{Binding TotalPrice}" />
+                            <!-- <DataGridTextColumn Header="Người mua" Binding="{Binding Buyer.Fullname}" /> -->
+                            <DataGridTextColumn Header="Tên vé" Binding="{Binding GenericTicket.TicketName}" />
+                            <DataGridCheckBoxColumn Header="Đã hủy" Binding="{Binding IsCanceled}" />
+                            <DataGridCheckBoxColumn Header="Đã đồng ý" Binding="{Binding IsAccepted}" />
+                            <DataGridTextColumn Header="Ghi chú của người bán" Binding="{Binding Note}" />
+                            <!-- Action Buttons -->
+                            <DataGridTemplateColumn Header="Thao tác">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Click="CancelOrder" Width="50" CommandParameter="{Binding OrderNo}"
+                                                Background="#FFF37575" Foreground="#DD000000" BorderBrush="#FFF37575"
+                                            >
+                                                <materialDesign:PackIcon Kind="DeleteForever" />
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                    <Button Click="Logout" HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
+                        <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                    </Button>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</Window>

@@ -228,7 +228,6 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
         public void ShowErrorMessageBox(string message)
         {
             MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);

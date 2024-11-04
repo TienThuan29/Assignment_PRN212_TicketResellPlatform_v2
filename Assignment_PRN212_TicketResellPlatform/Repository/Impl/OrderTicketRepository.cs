@@ -20,5 +20,25 @@ namespace Repository.Impl
         {
             return OrderTicketDAO.Instance.OrderTicket(GenericTicketId, quantity, user);
         }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId)
+        {
+            return OrderTicketDAO.Instance.GetAllOrderTicketsBySeller(sellerId);
+        }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId)
+        {
+            return OrderTicketDAO.Instance.GetAllOrderTicketsByBuyer(buyerId);
+        }
+
+        public bool RejectOrder(string orderNo, string note)
+        {
+            return OrderTicketDAO.Instance.RejectOrder(orderNo, note);
+        }
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo)
+        {
+            return OrderTicketDAO.Instance.GetOrderTicketByOrderNo(orderNo);
+        }
     }
 }

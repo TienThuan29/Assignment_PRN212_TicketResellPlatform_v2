@@ -155,5 +155,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void ToBoughtTicketWindow(object sender, RoutedEventArgs e)
+        {
+            BoughtTicketWindow boughtTicketWindow = new BoughtTicketWindow(logedUser);
+            this.Hide();
+            boughtTicketWindow.Show();  
+        }
     }
 }
