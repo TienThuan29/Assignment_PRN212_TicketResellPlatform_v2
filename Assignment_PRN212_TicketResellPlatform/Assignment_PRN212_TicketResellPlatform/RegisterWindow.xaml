@@ -25,6 +25,7 @@
       
             <Label FontSize="18" Content="Tên đăng nhập" Margin="550,71,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="usernameTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="550,101,0,0" VerticalAlignment="Top"/>
+            <materialDesign:PackIcon Kind="Users" Margin="952,123,0,0" Height="24" Width="24" />
 
    
             <Label FontSize="18" Content="Họ" Margin="550,176,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
@@ -37,10 +38,12 @@
 
             <Label FontSize="18" Content="Email" Margin="550,272,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="emailTextbox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="550,295,0,0" VerticalAlignment="Top"/>
+            <materialDesign:PackIcon Kind="Gmail" Margin="952,316,0,0" Height="24" Width="24" Foreground="Black" />
 
 
             <Label FontSize="18" Content="Mật khẩu" Margin="550,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <PasswordBox x:Name="passwordBox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="550,388,0,0" VerticalAlignment="Top"/>
+            <materialDesign:PackIcon Kind="AccountKey" Margin="952,408,0,0" Height="24" Width="24" />
 
             <Label FontSize="18" Content="Nhập lại mật khẩu" Margin="550,458,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <PasswordBox x:Name="repeatPasswordBox" FontSize="20" HorizontalAlignment="Left" Height="50" Width="426" Margin="550,480,0,0" VerticalAlignment="Top"/>

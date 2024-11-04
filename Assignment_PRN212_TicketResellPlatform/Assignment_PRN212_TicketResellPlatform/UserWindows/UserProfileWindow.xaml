@@ -62,7 +62,7 @@
                 <Label x:Name="fullnameLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Content="Fullname" Margin="33,182,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label x:Name="balanceLabel" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="Red" FontSize="10" Content="Số dư: " Margin="44,213,0,0"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="22"/>
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý tài khoản" Margin="17,268,0,0"/>
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" />
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Vé đã mua" Margin="17,322,0,0" Width="140" Click="ToBoughtTicketWindow" />
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cửa hàng của tôi" Margin="17,11,0,0" Click="ShowMyShopWindow" Grid.Row="1" />
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Quản lý số dư" Margin="17,69,0,0" Click="ShowBalanceManagementWindow" Grid.Row="1" Width="138" />
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="Đổi mật khẩu" Margin="17,127,0,0" Click="ShowChangePasswordWindow" Grid.Row="1" Width="138" />

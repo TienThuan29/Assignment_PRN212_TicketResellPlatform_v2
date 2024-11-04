@@ -16,6 +16,9 @@
     <Compile Update="StaffWindows\GenericTicketDetailWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="StaffWindows\InputBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="StaffWindows\ManageEventWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,10 +40,16 @@
     <Compile Update="UserWindows\BalanceManagementWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\BoughtTicketWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\BuyTicketWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\ChangePasswordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserWindows\CustomDialog\RejectOrderDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\DetailEventWindow.xaml.cs">
@@ -55,10 +64,16 @@
     <Compile Update="UserWindows\MyShopWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserWindows\OrderTicketRequestWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserWindows\PolicyWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\UserProfileWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserWindows\ViewBoughtTicketsOfOrder.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UserWindows\ViewTicketDetailWindow.xaml.cs">
@@ -96,6 +111,9 @@
     <Page Update="StaffWindows\GenericTicketDetailWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="StaffWindows\InputBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="StaffWindows\ManageEventWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -117,10 +135,16 @@
     <Page Update="UserWindows\BalanceManagementWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserWindows\BoughtTicketWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserWindows\BuyTicketWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\ChangePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\CustomDialog\RejectOrderDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\DetailEventWindow.xaml">
@@ -135,10 +159,16 @@
     <Page Update="UserWindows\MyShopWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserWindows\OrderTicketRequestWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserWindows\PolicyWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\UserProfileWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserWindows\ViewBoughtTicketsOfOrder.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserWindows\ViewTicketDetailWindow.xaml">

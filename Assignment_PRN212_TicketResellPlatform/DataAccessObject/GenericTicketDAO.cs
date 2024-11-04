@@ -69,9 +69,9 @@ namespace DataAccessObject
                                   join t in context.Tickets on gt.Id equals t.GenericTicketId
                                   where t.Process == GeneralProcess.WAITING
                                   select gt
-                                  ).Distinct();
+                                  ).Distinct().ToList();
             
-            return (ICollection<GenericTicket>)genericTickets;
+            return genericTickets;
         }
     }
 }

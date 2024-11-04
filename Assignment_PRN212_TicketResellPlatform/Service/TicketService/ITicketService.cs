@@ -23,13 +23,13 @@ namespace Service.TicketService
 
         ICollection<Ticket> FindByRequestSellingGenericTicket(long genericTicketID);
 
-        bool AcceptTicketSelling(long ticketId);
+        bool AcceptTicketSelling(long ticketId, long staffId, string note);
 
-        bool RejectTicketSelling(long ticketId);
-
+        bool RejectTicketSelling(long ticketId, long staffId, string note);
 
         public bool MarkBought(long ticketId);
 
+        public void UpdateBoughtTicket(Ticket ticket);
 
     }
 }

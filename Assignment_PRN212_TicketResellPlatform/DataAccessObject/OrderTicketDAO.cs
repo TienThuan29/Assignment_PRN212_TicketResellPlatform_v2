@@ -31,6 +31,18 @@ namespace DataAccessObject
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
+        public OrderTicket GetOrderTicketByOrderNo(string orderNo)
+        {
+            return context.OrderTickets.SingleOrDefault(obj => obj.OrderNo.Equals(orderNo));
+        }
+
+        public void UpdateOrderTicket(OrderTicket orderTicket)
+        {
+            context.Entry<OrderTicket>(orderTicket).CurrentValues.SetValues(orderTicket);
+            context.SaveChanges();
+        }
+
         public bool CreateOrderTicket(int Quantity, long BuyerId, long GenericTicketId, long GenericTicketPrice)
         {
             bool result = false;
@@ -58,6 +70,42 @@ namespace DataAccessObject
             return result;
         }
 
+        public bool RejectOrder(string orderNo, string note)
+        {
+            bool flag = true;
+            try
+            {
+                OrderTicket orderTicket = GetOrderTicketByOrderNo(orderNo);
+                
+                if (orderTicket != null)
+                {
+                    orderTicket.Note = note;
+                    orderTicket.IsAccepted = false;
+                    context.Entry<OrderTicket>(orderTicket).CurrentValues.SetValues(orderTicket);
+                    context.SaveChanges();
+                    // Refund for buyer
+                    User user = UserDAO.Instance.FindById(orderTicket.BuyerId);
+                    user.Balance += orderTicket.TotalPrice;
+                    UserDAO.Instance.SaveProfile(user);
+
+                    context.SaveChanges();
+                }
+                else flag = false;
+
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+            }
+            return flag;
+        }
+
+        public bool AcceptOrder(string orderNo) 
+        {
+            return true;
+        }
+
+
         public bool OrderTicket(long GenericTicketId, int quantity, BusinessObject.User user)
         {
             bool isSuccess = false;
@@ -74,6 +122,22 @@ namespace DataAccessObject
 
             }
             return isSuccess;
+        }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsBySeller(long sellerId)
+        {
+            var orderTickets = (from ot in context.OrderTickets 
+                                join gt in context.GenericTickets
+                                on ot.GenericTicketId equals gt.Id
+                                where gt.SellerId == sellerId 
+                                select ot)
+                                .ToList();
+            return orderTickets;
+;       }
+
+        public ICollection<OrderTicket> GetAllOrderTicketsByBuyer(long buyerId)
+        {
+            return context.OrderTickets.Where(orderTicket => orderTicket.BuyerId.Equals(buyerId)).ToList(); 
         }
     }
 }

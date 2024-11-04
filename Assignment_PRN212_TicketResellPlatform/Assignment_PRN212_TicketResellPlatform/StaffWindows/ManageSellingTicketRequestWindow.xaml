@@ -57,49 +57,46 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
             </Grid>
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
-             Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
-                </StackPanel>
-
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
                     <DataGrid AutoGenerateColumns="False" 
-            ItemsSource="{Binding EventList}" 
-            CanUserAddRows="False"
-            CanUserDeleteRows="False"
-            HeadersVisibility="Column" 
-            RowHeight="50" 
-            ColumnWidth="*" 
-            Margin="39,10,39,10" 
-            IsReadOnly="True"
-            Background="White">
+                        x:Name="GenericGrid"
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        HeadersVisibility="Column" 
+                        RowHeight="50" 
+                        ColumnWidth="*" 
+                        Margin="39,10,39,10" 
+                        IsReadOnly="True"
+                        Background="White">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
-                            <DataGridTextColumn Header="Số tiền" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="UserID" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="150"/>
-                            <DataGridTextColumn Header="Số tài khoản" Binding="{Binding EventNumber}" Width="150"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Tên vé" Binding="{Binding TicketName}" Width="200"/>
+                            <DataGridTextColumn Header="Khu vực" Binding="{Binding Area}" Width="100"/>
+                            <DataGridTextColumn Header="Ngày hết hạn" Binding="{Binding ExpiredDateTime}" Width="150"/>
+                            <DataGridTemplateColumn Header="Loại vé" Width="150">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
+                                        <TextBlock x:Name="IsPaperText" Text="Failed" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsPaper}" Value="False">
+                                                <Setter TargetName="IsPaperText" Property="Text" Value="Vé Điện Tử" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsPaper}" Value="True">
+                                                <Setter TargetName="IsPaperText" Property="Text" Value="Vé Vật Lý" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn Header="Hành động" Width="200">
+                            <DataGridTemplateColumn Header="Hành động" Width="100">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Chưa chuyển khoản" Background="LightBlue" Padding="5,0" Margin="5,0" />
-                                            <Button Content="Đã chuyển khoản" Background="LightCoral" Padding="5,0" Margin="5,0" />
+                                            <Button x:Name="btnDetail" Click="btnDetail_Click" Tag="{Binding Id}" Content="Chi tiết" Background="Green" Padding="5,0" Margin="5,0" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
-
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
