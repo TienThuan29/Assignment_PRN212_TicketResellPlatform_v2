@@ -74,5 +74,29 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             this.tableOfStaff.ItemsSource = adminService.GetListStaff();
         }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchStaff.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfStaff.ItemsSource = adminService.Search(txtSearchStaff.Text);
+            }
+            
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                List<BusinessObject.Staff> list = adminService.GetListStaff();
+                this.tableOfStaff.ItemsSource = list;
+            }
+            catch (Exception ex) { }
+        }
+
     }
 }

@@ -16,5 +16,7 @@ namespace Service.Admin
         public List<BusinessObject.Staff> GetListStaff();
 
         public List<BusinessObject.User> GetUsers();
+
+        List<BusinessObject.Staff> Search(string str);
     }
 }

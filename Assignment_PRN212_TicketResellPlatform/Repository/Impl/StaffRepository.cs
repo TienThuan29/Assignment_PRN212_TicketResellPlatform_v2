@@ -20,5 +20,10 @@ namespace Repository.Impl
         {
             return StaffDAO.Instance.GetAll();
         }
+
+        public List<Staff> Search(string str)
+        {
+            return StaffDAO.Instance.Search(str);
+        }
     }
 }

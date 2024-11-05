@@ -12,5 +12,7 @@ namespace Repository.Def
         Staff FindByUsername(string username);
 
         List<Staff> GetAll();
+
+        List<Staff> Search(string str);
     }
 }

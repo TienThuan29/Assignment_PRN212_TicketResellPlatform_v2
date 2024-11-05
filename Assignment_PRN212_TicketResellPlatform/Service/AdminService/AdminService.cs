@@ -44,5 +44,10 @@ namespace Service.AdminService
         {
             return (List<BusinessObject.User>) iUserRepository.GetAll();
         }
+
+        public List<BusinessObject.Staff> Search(string str)
+        {
+            return iStaffRepository.Search(str);
+        }
     }
 }
