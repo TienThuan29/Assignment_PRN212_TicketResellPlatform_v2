@@ -105,6 +105,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             AddPolicyWindow addPolicyWindow = new AddPolicyWindow();
             addPolicyWindow.Show();
+            this.Close();
         }
     }
 }

@@ -98,5 +98,11 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             catch (Exception ex) { }
         }
 
+        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+        {
+            AddStaffWindow addStaffWindow = new AddStaffWindow();
+            addStaffWindow.Show();
+            this.Close();
+        }
     }
 }

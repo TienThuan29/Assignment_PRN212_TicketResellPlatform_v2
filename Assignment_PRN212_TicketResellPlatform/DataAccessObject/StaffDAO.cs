@@ -57,5 +57,19 @@ namespace DataAccessObject
             }
             return result;
         }
+
+        public bool AddStaff(Staff item) {
+            bool isSuccess = false;
+            try
+            {
+                context.Staffs.Add(item);
+                context.SaveChanges();
+                isSuccess = true;
+            }
+            catch (Exception ex) {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
     }
 }

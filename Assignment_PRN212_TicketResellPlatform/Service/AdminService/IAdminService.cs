@@ -24,5 +24,7 @@ namespace Service.Admin
         List<Transaction> SearchTransactionOfType(string query, string type);
 
         List<BusinessObject.User> SearchUser(string query);
+
+        bool AddStaff(BusinessObject.Staff item);
     }
 }

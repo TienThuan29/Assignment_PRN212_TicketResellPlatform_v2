@@ -14,5 +14,7 @@ namespace Repository.Def
         List<Staff> GetAll();
 
         List<Staff> Search(string str);
+
+        bool AddStaff(Staff item);
     }
 }

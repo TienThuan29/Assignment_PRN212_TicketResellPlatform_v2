@@ -63,6 +63,7 @@
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
                     <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
+                    <Button Content="Thêm nhân viên" Width="134" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickAdd" />
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
@@ -81,6 +82,7 @@
                             <DataGridTextColumn Header="Tên" Binding="{Binding Lastname}" Width="150"/>
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
                             <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="150"/>
+                            <DataGridTextColumn Header="Staff Code" Binding="{Binding StaffCode}" Width="100"/>
                             <DataGridTextColumn Header="Hoạt động" Binding="{Binding IsEnable}" Width="100"/>
                             <DataGridTemplateColumn Header="Trạng thái" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
@@ -115,7 +117,7 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
 
-                            
+
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

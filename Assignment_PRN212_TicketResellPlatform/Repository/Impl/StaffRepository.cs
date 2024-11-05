@@ -11,6 +11,11 @@ namespace Repository.Impl
 {
     public class StaffRepository : IStaffRepository
     {
+        public bool AddStaff(Staff item)
+        {
+            return StaffDAO.Instance.AddStaff(item);
+        }
+
         public Staff FindByUsername(string username)
         {
             return StaffDAO.Instance.FindByUsername(username);  

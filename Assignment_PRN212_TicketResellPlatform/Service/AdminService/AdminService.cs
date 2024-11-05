@@ -25,6 +25,11 @@ namespace Service.AdminService
             iUserRepository = new UserRepository();
         }
 
+        public bool AddStaff(BusinessObject.Staff item)
+        {
+            return iStaffRepository.AddStaff(item);
+        }
+
         public List<BusinessObject.Staff> GetListStaff()
         {
             return iStaffRepository.GetAll();
