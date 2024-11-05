@@ -38,8 +38,8 @@ namespace DataAccessObject
             List<Policy> result = new List<Policy>();
             string str = query.ToLower();
             foreach (var item in policies) {
-                if (item.Id.ToString().Equals(str) || item.TypePolicy.Name.ToLower().Equals(str) || item.Content.ToLower().Equals(str)
-                    || item.Fee.ToString().Equals(str))
+                if (item.Id.ToString().Contains(str)|| item.TypePolicy.Name.ToLower().Contains(str) || item.Content.ToLower().Contains(str)
+                    || item.Fee.ToString().Contains(str))
                 {
                     result.Add(item);
                 }

@@ -35,5 +35,10 @@ namespace Repository.Impl
         {
             return UserDAO.Instance.SaveRegisterUser(user);
         }
+
+        public List<User> Search(string query)
+        {
+            return UserDAO.Instance.Search(query);
+        }
     }
 }

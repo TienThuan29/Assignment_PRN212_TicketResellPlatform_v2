@@ -18,5 +18,11 @@ namespace Service.Admin
         public List<BusinessObject.User> GetUsers();
 
         List<BusinessObject.Staff> Search(string str);
+
+        List<Transaction> SearchTransaction(string query);
+
+        List<Transaction> SearchTransactionOfType(string query, string type);
+
+        List<BusinessObject.User> SearchUser(string query);
     }
 }

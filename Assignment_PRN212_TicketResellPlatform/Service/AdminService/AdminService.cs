@@ -49,5 +49,20 @@ namespace Service.AdminService
         {
             return iStaffRepository.Search(str);
         }
+
+        public List<Transaction> SearchTransaction(string query)
+        {
+            return iTransactionRepository.Search(query);
+        }
+
+        public List<Transaction> SearchTransactionOfType(string query, string type)
+        {
+            return iTransactionRepository.SearchOfType(query, type);
+        }
+
+        public List<BusinessObject.User> SearchUser(string query)
+        {
+            return iUserRepository.Search(query);
+        }
     }
 }

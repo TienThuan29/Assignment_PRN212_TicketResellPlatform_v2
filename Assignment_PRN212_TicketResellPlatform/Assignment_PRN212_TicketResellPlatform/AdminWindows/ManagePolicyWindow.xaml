@@ -91,7 +91,7 @@
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
+                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
@@ -103,7 +103,7 @@
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
+                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>

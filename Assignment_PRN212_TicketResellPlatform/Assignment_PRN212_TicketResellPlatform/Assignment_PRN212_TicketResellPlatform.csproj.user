@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AdminWindows\AddPolicyWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RegisterWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -81,6 +84,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="AdminWindows\AddPolicyWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="AdminWindows\AdminDashboardWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

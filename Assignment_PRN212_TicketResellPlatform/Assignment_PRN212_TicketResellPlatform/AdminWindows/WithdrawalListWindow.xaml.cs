@@ -22,6 +22,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     public partial class WithdrawalListWindow : Window
     {
         private IAdminService adminService;
+        private string type = "WITHDRAWAL";
         public WithdrawalListWindow()
         {
             adminService = new AdminService();
@@ -71,16 +72,28 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType("WITHDRAWAL");
+            this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType(type);
         }
 
         private void ReloadDataGrid()
         {
             try
             {
-                this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType("WITHDRAWAL");
+                this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType(type);
             }
             catch (Exception ex) { }
+        }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchTransaction.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfWithdrawal.ItemsSource = adminService.SearchTransactionOfType(txtSearchTransaction.Text, type);
+            }
         }
     }
 }

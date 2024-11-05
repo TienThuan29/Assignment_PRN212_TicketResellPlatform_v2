@@ -67,5 +67,36 @@ namespace DataAccessObject
             return result;
         }
 
+        public List<Transaction> Search(string query)
+        {
+            List<Transaction> list = this.GetTransactions();
+            List<Transaction> result = new List<Transaction>();
+            query = query.ToLower();
+            foreach (var item in list) {
+                if (item.Id.ToString().Contains(query) || item.Amount.ToString().Contains(query) || item.TransDate.ToString().Contains(query)
+                    || item.TransType.ToLower().Contains(query) || item.UserId.ToString().Contains(query))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
+
+        public List<Transaction> SearchOfType(string query, string type)
+        {
+            List<Transaction> list = this.GetTransactionsListOfType(type);
+            List <Transaction> result = new List<Transaction>();
+            query = query.ToLower();
+            foreach (var item in list)
+            {
+                if (item.Id.ToString().Contains(query) || item.Amount.ToString().Contains(query) || item.TransDate.ToString().Contains(query)
+                     || item.UserId.ToString().Contains(query))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
+
     }
 }

@@ -82,5 +82,17 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             }
             catch (Exception ex) { }
         }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfUser.ItemsSource = adminService.SearchUser(txtSearch.Text);
+            }
+        }
     }
 }

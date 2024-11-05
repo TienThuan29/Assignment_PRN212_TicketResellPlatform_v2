@@ -87,5 +87,18 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             }
             catch (Exception ex) { }
         }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (!txtTransaction.Text.Equals(""))
+            {
+                List<Transaction> list = iAdminService.SearchTransaction(txtTransaction.Text);
+                this.tableHistoryTransaction.ItemsSource = list;
+            }
+            else
+            {
+                this.ReloadDataGrid();
+            }
+        }
     }
 }
