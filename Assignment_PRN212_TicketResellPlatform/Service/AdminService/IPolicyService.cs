@@ -12,5 +12,13 @@ namespace Service.AdminService
         public List<Policy> GetPolicies();
 
         public List<Policy> Search(string query);
+
+        public List<TypePolicy> GetAllTypePolicies();
+
+        public TypePolicy GetTypePolicyByName(string name);
+
+        bool AddPolicy(Policy policy);
+
+        TypePolicy GetTypePolicyByid(long id);
     }
 }

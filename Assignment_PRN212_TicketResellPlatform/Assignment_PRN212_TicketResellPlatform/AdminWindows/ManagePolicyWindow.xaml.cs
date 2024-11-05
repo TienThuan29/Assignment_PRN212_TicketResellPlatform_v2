@@ -100,5 +100,11 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             }
             catch (Exception ex) { }
         }
+
+        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+        {
+            AddPolicyWindow addPolicyWindow = new AddPolicyWindow();
+            addPolicyWindow.Show();
+        }
     }
 }

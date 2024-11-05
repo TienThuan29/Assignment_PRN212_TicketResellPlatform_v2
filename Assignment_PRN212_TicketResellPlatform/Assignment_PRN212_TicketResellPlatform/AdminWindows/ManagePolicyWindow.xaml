@@ -63,6 +63,7 @@
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
                     <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
+                    <Button Content="Thêm chính sách" Width="157" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickAdd"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">

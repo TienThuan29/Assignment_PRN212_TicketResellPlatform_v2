@@ -1,5 +1,6 @@
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.csproj.AssemblyReference.cache
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\StaffWindows\EventDetailWindow.baml
+C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.g.cs
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AdminDashboardWindow.g.cs
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\HistoryTransactionWindow.g.cs
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\ManagePolicyWindow.g.cs
@@ -36,6 +37,7 @@ C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assig
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform_MarkupCompile.cache
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform_MarkupCompile.lref
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\App.baml
+C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.baml
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AdminDashboardWindow.baml
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\HistoryTransactionWindow.baml
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\ManagePolicyWindow.baml
@@ -69,8 +71,8 @@ C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assig
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.g.resources
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\refint\Assignment_PRN212_TicketResellPlatform.dll
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.pdb
-C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\appsettings.json
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\UserWindows\LogoTab-Photoroom.png
+C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\appsettings.json
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.exe
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.deps.json
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\bin\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.runtimeconfig.json
@@ -149,5 +151,3 @@ C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assig
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.dll
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform.genruntimeconfig.cache
 C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\ref\Assignment_PRN212_TicketResellPlatform.dll
-C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.g.cs
-C:\Users\CHuy\Desktop\PRN212\Ticket\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.baml

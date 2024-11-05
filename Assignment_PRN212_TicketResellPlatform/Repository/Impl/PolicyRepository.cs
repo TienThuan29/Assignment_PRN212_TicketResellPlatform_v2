@@ -11,7 +11,27 @@ namespace Repository.Impl
 {
     public class PolicyRepository : IPolicyRepository
     {
+        public bool AddPolicy(Policy policy)
+        {
+            return PolicyDAO.Instance.AddPolicy(policy);
+        }
+
+        public List<TypePolicy> GetAllTypePolicies()
+        {
+            return TypePolicyDAO.Instance.GetAllTypePolicies();
+        }
+
         public List<Policy> GetPolicies() => PolicyDAO.Instance.GetPolicies();
+
+        public TypePolicy GetTypePolicyByid(long id)
+        {
+            return TypePolicyDAO.Instance.GetTypePolicyByid(id);
+        }
+
+        public TypePolicy GetTypePolicyByName(string name)
+        {
+            return TypePolicyDAO.Instance.GetTypePolicyByName(name);
+        }
 
         public List<Policy> Search(string query)
         {

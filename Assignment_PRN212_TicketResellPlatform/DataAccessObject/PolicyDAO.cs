@@ -28,7 +28,8 @@ namespace DataAccessObject
             List<Policy> policies = context.Policies.ToList();
             foreach (var item in policies)
             {
-                item.TypePolicy = TypePolicyDAO.Instance.GetTypePolicyByid(item.Id);
+                long? id = item.TypePolicyId;
+                item.TypePolicy = TypePolicyDAO.Instance.GetTypePolicyByid(id);
             }
             return policies;
         }
@@ -47,6 +48,25 @@ namespace DataAccessObject
             return result;
         }
 
+        public Policy GetPolicy(int id) {
+            return context.Policies.SingleOrDefault(x => x.Id == id);
+        }
+
+        public bool AddPolicy(Policy policy) {
+            bool isSuccess = false;
+            try
+            {
+                context.Policies.Add(policy);
+                context.SaveChanges();
+                isSuccess = true;
+            }
+            catch (Exception ex) {
+                isSuccess = false;
+                Console.WriteLine(ex.Message);
+            }
+
+            return isSuccess;
+        }
        
     }
 }

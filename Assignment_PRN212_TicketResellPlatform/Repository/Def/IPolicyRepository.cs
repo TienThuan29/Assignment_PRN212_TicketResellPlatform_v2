@@ -9,8 +9,16 @@ namespace Repository.Def
 {
     public interface IPolicyRepository
     {
-        public List<Policy> GetPolicies();
+        List<Policy> GetPolicies();
 
-        public List<Policy> Search(string query);
+        List<Policy> Search(string query);
+
+        List<TypePolicy> GetAllTypePolicies();
+
+        TypePolicy GetTypePolicyByName(string name);
+
+        bool AddPolicy(Policy policy);
+
+        TypePolicy GetTypePolicyByid(long id);
     }
 }

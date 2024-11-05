@@ -17,9 +17,30 @@ namespace Service.AdminService
         { 
             policyRepository = new PolicyRepository();
         }
+
+        public bool AddPolicy(Policy policy)
+        {
+            return policyRepository.AddPolicy(policy);
+        }
+
+        public List<TypePolicy> GetAllTypePolicies()
+        {
+            return policyRepository.GetAllTypePolicies();
+        }
+
         public List<Policy> GetPolicies()
         {
             return policyRepository.GetPolicies();
+        }
+
+        public TypePolicy GetTypePolicyByid(long id)
+        {
+            return policyRepository.GetTypePolicyByid(id);
+        }
+
+        public TypePolicy GetTypePolicyByName(string name)
+        {
+            return policyRepository.GetTypePolicyByName(name);
         }
 
         public List<Policy> Search(string query)
