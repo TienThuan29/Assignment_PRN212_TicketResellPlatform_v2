@@ -13,6 +13,8 @@ namespace Service.Admin
 
         public List<Transaction> GetTransactionsListOfType(string type);
 
-        public List<Policy> GetPolicies();
+        public List<BusinessObject.Staff> GetListStaff();
+
+        public List<BusinessObject.User> GetUsers();
     }
 }

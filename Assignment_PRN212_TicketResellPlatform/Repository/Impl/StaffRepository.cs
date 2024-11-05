@@ -15,5 +15,10 @@ namespace Repository.Impl
         {
             return StaffDAO.Instance.FindByUsername(username);  
         }
+
+        public List<Staff> GetAll()
+        {
+            return StaffDAO.Instance.GetAll();
+        }
     }
 }

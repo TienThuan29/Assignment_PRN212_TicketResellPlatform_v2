@@ -56,14 +56,15 @@ namespace DataAccessObject
         public List<Transaction> GetTransactionsListOfType(string type)
         {
             List<Transaction> list = this.GetTransactions();
+            List<Transaction> result = new List<Transaction>();
             foreach (var item in list)
             {
-                if (!item.TransType.Equals(type))
+                if (item.TransType.Equals(type))
                 {
-                    list.Remove(item);
+                   result.Add(item);
                 }
             }
-            return list;
+            return result;
         }
 
     }

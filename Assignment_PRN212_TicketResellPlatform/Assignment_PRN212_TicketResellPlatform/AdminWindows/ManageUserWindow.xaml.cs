@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Service.Admin;
+using Service.AdminService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +21,10 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class ManageUserWindow : Window
     {
+        private IAdminService adminService;
         public ManageUserWindow()
         {
+            adminService = new AdminService();
             InitializeComponent();
         }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -65,6 +69,9 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
-
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            this.tableOfUser.ItemsSource = adminService.GetUsers();
+        }
     }
 }

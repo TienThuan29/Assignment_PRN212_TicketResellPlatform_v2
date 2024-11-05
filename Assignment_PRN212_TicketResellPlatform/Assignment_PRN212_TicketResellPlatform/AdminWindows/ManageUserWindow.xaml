@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="ManageUserWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="ManageUserWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -66,7 +66,7 @@
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
-                    <DataGrid AutoGenerateColumns="False" 
+                    <DataGrid x:Name="tableOfUser" AutoGenerateColumns="False" 
                     ItemsSource="{Binding EventList}" 
                     CanUserAddRows="False"
                     CanUserDeleteRows="False"
@@ -77,25 +77,40 @@
                     IsReadOnly="True"
                     Background="White">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
-                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="250"/>
-                            <DataGridTextColumn Header="Email" Binding="{Binding EventName}" Width="100"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTextColumn Header="Doanh thu" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                            <DataGridTemplateColumn Header="Hành động" Width="200">
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Họ" Binding="{Binding Firstname}" Width="125"/>
+                            <DataGridTextColumn Header="Tên" Binding="{Binding Lastname}" Width="125"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="100"/>
+                            <DataGridTextColumn Header="Doanh thu" Binding="{Binding Revenue}" Width="100"/>
+                            <DataGridTemplateColumn Header="Trạng thái" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0" />
-                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0" />
+                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="IsEnabled" Value="True"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsEnable}" Value="True">
+                                                                <Setter Property="IsEnabled" Value="False"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
+                                                        <Setter Property="IsEnabled" Value="True"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsEnable}" Value="False">
+                                                                <Setter Property="IsEnabled" Value="False"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

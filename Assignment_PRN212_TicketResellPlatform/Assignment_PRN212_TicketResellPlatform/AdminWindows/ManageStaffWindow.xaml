@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="ManageStaffWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="ManageStaffWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -66,8 +66,7 @@
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
-                    <DataGrid AutoGenerateColumns="False" 
-                ItemsSource="{Binding StaffList}" 
+                    <DataGrid x:Name="tableOfStaff" AutoGenerateColumns="False" 
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
                 HeadersVisibility="Column" 
@@ -78,11 +77,12 @@
                 Background="White">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
-                            <DataGridTextColumn Header="Họ" Binding="{Binding FirstName}" Width="250"/>
-                            <DataGridTextColumn Header="Tên" Binding="{Binding LastName}" Width="250"/>
-                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="100"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="100"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                            <DataGridTextColumn Header="Họ" Binding="{Binding Firstname}" Width="150"/>
+                            <DataGridTextColumn Header="Tên" Binding="{Binding Lastname}" Width="150"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="150"/>
+                            <DataGridTextColumn Header="Hoạt động" Binding="{Binding IsEnable}" Width="100"/>
+                            <DataGridTemplateColumn Header="Trạng thái" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -91,7 +91,7 @@
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
+                                                            <DataTrigger Binding="{Binding IsEnable}" Value="True">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
@@ -103,7 +103,7 @@
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
+                                                            <DataTrigger Binding="{Binding IsEnable}" Value="False">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>

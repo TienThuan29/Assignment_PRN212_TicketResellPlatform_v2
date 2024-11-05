@@ -14,16 +14,20 @@ namespace Service.AdminService
     {
         private readonly ITransactionRepository iTransactionRepository;
         private readonly IPolicyRepository iPolicyRepository;
+        private readonly IStaffRepository iStaffRepository;
+        private readonly IUserRepository iUserRepository;
 
         public AdminService()
         {
             iTransactionRepository = new TransactionRepository();
             iPolicyRepository = new PolicyRepository();
+            iStaffRepository = new StaffRepository();
+            iUserRepository = new UserRepository();
         }
 
-        public List<Policy> GetPolicies()
+        public List<BusinessObject.Staff> GetListStaff()
         {
-            return iPolicyRepository.GetPolicies();
+            return iStaffRepository.GetAll();
         }
 
         public List<Transaction> GetTransactions()
@@ -36,6 +40,9 @@ namespace Service.AdminService
             return iTransactionRepository.GetTransactionsListOfType(type);
         }
 
-
+        public List<BusinessObject.User> GetUsers()
+        {
+            return (List<BusinessObject.User>) iUserRepository.GetAll();
+        }
     }
 }

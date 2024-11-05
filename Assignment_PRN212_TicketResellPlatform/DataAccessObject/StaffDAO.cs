@@ -27,5 +27,18 @@ namespace DataAccessObject
         {
             return context.Staffs.SingleOrDefault(obj => obj.Username.Equals(username));
         }
+
+        public List<Staff> GetAll()
+        {
+            List<Staff> list = context.Staffs.ToList();
+            List<Staff> result = new List<Staff>();
+            foreach (var item in list) {
+                if (item.RoleCode.ToUpper().Equals("STAFF"))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
     }
 }

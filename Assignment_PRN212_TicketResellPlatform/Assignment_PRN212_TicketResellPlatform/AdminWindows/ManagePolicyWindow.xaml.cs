@@ -23,10 +23,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     public partial class ManagePolicyWindow : Window
     {
         private IAdminService iAdminService;
+        private IPolicyService iPolicyService;
         public ManagePolicyWindow()
         {
             InitializeComponent();
             iAdminService = new AdminService();
+            iPolicyService = new PolicyService();
         }
 
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -73,7 +75,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            List<Policy> policies = iAdminService.GetPolicies();
+            List<Policy> policies = iPolicyService.GetPolicies();
             this.tableManagePolicy.ItemsSource = policies;
         }
 

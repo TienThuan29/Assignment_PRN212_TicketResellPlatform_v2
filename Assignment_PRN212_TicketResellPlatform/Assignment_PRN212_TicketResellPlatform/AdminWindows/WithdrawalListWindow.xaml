@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="WithdrawalListWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="WithdrawalListWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -66,7 +66,7 @@
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
-                    <DataGrid AutoGenerateColumns="False" 
+                    <DataGrid x:Name="tableOfWithdrawal" AutoGenerateColumns="False" 
                 ItemsSource="{Binding EventList}" 
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
@@ -77,26 +77,14 @@
                 IsReadOnly="True"
                 Background="White">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
-                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="250"/>
-                            <DataGridTextColumn Header="Email" Binding="{Binding EventName}" Width="100"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTextColumn Header="Doanh thu" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" Width="250"/>
+                            <DataGridTextColumn Header="User" Binding="{Binding UserId}" Width="150"/>
+                            <DataGridTextColumn Header="Date" Binding="{Binding TransDate}" Width="200"/>
+                            <DataGridTemplateColumn Header="Is Done" Width="100">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-
-                            <DataGridTemplateColumn Header="Hành động" Width="200">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Chưa chuyển khoản" Background="LightBlue" Padding="5,0" Margin="5,0" />
-                                            <Button Content="Đã chuyển khoản" Background="LightCoral" Padding="5,0" Margin="5,0" />
-                                        </StackPanel>
+                                        <Button Content="{Binding IsDone}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
