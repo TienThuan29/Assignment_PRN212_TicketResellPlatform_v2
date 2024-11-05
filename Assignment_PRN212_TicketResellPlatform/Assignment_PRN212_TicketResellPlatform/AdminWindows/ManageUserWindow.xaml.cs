@@ -73,5 +73,14 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             this.tableOfUser.ItemsSource = adminService.GetUsers();
         }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                this.tableOfUser.ItemsSource = adminService.GetUsers();
+            }
+            catch (Exception ex) { }
+        }
     }
 }

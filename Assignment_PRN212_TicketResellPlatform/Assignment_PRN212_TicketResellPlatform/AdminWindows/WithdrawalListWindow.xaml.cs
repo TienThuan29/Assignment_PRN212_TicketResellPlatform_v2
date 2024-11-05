@@ -73,5 +73,14 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType("WITHDRAWAL");
         }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType("WITHDRAWAL");
+            }
+            catch (Exception ex) { }
+        }
     }
 }

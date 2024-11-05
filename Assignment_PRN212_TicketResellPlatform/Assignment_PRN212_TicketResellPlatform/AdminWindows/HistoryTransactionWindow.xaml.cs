@@ -1,4 +1,5 @@
-﻿using Service.Admin;
+﻿using BusinessObject;
+using Service.Admin;
 using Service.AdminService;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,16 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
             this.tableHistoryTransaction.ItemsSource = iAdminService.GetTransactions();
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                List<Transaction> list = iAdminService.GetTransactions();
+                this.tableHistoryTransaction.ItemsSource = list;
+            }
+            catch (Exception ex) { }
         }
     }
 }
