@@ -10,5 +10,7 @@ namespace Repository.Def
     public interface IPolicyRepository
     {
         public List<Policy> GetPolicies();
+
+        public List<Policy> Search(string query);
     }
 }

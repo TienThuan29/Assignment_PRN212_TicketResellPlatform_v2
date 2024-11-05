@@ -12,5 +12,10 @@ namespace Repository.Impl
     public class PolicyRepository : IPolicyRepository
     {
         public List<Policy> GetPolicies() => PolicyDAO.Instance.GetPolicies();
+
+        public List<Policy> Search(string query)
+        {
+            return PolicyDAO.Instance.Search(query);
+        }
     }
 }

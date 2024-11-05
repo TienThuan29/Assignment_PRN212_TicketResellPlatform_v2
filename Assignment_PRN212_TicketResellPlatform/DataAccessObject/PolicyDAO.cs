@@ -28,19 +28,24 @@ namespace DataAccessObject
             List<Policy> policies = context.Policies.ToList();
             foreach (var item in policies)
             {
-                if (item.IsDeleted.Equals(true))
-                {
-                    policies.Remove(item);
-                }
-                else
-                {
-                    item.TypePolicy = TypePolicyDAO.Instance.GetTypePolicyByid(item.Id);
-                }
-                
+                item.TypePolicy = TypePolicyDAO.Instance.GetTypePolicyByid(item.Id);
             }
             return policies;
         }
-            
+
+        public List<Policy> Search(string query) {
+            List<Policy> policies = GetPolicies();
+            List<Policy> result = new List<Policy>();
+            string str = query.ToLower();
+            foreach (var item in policies) {
+                if (item.Id.ToString().Equals(str) || item.TypePolicy.Name.ToLower().Equals(str) || item.Content.ToLower().Equals(str)
+                    || item.Fee.ToString().Equals(str))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
 
        
     }

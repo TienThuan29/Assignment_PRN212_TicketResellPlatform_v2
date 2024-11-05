@@ -59,10 +59,10 @@
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
+                    <TextBox x:Name="txtSearchPolicy" Width="250" Height="30" VerticalAlignment="Center" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
@@ -81,7 +81,7 @@
                             <DataGridTextColumn Header="Nội dung" Binding="{Binding Content}" Width="300"/>
                             <DataGridTextColumn Header="Phí" Binding="{Binding Fee}" Width="100"/>
                             <DataGridTextColumn Header="Đã xóa" Binding="{Binding IsDeleted}" Width="100"/>
-                            <DataGridTextColumn Header="Loại" Binding="{Binding TypePolicyId}" Width="100"/>
+                            <DataGridTextColumn Header="Loại" Binding="{Binding TypePolicy.Name}" Width="100"/>
                             <DataGridTemplateColumn Header="Hành động" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>

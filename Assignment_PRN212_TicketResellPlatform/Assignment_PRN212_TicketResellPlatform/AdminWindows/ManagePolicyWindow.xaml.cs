@@ -79,5 +79,26 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.tableManagePolicy.ItemsSource = policies;
         }
 
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchPolicy.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableManagePolicy.ItemsSource = iPolicyService.Search(txtSearchPolicy.Text);
+            }
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                List<Policy> policies = iPolicyService.GetPolicies();
+                this.tableManagePolicy.ItemsSource = policies;
+            }
+            catch (Exception ex) { }
+        }
     }
 }

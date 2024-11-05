@@ -21,5 +21,10 @@ namespace Service.AdminService
         {
             return policyRepository.GetPolicies();
         }
+
+        public List<Policy> Search(string query)
+        {
+            return policyRepository.Search(query);
+        }
     }
 }

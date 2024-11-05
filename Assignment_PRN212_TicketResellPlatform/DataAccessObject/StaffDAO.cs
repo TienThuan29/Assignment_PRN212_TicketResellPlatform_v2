@@ -48,7 +48,7 @@ namespace DataAccessObject
             List<Staff> staff = context.Staffs.ToList();
             List<Staff> result = new List<Staff>();
             foreach (var item in staff) {
-                if(item.Id.Equals(str) || item.Firstname.ToLower().Equals(str) || item.Lastname.ToLower().Equals(str)
+                if(item.Id.ToString().Equals(str) || item.Firstname.ToLower().Equals(str) || item.Lastname.ToLower().Equals(str)
                     || item.Email.ToLower().Equals(str) || item.Phone.ToLower().Equals(str))
                 {
                     result.Add(item);
