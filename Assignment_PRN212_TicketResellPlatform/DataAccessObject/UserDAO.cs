@@ -93,5 +93,24 @@ namespace DataAccessObject
             }
             return filtered;
         }
+
+        public bool ChangeEnableOfUser(string id)
+        {
+            bool isSuccess = false;
+            try
+            {
+                User user = context.Users.SingleOrDefault(x=> x.Id.ToString().Equals(id));
+                if (user != null) {
+                    user.IsEnable = !user.IsEnable;
+                    context.Users.Update(user);
+                    context.SaveChanges();
+                    isSuccess = true;
+                }
+            }
+            catch (Exception ex) {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
     }
 }

@@ -20,5 +20,7 @@ namespace Repository.Def
         ICollection<User> GetAll();
 
         List<User> Search(string query);
+
+        bool ChangeEnableOfUser(string id);
     }
 }

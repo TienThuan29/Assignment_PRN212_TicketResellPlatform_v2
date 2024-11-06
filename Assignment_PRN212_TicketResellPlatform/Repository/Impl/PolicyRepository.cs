@@ -16,6 +16,11 @@ namespace Repository.Impl
             return PolicyDAO.Instance.AddPolicy(policy);
         }
 
+        public bool ChangeEnableOfPolicy(string id)
+        {
+            return PolicyDAO.Instance.ChangeEnableOfPolicy(id);
+        }
+
         public List<TypePolicy> GetAllTypePolicies()
         {
             return TypePolicyDAO.Instance.GetAllTypePolicies();

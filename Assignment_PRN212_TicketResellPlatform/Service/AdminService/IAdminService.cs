@@ -26,5 +26,9 @@ namespace Service.Admin
         List<BusinessObject.User> SearchUser(string query);
 
         bool AddStaff(BusinessObject.Staff item);
+
+        bool ChangeEnableOfStaff(string id);
+
+        bool ChangeEnableOfUser(string id);
     }
 }

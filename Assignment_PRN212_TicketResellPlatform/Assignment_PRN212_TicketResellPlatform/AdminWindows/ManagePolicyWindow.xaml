@@ -87,7 +87,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
@@ -99,7 +99,7 @@
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>

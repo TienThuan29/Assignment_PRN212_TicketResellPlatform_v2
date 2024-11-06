@@ -23,6 +23,11 @@ namespace Service.AdminService
             return policyRepository.AddPolicy(policy);
         }
 
+        public bool ChangeEnableOfPolicy(string id)
+        {
+            return policyRepository.ChangeEnableOfPolicy(id);
+        }
+
         public List<TypePolicy> GetAllTypePolicies()
         {
             return policyRepository.GetAllTypePolicies();

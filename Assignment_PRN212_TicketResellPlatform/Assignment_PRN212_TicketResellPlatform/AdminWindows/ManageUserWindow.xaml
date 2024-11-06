@@ -83,11 +83,12 @@
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
                             <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="100"/>
                             <DataGridTextColumn Header="Doanh thu" Binding="{Binding Revenue}" Width="100"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="200">
+                            <DataGridTextColumn Header="Trạng thái" Binding="{Binding IsEnable}" Width="100"/>
+                            <DataGridTemplateColumn Header="Hành động" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
@@ -99,7 +100,7 @@
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>

@@ -30,6 +30,16 @@ namespace Service.AdminService
             return iStaffRepository.AddStaff(item);
         }
 
+        public bool ChangeEnableOfStaff(string id)
+        {
+            return iStaffRepository.ChangeEnableOfStaff(id);
+        }
+
+        public bool ChangeEnableOfUser(string id)
+        {
+            return iUserRepository.ChangeEnableOfUser(id);
+        }
+
         public List<BusinessObject.Staff> GetListStaff()
         {
             return iStaffRepository.GetAll();

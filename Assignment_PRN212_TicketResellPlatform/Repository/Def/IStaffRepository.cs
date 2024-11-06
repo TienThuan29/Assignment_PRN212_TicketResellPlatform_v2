@@ -16,5 +16,7 @@ namespace Repository.Def
         List<Staff> Search(string str);
 
         bool AddStaff(Staff item);
+
+        bool ChangeEnableOfStaff(string id);
     }
 }

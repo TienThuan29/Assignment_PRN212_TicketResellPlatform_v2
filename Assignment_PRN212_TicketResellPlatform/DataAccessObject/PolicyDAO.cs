@@ -67,6 +67,26 @@ namespace DataAccessObject
 
             return isSuccess;
         }
-       
+        
+        public bool ChangeEnableOfPolicy(string id)
+        {
+            bool isSuccess = false;
+            try
+            {
+                Policy policy = context.Policies.SingleOrDefault(x=>x.Id.ToString().Equals(id));
+                if (policy != null)
+                {
+                    policy.IsDeleted = !policy.IsDeleted;
+                    context.Policies.Update(policy);
+                    context.SaveChanges();
+                    isSuccess = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
     }
 }

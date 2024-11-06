@@ -71,5 +71,26 @@ namespace DataAccessObject
             }
             return isSuccess;
         }
+
+        public bool ChangeEnableOfStaff(string id)
+        {
+            bool isSuccess = false;
+            try
+            {
+                Staff staff = context.Staffs.SingleOrDefault(x => x.Id.ToString() == id);
+                if (staff != null) {
+                    staff.IsEnable = !staff.IsEnable;
+                    context.Staffs.Update(staff);
+                    context.SaveChanges();
+                    isSuccess=true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
     }
 }

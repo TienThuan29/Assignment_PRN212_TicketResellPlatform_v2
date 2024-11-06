@@ -11,6 +11,11 @@ namespace Repository.Impl
 {
     public class UserRepository : IUserRepository
     {
+        public bool ChangeEnableOfUser(string id)
+        {
+            return UserDAO.Instance.ChangeEnableOfUser(id);
+        }
+
         public User FindByUsername(string username)
         {
             return UserDAO.Instance.FindByUsername(username);   

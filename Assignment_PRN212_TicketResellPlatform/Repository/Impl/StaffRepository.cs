@@ -16,6 +16,11 @@ namespace Repository.Impl
             return StaffDAO.Instance.AddStaff(item);
         }
 
+        public bool ChangeEnableOfStaff(string id)
+        {
+            return StaffDAO.Instance.ChangeEnableOfStaff(id);
+        }
+
         public Staff FindByUsername(string username)
         {
             return StaffDAO.Instance.FindByUsername(username);  

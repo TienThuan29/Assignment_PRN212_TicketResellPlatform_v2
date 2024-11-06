@@ -94,5 +94,20 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                 this.tableOfUser.ItemsSource = adminService.SearchUser(txtSearch.Text);
             }
         }
+
+        private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string id = button?.Tag?.ToString();
+            if (adminService.ChangeEnableOfUser(id))
+            {
+                MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thành công !");
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thất bại !");
+            }
+        }    
     }
 }
