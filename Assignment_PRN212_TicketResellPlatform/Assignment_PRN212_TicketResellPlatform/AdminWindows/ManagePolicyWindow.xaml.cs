@@ -103,23 +103,31 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void ButtonClickAdd(object sender, RoutedEventArgs e)
         {
-            AddPolicyWindow addPolicyWindow = new AddPolicyWindow();
+            AddPolicyWindow addPolicyWindow = new AddPolicyWindow(this);
             addPolicyWindow.Show();
-            this.Close();
         }
 
         private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            string id = button?.Tag?.ToString();
-            if (iPolicyService.ChangeEnableOfPolicy(id))
+            switch (MessageBox.Show("Bạn muốn thay đổi trạng thái của chính sách ?",
+    "Thông báo", MessageBoxButton.YesNo))
             {
-                MessageBox.Show("Thay đổi trạng thái chính sách thành công !");
-                this.ReloadDataGrid();
-            }
-            else
-            {
-                MessageBox.Show("Thay đổi trạng thái chính sách thất bại !");
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (iPolicyService.ChangeEnableOfPolicy(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái chính sách thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái chính sách thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
             }
         }
     }

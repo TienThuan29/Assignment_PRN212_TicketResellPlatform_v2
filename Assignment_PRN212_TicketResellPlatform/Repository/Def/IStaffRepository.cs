@@ -18,5 +18,7 @@ namespace Repository.Def
         bool AddStaff(Staff item);
 
         bool ChangeEnableOfStaff(string id);
+
+        bool CheckExistUsername(string username);
     }
 }

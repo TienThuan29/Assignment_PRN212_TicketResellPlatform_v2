@@ -24,16 +24,17 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     public partial class AddStaffWindow : Window
     {
         private IAdminService adminService;
-        public AddStaffWindow()
+        private ManageStaffWindow staffWindow;
+        public AddStaffWindow(ManageStaffWindow staffWindow)
         {
             adminService = new AdminService();
             InitializeComponent();
+            this.staffWindow = staffWindow;
         }
 
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
-            ManageStaffWindow manageStaffWindow = new ManageStaffWindow();
-            manageStaffWindow.Show();
+            staffWindow.Show();
             this.Close();
         }
 
@@ -46,36 +47,43 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                     string EmailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
                     if (Regex.IsMatch(txtEmail.Text,EmailPattern))
                     {
-                        string PwdPattern = @"^.{5,}$";
-                        string UsernamePattern = @"^[a-zA-Z]{5,}[a-zA-Z0-9]*$";
-                        if (Regex.IsMatch(pwdBox.Password, PwdPattern) && pwdBox.Password.Equals(confirmPwd.Password)
-                            && Regex.IsMatch(txtUsername.Text,UsernamePattern))
+                        if (adminService.CheckExistUsername(txtUsername.Text))
                         {
-                            Staff staff = new Staff();
-                            staff.Password = pwdBox.Password;
-                            staff.Firstname = txtFirstname.Text;
-                            staff.Lastname = txtLastname.Text;
-                            staff.Email = txtEmail.Text;
-                            staff.Phone = txtPhone.Text;
-                            staff.StaffCode = txtStaffcode.Text;
-                            staff.Username = txtUsername.Text;
-                            staff.Balance = 0;
-                            staff.Revenue = 0;
-                            staff.IsEnable = true;
-                            staff.RoleCode = "STAFF";
-                            if (adminService.AddStaff(staff))
+                            string PwdPattern = @"^.{5,}$";
+                            string UsernamePattern = @"^[a-zA-Z]{5,}[a-zA-Z0-9]*$";
+                            if (Regex.IsMatch(pwdBox.Password, PwdPattern) && pwdBox.Password.Equals(confirmPwd.Password)
+                                && Regex.IsMatch(txtUsername.Text, UsernamePattern))
                             {
-                                MessageBox.Show("Thêm nhân viên thành công !");
-                                this.ResetInput();
+                                Staff staff = new Staff();
+                                staff.Password = pwdBox.Password;
+                                staff.Firstname = txtFirstname.Text;
+                                staff.Lastname = txtLastname.Text;
+                                staff.Email = txtEmail.Text;
+                                staff.Phone = txtPhone.Text;
+                                staff.StaffCode = txtStaffcode.Text;
+                                staff.Username = txtUsername.Text;
+                                staff.Balance = 0;
+                                staff.Revenue = 0;
+                                staff.IsEnable = true;
+                                staff.RoleCode = "STAFF";
+                                if (adminService.AddStaff(staff))
+                                {
+                                    MessageBox.Show("Thêm nhân viên thành công !");
+                                    this.ResetInput();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Thêm nhân viên thất bại !");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Thêm nhân viên thất bại !");
+                                MessageBox.Show("Mật khẩu hoặc Username chưa phù hợp !");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Mật khẩu hoặc Username chưa phù hợp !");
+                            MessageBox.Show("Tên đăng nhập đã tồn tại");
                         }
                     }
                     else

@@ -30,5 +30,7 @@ namespace Service.Admin
         bool ChangeEnableOfStaff(string id);
 
         bool ChangeEnableOfUser(string id);
+
+        bool CheckExistUsername(string username);
     }
 }

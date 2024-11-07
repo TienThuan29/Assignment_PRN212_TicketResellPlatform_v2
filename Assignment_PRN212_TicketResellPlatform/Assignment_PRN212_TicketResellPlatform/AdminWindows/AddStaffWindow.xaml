@@ -5,25 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="AddStaffWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="435,366,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" />
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="564,366,0,0" VerticalAlignment="Top" Click="ButtonClickExit" />
-        <Label Content="Họ" HorizontalAlignment="Left" Margin="150,53,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tên" HorizontalAlignment="Left" Margin="150,104,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="145,161,0,0" VerticalAlignment="Top"/>
-        <Label Content="Số điện thoại" HorizontalAlignment="Left" Margin="435,53,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mã nhân viên" HorizontalAlignment="Left" Margin="434,104,0,0" VerticalAlignment="Top"/>
-        <Label Content="Username" HorizontalAlignment="Left" Margin="443,161,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mật khẩu" HorizontalAlignment="Left" Margin="278,222,0,0" VerticalAlignment="Top"/>
-        <Label Content="Xác nhận mật khẩu" HorizontalAlignment="Left" Margin="278,265,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtFirstname" HorizontalAlignment="Left" Margin="218,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Margin="218,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="218,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="548,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtStaffcode" HorizontalAlignment="Left" Margin="548,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="548,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="403,222,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox x:Name="confirmPwd" HorizontalAlignment="Left" Margin="403,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Đăng ký nhân viên" FontStyle="Italic" FontWeight="Medium" Margin="214,30,0,0" Height="76" Width="310"/>
+        <Button Content="Lưu" HorizontalAlignment="Left" Margin="247,313,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" />
+        <Button Content="Thoát" HorizontalAlignment="Left" Margin="382,313,0,0" VerticalAlignment="Top" Click="ButtonClickExit" Width="66" />
+        <Label Content="Họ" HorizontalAlignment="Left" Margin="134,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tên" HorizontalAlignment="Left" Margin="134,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="129,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="Số điện thoại" HorizontalAlignment="Left" Margin="370,106,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mã nhân viên" HorizontalAlignment="Left" Margin="370,158,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="361,215,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mật khẩu" HorizontalAlignment="Left" Margin="112,267,0,0" VerticalAlignment="Top"/>
+        <Label Content="Xác nhận mật khẩu" HorizontalAlignment="Left" Margin="339,270,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFirstname" HorizontalAlignment="Left" Margin="175,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Margin="175,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="175,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="464,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtStaffcode" HorizontalAlignment="Left" Margin="464,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Margin="464,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="pwdBox" HorizontalAlignment="Left" Margin="175,266,0,0" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="confirmPwd" HorizontalAlignment="Left" Margin="464,266,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

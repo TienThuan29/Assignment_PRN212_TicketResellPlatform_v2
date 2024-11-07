@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="ManageStaffWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
+        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,15 +22,15 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/Add a heading (1)-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
-                    <Border CornerRadius="30"  Margin="1090,6,62,6">
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
                         <Border.Background>
-                            <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                            <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
@@ -56,7 +56,7 @@
             </Grid>
 
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,54,10,-34">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <TextBox x:Name="txtSearchStaff" Width="250" Height="30" VerticalAlignment="Center" 
@@ -81,9 +81,23 @@
                             <DataGridTextColumn Header="Họ" Binding="{Binding Firstname}" Width="150"/>
                             <DataGridTextColumn Header="Tên" Binding="{Binding Lastname}" Width="150"/>
                             <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding Phone}" Width="150"/>
+                            <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Phone}" Width="150"/>
                             <DataGridTextColumn Header="Staff Code" Binding="{Binding StaffCode}" Width="100"/>
-                            <DataGridTextColumn Header="Hoạt động" Binding="{Binding IsEnable}" Width="100"/>
+                            <DataGridTemplateColumn Header="Hoạt động" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="IsEnableText" Text="Failed" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsEnable}" Value="False">
+                                                <Setter TargetName="IsEnableText" Property="Text" Value="Đã khóa" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsEnable}" Value="True">
+                                                <Setter TargetName="IsEnableText" Property="Text" Value="Hoạt động" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTemplateColumn Header="Trạng thái" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -100,7 +114,7 @@
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Delete" Background="LightCoral" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Khóa TK" Background="LightCoral" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
@@ -122,6 +136,7 @@
                     </DataGrid>
                 </Grid>
             </StackPanel>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#623ED0" FontSize="30" Content="Quản lý nhân viên" FontStyle="Italic" FontWeight="Medium" Grid.Column="1" Margin="595,5,0,0" Grid.Row="1" Height="89" Width="275"/>
         </Grid>
     </Border>
 </Window>

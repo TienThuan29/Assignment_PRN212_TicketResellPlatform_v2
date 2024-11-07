@@ -100,24 +100,34 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void ButtonClickAdd(object sender, RoutedEventArgs e)
         {
-            AddStaffWindow addStaffWindow = new AddStaffWindow();
+            AddStaffWindow addStaffWindow = new AddStaffWindow(this);
             addStaffWindow.Show();
-            this.Close();
         }
 
         private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            string id = button?.Tag?.ToString();
-            if (adminService.ChangeEnableOfStaff(id))
+            
+            switch(MessageBox.Show("Bạn muốn thay đổi trạng thái của tài khoản nhân viên ?",
+    "Thông báo", MessageBoxButton.YesNo))
             {
-                MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thành công !");
-                this.ReloadDataGrid();
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (adminService.ChangeEnableOfStaff(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thất bại !");
-            }
+            
         }
     }
 }

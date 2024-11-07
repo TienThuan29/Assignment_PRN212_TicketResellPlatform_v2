@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="AdminDashboardWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,15 +22,15 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/LogoTab-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
-                    <Border CornerRadius="30"  Margin="1090,6,62,6">
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
                         <Border.Background>
-                            <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                            <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
@@ -57,7 +57,7 @@
 
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-
+                
             </StackPanel>
         </Grid>
     </Border>

@@ -23,10 +23,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     public partial class AddPolicyWindow : Window
     {
         private IPolicyService policyService;
-        public AddPolicyWindow()
+        private ManagePolicyWindow policyWindow;
+        public AddPolicyWindow(ManagePolicyWindow managePolicyWindow)
         {
             policyService = new PolicyService();
             InitializeComponent();
+            policyWindow = managePolicyWindow;
         }
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
@@ -38,8 +40,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
-            ManagePolicyWindow managePolicyWindow = new ManagePolicyWindow();
-            managePolicyWindow.Show();
+            policyWindow.Show();
             this.Hide();
         }
 
@@ -47,27 +48,35 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             if (!CheckInput())
             {
-                Policy policy = new Policy();
-                policy.Content = txtContent.Text;
-                policy.TypePolicyId = policyService.GetTypePolicyByName(boxOfTypePolicy.Text).Id;
-                policy.TypePolicy = policyService.GetTypePolicyByid(policy.Id);
-                policy.IsDeleted = false;
-                if (txtFee.Text.Equals(""))
+                string pattern = @"^(0|[1-9][0-9]|100)?$";
+                if (Regex.IsMatch(txtFee.Text,pattern))
                 {
-                    policy.Fee = 0;
+                    Policy policy = new Policy();
+                    policy.Content = txtContent.Text;
+                    policy.TypePolicyId = policyService.GetTypePolicyByName(boxOfTypePolicy.Text).Id;
+                    policy.TypePolicy = policyService.GetTypePolicyByid(policy.Id);
+                    policy.IsDeleted = false;
+                    if (txtFee.Text.Equals(""))
+                    {
+                        policy.Fee = 0;
+                    }
+                    else
+                    {
+                        policy.Fee = int.Parse(txtFee.Text);
+                    }
+                    if (policyService.AddPolicy(policy))
+                    {
+                        MessageBox.Show("Thêm chính sách thành công !");
+                        this.ResetInput();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm chính sách thất bại !");
+                    }
                 }
                 else
                 {
-                    policy.Fee = int.Parse(txtFee.Text);
-                }
-                if (policyService.AddPolicy(policy))
-                {
-                    MessageBox.Show("Thêm chính sách thành công !");
-                    this.ResetInput();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm chính sách thất bại !");
+                    MessageBox.Show("Số phí nhập vào phải là số nguyên!");
                 }
                 
             }

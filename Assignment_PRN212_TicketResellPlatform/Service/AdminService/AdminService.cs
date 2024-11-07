@@ -40,6 +40,11 @@ namespace Service.AdminService
             return iUserRepository.ChangeEnableOfUser(id);
         }
 
+        public bool CheckExistUsername(string username)
+        {
+            return iStaffRepository.CheckExistUsername(username);
+        }
+
         public List<BusinessObject.Staff> GetListStaff()
         {
             return iStaffRepository.GetAll();

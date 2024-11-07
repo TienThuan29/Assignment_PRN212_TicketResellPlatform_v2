@@ -97,17 +97,27 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            string id = button?.Tag?.ToString();
-            if (adminService.ChangeEnableOfUser(id))
+            switch(MessageBox.Show("Bạn muốn thay đổi trạng thái của tài khoản người dùng ?",
+    "Thông báo", MessageBoxButton.YesNo))
             {
-                MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thành công !");
-                this.ReloadDataGrid();
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (adminService.ChangeEnableOfUser(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
             }
-            else
-            {
-                MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thất bại !");
-            }
+            
         }    
     }
 }

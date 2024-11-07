@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="AddPolicyWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
+        Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Grid>
-        <Label Content="Nội dung" HorizontalAlignment="Left" Margin="157,114,0,0" VerticalAlignment="Top"/>
-        <Label Content="Loại" HorizontalAlignment="Left" Margin="157,237,0,0" VerticalAlignment="Top"/>
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="469,171,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="598,171,0,0" VerticalAlignment="Top" Click="ButtonClickExit"/>
-        <TextBox x:Name="txtContent" HorizontalAlignment="Left" Margin="254,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
-        <ComboBox x:Name="boxOfTypePolicy" HorizontalAlignment="Left" Margin="254,236,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Phí" HorizontalAlignment="Left" Margin="157,182,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtFee" HorizontalAlignment="Left" Margin="254,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Đăng ký chính sách" FontStyle="Italic" FontWeight="Medium" Margin="210,24,0,0" Height="70" Width="298"/>
+        <Label Content="Nội dung" HorizontalAlignment="Left" Margin="165,94,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Loại" HorizontalAlignment="Left" Margin="165,238,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="Lưu" HorizontalAlignment="Left" Margin="252,308,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" Width="66"/>
+        <Button Content="Thoát" HorizontalAlignment="Left" Margin="374,308,0,0" VerticalAlignment="Top" Click="ButtonClickExit"/>
+        <TextBox  AcceptsReturn="True" TextWrapping="Wrap" x:Name="txtContent" HorizontalAlignment="Left" Margin="318,94,0,0" VerticalAlignment="Top" Width="230" Height="68"/>
+        <ComboBox x:Name="boxOfTypePolicy" HorizontalAlignment="Left" Margin="318,237,0,0" VerticalAlignment="Top" Width="230"/>
+        <Label Content="Phí (%)" HorizontalAlignment="Left" Margin="165,189,0,0" VerticalAlignment="Top" Width="45"/>
+        <TextBox x:Name="txtFee" HorizontalAlignment="Left" Margin="318,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
 
     </Grid>
 </Window>

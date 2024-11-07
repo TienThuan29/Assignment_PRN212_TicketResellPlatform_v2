@@ -58,6 +58,13 @@ namespace DataAccessObject
             return result;
         }
 
+        public bool CheckExistUsername(string username)
+        {
+            Staff staff = context.Staffs.SingleOrDefault(x=>x.Username.Equals(username));
+            User user = context.Users.SingleOrDefault(x => x.Username.Equals(username));
+            return user == null && staff == null;
+        }
+
         public bool AddStaff(Staff item) {
             bool isSuccess = false;
             try
