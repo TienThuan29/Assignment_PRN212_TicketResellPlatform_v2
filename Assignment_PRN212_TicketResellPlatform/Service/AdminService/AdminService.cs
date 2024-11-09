@@ -13,14 +13,12 @@ namespace Service.AdminService
     public class AdminService : IAdminService
     {
         private readonly ITransactionRepository iTransactionRepository;
-        private readonly IPolicyRepository iPolicyRepository;
         private readonly IStaffRepository iStaffRepository;
         private readonly IUserRepository iUserRepository;
 
         public AdminService()
         {
             iTransactionRepository = new TransactionRepository();
-            iPolicyRepository = new PolicyRepository();
             iStaffRepository = new StaffRepository();
             iUserRepository = new UserRepository();
         }
@@ -43,6 +41,11 @@ namespace Service.AdminService
         public bool CheckExistUsername(string username)
         {
             return iStaffRepository.CheckExistUsername(username);
+        }
+
+        public List<EventRevenue> GetEventRevenueList()
+        {
+            return iStaffRepository.GetEventRevenueList();
         }
 
         public List<BusinessObject.Staff> GetListStaff()

@@ -62,8 +62,8 @@ namespace Assignment_PRN212_TicketResellPlatform
                     else if (staff.RoleCode.Equals(Role.ADMIN))
                     {
                         // Show admin dashboard here
-                        ManageStaffWindow manageStaff = new ManageStaffWindow();
-                        manageStaff.Show();
+                        AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+                        adminDashboardWindow.Show();
                         this.Hide();
                     }
                 }

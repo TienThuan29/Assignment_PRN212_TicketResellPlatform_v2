@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -56,8 +56,34 @@
             </Grid>
 
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
-                
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,70,0,-90">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                    <TextBox x:Name="txtTransaction" Width="250" Height="30" VerticalAlignment="Center" 
+         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+         />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                </StackPanel>
+
+                <Grid Grid.Row="1" Grid.Column="1" Width="921">
+                    <DataGrid x:Name="tableDashboard" AutoGenerateColumns="False" 
+    ItemsSource="{Binding EventList}" 
+    CanUserAddRows="False"
+    CanUserDeleteRows="False"
+    HeadersVisibility="Column" 
+    RowHeight="50" 
+    ColumnWidth="*" 
+    Margin="39,10,39,10" 
+    IsReadOnly="True"
+    Background="White">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Sự kiện" Binding="{Binding EventName}" Width="150"/>
+                            <DataGridTextColumn Header="Số vé" Binding="{Binding TicketCount}" Width="150"/>
+                            <DataGridTextColumn Header="Ngày diễn ra" Binding="{Binding StartDate}" Width="150"/>
+                            <DataGridTextColumn Header="Doanh thu" Binding="{Binding TotalRevenue}" Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
             </StackPanel>
         </Grid>
     </Border>

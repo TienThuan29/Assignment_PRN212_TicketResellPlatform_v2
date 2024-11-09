@@ -20,5 +20,7 @@ namespace Repository.Def
         bool ChangeEnableOfStaff(string id);
 
         bool CheckExistUsername(string username);
+
+        List<EventRevenue> GetEventRevenueList();
     }
 }

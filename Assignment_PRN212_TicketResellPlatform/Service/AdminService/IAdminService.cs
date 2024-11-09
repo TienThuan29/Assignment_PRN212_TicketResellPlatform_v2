@@ -32,5 +32,7 @@ namespace Service.Admin
         bool ChangeEnableOfUser(string id);
 
         bool CheckExistUsername(string username);
+
+        List<EventRevenue> GetEventRevenueList();
     }
 }

@@ -3,6 +3,70 @@
   "WorkspaceRootPath": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\staffwindows\\viewuserinfowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\staffwindows\\viewuserinfowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\service\\utils\\localpathsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|solutionrelative:service\\utils\\localpathsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\dataaccessobject\\prn212_ticketresellplatformcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|solutionrelative:dataaccessobject\\prn212_ticketresellplatformcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\admindashboardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\admindashboardwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\businessobject\\eventrevenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\eventrevenue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4EAC63A1-685D-4B66-BDCA-9A5DFDF58883}|DataAccessObject\\DataAccessObject.csproj|solutionrelative:dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\admindashboardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\admindashboardwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\historytransactionwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\historytransactionwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51F859A-CD40-4678-8461-2044E0E72961}|Repository\\Repository.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\repository\\def\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E51F859A-CD40-4678-8461-2044E0E72961}|Repository\\Repository.csproj|solutionrelative:repository\\def\\istaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\service\\adminservice\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|solutionrelative:service\\adminservice\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\service\\adminservice\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9E66F1A-FC6A-4289-BC44-1C236AF47A5D}|Service\\Service.csproj|solutionrelative:service\\adminservice\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E51F859A-CD40-4678-8461-2044E0E72961}|Repository\\Repository.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\repository\\impl\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E51F859A-CD40-4678-8461-2044E0E72961}|Repository\\Repository.csproj|solutionrelative:repository\\impl\\staffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\businessobject\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\businessobject\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\businessobject\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0DA7E47-1D87-4E74-AB00-07984B438CB9}|BusinessObject\\BusinessObject.csproj|solutionrelative:businessobject\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\manageuserwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\manageuserwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\manageuserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\manageuserwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\adminwindows\\historytransactionwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|solutionrelative:assignment_prn212_ticketresellplatform\\adminwindows\\historytransactionwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6F1156E-67B8-4737-A7D7-3D99D9F0C8D6}|Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform.csproj|c:\\users\\chuy\\desktop\\prn212\\ticket\\assignment_prn212_ticketresellplatform\\assignment_prn212_ticketresellplatform\\staffwindows\\managesellingticketrequestwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -79,6 +139,199 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ViewUserInfoWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ViewUserInfoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ViewUserInfoWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ViewUserInfoWindow.xaml.cs",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ViewUserInfoWindow.xaml.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAowCAAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T13:57:28.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\AdminService\\AdminService.cs",
+              "RelativeDocumentMoniker": "Service\\AdminService\\AdminService.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\AdminService\\AdminService.cs",
+              "RelativeToolTip": "Service\\AdminService\\AdminService.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAkwC8AAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:18:27.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IStaffRepository.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Repository\\Def\\IStaffRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Def\\IStaffRepository.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Repository\\Def\\IStaffRepository.cs",
+              "RelativeToolTip": "Repository\\Def\\IStaffRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:17:47.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PRN212_TicketResellPlatformContext.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "RelativeDocumentMoniker": "DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "RelativeToolTip": "DataAccessObject\\PRN212_TicketResellPlatformContext.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAqwDkAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:13:28.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StaffDAO.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\StaffDAO.cs",
+              "RelativeDocumentMoniker": "DataAccessObject\\StaffDAO.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\DataAccessObject\\StaffDAO.cs",
+              "RelativeToolTip": "DataAccessObject\\StaffDAO.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAuwGoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T05:59:42.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EventRevenue.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\EventRevenue.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\EventRevenue.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\EventRevenue.cs",
+              "RelativeToolTip": "BusinessObject\\EventRevenue.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T04:35:56.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LocalPathSetting.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\Utils\\LocalPathSetting.cs",
+              "RelativeDocumentMoniker": "Service\\Utils\\LocalPathSetting.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\Utils\\LocalPathSetting.cs",
+              "RelativeToolTip": "Service\\Utils\\LocalPathSetting.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T04:39:24.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminDashboardWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T06:19:15.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AdminDashboardWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml.cs",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\AdminDashboardWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:21:50.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\MainWindow.xaml.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwEEAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:25:33.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HistoryTransactionWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
+              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
+              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-07T13:26:51.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\AdminService\\IAdminService.cs",
+              "RelativeDocumentMoniker": "Service\\AdminService\\IAdminService.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Service\\AdminService\\IAdminService.cs",
+              "RelativeToolTip": "Service\\AdminService\\IAdminService.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwCMAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:18:20.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StaffRepository.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Repository\\Impl\\StaffRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Impl\\StaffRepository.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Repository\\Impl\\StaffRepository.cs",
+              "RelativeToolTip": "Repository\\Impl\\StaffRepository.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAgwCgAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:17:56.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Event.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Event.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Event.cs",
+              "RelativeToolTip": "BusinessObject\\Event.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T06:06:50.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Ticket.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Ticket.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Ticket.cs",
+              "RelativeToolTip": "BusinessObject\\Ticket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T04:37:45.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Category.cs",
+              "RelativeDocumentMoniker": "BusinessObject\\Category.cs",
+              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Category.cs",
+              "RelativeToolTip": "BusinessObject\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T04:36:03.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ManageUserWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml.cs",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml.cs",
@@ -86,12 +339,11 @@
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml.cs",
               "ViewState": "AQIAAF8AAAAAAAAAAAAUwHUAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T13:46:35.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:46:35.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
               "Title": "ManagePolicyWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml.cs",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml.cs",
@@ -99,12 +351,11 @@
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml.cs",
               "ViewState": "AQIAAGMAAAAAAAAAAAAAwIIAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T13:45:31.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:45:31.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 17,
               "Title": "ManageStaffWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml.cs",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml.cs",
@@ -112,60 +363,44 @@
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml.cs",
               "ViewState": "AQIAAGQAAAAAAAAAAAA2wG4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T13:39:25.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:39:25.391Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 19,
               "Title": "ManagePolicyWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml",
               "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml",
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManagePolicyWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T13:30:57.786Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:30:57.786Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 20,
               "Title": "ManageStaffWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml",
               "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml",
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageStaffWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T13:30:47.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:30:47.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 21,
               "Title": "ManageUserWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml",
               "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml",
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\ManageUserWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T13:30:37.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:30:37.361Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HistoryTransactionWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
-              "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
-              "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
-              "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\HistoryTransactionWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T13:26:51.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 24,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\BusinessObject\\Transaction.cs",
               "RelativeDocumentMoniker": "BusinessObject\\Transaction.cs",
@@ -173,32 +408,29 @@
               "RelativeToolTip": "BusinessObject\\Transaction.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T13:24:58.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:24:58.809Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "ManageSellingTicketRequestWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ManageSellingTicketRequestWindow.xaml",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ManageSellingTicketRequestWindow.xaml",
               "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ManageSellingTicketRequestWindow.xaml",
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\StaffWindows\\ManageSellingTicketRequestWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T13:19:41.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T13:19:41.3Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 23,
               "Title": "WithdrawalListWindow.xaml",
               "DocumentMoniker": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\WithdrawalListWindow.xaml",
               "RelativeDocumentMoniker": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\WithdrawalListWindow.xaml",
               "ToolTip": "C:\\Users\\CHuy\\Desktop\\PRN212\\Ticket\\Assignment_PRN212_TicketResellPlatform\\Assignment_PRN212_TicketResellPlatform\\AdminWindows\\WithdrawalListWindow.xaml",
               "RelativeToolTip": "Assignment_PRN212_TicketResellPlatform\\AdminWindows\\WithdrawalListWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-07T12:04:29.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-07T12:04:29.879Z"
             }
           ]
         },

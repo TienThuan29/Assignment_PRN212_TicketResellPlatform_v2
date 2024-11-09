@@ -36,6 +36,11 @@ namespace Repository.Impl
             return StaffDAO.Instance.GetAll();
         }
 
+        public List<EventRevenue> GetEventRevenueList()
+        {
+            return StaffDAO.Instance.GetEventRevenueList();
+        }
+
         public List<Staff> Search(string str)
         {
             return StaffDAO.Instance.Search(str);

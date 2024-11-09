@@ -1,6 +1,8 @@
 ﻿using BusinessObject;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,11 +47,11 @@ namespace DataAccessObject
 
         public List<Staff> Search(string str1)
         {
-            string str = str1.ToLower(); 
+            string str = str1.ToLower();
             List<Staff> staff = context.Staffs.ToList();
             List<Staff> result = new List<Staff>();
             foreach (var item in staff) {
-                if(item.Id.ToString().Contains(str) || item.Firstname.ToLower().Contains(str) || item.Lastname.ToLower().Contains(str)
+                if (item.Id.ToString().Contains(str) || item.Firstname.ToLower().Contains(str) || item.Lastname.ToLower().Contains(str)
                     || item.Email.ToLower().Contains(str) || item.Phone.ToLower().Contains(str))
                 {
                     result.Add(item);
@@ -60,7 +62,7 @@ namespace DataAccessObject
 
         public bool CheckExistUsername(string username)
         {
-            Staff staff = context.Staffs.SingleOrDefault(x=>x.Username.Equals(username));
+            Staff staff = context.Staffs.SingleOrDefault(x => x.Username.Equals(username));
             User user = context.Users.SingleOrDefault(x => x.Username.Equals(username));
             return user == null && staff == null;
         }
@@ -89,7 +91,7 @@ namespace DataAccessObject
                     staff.IsEnable = !staff.IsEnable;
                     context.Staffs.Update(staff);
                     context.SaveChanges();
-                    isSuccess=true;
+                    isSuccess = true;
                 }
 
             }
@@ -99,5 +101,11 @@ namespace DataAccessObject
             }
             return isSuccess;
         }
+
+        public List<EventRevenue> GetEventRevenueList()
+        {
+            return context.GetEventRevenue();
+        } 
+
     }
 }
