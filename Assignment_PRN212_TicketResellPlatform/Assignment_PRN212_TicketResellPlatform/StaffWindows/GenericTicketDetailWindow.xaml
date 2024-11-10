@@ -67,7 +67,7 @@
               IsReadOnly="True"
               Background="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Serial" Binding="{Binding Id}" Width="150"/>
+                    <DataGridTextColumn Header="Serial" Binding="{Binding TicketSerial}" Width="150"/>
                     <DataGridTemplateColumn Header="Ảnh vé" Width="200">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -83,8 +83,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    <Button x:Name="btnAccept" Click="btnAccept_Click" Content="Chấp Nhận" Tag="{Binding Id}" Background="Green" Padding="5,0" Margin="5,0" />
-                                    <Button x:Name="btnReject" Click="btnReject_Click" Content="Từ Chối" Tag="{Binding Id}" Background="Red" Padding="5,0" Margin="5,0" />
+                                    <Button x:Name="btnAccept" Click="btnAccept_Click" Content="Chấp Nhận" Tag="{Binding Id}" Background="#FF74D44A" BorderBrush="#FF74D44A" Padding="5,0" Margin="5,0" />
+                                    <Button x:Name="btnReject" Click="btnReject_Click" Content="Từ Chối" Tag="{Binding Id}" Background="#F44336" BorderBrush="#F44336" Padding="5,0" Margin="5,0" />
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -96,7 +96,7 @@
                     <Image x:Name="PopupImage" Width="400" Height="400" Stretch="Uniform"/>
                 </Border>
             </Popup>
-            <Button Content="Đóng" HorizontalAlignment="Left" Margin="705,615,0,0" VerticalAlignment="Top" Click="btnClose_Click" Background="#F44336"/>
+            <Button Content="Đóng" HorizontalAlignment="Left" Margin="705,615,0,0" VerticalAlignment="Top" Click="btnClose_Click" Background="#F44336" BorderBrush="#F44336"/>
         </Grid>
     </Grid>
 </Window>

@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Service.TicketService;
 using Assignment_PRN212_TicketResellPlatform.UserWindows.CustomDialog;
 using BusinessObject;
+using Service.User;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
@@ -26,6 +27,8 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         private IOrderTicketService orderTicketService = new OrderTicketService();
 
         private ITicketService ticketService = new TicketService();
+
+        private IUserService userService = new UserService();
 
         public BoughtTicketWindow()
         {
@@ -71,7 +74,6 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 {
                     ShowErrorMessageBox("Có một vài sự cố xảy ra!!!");
                 }
-                
             }
         }
 
@@ -96,7 +98,18 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                 }
                 else
                 {
-                    
+                    switch(MessageBox.Show("Xác nhận hủy đơn hàng?", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question))
+                    {
+                        case MessageBoxResult.Yes:
+                            orderTicket.IsCanceled = true;
+                            orderTicketService.UpdateOrderTicket(orderTicket);
+                            logedUser.Balance += orderTicket.TotalPrice;
+                            userService.SaveProfile(logedUser);
+                            ShowInfoMessageBox("Hủy đon hàng thành công!");
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    }
                 }
             }
         }

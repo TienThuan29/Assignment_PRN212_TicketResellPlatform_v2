@@ -13,6 +13,26 @@ namespace Service.Admin
 
         public List<Transaction> GetTransactionsListOfType(string type);
 
-        public List<Policy> GetPolicies();
+        public List<BusinessObject.Staff> GetListStaff();
+
+        public List<BusinessObject.User> GetUsers();
+
+        List<BusinessObject.Staff> Search(string str);
+
+        List<Transaction> SearchTransaction(string query);
+
+        List<Transaction> SearchTransactionOfType(string query, string type);
+
+        List<BusinessObject.User> SearchUser(string query);
+
+        bool AddStaff(BusinessObject.Staff item);
+
+        bool ChangeEnableOfStaff(string id);
+
+        bool ChangeEnableOfUser(string id);
+
+        bool CheckExistUsername(string username);
+
+        List<EventRevenue> GetEventRevenueList();
     }
 }

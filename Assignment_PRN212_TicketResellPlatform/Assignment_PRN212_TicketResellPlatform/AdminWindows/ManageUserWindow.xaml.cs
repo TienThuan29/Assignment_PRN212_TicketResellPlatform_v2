@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Service.Admin;
+using Service.AdminService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +21,10 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class ManageUserWindow : Window
     {
+        private IAdminService adminService;
         public ManageUserWindow()
         {
+            adminService = new AdminService();
             InitializeComponent();
         }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -65,6 +69,55 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            this.tableOfUser.ItemsSource = adminService.GetUsers();
+        }
 
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                this.tableOfUser.ItemsSource = adminService.GetUsers();
+            }
+            catch (Exception ex) { }
+        }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfUser.ItemsSource = adminService.SearchUser(txtSearch.Text);
+            }
+        }
+
+        private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
+        {
+            switch(MessageBox.Show("Bạn muốn thay đổi trạng thái của tài khoản người dùng ?",
+    "Thông báo", MessageBoxButton.YesNo))
+            {
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (adminService.ChangeEnableOfUser(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản người dùng thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
+            }
+            
+        }    
     }
 }

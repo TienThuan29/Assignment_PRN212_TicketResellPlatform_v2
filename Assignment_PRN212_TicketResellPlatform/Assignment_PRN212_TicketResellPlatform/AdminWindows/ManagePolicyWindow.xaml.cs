@@ -23,10 +23,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     public partial class ManagePolicyWindow : Window
     {
         private IAdminService iAdminService;
+        private IPolicyService iPolicyService;
         public ManagePolicyWindow()
         {
             InitializeComponent();
             iAdminService = new AdminService();
+            iPolicyService = new PolicyService();
         }
 
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -73,9 +75,60 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            List<Policy> policies = iAdminService.GetPolicies();
+            List<Policy> policies = iPolicyService.GetPolicies();
             this.tableManagePolicy.ItemsSource = policies;
         }
 
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchPolicy.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableManagePolicy.ItemsSource = iPolicyService.Search(txtSearchPolicy.Text);
+            }
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                List<Policy> policies = iPolicyService.GetPolicies();
+                this.tableManagePolicy.ItemsSource = policies;
+            }
+            catch (Exception ex) { }
+        }
+
+        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+        {
+            AddPolicyWindow addPolicyWindow = new AddPolicyWindow(this);
+            addPolicyWindow.Show();
+        }
+
+        private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
+        {
+            switch (MessageBox.Show("Bạn muốn thay đổi trạng thái của chính sách ?",
+    "Thông báo", MessageBoxButton.YesNo))
+            {
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (iPolicyService.ChangeEnableOfPolicy(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái chính sách thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái chính sách thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
+            }
+        }
     }
 }

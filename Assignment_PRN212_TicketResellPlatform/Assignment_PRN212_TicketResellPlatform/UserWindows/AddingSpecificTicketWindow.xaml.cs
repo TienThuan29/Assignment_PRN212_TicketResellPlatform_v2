@@ -68,7 +68,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     {
                         FileInfo fileInfo = new FileInfo(currentFullFilePath);
                         string filename = System.IO.Path.GetFileName(currentFullFilePath);
-                        if (!File.Exists(currentFullFilePath))
+                        if (!File.Exists(LocalPathSetting.TicketImagePath + filename))
                         {
                             fileInfo.CopyTo(LocalPathSetting.TicketImagePath + filename);
                         }

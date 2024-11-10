@@ -21,9 +21,16 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
     {
 
         public string InputMessage { get; private set; }
+        private string header;
         public InputBox()
         {
             InitializeComponent();
+        }
+
+        public InputBox(string header)
+        {
+            InitializeComponent();
+            txtHeader.Text = header;
         }
 
         private void OkButton_Click(object sender, RoutedEventArgs e)

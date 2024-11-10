@@ -18,5 +18,9 @@ namespace Repository.Def
         bool SaveProfile(User user);
 
         ICollection<User> GetAll();
+
+        List<User> Search(string query);
+
+        bool ChangeEnableOfUser(string id);
     }
 }

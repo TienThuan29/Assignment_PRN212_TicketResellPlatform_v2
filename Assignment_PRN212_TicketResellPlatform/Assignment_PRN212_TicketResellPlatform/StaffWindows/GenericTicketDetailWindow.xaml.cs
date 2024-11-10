@@ -70,11 +70,12 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             {
                 long ticketId = (long)button.Tag;
 
-                InputBox inputBox = new InputBox();
+                InputBox inputBox = new InputBox("Ghi chú:");
                 if (inputBox.ShowDialog() == true)
                 {
                     string note = inputBox.InputMessage;
                     ticketService.AcceptTicketSelling(ticketId, staff.Id, note);
+                    ShowInfoMessageBox("Đã chấp nhận vé thành công");
                 }
             }
             setUpTicketGrid();
@@ -87,11 +88,19 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             {
                 long ticketId = (long)button.Tag;
 
-                InputBox inputBox = new InputBox();
+                InputBox inputBox = new InputBox("Lí do từ chối");
                 if (inputBox.ShowDialog() == true)
                 {
                     string note = inputBox.InputMessage;
-                    ticketService.RejectTicketSelling(ticketId, staff.Id, note);
+                    if(!string.IsNullOrEmpty(note))
+                    {
+                        ticketService.RejectTicketSelling(ticketId, staff.Id, note);
+                        ShowInfoMessageBox("Đã từ chối vé thành công");
+                    }
+                    else
+                    {
+                        ShowErrorMessageBox("Lý do từ chối không được để trống!!!");
+                    }    
                 }
             }
             setUpTicketGrid();
@@ -111,6 +120,16 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             manageSellingTicketRequestWindow.loadData();
             this.Close();
+        }
+
+        // Message box define
+        public void ShowInfoMessageBox(string message)
+        {
+            MessageBox.Show(message, "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        public void ShowErrorMessageBox(string message)
+        {
+            MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
