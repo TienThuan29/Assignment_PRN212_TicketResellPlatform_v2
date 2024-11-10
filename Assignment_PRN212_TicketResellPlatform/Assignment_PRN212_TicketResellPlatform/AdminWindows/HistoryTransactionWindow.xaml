@@ -22,7 +22,7 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/LogoTab-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
                     <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
@@ -50,7 +50,7 @@
                 <Button Content="Quản lý chính sách" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManagePolicy"/>
                 <Button Content="Lịch sử giao dịch" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickHistoryTransaction"/>
                 <Button Content="Danh sách rút tiền" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickWithdrawalList"/>
-                <Button Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,0,0,0" Click="ButtonClickExit">
+                <Button Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Width="170" Height="54" Click="ButtonClickExit">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>
             </Grid>

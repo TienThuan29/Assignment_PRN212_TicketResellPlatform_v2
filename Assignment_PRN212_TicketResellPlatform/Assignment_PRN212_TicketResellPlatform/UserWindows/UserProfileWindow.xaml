@@ -84,7 +84,7 @@
                 <Button  Click="SaveProfile" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Lưu" Margin="658,127,0,0" Grid.Row="1" Width="95" />
 
 
-                <Button Click="HandleLogout" HorizontalAlignment="Left" Margin="17,216,0,0" VerticalAlignment="Top" Width="54" Grid.Row="1">
+                <Button Click="HandleLogout" HorizontalAlignment="Left" Margin="17,216,0,0" VerticalAlignment="Top" Width="138" Grid.Row="1">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>
 
