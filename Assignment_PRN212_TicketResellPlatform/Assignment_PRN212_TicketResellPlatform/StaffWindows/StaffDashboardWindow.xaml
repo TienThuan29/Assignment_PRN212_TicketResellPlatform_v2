@@ -10,7 +10,9 @@
         Title="StaffDashboardWindow" Height="720" Width="1200" 
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="OnWindowLoad">
+        Loaded="OnWindowLoad"
+        
+        >
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>

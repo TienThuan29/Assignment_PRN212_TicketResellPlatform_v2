@@ -1,6 +1,5 @@
 ﻿using BusinessObject;
 using Service.TicketService;
-using Service.TicketService;
 using Service.Utils;
 using Service.Utils.TienThuan;
 using System;
@@ -23,6 +22,8 @@ using System.Windows.Shapes;
 
 namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 {
+
+
     public partial class MyShopWindow : Window
     {
         private BusinessObject.User logedUser;
@@ -164,4 +165,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             orderTicketRequestWindow.Show();
         }
     }
+
+
+   
 }
