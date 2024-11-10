@@ -38,6 +38,7 @@ namespace DataAccessObject
             bool flag = true;
             if (user != null)
             {
+                user.Avatar = "child-1837375_1280.png";
                 this.context.Users.Add(user);
                 this.context.SaveChanges();
             }

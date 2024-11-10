@@ -7,11 +7,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.StaffWindows"
         mc:Ignorable="d"
-        Title="InputBox" Height="250" Width="300" WindowStartupLocation="CenterScreen">
+        Title="InputBox" Height="350" Width="300" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
-        <TextBlock x:Name="txtHeader" Text="Nhập ghi chú:" Margin="0,0,0,10"/>
+        <TextBlock x:Name="txtHeader" Text="Nhập ghi chú:" Margin="0,0,0,-11"/>
         <TextBox x:Name="txtInput" Height="25" Margin="0,0,0,10"/>
-        <Button Content="Xác Nhận" Click="OkButton_Click" Margin="32,132,157,50" Padding="0" Background="#4CAF50" BorderBrush="#4CAF50" />
-        <Button Content="Từ Chối" Click="CancelButton_Click" Margin="150,132,38,50" Padding="0" Background="#F44336" BorderBrush="#F44336"/>
+        <Button Content="Xác Nhận" HorizontalAlignment="Left" VerticalAlignment="Top" Click="OkButton_Click" Margin="60,170,0,0" Padding="0" Background="#4CAF50" BorderBrush="#4CAF50" />
+        <Button Content="Từ Chối" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CancelButton_Click" Margin="159,170,0,0" Padding="0" Background="#F44336" BorderBrush="#F44336" Width="58"/>
     </Grid>
 </Window>
