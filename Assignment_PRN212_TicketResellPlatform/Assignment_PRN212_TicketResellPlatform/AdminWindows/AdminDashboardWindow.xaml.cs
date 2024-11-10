@@ -63,6 +63,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
+        private void ButtonClickHomePage(object sender, RoutedEventArgs e)
+        {
+            AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+            adminDashboardWindow.Show();
+            this.Hide();
+        }
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -75,5 +81,16 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.tableDashboard.ItemsSource = adminService.GetEventRevenueList();
         }
 
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtDashboard.Text.Equals(""))
+            {
+                this.tableDashboard.ItemsSource = adminService.GetEventRevenueList();
+            }
+            else
+            {
+                this.tableDashboard.ItemsSource = adminService.SearchEventRevenueList(txtDashboard.Text);
+            }
+        }
     }
 }

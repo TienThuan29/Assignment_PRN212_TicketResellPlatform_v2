@@ -34,5 +34,7 @@ namespace Service.Admin
         bool CheckExistUsername(string username);
 
         List<EventRevenue> GetEventRevenueList();
+
+        List<EventRevenue> SearchEventRevenueList(string str);
     }
 }

@@ -27,6 +27,13 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             adminService = new AdminService();
             InitializeComponent();
         }
+
+        private void ButtonClickHomePage(object sender, RoutedEventArgs e)
+        {
+            AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+            adminDashboardWindow.Show();
+            this.Hide();
+        }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
         {
             ManageUserWindow manageUserWindow = new ManageUserWindow();
