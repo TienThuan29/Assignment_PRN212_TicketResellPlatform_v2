@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
         Title="Ticket Resell Platform"  Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Icon="/LogoTab-Photoroom.png"
         >
     <Grid>
 

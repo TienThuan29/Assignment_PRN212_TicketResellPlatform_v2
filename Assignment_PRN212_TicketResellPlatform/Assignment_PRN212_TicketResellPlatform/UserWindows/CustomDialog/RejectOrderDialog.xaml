@@ -13,7 +13,7 @@
     <Grid>
         <Button Click="Confirm" Content="Xác nhận" HorizontalAlignment="Left" Margin="156,134,0,0" VerticalAlignment="Top" BorderBrush="#FF79D05A" Background="#FF87F95E" Foreground="#DD000000"/>
         <Button Click="CancelWindow" Content="Đóng" HorizontalAlignment="Left" Margin="270,134,0,0" VerticalAlignment="Top" Background="#FFEA0909" BorderBrush="#FFEA0909"/>
-        <TextBox x:Name="reasonTextbox" FontSize="14" HorizontalAlignment="Center" Margin="0,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="330" Height="46"/>
+        <TextBox x:Name="reasonTextbox"  FontSize="14" HorizontalAlignment="Center" Margin="0,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="330" Height="46"/>
         <Label FontSize="14" Content="Nhập lý do từ chối&#xD;&#xA;" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"/>
 
     </Grid>

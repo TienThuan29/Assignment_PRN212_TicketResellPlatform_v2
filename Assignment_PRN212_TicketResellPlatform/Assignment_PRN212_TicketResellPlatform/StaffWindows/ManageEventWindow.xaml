@@ -10,7 +10,9 @@
         Title="ManageEventWindow" Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="OnWindowLoad">
+        Loaded="OnWindowLoad"
+        Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        >
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -32,7 +34,7 @@
                             <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="STAFF" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="STAFF" Margin="802,0,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
@@ -50,6 +52,7 @@
                 <Button x:Name="btnManageEvent" Content="Quản lý sự kiện" Grid.Row="1" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageEvent_Click"/>
                 <Button x:Name="btnManageSellingRequest" Content="Quản lý yêu cầu bán vé" Grid.Row="3" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageSellingRequest_Click"/>
                 <Button x:Name="btnViewUserInfo" Content="Thông Tin Người Dùng" Grid.Row="4" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ViewInfoUser_Click"/>
+                
                 <Button x:Name="btnLogout" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="0,178,0,0" Click="Logout_Click">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>

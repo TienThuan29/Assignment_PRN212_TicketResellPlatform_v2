@@ -87,7 +87,12 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void RefreshFields(object sender, RoutedEventArgs e)
         {
-
+            gTicketNameTextbox.Text = "";
+            gTicketPriceTextbox.Text = "";
+            gTicketAreaTextbox.Text = "";
+            gTicketExpiredDateTime.Text = "";
+            gTicketLinkTextbox.Text = "";
+            desTextbox.Text = "";
         }
 
         private void UpdateGenericTicket(object sender, RoutedEventArgs e)
@@ -114,6 +119,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
                     genericTicket.LinkEvent = gTicketLinkTextbox.Text;
                     genericTicket.CategoryId = int.Parse(categoriesComboBox.SelectedValue.ToString());
                     //genericTicket.IsPaper = int.Parse(gTicketTypeComboBox.Tag == 1);
+                    genericTicket.PolicyId = 1;
                     var selectedItem = gTicketTypeComboBox.SelectedItem as ComboBoxItem;
                     if (selectedItem != null && int.TryParse(selectedItem.Tag?.ToString(), out int tagValue))
                     {
@@ -178,6 +184,13 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             myShopWindow.Show();
         }
 
+        private void Logout(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Hide();
+            mainWindow.Show();
+        }
+
         // Message box define
         public void ShowInfoMessageBox(string message)
         {
@@ -194,6 +207,6 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             MessageBox.Show(message, "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
-        
+   
     }
 }

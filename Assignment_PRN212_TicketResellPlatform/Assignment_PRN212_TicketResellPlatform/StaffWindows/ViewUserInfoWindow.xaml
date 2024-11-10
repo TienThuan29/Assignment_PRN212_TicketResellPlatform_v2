@@ -10,7 +10,8 @@
         Title="ViewUserInfoWindow" Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="OnWindowLoad">
+        Loaded="OnWindowLoad" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        >
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
