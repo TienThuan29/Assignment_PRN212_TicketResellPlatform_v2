@@ -79,7 +79,27 @@
                         <DataGridTextColumn Header="Mã vé" Binding="{Binding TicketSerial}" Width="Auto" />
                         <DataGridCheckBoxColumn Header="Kiểm tra" Binding="{Binding IsChecked}" Width="Auto" />
                         <DataGridCheckBoxColumn Header="Hợp lệ" Binding="{Binding IsValid}" Width="Auto" />
-                        <DataGridTextColumn Header="Trạng thái" Binding="{Binding Process}" Width="Auto" />
+                        <DataGridTemplateColumn Header="Trạng thái" Width="Auto">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock x:Name="StatusText" Text="Unknown" />
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding Process}" Value="WAITING">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Chờ xác nhận" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Process}" Value="SELLING">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Đang bán" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Process}" Value="SUCCESS">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Đã bán" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding Process}" Value="REJECTED">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Bị từ chối" />
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridCheckBoxColumn Header="Bán" Binding="{Binding IsBought}" Width="Auto" />
                         <DataGridTextColumn Header="Ngày bán" Binding="{Binding BoughtDate, StringFormat=G}" Width="Auto" />
                         <DataGridTextColumn Header="Người mua" Binding="{Binding BuyerId}" Width="Auto" />
