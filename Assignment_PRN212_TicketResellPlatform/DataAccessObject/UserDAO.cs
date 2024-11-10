@@ -84,13 +84,24 @@ namespace DataAccessObject
         {
             List<User> users = context.Users.ToList();
             List<User> filtered = new List<User>();
+            bool isAdded = false;
             query = query.ToLower();
             foreach (var user in users) {
+                isAdded = false;
                 if (user.Id.ToString().Contains(query) || user.Firstname.ToLower().Contains(query) || user.Lastname.ToLower().Contains(query)
-                    || user.Email.ToLower().Contains(query) || user.Phone.Contains(query) || user.Revenue.ToString().Contains(query))
+                    || user.Email.ToLower().Contains(query))
                 {
                     filtered.Add(user);
+                    isAdded = true;
                 }
+                if (!isAdded && user.Phone != null && user.Revenue != null)
+                {
+                    if (user.Phone.Contains(query) || user.Revenue.ToString().Contains(query))
+                    {
+                        filtered.Add(user);
+                    }
+                }
+
             }
             return filtered;
         }

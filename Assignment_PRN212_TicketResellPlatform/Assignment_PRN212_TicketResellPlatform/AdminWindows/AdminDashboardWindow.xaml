@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
-        mc:Ignorable="d" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        mc:Ignorable="d" Icon="/AdminWindows/LogoTab-Photoroom.png"
         Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
@@ -22,7 +22,7 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/LogoTab-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="61,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/LogoTab-Photoroom.png" RenderTransformOrigin="-0.286,0.605"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
                     <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
@@ -65,9 +65,11 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
                     <TextBox x:Name="txtTransaction" Width="250" Height="30" VerticalAlignment="Center" 
-         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
-         />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                        Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
+
+                     />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Margin="10,0,10,0" />
+
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">

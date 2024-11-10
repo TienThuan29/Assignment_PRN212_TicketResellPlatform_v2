@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
-        mc:Ignorable="d" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        mc:Ignorable="d" Icon="/AdminWindows/LogoTab-Photoroom.png"
         Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
@@ -67,7 +67,7 @@
                     <TextBox x:Name="txtTransaction" Width="250" Height="30" VerticalAlignment="Center" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" Margin="10,0,10,0"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">

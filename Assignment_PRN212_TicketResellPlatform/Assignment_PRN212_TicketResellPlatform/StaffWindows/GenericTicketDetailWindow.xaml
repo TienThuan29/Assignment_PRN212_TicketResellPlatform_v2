@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="GenericTicketDetailWindow" Height="700" Width="800" 
         WindowStartupLocation="CenterScreen"
-        Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        Icon="/StaffWindows/LogoTab-Photoroom.png"
         >
 
     <Grid Margin="2">
