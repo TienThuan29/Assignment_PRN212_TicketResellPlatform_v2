@@ -7,7 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
         mc:Ignorable="d"
-        Title="WithdrawalListWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen">
+        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,15 +22,15 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/LogoTab-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
-                    <Border CornerRadius="30"  Margin="1090,6,62,6">
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
                         <Border.Background>
-                            <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                            <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
@@ -56,17 +56,17 @@
             </Grid>
 
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,49,10,-29">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
+                    <TextBox x:Name="txtSearchTransaction" Width="250" Height="30" VerticalAlignment="Center" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
-                    <DataGrid AutoGenerateColumns="False" 
+                    <DataGrid x:Name="tableOfWithdrawal" AutoGenerateColumns="False" 
                 ItemsSource="{Binding EventList}" 
                 CanUserAddRows="False"
                 CanUserDeleteRows="False"
@@ -77,33 +77,31 @@
                 IsReadOnly="True"
                 Background="White">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding EventNumber}" Width="50"/>
-                            <DataGridTextColumn Header="Họ và tên" Binding="{Binding EventName}" Width="250"/>
-                            <DataGridTextColumn Header="Email" Binding="{Binding EventName}" Width="100"/>
-                            <DataGridTextColumn Header="Phone" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTextColumn Header="Doanh thu" Binding="{Binding EventNumber}" Width="100"/>
-                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" Width="250"/>
+                            <DataGridTextColumn Header="UserID" Binding="{Binding UserId}" Width="150"/>
+                            <DataGridTextColumn Header="Ngày diễn ra" Binding="{Binding TransDate}" Width="200"/>
+                            <DataGridTemplateColumn Header="Hoàn thành" Width="150">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button Content="{Binding Status}" Background="LightGreen" Foreground="Black" Padding="5,0" BorderThickness="0" />
+                                        <TextBlock x:Name="IsDoneText" Text="Failed" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsDone}" Value="False">
+                                                <Setter TargetName="IsDoneText" Property="Text" Value="Chưa hoàn thành" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsDone}" Value="True">
+                                                <Setter TargetName="IsDoneText" Property="Text" Value="Đã hoàn thành" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
-                            <DataGridTemplateColumn Header="Hành động" Width="200">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Chưa chuyển khoản" Background="LightBlue" Padding="5,0" Margin="5,0" />
-                                            <Button Content="Đã chuyển khoản" Background="LightCoral" Padding="5,0" Margin="5,0" />
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="No" Binding="{Binding TransactionNo}" Width="150"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
             </StackPanel>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#623ED0" FontSize="30" Content="Danh sách rút tiền" FontStyle="Italic" FontWeight="Medium" Grid.Column="1" Margin="550,5,0,0" Grid.Row="1" Width="293" Height="84"/>
         </Grid>
     </Border>
 </Window>

@@ -35,6 +35,7 @@ namespace DataAccessObject
         public virtual DbSet<TypePolicy> TypePolicies { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
+        public DbSet<EventRevenue> EventRevenues { get; set; }
         private string GetConnectionString()
         {
             IConfiguration configuration = new ConfigurationBuilder()
@@ -52,8 +53,17 @@ namespace DataAccessObject
             }
         }
 
+        public List<EventRevenue> GetEventRevenue()
+        {
+            return this.EventRevenues
+                   .FromSqlRaw("EXEC SelectEventRevenue")
+                   .AsNoTracking()
+                   .ToList();
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<EventRevenue>().HasNoKey();
             modelBuilder.Entity<Category>(entity =>
             {
                 entity.ToTable("categories");

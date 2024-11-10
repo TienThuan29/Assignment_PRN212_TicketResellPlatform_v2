@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Service.Admin;
+using Service.AdminService;
+using Service.Staff;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +22,10 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class ManageStaffWindow : Window
     {
+        private IAdminService adminService;
         public ManageStaffWindow()
         {
+            adminService = new AdminService();
             InitializeComponent();
         }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -65,9 +70,64 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void WindowLoaded(object sender, RoutedEventArgs e)
         {
+            this.tableOfStaff.ItemsSource = adminService.GetListStaff();
+        }
 
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchStaff.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfStaff.ItemsSource = adminService.Search(txtSearchStaff.Text);
+            }
+            
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                List<BusinessObject.Staff> list = adminService.GetListStaff();
+                this.tableOfStaff.ItemsSource = list;
+            }
+            catch (Exception ex) { }
+        }
+
+        private void ButtonClickAdd(object sender, RoutedEventArgs e)
+        {
+            AddStaffWindow addStaffWindow = new AddStaffWindow(this);
+            addStaffWindow.Show();
+        }
+
+        private void ButtonClickChangeAble(object sender, RoutedEventArgs e)
+        {
+            
+            switch(MessageBox.Show("Bạn muốn thay đổi trạng thái của tài khoản nhân viên ?",
+    "Thông báo", MessageBoxButton.YesNo))
+            {
+                case MessageBoxResult.Yes:
+                    var button = sender as Button;
+                    string id = button?.Tag?.ToString();
+                    if (adminService.ChangeEnableOfStaff(id))
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thành công !");
+                        this.ReloadDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi trạng thái tài khoản nhân viên thất bại !");
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    this.ReloadDataGrid();
+                    break;
+            }
+            
         }
     }
 }
