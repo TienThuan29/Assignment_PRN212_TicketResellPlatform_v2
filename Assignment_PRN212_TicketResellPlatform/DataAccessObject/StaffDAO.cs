@@ -113,8 +113,8 @@ namespace DataAccessObject
             List<EventRevenue> result = new List<EventRevenue>();
             str = str.ToLower();
             foreach (EventRevenue e in list) {
-                if(e.EventName.ToLower().Equals(str) || e.TicketCount.ToString().Equals(str) || e.StartDate.ToString().Equals(str)
-                    || e.TotalRevenue.ToString().Equals(str))
+                if(e.EventName.ToLower().Contains(str) || e.TicketCount.ToString().Contains(str) || e.StartDate.ToString().Contains(str)
+                    || e.TotalRevenue.ToString().Contains(str))
                 {
                     result.Add(e);
                 }
