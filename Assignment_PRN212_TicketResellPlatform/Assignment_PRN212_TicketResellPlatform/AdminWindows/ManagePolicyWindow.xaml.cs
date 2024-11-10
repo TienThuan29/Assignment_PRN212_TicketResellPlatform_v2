@@ -31,6 +31,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             iPolicyService = new PolicyService();
         }
 
+        private void ButtonClickHomePage(object sender, RoutedEventArgs e)
+        {
+            AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+            adminDashboardWindow.Show();
+            this.Hide();
+        }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
         {
             ManageUserWindow manageUserWindow = new ManageUserWindow();

@@ -63,6 +63,12 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
+        private void ButtonClickHomePage(object sender, RoutedEventArgs e)
+        {
+            AdminDashboardWindow adminDashboardWindow = new AdminDashboardWindow();
+            adminDashboardWindow.Show();
+            this.Hide();
+        }
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
