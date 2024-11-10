@@ -62,7 +62,7 @@
                     <TextBox x:Name="txtSearch" Width="250" Height="30" VerticalAlignment="Center" 
                          Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                          />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch"/>
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" Margin="10,0,10,0"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">

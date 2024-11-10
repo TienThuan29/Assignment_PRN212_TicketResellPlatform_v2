@@ -39,12 +39,25 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             UserGrid.ItemsSource= users;
         }
 
+        private void ReUpdateAvatar()
+        {
+            var users = userService.GetAllUsers();
+            foreach (var user in users)
+            {
+                if (user.Avatar.Contains(LocalPathSetting.ProfileImagePath))
+                {
+                    user.Avatar = System.IO.Path.GetFileName(user.Avatar);
+                }
+            }
+        }
+
         //Side bar button
         private void StaffInfo_Click(object sender, RoutedEventArgs e)
         {
             StaffDashboardWindow staffDashboardWindow = new StaffDashboardWindow(staff);
             this.Hide();
             staffDashboardWindow.Show();
+            ReUpdateAvatar();
         }
 
         private void ManageEvent_Click(object sender, RoutedEventArgs e)
@@ -52,6 +65,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             ManageEventWindow manageEventWindow = new ManageEventWindow(staff);
             this.Hide();
             manageEventWindow.Show();
+            ReUpdateAvatar();
         }
 
         private void ManageSellingRequest_Click(object sender, RoutedEventArgs e)
@@ -59,6 +73,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             ManageSellingTicketRequestWindow manageSellingTicketRequestWindow = new ManageSellingTicketRequestWindow(staff);
             this.Hide();
             manageSellingTicketRequestWindow.Show();
+            ReUpdateAvatar();
         }
 
         private void ViewInfoUser_Click(object sender, RoutedEventArgs e)
@@ -66,6 +81,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             ViewUserInfoWindow viewUserInfoWindow = new ViewUserInfoWindow(staff);
             this.Hide();
             viewUserInfoWindow.Show();
+            ReUpdateAvatar();
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
@@ -73,6 +89,7 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
             MainWindow mainWindow = new MainWindow();
             this.Hide();
             mainWindow.Show();
+            ReUpdateAvatar();
         }
     }
 }

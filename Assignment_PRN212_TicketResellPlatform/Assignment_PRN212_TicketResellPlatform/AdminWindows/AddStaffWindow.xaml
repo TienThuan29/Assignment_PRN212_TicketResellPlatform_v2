@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Đăng ký nhân viên" FontStyle="Italic" FontWeight="Medium" Margin="214,30,0,0" Height="76" Width="310"/>
-        <Button Content="Lưu" HorizontalAlignment="Left" Margin="247,313,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" />
-        <Button Content="Thoát" HorizontalAlignment="Left" Margin="382,313,0,0" VerticalAlignment="Top" Click="ButtonClickExit" Width="66" />
-        <Label Content="Họ" HorizontalAlignment="Left" Margin="134,103,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tên" HorizontalAlignment="Left" Margin="134,153,0,0" VerticalAlignment="Top"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="129,212,0,0" VerticalAlignment="Top"/>
-        <Label Content="Số điện thoại" HorizontalAlignment="Left" Margin="370,106,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mã nhân viên" HorizontalAlignment="Left" Margin="370,158,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="361,215,0,0" VerticalAlignment="Top"/>
-        <Label Content="Mật khẩu" HorizontalAlignment="Left" Margin="112,267,0,0" VerticalAlignment="Top"/>
-        <Label Content="Xác nhận mật khẩu" HorizontalAlignment="Left" Margin="339,270,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#623ED0" FontSize="30" Content="Đăng ký nhân viên" FontStyle="Italic" FontWeight="Medium" Margin="214,30,0,0" Height="76" Width="310"/>
+        <Button Content="Lưu" Background="#4CAF50" BorderBrush="#4CAF50" Padding="0" HorizontalAlignment="Left" Margin="293,325,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" Width="57" Height="24" />
+        <Button Content="Thoát" Background="#F44336" BorderBrush="#F44336" Padding="0" HorizontalAlignment="Left" Margin="602,325,0,0" VerticalAlignment="Top" Click="ButtonClickExit" Width="59" RenderTransformOrigin="-0.206,0.539" Height="24" />
+        <Label Content="Họ" HorizontalAlignment="Left" Margin="101,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.585,1.333"/>
+        <Label Content="Tên" HorizontalAlignment="Left" Margin="101,158,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.623,1.216"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="101,219,0,0" VerticalAlignment="Top"/>
+        <Label Content="Số điện thoại" HorizontalAlignment="Left" Margin="339,107,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mã nhân viên" HorizontalAlignment="Left" Margin="339,158,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="339,219,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mật khẩu" HorizontalAlignment="Left" Margin="101,274,0,0" VerticalAlignment="Top"/>
+        <Label Content="Xác nhận mật khẩu" HorizontalAlignment="Left" Margin="339,274,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFirstname" HorizontalAlignment="Left" Margin="175,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtLastname" HorizontalAlignment="Left" Margin="175,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="175,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

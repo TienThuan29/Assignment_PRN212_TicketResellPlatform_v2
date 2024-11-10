@@ -74,5 +74,6 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         {
             this.tableDashboard.ItemsSource = adminService.GetEventRevenueList();
         }
+
     }
 }

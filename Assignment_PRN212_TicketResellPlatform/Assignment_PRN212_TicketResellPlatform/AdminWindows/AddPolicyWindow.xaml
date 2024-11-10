@@ -8,13 +8,13 @@
         Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Đăng ký chính sách" FontStyle="Italic" FontWeight="Medium" Margin="210,24,0,0" Height="70" Width="298"/>
-        <Label Content="Nội dung" HorizontalAlignment="Left" Margin="165,94,0,0" VerticalAlignment="Top" Width="91"/>
-        <Label Content="Loại" HorizontalAlignment="Left" Margin="165,238,0,0" VerticalAlignment="Top" Width="47"/>
-        <Button Content="Lưu" HorizontalAlignment="Left" Margin="252,308,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" Width="66"/>
-        <Button Content="Thoát" HorizontalAlignment="Left" Margin="374,308,0,0" VerticalAlignment="Top" Click="ButtonClickExit"/>
+        <Label Content="Nội dung" HorizontalAlignment="Left" Margin="164,127,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label Content="Loại" HorizontalAlignment="Left" Margin="164,245,0,0" VerticalAlignment="Top" Width="46"/>
+        <Button Background="#4CAF50" BorderBrush="#4CAF50" Padding="0" Content="Lưu" HorizontalAlignment="Center" Margin="0,308,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" Width="66"/>
+        <Button Content="Thoát" Background="#F44336" BorderBrush="#F44336" Padding="0" HorizontalAlignment="Left" Margin="610,308,0,0" VerticalAlignment="Top" Click="ButtonClickExit" Width="59"/>
         <TextBox  AcceptsReturn="True" TextWrapping="Wrap" x:Name="txtContent" HorizontalAlignment="Left" Margin="318,94,0,0" VerticalAlignment="Top" Width="230" Height="68"/>
         <ComboBox x:Name="boxOfTypePolicy" HorizontalAlignment="Left" Margin="318,237,0,0" VerticalAlignment="Top" Width="230"/>
-        <Label Content="Phí (%)" HorizontalAlignment="Left" Margin="165,189,0,0" VerticalAlignment="Top" Width="45"/>
+        <Label Content="Phí (%)" HorizontalAlignment="Left" Margin="165,197,0,0" VerticalAlignment="Top" Width="45"/>
         <TextBox x:Name="txtFee" HorizontalAlignment="Left" Margin="318,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
 
     </Grid>
