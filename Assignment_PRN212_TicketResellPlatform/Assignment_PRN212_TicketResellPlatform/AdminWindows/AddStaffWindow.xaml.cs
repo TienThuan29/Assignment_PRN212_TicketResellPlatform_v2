@@ -80,13 +80,20 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             {
                 if (!CheckInputUpdate())
                 {
-                    if (UpdateStaffInfor())
+                    if (!CheckStaffCode(txtStaffcode.Text))
                     {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thành công");
+                        if (UpdateStaffInfor())
+                        {
+                            MessageBox.Show("Cập nhật thông tin nhân viên thành công");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật thông tin nhân viên thất bại");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thất bại");
+                        MessageBox.Show("Mã nhân viên không được trùng lặp");
                     }
                 }
                 else
@@ -111,26 +118,33 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                                 if (Regex.IsMatch(pwdBox.Password, PwdPattern) && pwdBox.Password.Equals(confirmPwd.Password)
                                     && Regex.IsMatch(txtUsername.Text, UsernamePattern))
                                 {
-                                    Staff staff = new Staff();
-                                    staff.Password = pwdBox.Password;
-                                    staff.Firstname = txtFirstname.Text;
-                                    staff.Lastname = txtLastname.Text;
-                                    staff.Email = txtEmail.Text;
-                                    staff.Phone = txtPhone.Text;
-                                    staff.StaffCode = txtStaffcode.Text;
-                                    staff.Username = txtUsername.Text;
-                                    staff.Balance = 0;
-                                    staff.Revenue = 0;
-                                    staff.IsEnable = true;
-                                    staff.RoleCode = "STAFF";
-                                    if (adminService.AddStaff(staff))
+                                    if (!CheckStaffCode(txtStaffcode.Text))
                                     {
-                                        MessageBox.Show("Thêm nhân viên thành công !");
-                                        this.ResetInput();
+                                        Staff staff = new Staff();
+                                        staff.Password = pwdBox.Password;
+                                        staff.Firstname = txtFirstname.Text;
+                                        staff.Lastname = txtLastname.Text;
+                                        staff.Email = txtEmail.Text;
+                                        staff.Phone = txtPhone.Text;
+                                        staff.StaffCode = txtStaffcode.Text;
+                                        staff.Username = txtUsername.Text;
+                                        staff.Balance = 0;
+                                        staff.Revenue = 0;
+                                        staff.IsEnable = true;
+                                        staff.RoleCode = "STAFF";
+                                        if (adminService.AddStaff(staff))
+                                        {
+                                            MessageBox.Show("Thêm nhân viên thành công !");
+                                            this.ResetInput();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Thêm nhân viên thất bại !");
+                                        }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Thêm nhân viên thất bại !");
+                                        MessageBox.Show("Mã nhân viên không được trùng lặp");
                                     }
                                 }
                                 else
@@ -192,6 +206,16 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                 pwdBox.IsEnabled = false;
                 confirmPwd.IsEnabled = false;
             }
+        }
+
+        private bool CheckStaffCode(string staffcode)
+        {
+            List<Staff> staffs = adminService.GetListStaff();
+            foreach (var item in staffs)
+            {
+                if (item.StaffCode.Equals(staffcode)) return true;
+            }
+            return false;
         }
     }
 }
