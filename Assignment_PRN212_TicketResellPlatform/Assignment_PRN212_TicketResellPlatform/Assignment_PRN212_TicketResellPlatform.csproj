@@ -15,6 +15,7 @@
     <None Remove="LogoTab-Photoroom.png" />
     <None Remove="StaffWindows\Add a heading %281%29-Photoroom.png" />
     <None Remove="StaffWindows\child-1837375_1280.png" />
+    <None Remove="StaffWindows\LogoTab-Photoroom.png" />
     <None Remove="UserWindows\child-1837375_1280.png" />
     <None Remove="UserWindows\LogoTab-Photoroom.png" />
   </ItemGroup>
@@ -45,7 +46,7 @@
 
     <Resource Include="LogoTab-Photoroom.png" />
 
-    <Resource Include="StaffWindows\Add a heading (1)-Photoroom.png" />
+    <Resource Include="StaffWindows\LogoTab-Photoroom.png" />
 
     <Resource Include="UserWindows\1.jpg" />
     <Resource Include="UserWindows\child-1837375_1280.png" />

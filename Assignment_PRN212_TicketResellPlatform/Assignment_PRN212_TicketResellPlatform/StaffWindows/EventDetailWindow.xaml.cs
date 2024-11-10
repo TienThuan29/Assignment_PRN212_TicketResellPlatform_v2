@@ -154,12 +154,21 @@ namespace Assignment_PRN212_TicketResellPlatform.StaffWindows
         {
             if (Event != null)
             {
-                Uri uri = new Uri(LocalPathSetting.EventImagePath+ Event.Image, UriKind.Absolute);
+                
                 txtEventId.Text = Event.Id.ToString();
                 txtEventName.Text = Event.Name;
                 txtEventDetail.Text = Event.Detail;
                 dpStartDate.Value = Event.StartDate;
                 dpEndDate.Value = Event.EndDate;
+                Uri uri = null;
+                if (!Event.Image.Contains(LocalPathSetting.EventImagePath))
+                {
+                    uri = new Uri(LocalPathSetting.EventImagePath + Event.Image, UriKind.Absolute);
+                }
+                else
+                {
+                    uri = new Uri(Event.Image, UriKind.Absolute);
+                }
                 imgEventImage.Source = new BitmapImage(uri);
             }
         }

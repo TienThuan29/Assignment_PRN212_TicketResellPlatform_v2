@@ -18,7 +18,7 @@
                 <Button Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomePageWindow">
                     <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
                 </Button>
-                <Image HorizontalAlignment="Left" Height="52" Margin="130,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png" RenderTransformOrigin="1.048,0.414"/>
+                <Image HorizontalAlignment="Left" Height="52" Margin="130,7,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/LogoTab-Photoroom.png" RenderTransformOrigin="1.048,0.414"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="190,10,792,8"/>
 
                 <Border HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="30"  Margin="1040,0,0,0" Height="44" Width="47">

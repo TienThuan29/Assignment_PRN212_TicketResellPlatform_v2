@@ -3,7 +3,6 @@ D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResel
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddStaffWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AdminDashboardWindow.g.cs
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\HistoryTransactionWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\ManagePolicyWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\ManageStaffWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\ManageUserWindow.g.cs
@@ -29,14 +28,15 @@ D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResel
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\HomeWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\MyShopWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\OrderTicketRequestWindow.g.cs
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\PolicyWindow.g.cs
-D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\UserProfileWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\ViewBoughtTicketsOfOrder.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\ViewTicketDetailWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\App.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform_Content.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform_MarkupCompile.cache
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\Assignment_PRN212_TicketResellPlatform_MarkupCompile.lref
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\HistoryTransactionWindow.g.cs
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\PolicyWindow.g.cs
+D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\UserWindows\UserProfileWindow.g.cs
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\App.baml
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddPolicyWindow.baml
 D:\Visual Studio 2022\Csharp\WPF\Assignment_PRN212\Assignment_PRN212_TicketResellPlatform\Assignment_PRN212_TicketResellPlatform\obj\Debug\net8.0-windows\AdminWindows\AddStaffWindow.baml

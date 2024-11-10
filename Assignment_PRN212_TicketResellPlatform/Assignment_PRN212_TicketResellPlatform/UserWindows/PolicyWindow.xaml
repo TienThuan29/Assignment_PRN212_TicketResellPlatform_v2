@@ -7,18 +7,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
         mc:Ignorable="d"
-        Title="PolicyWindow" Height="750" Width="900" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen" 
+        Title="PolicyWindow" Height="720" Width="1200" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen"
         Icon="/LogoTab-Photoroom.png"
         >
+
     <Grid>
-        <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="264,26,251,637"/>
-        <DataGrid x:Name="PolicyDataGrid" Margin="0,97,0,127" AutoGenerateColumns="False">
+        <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="381,28,134,597"/>
+        <DataGrid x:Name="PolicyDataGrid" Margin="0,112,0,112" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Thể loại chính sách" Width="Auto" Binding="{Binding TypePolicy.Name}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Nội dung chính sách" Width="Auto" Binding="{Binding Content}" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Đóng" HorizontalAlignment="Left" Margin="815,664,0,0" VerticalAlignment="Top" Background="#FFE62809" Click="Button_Close"/>
+        <Button Content="Đóng" HorizontalAlignment="Left" Margin="1100,648,0,0" VerticalAlignment="Top" Background="#FFE62809" Click="Button_Close"/>
 
     </Grid>
 </Window>

@@ -23,7 +23,7 @@
                 <Button Background="#FFD8C5FA" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FFA57BF0" Foreground="#DD000000" Margin="15,12,1091,16" RenderTransformOrigin="0.5,0.5" Click="ShowHomeWindow">
                     <materialDesign:PackIcon Kind="Home" RenderTransformOrigin="0.5,0.5" />
                 </Button>
-                <Image HorizontalAlignment="Left" Height="52" Margin="114,8,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                <Image HorizontalAlignment="Left" Height="52" Margin="114,8,0,0" VerticalAlignment="Top" Width="42" Source="/UserWindows/LogoTab-Photoroom.png"/>
                 <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="161,10,822,8" RenderTransformOrigin="0.677,0.489"/>
 
                 <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1067,7,0,0" Height="43" Width="47">
@@ -69,7 +69,7 @@
 
                 <Button HorizontalAlignment="Left" VerticalAlignment="Top" Click="ToHistoryDepositeWindow" Content="Lịch sử giao dịch" Margin="264,118,0,0" Background="#FFD8C5FA" BorderBrush="#FFA57BF0" Foreground="#DD000000"/>
 
-                <Label x:Name="balanceMainLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Content="Số dư của bạn: " Margin="886,118,0,0" />
+                <Label x:Name="balanceMainLabel" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Content="Số dư của bạn: " Margin="886,118,0,0" Grid.ColumnSpan="2" Width="266" />
                 <Border Margin="264,166,42,306" Background="#FFC1EDFF" Panel.ZIndex="-1" Grid.ColumnSpan="2" />
                 <ComboBox x:Name="amountDepositeComboBox" FontSize="16" Margin="264,380,520,0" VerticalAlignment="Top" Height="47">
                     <ComboBoxItem IsSelected="True">10.000đ</ComboBoxItem>

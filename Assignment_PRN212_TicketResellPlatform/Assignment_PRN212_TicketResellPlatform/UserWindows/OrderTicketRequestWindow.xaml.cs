@@ -166,7 +166,9 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
 
         private void ShowHomeWindow(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
+            HomeWindow homeWindow = new HomeWindow(logedUser);
+            homeWindow.Show();
         }
 
         // Message box define
