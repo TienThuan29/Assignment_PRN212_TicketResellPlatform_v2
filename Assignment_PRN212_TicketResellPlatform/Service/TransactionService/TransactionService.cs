@@ -54,5 +54,17 @@ namespace Service.TransactionService
             transaction.TransactionNo = RandomUtil.RandomString(10);
             return transactionRepository.Save(transaction);
         }
+
+        public List<Transaction> SearchByDateOrType(string date, string type)
+        {
+            var transcations = transactionRepository.GetTransactions();
+            if(!    string.IsNullOrEmpty(date))
+            {
+                DateTime dateTime = DateTime.Parse(date);
+                return transcations.Where(t => (string.IsNullOrWhiteSpace(type) || t.TransType.Equals(type)) 
+                    && (t.TransDate.Date.ToString("yyyy-MM-dd") == dateTime.Date.ToString("yyyy-MM-dd"))).ToList();
+            }
+            return transcations.Where(t => (string.IsNullOrWhiteSpace(type) || t.TransType.Equals(type))).ToList();
+        }
     }
 }

@@ -58,17 +58,21 @@
                         <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                         <TextBlock  Text="Đăng xuất" Margin="5,0,0,0" VerticalAlignment="Center" />
                     </StackPanel>
-                    </Button>
+                </Button>
             </Grid>
 
 
             <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,54,0,-74">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox x:Name="txtTransaction" Width="250" Height="30" VerticalAlignment="Center" 
-                     Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
-                     />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" Margin="10,0,10,0"/>
+                    <DatePicker x:Name="dateSearchTransaction" Width="213" materialDesign:HintAssist.Hint="Ngày giao dịch"/>
+                    <ComboBox x:Name="cmbTransType" Width="146" Height="35" Margin="20,0,0,0" materialDesign:HintAssist.Hint="Loại giao dịch"/>
+                    <Button Width="40" Height="35" Padding="0" Margin="20,0,0,0" Click="ButtonClickSearch">
+                        <materialDesign:PackIcon Kind="Search" Height="24" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
+                    <Button Width="40" Height="35" Padding="0" Margin="20,0,0,0" Click="Refresh_Click">
+                        <materialDesign:PackIcon Kind="Refresh" Height="24" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Button>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
@@ -85,14 +89,26 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
                             <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" Width="150"/>
-                            <DataGridTextColumn Header="UserID" Binding="{Binding UserId}" Width="150"/>
+                            <DataGridTemplateColumn Header="Họ và Tên" Width="Auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock>
+                                                <Run Text="{Binding User.Firstname}" />
+                                                <Run Text=" " />
+                                                <Run Text="{Binding User.Lastname}" />
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                             <DataGridTextColumn Header="Ngày diễn ra" Binding="{Binding TransDate}" Width="150"/>
                             <DataGridTemplateColumn Header="Loại" Width="150">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock x:Name="IsDoneText" Text="Failed" />
                                         <DataTemplate.Triggers>
-                                            <DataTrigger Binding="{Binding TransType}" Value="DEPOSIT">
+                                            <DataTrigger Binding="{Binding TransType}" Value="DEPOSITE">
                                                 <Setter TargetName="IsDoneText" Property="Text" Value="Nạp Tiền" />
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding TransType}" Value="WITHDRAWAL">

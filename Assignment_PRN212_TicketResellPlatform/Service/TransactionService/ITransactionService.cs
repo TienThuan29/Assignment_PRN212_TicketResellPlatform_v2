@@ -18,5 +18,6 @@ namespace Service.TransactionService
 
         public bool SaveSellingTransaction(long userId, long amount);
 
+        public List<Transaction> SearchByDateOrType(string date, string type);
     }
 }

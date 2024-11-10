@@ -12,5 +12,7 @@ namespace BusinessObject
         public string? TransType { get; set; }
         public long? UserId { get; set; }
         public string? TransactionNo { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

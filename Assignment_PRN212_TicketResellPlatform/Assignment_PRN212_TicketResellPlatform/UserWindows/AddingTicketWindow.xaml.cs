@@ -208,6 +208,5 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             MessageBox.Show(message, "Cảnh báo", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
-   
     }
 }

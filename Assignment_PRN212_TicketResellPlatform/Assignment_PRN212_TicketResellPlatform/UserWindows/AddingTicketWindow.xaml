@@ -113,7 +113,7 @@
                 </TextBlock>
 
                 <ComboBox x:Name="gTicketTypeComboBox" Margin="740,310,132,0" VerticalAlignment="Top" SelectedIndex="0">
-                    <ComboBoxItem Content="Online" Tag="0"/>
+                    <ComboBoxItem Content="Online" Tag=""/>
                 </ComboBox>
 
 

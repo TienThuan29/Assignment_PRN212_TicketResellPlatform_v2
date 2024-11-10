@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
-        mc:Ignorable="d" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        mc:Ignorable="d" Icon="/AdminWindows/Add a heading (1)-Photoroom.png"
         Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Đăng ký chính sách" FontStyle="Italic" FontWeight="Medium" Margin="210,24,0,0" Height="70" Width="298"/>

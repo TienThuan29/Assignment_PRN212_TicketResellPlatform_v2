@@ -1,6 +1,8 @@
 ﻿using BusinessObject;
 using Service.Admin;
 using Service.AdminService;
+using Service.Constant;
+using Service.TransactionService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 {
@@ -24,11 +27,13 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     {
 
         private readonly IAdminService iAdminService;
-        
+        private readonly TransactionService transactionService;
+
         public HistoryTransactionWindow()
         {
             InitializeComponent();
             this.iAdminService = new AdminService();
+            this.transactionService = new TransactionService();
         }
 
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -83,6 +88,16 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
             this.tableHistoryTransaction.ItemsSource = iAdminService.GetTransactions();
+            Dictionary<string, string> transtypes = new Dictionary<string, string>
+            {
+                { TransactionType.WITHDRAWAL, "Rút tiền" },
+                { TransactionType.BUYING, "Mua vé" },
+                { TransactionType.SELLING, "Bán vé" },
+                { TransactionType.DEPOSITE, "Nạp tiền" }
+            };
+            cmbTransType.ItemsSource = transtypes;
+            cmbTransType.DisplayMemberPath = "Value";
+            cmbTransType.SelectedValuePath = "Key";
         }
 
         private void ReloadDataGrid()
@@ -97,15 +112,13 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
 
         private void ButtonClickSearch(object sender, RoutedEventArgs e)
         {
-            if (!txtTransaction.Text.Equals(""))
-            {
-                List<Transaction> list = iAdminService.SearchTransaction(txtTransaction.Text);
-                this.tableHistoryTransaction.ItemsSource = list;
-            }
-            else
-            {
-                this.ReloadDataGrid();
-            }
+            string date = dateSearchTransaction.Text;
+            this.tableHistoryTransaction.ItemsSource = transactionService.SearchByDateOrType(date, cmbTransType.SelectedValue.ToString());
+        }
+
+        private void Refresh_Click(object sender, RoutedEventArgs e)
+        {
+            ReloadDataGrid();
         }
     }
 }
