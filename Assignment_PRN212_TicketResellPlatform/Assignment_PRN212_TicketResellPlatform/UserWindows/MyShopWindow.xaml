@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform"  Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Icon="/LogoTab-Photoroom.png"
         >
 
     <Grid>
@@ -120,8 +120,11 @@
                 </DataGrid>
 
 
-                <Button Click="Logout" HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
-                    <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                <Button Click="Logout" HorizontalAlignment="Left" Margin="17,550,0,0" VerticalAlignment="Top" Width="138">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                        <TextBlock  Text="Đăng xuất" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
                 </Button>
 
             </Grid>

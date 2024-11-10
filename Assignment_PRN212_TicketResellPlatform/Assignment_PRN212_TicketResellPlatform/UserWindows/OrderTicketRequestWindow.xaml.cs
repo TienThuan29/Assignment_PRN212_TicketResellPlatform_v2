@@ -179,5 +179,10 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
         {
             MessageBox.Show(message, "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void HandleLogout(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

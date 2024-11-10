@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
         mc:Ignorable="d"
-        Title="ViewBoughtTicketsOfOrder" Height="700" Width="500"
+        Title="ViewBoughtTicketsOfOrder" Height="700" Width="500" Icon="/LogoTab-Photoroom.png"
         WindowStartupLocation="CenterScreen"
         >
     <Grid>

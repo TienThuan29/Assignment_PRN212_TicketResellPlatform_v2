@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Service.Admin;
+using Service.AdminService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +21,11 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
     /// </summary>
     public partial class WithdrawalListWindow : Window
     {
+        private IAdminService adminService;
+        private string type = "WITHDRAWAL";
         public WithdrawalListWindow()
         {
+            adminService = new AdminService();
             InitializeComponent();
         }
         private void ButtonClickManageUser(object sender, RoutedEventArgs e)
@@ -63,6 +68,32 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Hide();
+        }
+
+        private void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType(type);
+        }
+
+        private void ReloadDataGrid()
+        {
+            try
+            {
+                this.tableOfWithdrawal.ItemsSource = adminService.GetTransactionsListOfType(type);
+            }
+            catch (Exception ex) { }
+        }
+
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtSearchTransaction.Text.Equals(""))
+            {
+                this.ReloadDataGrid();
+            }
+            else
+            {
+                this.tableOfWithdrawal.ItemsSource = adminService.SearchTransactionOfType(txtSearchTransaction.Text, type);
+            }
         }
     }
 }

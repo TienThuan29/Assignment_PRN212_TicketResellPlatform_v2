@@ -6,7 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Icon="/LogoTab-Photoroom.png"
         Title="BuyTicketWindow" Height="720" Width="1200">
     <Grid>
         <Grid.RowDefinitions>

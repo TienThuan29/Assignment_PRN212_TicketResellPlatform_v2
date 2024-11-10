@@ -16,5 +16,9 @@ namespace Repository.Def
         List<Transaction> GetTransactions();
 
         List<Transaction> GetTransactionsListOfType(string type);
+
+        List<Transaction> Search(string query);
+
+        List<Transaction> SearchOfType(string query, string type);
     }
 }

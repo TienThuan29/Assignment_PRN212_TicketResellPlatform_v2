@@ -7,7 +7,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.UserWindows"
         mc:Ignorable="d"
-        Title="PolicyWindow" Height="750" Width="900" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen" >
+        Title="PolicyWindow" Height="750" Width="900" Loaded="OnDataWindow" WindowStartupLocation="CenterScreen" 
+        Icon="/LogoTab-Photoroom.png"
+        >
     <Grid>
         <Label Foreground="#623ED0" FontSize="30" Content="Chính sách của chúng tôi" FontStyle="Italic" FontWeight="Bold" Margin="264,26,251,637"/>
         <DataGrid x:Name="PolicyDataGrid" Margin="0,97,0,127" AutoGenerateColumns="False">

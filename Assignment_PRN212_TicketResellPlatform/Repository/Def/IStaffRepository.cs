@@ -9,6 +9,18 @@ namespace Repository.Def
 {
     public interface IStaffRepository
     {
-        Staff FindByUsername(string username);  
+        Staff FindByUsername(string username);
+
+        List<Staff> GetAll();
+
+        List<Staff> Search(string str);
+
+        bool AddStaff(Staff item);
+
+        bool ChangeEnableOfStaff(string id);
+
+        bool CheckExistUsername(string username);
+
+        List<EventRevenue> GetEventRevenueList();
     }
 }

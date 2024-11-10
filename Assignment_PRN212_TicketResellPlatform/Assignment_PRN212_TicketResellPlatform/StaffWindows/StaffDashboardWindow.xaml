@@ -10,7 +10,9 @@
         Title="StaffDashboardWindow" Height="720" Width="1200" 
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="OnWindowLoad">  
+        Loaded="OnWindowLoad"
+        Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        >
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -18,8 +20,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="229"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
@@ -32,12 +34,12 @@
                             <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="Nguyễn Văn A" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="STAFF" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
-            <Grid Grid.Row="1" Grid.Column="0" Background="White" Margin="10" 
-                  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid Grid.Row="1" Background="White" 
+                  HorizontalAlignment="Left" VerticalAlignment="Top" Height="542" Width="218" Margin="11,102,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -49,28 +51,26 @@
                 <Button x:Name="btnStaffInfo" Content="Thông tin tài khoản" Grid.Row="0" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="StaffInfo_Click"/>
                 <Button x:Name="btnManageEvent" Content="Quản lý sự kiện" Grid.Row="1" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageEvent_Click"/>
                 <Button x:Name="btnManageSellingRequest" Content="Quản lý yêu cầu bán vé" Grid.Row="3" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ManageSellingRequest_Click"/>
-                <Button x:Name="btnViewUserInfo" Content="Xem Thông Tin Người Dùng" Grid.Row="4" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ViewInfoUser_Click"/>
-                <Button x:Name="btnLogout" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,10,0,0" Click="Logout_Click">
+                <Button x:Name="btnViewUserInfo" Content="Thông Tin Người Dùng" Grid.Row="4" Height="50" Margin="0,10" Background="#623ED0" Foreground="White" FontSize="16" Click="ViewInfoUser_Click"/>
+                <Button x:Name="btnLogout" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="0,178,0,0" Click="Logout_Click">
                     <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                 </Button>
 
             </Grid>
-            <Grid Grid.Row="1" Grid.Column="1" Margin="20">
-                <Label FontSize="40" Content="Quản lý tài khoản" HorizontalAlignment="Center" Margin="0,10"/>
+            <Grid Grid.Row="1" Margin="10,40,51,0" Grid.Column="1">
+                <Label Content="Thông Tin Tài Khoản" Foreground="#623ED0" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top" Height="72" Width="392" FontSize="40" FontStyle="Italic" FontWeight="Bold"/>
 
-                <StackPanel Margin="60,100,60,60">
-                    <Label FontSize="20" Content="Họ*" />
-                    <TextBox IsReadOnly="True" x:Name="firstnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                <Label FontSize="20" Content="Họ*" HorizontalAlignment="Left" Margin="151,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.324,1.648"/>
+                <TextBox x:Name="firstnameTextBox"  FontSize="20" HorizontalAlignment="Left" Height="38" Width="573" Margin="211,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-                    <Label FontSize="20" Content="Tên*" />
-                    <TextBox IsReadOnly="True" x:Name="lastnameTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                <Label FontSize="20" Content="Tên*" HorizontalAlignment="Left" Margin="148,250,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="lastnameTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="577" Margin="211,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-                    <Label FontSize="20" Content="Email*" />
-                    <TextBox IsReadOnly="True" x:Name="emailTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
+                <Label FontSize="20" Content="Email*" HorizontalAlignment="Left" Margin="140,345,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="emailTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="577" Margin="211,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
-                    <Label FontSize="20" Content="SĐT" />
-                    <TextBox IsReadOnly="True" x:Name="phoneTextBox" FontSize="20" Height="38" Padding="5" Margin="0,5" />
-                </StackPanel>
+                <Label FontSize="20" Content="SĐT" HorizontalAlignment="Left" Margin="148,436,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="phoneTextBox" FontSize="20" HorizontalAlignment="Left" Height="38" Width="573" Margin="211,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             </Grid>
         </Grid>
     </Border>

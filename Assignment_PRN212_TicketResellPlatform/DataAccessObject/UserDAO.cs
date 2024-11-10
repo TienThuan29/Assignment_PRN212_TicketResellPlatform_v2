@@ -15,7 +15,7 @@ namespace DataAccessObject
 
         public static UserDAO Instance
         {
-            get => instance = instance ?? (instance = new UserDAO());   
+            get => instance = instance ?? (instance = new UserDAO());
         }
 
         private UserDAO()
@@ -23,17 +23,17 @@ namespace DataAccessObject
             this.context = new PRN212_TicketResellPlatformContext();
         }
 
-        public User FindByUsername(string username) 
+        public User FindByUsername(string username)
         {
             return context.Users.SingleOrDefault(obj => obj.Username.Equals(username));
         }
 
-        public User FindById(long id) 
+        public User FindById(long id)
         {
             return context.Users.SingleOrDefault(obj => obj.Id.Equals(id));
         }
 
-        public bool SaveRegisterUser(User user) 
+        public bool SaveRegisterUser(User user)
         {
             bool flag = true;
             if (user != null)
@@ -71,12 +71,46 @@ namespace DataAccessObject
                 this.context.SaveChanges();
             }
             else flag = false;
-            return flag;    
+            return flag;
         }
 
         public ICollection<User> GetAllUsers()
         {
             return context.Users.ToList();
+        }
+
+        public List<User> Search(string query)
+        {
+            List<User> users = context.Users.ToList();
+            List<User> filtered = new List<User>();
+            query = query.ToLower();
+            foreach (var user in users) {
+                if (user.Id.ToString().Contains(query) || user.Firstname.ToLower().Contains(query) || user.Lastname.ToLower().Contains(query)
+                    || user.Email.ToLower().Contains(query) || user.Phone.Contains(query) || user.Revenue.ToString().Contains(query))
+                {
+                    filtered.Add(user);
+                }
+            }
+            return filtered;
+        }
+
+        public bool ChangeEnableOfUser(string id)
+        {
+            bool isSuccess = false;
+            try
+            {
+                User user = context.Users.SingleOrDefault(x=> x.Id.ToString().Equals(id));
+                if (user != null) {
+                    user.IsEnable = !user.IsEnable;
+                    context.Users.Update(user);
+                    context.SaveChanges();
+                    isSuccess = true;
+                }
+            }
+            catch (Exception ex) {
+                isSuccess = false;
+            }
+            return isSuccess;
         }
     }
 }

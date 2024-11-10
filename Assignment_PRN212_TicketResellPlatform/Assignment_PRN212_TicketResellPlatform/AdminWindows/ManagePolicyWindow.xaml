@@ -6,8 +6,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
-        mc:Ignorable="d"
-        Title="ManagePolicyWindow" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
+        mc:Ignorable="d" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
+        Title="Ticket Resell Platform" Height="720" Width="1200" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Border CornerRadius="30" Background="White">
         <Grid>
             <Grid.RowDefinitions>
@@ -22,15 +22,15 @@
 
             <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#623ED0"  CornerRadius="0 0 10 10">
                 <Grid>
-                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/UserWindows/Add a heading (1)-Photoroom.png"/>
+                    <Image HorizontalAlignment="Left" Height="52" Margin="56,0,0,0" VerticalAlignment="Center" Width="42" Source="/AdminWindows/Add a heading (1)-Photoroom.png"/>
                     <Label Foreground="White" FontSize="30" Content="Ticket Resell" FontStyle="Italic" FontWeight="Bold" Height="42" Width="217" Margin="108,10,875,8"/>
 
-                    <Border CornerRadius="30"  Margin="1090,6,62,6">
+                    <Border HorizontalAlignment="Left" VerticalAlignment="Top" CornerRadius="30"  Margin="1077,7,0,0" Height="43" Width="47">
                         <Border.Background>
-                            <ImageBrush Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
+                            <ImageBrush x:Name="avatarImageBrushHeader" Stretch="Fill"  ImageSource="/UserWindows/child-1837375_1280.png"/>
                         </Border.Background>
                     </Border>
-                    <Label  Foreground="White" Content="Nguyễn Văn Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
+                    <Label  Foreground="White" Content="Admin" Margin="802,10,0,0" Height="32" Width="270" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Right"/>
                 </Grid>
             </Border>
 
@@ -50,19 +50,24 @@
                 <Button Content="Quản lý chính sách" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManagePolicy"/>
                 <Button Content="Lịch sử giao dịch" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickHistoryTransaction"/>
                 <Button Content="Danh sách rút tiền" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickWithdrawalList"/>
-                <Button Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="54" Height="54" Margin="10,0,0,0" Click="ButtonClickExit">
-                    <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+
+                <Button Grid.Row="5" Click="ButtonClickExit" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"  Width="170" Background="#FF623ED0" Height="48">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                        <TextBlock  Text="Đăng xuất" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
                 </Button>
             </Grid>
 
 
-            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,50,10,-30">
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
-                    <TextBox Width="250" Height="30" VerticalAlignment="Center" 
+                    <TextBox x:Name="txtSearchPolicy" Width="250" Height="30" VerticalAlignment="Center" 
                      Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" 
                      />
-                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" />
+                    <Button Content="Tìm kiếm" Width="120" Height="30" Command="{Binding SearchCommand}" Click="ButtonClickSearch" />
+                    <Button Content="Thêm chính sách" Width="157" Height="30" Margin="0,0," Command="{Binding SearchCommand}" Click="ButtonClickAdd"/>
                 </StackPanel>
 
                 <Grid Grid.Row="1" Grid.Column="1" Width="921">
@@ -80,30 +85,44 @@
                             <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
                             <DataGridTextColumn Header="Nội dung" Binding="{Binding Content}" Width="300"/>
                             <DataGridTextColumn Header="Phí" Binding="{Binding Fee}" Width="100"/>
-                            <DataGridTextColumn Header="Đã xóa" Binding="{Binding IsDeleted}" Width="100"/>
-                            <DataGridTextColumn Header="Loại" Binding="{Binding TypePolicyId}" Width="100"/>
+                            <DataGridTemplateColumn Header="Trạng thái" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="IsDeletedText" Text="Failed" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
+                                                <Setter TargetName="IsDeletedText" Property="Text" Value="Đã khóa" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
+                                                <Setter TargetName="IsDeletedText" Property="Text" Value="Hoạt động" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Loại" Binding="{Binding TypePolicy.Name}" Width="100"/>
                             <DataGridTemplateColumn Header="Hành động" Width="200">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                            <Button Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Hoạt động" Background="LightBlue" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
+                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
-                                            <Button Content="Banning" Background="LightCoral" Padding="5,0" Margin="5,0">
+                                            <Button Click="ButtonClickChangeAble" Tag="{Binding Id}" Content="Khóa CS" Background="LightCoral" Padding="5,0" Margin="5,0">
                                                 <Button.Style>
                                                     <Style TargetType="Button">
                                                         <Setter Property="IsEnabled" Value="True"/>
                                                         <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="False">
+                                                            <DataTrigger Binding="{Binding IsDeleted}" Value="True">
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
@@ -118,6 +137,7 @@
                     </DataGrid>
                 </Grid>
             </StackPanel>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Quản lý chính sách" FontStyle="Italic" FontWeight="Medium" Grid.Column="1" Margin="602,5,0,0" Grid.Row="1" Height="75" Width="284"/>
         </Grid>
     </Border>
 </Window>

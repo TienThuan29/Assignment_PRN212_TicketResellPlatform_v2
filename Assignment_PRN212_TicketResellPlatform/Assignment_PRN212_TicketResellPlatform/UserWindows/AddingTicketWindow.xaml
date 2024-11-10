@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Ticket Resell Platform"  Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="NoResize" Icon="/LogoTab-Photoroom.png"
         >
     <Grid>
 
@@ -91,7 +91,7 @@
                 <TextBox x:Name="gTicketAreaTextbox" Margin="315,308,557,325"/>
 
                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" Margin="315,373,0,0" Width="192">
-                    <Run Text="Thời gian hết hạn" Foreground="Black"/>
+                    <Run Text="Ngày hết hạn" Foreground="Black"/>
                     <Run Text="*" Foreground="Red"/>
                 </TextBlock>
 
@@ -114,7 +114,6 @@
 
                 <ComboBox x:Name="gTicketTypeComboBox" Margin="740,310,132,0" VerticalAlignment="Top" SelectedIndex="0">
                     <ComboBoxItem Content="Online" Tag="0"/>
-                    <ComboBoxItem Content="Giấy" Tag="1"/>
                 </ComboBox>
 
 
@@ -130,15 +129,18 @@
 
 
                 <Button Click="CreateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Tạo vé" Margin="391,560,0,0" Background="#FF9DEC68" Foreground="#DD000000" BorderBrush="#FF9DEC68" />
-                <Button Click="UpdateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cập nhật chỉnh sửa" Margin="490,560,0,0" BorderBrush="#FFFFC805" Background="#FFFFC805" Foreground="#DD000000" />
+                <!-- <Button Click="UpdateGenericTicket" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Cập nhật chỉnh sửa" Margin="490,560,0,0" BorderBrush="#FFFFC805" Background="#FFFFC805" Foreground="#DD000000" /> -->
                 
                 <Button Click="OpenAddSpecificTicketWindow" HorizontalAlignment="Left" VerticalAlignment="Top" Content="Thêm vé chi tiết" Margin="920,560,132,68" Background="#FF3AA5B7" BorderBrush="{x:Null}" />
 
-
-
-                <Button HorizontalAlignment="Left" Margin="17,581,0,0" VerticalAlignment="Top" Width="54">
-                    <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                <Button Click="Logout" HorizontalAlignment="Left" Margin="17,548,0,0" VerticalAlignment="Top" Width="140">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
+                        <TextBlock Text="Đăng xuất" Margin="5,0,0,0" VerticalAlignment="Center" />
+                    </StackPanel>
                 </Button>
+
+
                 <Button Click="RefreshFields" HorizontalAlignment="Left" Margin="315,560,0,0" VerticalAlignment="Top" Background="#FFED8D8D" Foreground="#DD000000" BorderBrush="#FFED8D8D">
                     <materialDesign:PackIcon Kind="Refresh" />
                 </Button>

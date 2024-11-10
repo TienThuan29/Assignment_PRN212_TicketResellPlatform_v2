@@ -23,9 +23,17 @@ namespace DataAccessObject
             this.context = new PRN212_TicketResellPlatformContext();
         }
 
-        public TypePolicy GetTypePolicyByid(long id)
+        public TypePolicy GetTypePolicyByid(long? id)
         {
             return this.context.TypePolicies.SingleOrDefault(m => m.Id.Equals(id));
+        }
+
+        public List<TypePolicy> GetAllTypePolicies() {
+            return this.context.TypePolicies.ToList();
+        }
+
+        public TypePolicy GetTypePolicyByName(string name) {
+            return this.context.TypePolicies.SingleOrDefault(m => m.Name.Equals(name));
         }
     }
 }

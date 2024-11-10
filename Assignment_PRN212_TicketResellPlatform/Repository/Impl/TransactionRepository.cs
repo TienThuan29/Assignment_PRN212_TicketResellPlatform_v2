@@ -30,5 +30,15 @@ namespace Repository.Impl
         {
             return TransactionDAO.Instance.Save(transaction);
         }
+
+        public List<Transaction> Search(string query)
+        {
+            return TransactionDAO.Instance.Search(query);
+        }
+
+        public List<Transaction> SearchOfType(string query, string type)
+        {
+            return TransactionDAO.Instance.SearchOfType(query, type);
+        }
     }
 }
