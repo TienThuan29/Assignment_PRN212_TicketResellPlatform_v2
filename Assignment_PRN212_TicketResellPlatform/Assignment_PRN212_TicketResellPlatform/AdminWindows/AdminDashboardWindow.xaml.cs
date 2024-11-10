@@ -81,5 +81,16 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.tableDashboard.ItemsSource = adminService.GetEventRevenueList();
         }
 
+        private void ButtonClickSearch(object sender, RoutedEventArgs e)
+        {
+            if (txtDashboard.Text.Equals(""))
+            {
+                this.tableDashboard.ItemsSource = adminService.GetEventRevenueList();
+            }
+            else
+            {
+                this.tableDashboard.ItemsSource = adminService.SearchEventRevenueList(txtDashboard.Text);
+            }
+        }
     }
 }
