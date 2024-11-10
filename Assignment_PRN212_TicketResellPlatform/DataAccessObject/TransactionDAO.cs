@@ -51,7 +51,7 @@ namespace DataAccessObject
                     .OrderByDescending(trs => trs.TransDate).ToList();
         }
 
-        public List<Transaction> GetTransactions() => context.Transactions.ToList();
+        public List<Transaction> GetTransactions() => context.Transactions.Include(t => t.User).ToList();
 
         public List<Transaction> GetTransactionsListOfType(string type)
         {
