@@ -11,6 +11,6 @@ namespace BusinessObject
         public string EventName { get; set; }
         public int TicketCount { get; set; }
         public DateTime StartDate { get; set; }
-        public decimal TotalRevenue { get; set; }
+        public double TotalRevenue { get; set; }
     }
 }

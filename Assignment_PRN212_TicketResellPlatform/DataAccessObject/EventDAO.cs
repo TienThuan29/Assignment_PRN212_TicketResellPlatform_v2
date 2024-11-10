@@ -61,7 +61,7 @@ namespace DataAccessObject
                 existingEvent.Name = updatedEvent.Name;
                 existingEvent.StartDate = updatedEvent.StartDate;
                 existingEvent.EndDate = updatedEvent.EndDate;
-                existingEvent.Image = updatedEvent.Image;
+                existingEvent.Image = System.IO.Path.GetFileName(updatedEvent.Image);
 
                 context.Entry(existingEvent).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
