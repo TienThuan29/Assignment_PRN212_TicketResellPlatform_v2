@@ -105,7 +105,21 @@ namespace DataAccessObject
         public List<EventRevenue> GetEventRevenueList()
         {
             return context.GetEventRevenue();
-        } 
+        }
 
+        public List<EventRevenue> SearchEventRevenueList(string str)
+        {
+            List<EventRevenue> list = this.GetEventRevenueList();
+            List<EventRevenue> result = new List<EventRevenue>();
+            str = str.ToLower();
+            foreach (EventRevenue e in list) {
+                if(e.EventName.ToLower().Contains(str) || e.TicketCount.ToString().Contains(str) || e.StartDate.ToString().Contains(str)
+                    || e.TotalRevenue.ToString().Contains(str))
+                {
+                    result.Add(e);
+                }
+            }
+            return result;
+        }
     }
 }

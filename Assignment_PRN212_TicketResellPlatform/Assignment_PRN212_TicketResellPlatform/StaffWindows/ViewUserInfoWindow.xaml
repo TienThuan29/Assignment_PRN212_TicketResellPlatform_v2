@@ -10,7 +10,7 @@
         Title="ViewUserInfoWindow" Height="720" Width="1200"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="OnWindowLoad"  Icon="/StaffWindows/LogoTab-Photoroom.png"
+        Loaded="OnWindowLoad" Icon="/StaffWindows/LogoTab-Photoroom.png"
         >
     <Border CornerRadius="30" Background="White">
         <Grid>
@@ -75,8 +75,7 @@
                               IsReadOnly="True"
                               Background="White">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="50"/>
-
+                            <DataGridTextColumn Header="#" Binding="{Binding Id}" Width="Auto"/>
                             <DataGridTemplateColumn Header="Avatar" Width="100">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
@@ -85,8 +84,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-
-                            <DataGridTemplateColumn Header="Họ và Tên" Width="150">
+                            <DataGridTemplateColumn Header="Họ và Tên" Width="Auto">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Vertical">
@@ -99,8 +97,8 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
-                            <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Phone}" Width="150"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="Auto"/>
+                            <DataGridTextColumn Header="Số điện thoại" Binding="{Binding Phone}" Width="Auto"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

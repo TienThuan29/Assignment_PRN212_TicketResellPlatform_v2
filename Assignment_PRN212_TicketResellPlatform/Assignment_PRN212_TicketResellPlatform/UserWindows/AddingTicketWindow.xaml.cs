@@ -93,6 +93,7 @@ namespace Assignment_PRN212_TicketResellPlatform.UserWindows
             gTicketExpiredDateTime.Text = "";
             gTicketLinkTextbox.Text = "";
             desTextbox.Text = "";
+            currentAddingGenericTicket = null;
         }
 
         private void UpdateGenericTicket(object sender, RoutedEventArgs e)

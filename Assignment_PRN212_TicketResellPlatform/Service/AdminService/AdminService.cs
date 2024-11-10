@@ -73,6 +73,11 @@ namespace Service.AdminService
             return iStaffRepository.Search(str);
         }
 
+        public List<EventRevenue> SearchEventRevenueList(string str)
+        {
+            return iStaffRepository.SearchEventRevenueList(str);
+        }
+
         public List<Transaction> SearchTransaction(string query)
         {
             return iTransactionRepository.Search(query);

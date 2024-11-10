@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Loaded="OnWindowLoad"
-         Icon="/StaffWindows/LogoTab-Photoroom.png"
+        Icon="/StaffWindows/LogoTab-Photoroom.png"
         >
     <Border CornerRadius="30" Background="White">
         <Grid>

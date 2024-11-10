@@ -22,5 +22,7 @@ namespace Repository.Def
         bool CheckExistUsername(string username);
 
         List<EventRevenue> GetEventRevenueList();
+
+        List<EventRevenue> SearchEventRevenueList(string str);
     }
 }
