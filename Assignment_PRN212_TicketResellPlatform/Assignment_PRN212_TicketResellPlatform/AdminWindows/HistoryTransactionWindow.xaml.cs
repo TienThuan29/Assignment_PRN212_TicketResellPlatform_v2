@@ -64,12 +64,6 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
-        private void ButtonClickWithdrawalList(object sender, RoutedEventArgs e)
-        {
-            WithdrawalListWindow withdrawalWindow = new WithdrawalListWindow();
-            withdrawalWindow.Show();
-            this.Hide();
-        }
 
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {

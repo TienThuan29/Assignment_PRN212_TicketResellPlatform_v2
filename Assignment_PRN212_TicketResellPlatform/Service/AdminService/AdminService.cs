@@ -53,6 +53,11 @@ namespace Service.AdminService
             return iStaffRepository.GetAll();
         }
 
+        public BusinessObject.Staff GetStaffById(string id)
+        {
+            return iStaffRepository.GetStaffById(id);
+        }
+
         public List<Transaction> GetTransactions()
         {
             return iTransactionRepository.GetTransactions();
@@ -91,6 +96,11 @@ namespace Service.AdminService
         public List<BusinessObject.User> SearchUser(string query)
         {
             return iUserRepository.Search(query);
+        }
+
+        public bool UpdateStaff(BusinessObject.Staff item)
+        {
+            return iStaffRepository.UpdateStaff(item);
         }
     }
 }

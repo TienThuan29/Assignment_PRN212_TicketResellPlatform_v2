@@ -77,7 +77,32 @@
                         <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount}" Width="Auto" />
                         <DataGridCheckBoxColumn Header="Hoàn thành" Binding="{Binding IsDone}" Width="Auto" />
                         <DataGridTextColumn Header="Thời gian giao dịch" Binding="{Binding TransDate, StringFormat=G}" Width="Auto" />
-                        <DataGridTextColumn Header="Loại giao dịch" Binding="{Binding TransType}" Width="Auto" />
+                        <!-- <DataGridTextColumn Header="Loại giao dịch" Binding="{Binding TransType}" Width="Auto" />-->
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock x:Name="StatusText" Text="Không xác định" />
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding TransType}" Value="DEPOSITE">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Nạp tiền" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding TransType}" Value="WITHDRAWAL">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Rút tiền" />
+                                        </DataTrigger>
+                                            
+                                        <DataTrigger Binding="{Binding TransType}" Value="SELLING">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Bán vé" />
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding TransType}" Value="BUYING">
+                                            <Setter TargetName="StatusText" Property="Text" Value="Mua vé" />
+                                        </DataTrigger>
+
+
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn Header="Mã số giao dịch" Binding="{Binding TransactionNo}" Width="Auto" />
                     </DataGrid.Columns>
                 </DataGrid>

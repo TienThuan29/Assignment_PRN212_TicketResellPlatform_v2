@@ -82,7 +82,7 @@
                         <DataGridTemplateColumn Header="Trạng thái" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock x:Name="StatusText" Text="Unknown" />
+                                    <TextBlock x:Name="StatusText" Text="Không xác định" />
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding Process}" Value="WAITING">
                                             <Setter TargetName="StatusText" Property="Text" Value="Chờ xác nhận" />

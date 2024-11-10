@@ -22,5 +22,9 @@ namespace Service.AdminService
         TypePolicy GetTypePolicyByid(long id);
 
         bool ChangeEnableOfPolicy(string id);
+
+        bool UpdatePolicy(Policy policy);
+
+        Policy GetPolicy(int id);
     }
 }

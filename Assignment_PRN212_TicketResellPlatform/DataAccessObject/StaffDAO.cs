@@ -121,5 +121,35 @@ namespace DataAccessObject
             }
             return result;
         }
+
+        public Staff GetStaffById(string id)
+        {
+            return context.Staffs.SingleOrDefault(x => x.Id.ToString().Equals(id));
+        }
+
+        public bool UpdateStaff(Staff item)
+        {
+            bool success = false;
+            try
+            {
+                Staff staff = context.Staffs.SingleOrDefault(x => x.Id == item.Id);
+                if (staff != null)
+                {
+                    staff.Firstname = item.Firstname;
+                    staff.Lastname = item.Lastname;
+                    staff.Email = item.Email;
+                    staff.StaffCode = item.StaffCode;
+                    staff.Phone = item.Phone;
+                    context.Staffs.Update(staff);
+                    context.SaveChanges();
+                    success = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                success = false;
+            }
+            return success;
+        }
     }
 }

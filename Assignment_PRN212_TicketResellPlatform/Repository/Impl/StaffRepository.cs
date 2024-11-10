@@ -41,6 +41,11 @@ namespace Repository.Impl
             return StaffDAO.Instance.GetEventRevenueList();
         }
 
+        public Staff GetStaffById(string id)
+        {
+            return StaffDAO.Instance.GetStaffById(id);
+        }
+
         public List<Staff> Search(string str)
         {
             return StaffDAO.Instance.Search(str);
@@ -49,6 +54,11 @@ namespace Repository.Impl
         public List<EventRevenue> SearchEventRevenueList(string str)
         {
             return StaffDAO.Instance.SearchEventRevenueList(str);
+        }
+
+        public bool UpdateStaff(Staff item)
+        {
+            return StaffDAO.Instance.UpdateStaff(item);
         }
     }
 }

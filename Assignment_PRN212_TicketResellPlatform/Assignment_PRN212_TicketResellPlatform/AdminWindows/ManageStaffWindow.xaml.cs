@@ -63,13 +63,6 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
-        private void ButtonClickWithdrawalList(object sender, RoutedEventArgs e)
-        {
-            WithdrawalListWindow withdrawalWindow = new WithdrawalListWindow();
-            withdrawalWindow.Show();
-            this.Hide();
-        }
-
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -95,7 +88,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             
         }
 
-        private void ReloadDataGrid()
+        public void ReloadDataGrid()
         {
             try
             {
@@ -135,6 +128,22 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                     break;
             }
             
+        }
+
+        private void ButtonClickUpdateStaff(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            string id = button?.Tag?.ToString();
+            BusinessObject.Staff staff = adminService.GetStaffById(id);
+            if (staff != null)
+            {
+                AddStaffWindow addStaffWindow = new AddStaffWindow(this, staff);
+                addStaffWindow.Show();
+            }
+            else
+            {
+                MessageBox.Show("Không thê cập nhật nhân viên");
+            }
         }
     }
 }

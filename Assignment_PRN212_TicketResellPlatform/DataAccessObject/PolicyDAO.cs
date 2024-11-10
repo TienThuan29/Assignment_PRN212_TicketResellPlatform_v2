@@ -88,5 +88,29 @@ namespace DataAccessObject
             }
             return isSuccess;
         }
+
+        public bool UpdatePolicy(Policy policy)
+        {
+            bool isSuccess = false;
+            try
+            {
+                Policy policy1 = context.Policies.SingleOrDefault(x => x.Id == policy.Id);
+                if (policy1 != null)
+                {
+                    policy1.Content = policy.Content;
+                    policy1.Fee = policy.Fee;
+                    policy1.TypePolicy = policy.TypePolicy;
+                    policy1.TypePolicyId = policy.TypePolicyId;
+                    context.Policies.Update(policy1);
+                    context.SaveChanges();
+                    isSuccess = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                isSuccess = false;
+            }
+            return isSuccess;
+        }
     }
 }

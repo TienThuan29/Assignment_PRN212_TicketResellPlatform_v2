@@ -24,5 +24,9 @@ namespace Repository.Def
         List<EventRevenue> GetEventRevenueList();
 
         List<EventRevenue> SearchEventRevenueList(string str);
+
+        Staff GetStaffById(string id);
+
+        bool UpdateStaff(Staff item);
     }
 }
