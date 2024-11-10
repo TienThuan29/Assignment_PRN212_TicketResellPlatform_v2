@@ -28,6 +28,11 @@ namespace Repository.Impl
 
         public List<Policy> GetPolicies() => PolicyDAO.Instance.GetPolicies();
 
+        public Policy GetPolicy(int id)
+        {
+            return PolicyDAO.Instance.GetPolicy(id);
+        }
+
         public TypePolicy GetTypePolicyByid(long id)
         {
             return TypePolicyDAO.Instance.GetTypePolicyByid(id);
@@ -41,6 +46,11 @@ namespace Repository.Impl
         public List<Policy> Search(string query)
         {
             return PolicyDAO.Instance.Search(query);
+        }
+
+        public bool UpdatePolicy(Policy policy)
+        {
+            return PolicyDAO.Instance.UpdatePolicy(policy);
         }
     }
 }

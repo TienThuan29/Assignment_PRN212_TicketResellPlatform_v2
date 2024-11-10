@@ -65,13 +65,6 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             this.Hide();
         }
 
-        private void ButtonClickWithdrawalList(object sender, RoutedEventArgs e)
-        {
-            WithdrawalListWindow withdrawalWindow = new WithdrawalListWindow();
-            withdrawalWindow.Show();
-            this.Hide();
-        }
-
         private void ButtonClickExit(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
@@ -97,7 +90,7 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
             }
         }
 
-        private void ReloadDataGrid()
+        public void ReloadDataGrid()
         {
             try
             {
@@ -134,6 +127,18 @@ namespace Assignment_PRN212_TicketResellPlatform.AdminWindows
                 case MessageBoxResult.No:
                     this.ReloadDataGrid();
                     break;
+            }
+        }
+
+        private void ButtonClickUpdatePolicy(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            int id = int.Parse(button?.Tag?.ToString());
+            Policy policy = iPolicyService.GetPolicy(id);
+            if (policy != null)
+            {
+                AddPolicyWindow policyWindow = new AddPolicyWindow(this, policy);
+                policyWindow.Show();
             }
         }
     }

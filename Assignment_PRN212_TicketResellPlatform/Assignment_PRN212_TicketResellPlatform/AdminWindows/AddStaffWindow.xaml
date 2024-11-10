@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Assignment_PRN212_TicketResellPlatform.AdminWindows"
-        mc:Ignorable="d" Icon="/StaffWindows/Add a heading (1)-Photoroom.png"
-        Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen">
+        mc:Ignorable="d" Icon="/AdminWindows/Add a heading (1)-Photoroom.png"
+        Title="Ticket Resell Platform" Height="400" Width="700" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
     <Grid>
         <Label HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#623ED0" FontSize="30" Content="Đăng ký nhân viên" FontStyle="Italic" FontWeight="Medium" Margin="214,30,0,0" Height="76" Width="310"/>
         <Button Content="Lưu" Background="#4CAF50" BorderBrush="#4CAF50" Padding="0" HorizontalAlignment="Left" Margin="293,325,0,0" VerticalAlignment="Top" Click="ButtonClickSubmit" Width="57" Height="24" />

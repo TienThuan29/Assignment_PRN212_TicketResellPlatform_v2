@@ -38,6 +38,11 @@ namespace Service.AdminService
             return policyRepository.GetPolicies();
         }
 
+        public Policy GetPolicy(int id)
+        {
+            return policyRepository.GetPolicy(id);
+        }
+
         public TypePolicy GetTypePolicyByid(long id)
         {
             return policyRepository.GetTypePolicyByid(id);
@@ -51,6 +56,11 @@ namespace Service.AdminService
         public List<Policy> Search(string query)
         {
             return policyRepository.Search(query);
+        }
+
+        public bool UpdatePolicy(Policy policy)
+        {
+            return policyRepository.UpdatePolicy(policy);
         }
     }
 }

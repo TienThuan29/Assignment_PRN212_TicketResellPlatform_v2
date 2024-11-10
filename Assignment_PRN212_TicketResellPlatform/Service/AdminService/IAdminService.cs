@@ -36,5 +36,9 @@ namespace Service.Admin
         List<EventRevenue> GetEventRevenueList();
 
         List<EventRevenue> SearchEventRevenueList(string str);
+
+        BusinessObject.Staff GetStaffById(string id);
+
+        bool UpdateStaff(BusinessObject.Staff item);
     }
 }

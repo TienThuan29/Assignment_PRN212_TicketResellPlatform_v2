@@ -50,9 +50,9 @@
                 <Button Content="Quản lý nhân viên" Grid.Row="2" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManageStaff"/>
                 <Button Content="Quản lý chính sách" Grid.Row="3" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickManagePolicy"/>
                 <Button Content="Lịch sử giao dịch" Grid.Row="4" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickHistoryTransaction"/>
-                <Button Content="Danh sách rút tiền" Grid.Row="5" Height="50" Margin="0,20,0,20" Background="#623ED0" Foreground="White" FontSize="16" Click="ButtonClickWithdrawalList"/>
+                
 
-                <Button Grid.Row="6" Click="ButtonClickExit" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"  Width="170" Background="#FF623ED0" Height="48">
+                <Button Grid.Row="5" Click="ButtonClickExit" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top"  Width="170" Background="#FF623ED0" Height="48">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="ExitRun" Height="24" Width="24" />
                         <TextBlock  Text="Đăng xuất" Margin="5,0,0,0" VerticalAlignment="Center" />
@@ -127,6 +127,20 @@
                                                                 <Setter Property="IsEnabled" Value="False"/>
                                                             </DataTrigger>
                                                         </Style.Triggers>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Cập nhật" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                            <Button Click="ButtonClickUpdatePolicy" Tag="{Binding Id}" Content="Cập nhật" Background="DarkSeaGreen" Padding="5,0" Margin="5,0">
+                                                <Button.Style>
+                                                    <Style TargetType="Button">
                                                     </Style>
                                                 </Button.Style>
                                             </Button>
