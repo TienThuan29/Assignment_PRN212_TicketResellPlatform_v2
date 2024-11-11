@@ -94,6 +94,7 @@
                     </DataGrid>
                 </Grid>
             </StackPanel>
+            <Label HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#623ED0" FontSize="30" Content="Trang chủ" FontStyle="Italic" FontWeight="Medium" Grid.Column="1" Margin="582,10,0,0" Grid.Row="1" Height="70" Width="256"/>
         </Grid>
     </Border>
 
